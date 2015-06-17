@@ -1,4 +1,4 @@
-name              "grid_kafka_deployment"
+name              "grid_kafka_deploy"
 maintainer        "GRIDOPS"
 maintainer_email  "grid-ops@inmobi.com"
 description       "Installs kafka"
