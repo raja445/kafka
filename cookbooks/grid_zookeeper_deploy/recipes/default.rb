@@ -8,6 +8,12 @@ package "zookeeper-server" do
   action :install
 end
 
+package "zookeeper-server-startup" do
+  action :install
+end
+
+
+
 
 template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
   source "zoo.cfg.erb"
