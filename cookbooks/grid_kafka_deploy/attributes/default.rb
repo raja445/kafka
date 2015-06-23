@@ -1,4 +1,4 @@
-default['kafka']['kafka_version'] = '0.8.1.2.2.0.0-2041'
+default['kafka']['kafka_version'] = '0.8.1.2.2.4.2-2'
 default['kafka']['network.threads'] = '2'
 default['kafka']['io.threads'] = '8'
 default['kafka']['log.dirs'] = '/data/d1/kafka,/data/d2/kafka'
