@@ -16,6 +16,7 @@ template "/usr/hdp/current/kafka-broker/config/server.properties" do
   )
 end
 
+Chef::Log.info("hostname: #{node['hostname']} broker_id: node['kafka']['broker.id'][node['hostname']]")
 node['kafka']['log.dirs'].split(",").each do |path|
   directory path do
     owner 'kafka'
