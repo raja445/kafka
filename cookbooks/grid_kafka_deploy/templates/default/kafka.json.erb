@@ -1,0 +1,88 @@
+{
+    "servers": [
+        {
+            "port": "9999",
+            "host": "<%= @host %>.grid.uj1.inmobi.com",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "settings": {
+                                "groupName": "jvmheapmemory",
+                                "port": 8655,
+                                "host": "tzgm4001.grid.uj1.inmobi.com"
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=Memory",
+                    "resultAlias": "heap",
+                    "attr": [
+                        "HeapMemoryUsage",
+                        "NonHeapMemoryUsage"
+                    ]
+                },
+        {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "settings": {
+                                "groupName": "kafka topic stats",
+                                "port": 8655,
+                                "host": "tzgm4001.grid.uj1.inmobi.com",
+                "typeNames":[
+                    "name"
+                ]
+                            }
+                        }
+                    ],
+                    "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=*",
+                    "resultAlias": "Kafka",
+                    "attr": [
+                        "Count",
+                        "OneMinuteRate"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "settings": {
+                                "groupName": "kafka server request",
+                                "port": 8655,
+                                "host": "tzgm4001.grid.uj1.inmobi.com"
+                            }
+                        }
+                    ],
+                    "obj":"\"kafka.server\":type=\"OffsetManager\",name=\"NumGroups\"",
+                    "resultAlias": "OffsetManager NumGroups",
+                    "attr": [
+                        "Value"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "settings": {
+                                "groupName": "jvmGC",
+                                "port": 8655,
+                                "host": "tzgm4001.grid.uj1.inmobi.com",
+                                "typeNames": [
+                                    "name"
+                                ]
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=GarbageCollector,name=*",
+                    "resultAlias": "GC",
+                    "attr": [
+                        "CollectionCount",
+                        "CollectionTime"
+                    ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+}
