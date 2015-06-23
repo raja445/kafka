@@ -3,14 +3,24 @@ package "kafka" do
   action :install
 end
 
-template "/usr/hdp/2.2.0.0-2041/etc/kafka/conf.default/server.properties" do
+template "/usr/hdp/current/kafka-broker/config/server.properties" do
   source "server.properties.erb"
   owner "root"
   group "root"
   mode "0644"
   variables(
     :network_threads => node['kafka']['network.threads'],
-    :log_dirs => node['kafka']['log.dirs']
-
+    :io_threads => node['kafka']['io.threads'],
+    :log_dirs => node['kafka']['log.dirs'],
+    :broker_id => node['kafka']['broker.id'][node['hostname']]
   )
+end
+
+node['kafka']['log.dirs'].split(",").each do |path|
+  directory path do
+    owner 'kafka'
+    group 'kafka'
+    mode '0755'
+    action :create
+  end
 end
