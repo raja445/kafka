@@ -24,3 +24,20 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
     :zookeeper_quorum => node['zookeeper']['quorum']
   )
 end
+
+template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-env.sh" do
+  source "zookeeper-env.sh.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  variables(
+    :zookeeper_quorum => node['zookeeper']['quorum']
+  )
+end
+
+directory node['zookeeper']['log_dir'] do
+  owner 'zookeeper'
+  group 'zookeeper'
+  mode '0755'
+  action :create
+end
