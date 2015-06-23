@@ -2,6 +2,11 @@ package "kafka" do
   version node['kafka']['kafka_version']
   action :install
 end
+package "jmxtrans" do
+  version node['jmxtrans_version']
+  action :install
+end
+
 
 template "/usr/hdp/current/kafka-broker/config/server.properties" do
   source "server.properties.erb"
