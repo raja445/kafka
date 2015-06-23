@@ -13,8 +13,6 @@ package "zookeeper-server-startup" do
 end
 
 
-
-
 template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
   source "zoo.cfg.erb"
   owner "root"
@@ -31,7 +29,7 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-env.sh" do
   group "root"
   mode "0644"
   variables(
-    :zookeeper_quorum => node['zookeeper']['quorum']
+    :log_dir => node['zookeeper']['log_dir']
   )
 end
 
