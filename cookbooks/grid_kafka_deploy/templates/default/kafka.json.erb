@@ -1,88 +1,193 @@
 {
-    "servers": [
-        {
-            "port": "9999",
-            "host": "<%= @host %>.grid.uj1.inmobi.com",
-            "queries": [
-                {
-                    "outputWriters": [
-                        {
-                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
-                            "settings": {
-                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
-                                "port": 2020,
-                                "host": "grid-metrics-relay.uj1.inmobi.com"
-                            }
-                        }
-                    ],
-                    "obj": "java.lang:type=Memory",
-                    "resultAlias": "heap",
-                    "attr": [
-                        "HeapMemoryUsage",
-                        "NonHeapMemoryUsage"
-                    ]
-                },
-        {
-                    "outputWriters": [
-                        {
-                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
-                            "settings": {
-                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
-                                "port": 2020,
-                                "host": "grid-metrics-relay.uj1.inmobi.com",
-                "typeNames":[
-                    "name"
-                ]
-                            }
-                        }
-                    ],
-                    "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",name=*",
-                    "resultAlias": "Kafka",
-                    "attr": [
-                        "Count",
-                        "OneMinuteRate"
-                    ]
-                },
-                {
-                    "outputWriters": [
-                        {
-                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
-                            "settings": {
-                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
-                                "port": 2020,
-                                "host": "grid-metrics-relay.uj1.inmobi.com"
-                            }
-                        }
-                    ],
-                    "obj":"\"kafka.server\":type=\"OffsetManager\",name=\"NumGroups\"",
-                    "resultAlias": "OffsetManager NumGroups",
-                    "attr": [
-                        "Value"
-                    ]
-                },
-                {
-                    "outputWriters": [
-                        {
-                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
-                            "settings": {
-                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
-                                "port": 2020,
-                                "host": "grid-metrics-relay.uj1.inmobi.com",
-                                "typeNames": [
-                                    "name"
-                                ]
-                            }
-                        }
-                    ],
-                    "obj": "java.lang:type=GarbageCollector,name=*",
-                    "resultAlias": "GC",
-                    "attr": [
-                        "CollectionCount",
-                        "CollectionTime"
-                    ]
-                }
-            ],
-            "numQueryThreads": 2
-        }
-    ]
+ "servers": [
+  {
+   "numQueryThreads": 8, 
+   "alias": "<%= @host %>", 
+   "host": "<%= @host %>.grid.uj1.inmobi.com", 
+   "port": 9999, 
+   "queries": [
+    {
+     "resultAlias": "memorypool", 
+     "obj": "java.lang:type=MemoryPool,name=*", 
+     "attr": [
+      "Usage"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": "gc", 
+     "obj": "java.lang:type=GarbageCollector,name=*", 
+     "attr": [
+      "CollectionCount", 
+      "CollectionTime"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": "hibernate", 
+     "obj": "Hibernate:type=statistics,name=*", 
+     "attr": [
+      "QueryExecutionMaxTime", 
+      "Queries", 
+      "TransactionCount"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": "sys", 
+     "obj": "java.lang:type=OperatingSystem", 
+     "attr": [
+      "SystemLoadAverage", 
+      "AvailableProcessors", 
+      "TotalPhysicalMemorySize", 
+      "FreePhysicalMemorySize", 
+      "TotalSwapSpaceSize", 
+      "FreeSwapSpaceSize", 
+      "OpenFileDescriptorCount", 
+      "MaxFileDescriptorCount"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": "threads", 
+     "obj": "java.lang:type=Threading", 
+     "attr": [
+      "DaemonThreadCount", 
+      "PeakThreadCount", 
+      "ThreadCount", 
+      "TotalStartedThreadCount"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": null, 
+     "obj": "\"kafka.server\":type=\"BrokerTopicMetrics\",*", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "Count"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": "replicamanagermetrics", 
+     "obj": "\"kafka.server\":type=\"ReplicaManager\",*", 
+     "attr": [
+      "Value"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }, 
+    {
+     "resultAlias": null, 
+     "obj": "\"kafka.controller\":type=\"ControllerStats\",*", 
+     "attr": [
+      "MeanRate", 
+      "OneMinuteRate", 
+      "FiveMinuteRate", 
+      "FifteenMinuteRate", 
+      "Count"
+     ], 
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
+       "settings": {
+        "typeNames": [
+         "name"
+        ], 
+        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "port": 2020, 
+        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }
