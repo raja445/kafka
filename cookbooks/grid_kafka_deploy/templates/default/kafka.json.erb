@@ -7,11 +7,11 @@
                 {
                     "outputWriters": [
                         {
-                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
                             "settings": {
-                                "groupName": "jvmheapmemory",
-                                "port": 8655,
-                                "host": "tzgm4001.grid.uj1.inmobi.com"
+                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
+                                "Port": 2020,
+                                "host": "grid-metrics-relay.uj1.inmobi.com"
                             }
                         }
                     ],
@@ -25,11 +25,11 @@
         {
                     "outputWriters": [
                         {
-                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
                             "settings": {
-                                "groupName": "kafka topic stats",
-                                "port": 8655,
-                                "host": "tzgm4001.grid.uj1.inmobi.com",
+                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
+                                "port": 2020,
+                                "host": "grid-metrics-relay.uj1.inmobi.com",
                 "typeNames":[
                     "name"
                 ]
@@ -46,11 +46,11 @@
                 {
                     "outputWriters": [
                         {
-                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
                             "settings": {
-                                "groupName": "kafka server request",
-                                "port": 8655,
-                                "host": "tzgm4001.grid.uj1.inmobi.com"
+                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
+                                "port": 2020,
+                                "host": "grid-metrics-relay.uj1.inmobi.com"
                             }
                         }
                     ],
@@ -63,11 +63,11 @@
                 {
                     "outputWriters": [
                         {
-                            "@class": "com.googlecode.jmxtrans.model.output.GangliaWriter",
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
                             "settings": {
-                                "groupName": "jvmGC",
-                                "port": 8655,
-                                "host": "tzgm4001.grid.uj1.inmobi.com",
+                                "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app",
+                                "port": 2020,
+                                "host": "grid-metrics-relay.uj1.inmobi.com",
                                 "typeNames": [
                                     "name"
                                 ]
