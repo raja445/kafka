@@ -33,6 +33,20 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-env.sh" do
   )
 end
 
+template "/usr/share/jmxtrans/zookeeper.json" do
+  source "zookeeper.json.erb"
+  owner "jmxtrans"
+  group "jmxtrans"
+  mode "0644"
+  variables(
+    :host => node['hostname'],
+    :fqdn => node['fqdn'],
+    :colo => node['colo'],
+    :cluster_name => node['cluster_name'][node['colo']],
+    :graphite_host => "grid-metrics-relay.#{node["colo']}.inmobi.com"
+  )
+end
+
 directory node['zookeeper']['log_dir'] do
   owner 'zookeeper'
   group 'zookeeper'
