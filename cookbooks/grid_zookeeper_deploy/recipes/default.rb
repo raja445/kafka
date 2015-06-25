@@ -43,7 +43,7 @@ template "/usr/share/jmxtrans/zookeeper.json" do
     :fqdn => node['fqdn'],
     :colo => node['colo'],
     :cluster_name => node['cluster_name'][node['colo']],
-    :graphite_host => "grid-metrics-relay.#{node["colo']}.inmobi.com"
+    :graphite_host => "grid-metrics-relay.#{node['colo']}.inmobi.com"
   )
 end
 
