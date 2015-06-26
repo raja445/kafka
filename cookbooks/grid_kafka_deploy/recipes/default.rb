@@ -32,7 +32,7 @@ template "/usr/share/jmxtrans/kafka.json" do
 end
 
 template "/usr/hdp/current/kafka-broker/config/kafka-env.sh" do
-  source "kafka-env.sh"
+  source "kafka-env.sh.erb"
   owner "root"
   group "root"
   mode "0644"
