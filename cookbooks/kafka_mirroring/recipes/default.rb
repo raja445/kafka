@@ -11,7 +11,7 @@ template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
   owner "root"
   mode "0644"
   variables(
-    :colo => node['fqdn'].split(".")[-3]
+    :colo => node['fqdn'].split(".")[-3],
     :instance_id => node['kafkaMirroring']['instanceid'][node['hostname']]
   )
 end
