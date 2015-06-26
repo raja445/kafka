@@ -21,4 +21,8 @@
 # Set Kafka specific environment variables here.
 
 # The java implementation to use.
-export JAVA_HOME=${JAVA_HOME}
+export KAFKA_JMX_OPTS="-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false  -Dcom.sun.management.jmxremote.ssl=false "
+
+export JMX_PORT=${JMX_PORT:-9999}
+e
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/

@@ -31,6 +31,13 @@ template "/usr/share/jmxtrans/kafka.json" do
   )
 end
 
+template "/usr/hdp/current/kafka-broker/config/kafka-env.sh" do
+  source "kafka-env.sh"
+  owner "root"
+  group "root"
+  mode "0644"
+end
+
 Chef::Log.info("hostname: #{node['hostname']} broker_id: node['kafka']['broker.id'][node['hostname']]")
 node['kafka']['log.dirs'].split(",").each do |path|
   directory path do
