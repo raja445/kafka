@@ -33,6 +33,9 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-env.sh" do
   )
 end
 
+
+Chef::Log.info("colo: #{node['colo']}")
+
 directory node['zookeeper']['log_dir'] do
   owner 'zookeeper'
   group 'zookeeper'
