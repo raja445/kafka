@@ -1,8 +1,7 @@
 # could be improved to run only on update
 
 package ['kafkaMirroring','kafkaMirroringConfig'] do
-  version node['kafkaMirroring']['version']
-  action :install
+  action :upgrade
 end
 
 template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
