@@ -1,3 +1,3 @@
-package ['auditworker'] do
+package ['KafkaAudit'] do
   action :upgrade
 end
