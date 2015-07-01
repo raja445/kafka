@@ -1,3 +1,4 @@
 package ['KafkaAudit'] do
-  action :upgrade
+  version node['KafkaAudit']['version']
+  action :install
 end
