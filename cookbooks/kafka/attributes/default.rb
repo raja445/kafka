@@ -80,3 +80,5 @@ default["kafka"]["offset_monitor"]["port"] = "8080"
 default["kafka"]["offset_monitor"]["db_name"] = "offset_monitor"
 default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
+
+default['jmxtrans_version'] = '250-1'

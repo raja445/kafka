@@ -214,3 +214,22 @@ end
 service "kafka" do
   action [:enable, :start]
 end
+
+package "jmxtrans" do
+  version node['jmxtrans_version']
+  action :install
+end
+template "/usr/share/jmxtrans/kafka.json" do
+  source "kafka.json.erb"
+  owner "jmxtrans"
+  group "jmxtrans"
+  mode "0644"
+  colo = node['domain'].split(",")[-3]
+  variables(
+    :host => node['hostname'],
+    :fqdn => node['fqdn'],
+    :colo => colo,
+    :cluster_name => node['cluster_name'][colo],
+    :graphite_host => "grid-metrics-relay.#{colo}.inmobi.com"
+  )
+end
