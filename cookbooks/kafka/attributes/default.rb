@@ -82,3 +82,4 @@ default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 default['jmxtrans_version'] = '250-1'
+default['cluster_name'] = {'uj1'=> 'UJ1_Topaz'}

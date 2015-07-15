@@ -224,12 +224,12 @@ template "/usr/share/jmxtrans/kafka.json" do
   owner "jmxtrans"
   group "jmxtrans"
   mode "0644"
-  
+  colo = node['domain'].split(".")[-3]
   variables(
     :host => node['hostname'],
     :fqdn => node['fqdn'],
-    :colo => node['domain'].split(",")[-3],
-    :cluster_name => node['cluster_name'][node['domain'].split(",")[-3]],
-    :graphite_host => "grid-metrics-relay.#{node['domain'].split(",")[-3]}.inmobi.com"
+    :colo => colo,
+    :cluster_name => node['cluster_name'][colo]],
+    :graphite_host => "grid-metrics-relay.#{node['domain']}"
   )
 end
