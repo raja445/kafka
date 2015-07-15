@@ -7,7 +7,6 @@
    "port": 9999, 
    "queries": [
     {
-     "allowDottedKeys": null, 
      "resultAlias": "memorypool", 
      "obj": "java.lang:type=MemoryPool,name=*", 
      "attr": [
@@ -28,7 +27,6 @@
      ]
     }, 
     {
-     "allowDottedKeys": null, 
      "resultAlias": "gc", 
      "obj": "java.lang:type=GarbageCollector,name=*", 
      "attr": [
@@ -50,30 +48,6 @@
      ]
     }, 
     {
-     "allowDottedKeys": null, 
-     "resultAlias": "hibernate", 
-     "obj": "Hibernate:type=statistics,name=*", 
-     "attr": [
-      "QueryExecutionMaxTime", 
-      "Queries", 
-      "TransactionCount"
-     ], 
-     "outputWriters": [
-      {
-       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
-       "settings": {
-        "typeNames": [
-         "name"
-        ], 
-        "host": "<%= @graphite_host %>", 
-        "port": 2020, 
-        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
-       }
-      }
-     ]
-    }, 
-    {
-     "allowDottedKeys": null, 
      "resultAlias": "sys", 
      "obj": "java.lang:type=OperatingSystem", 
      "attr": [
@@ -101,7 +75,6 @@
      ]
     }, 
     {
-     "allowDottedKeys": null, 
      "resultAlias": "threads", 
      "obj": "java.lang:type=Threading", 
      "attr": [
@@ -125,7 +98,6 @@
      ]
     }, 
     {
-     "allowDottedKeys": null, 
      "resultAlias": "brokertopicmetrics", 
      "obj": "kafka.server:type=BrokerTopicMetrics,*", 
      "attr": [
@@ -150,11 +122,11 @@
      ]
     }, 
     {
-     "allowDottedKeys": null, 
      "resultAlias": "replicamanagermetrics", 
      "obj": "kafka.server:type=ReplicaManager,*", 
      "attr": [
-      "Value"
+      "Value", 
+      "Count"
      ], 
      "outputWriters": [
       {
@@ -171,7 +143,6 @@
      ]
     }, 
     {
-     "allowDottedKeys": null, 
      "resultAlias": "controllermetrics", 
      "obj": "kafka.controller:type=ControllerStats,*", 
      "attr": [
