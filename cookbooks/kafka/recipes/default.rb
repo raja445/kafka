@@ -229,7 +229,7 @@ template "/usr/share/jmxtrans/kafka.json" do
     :host => node['hostname'],
     :fqdn => node['fqdn'],
     :colo => colo,
-    :cluster_name => node['cluster_name'][colo]],
+    :cluster_name => node['cluster_name'][colo],
     :graphite_host => "grid-metrics-relay.#{node['domain']}"
   )
 end
