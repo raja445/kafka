@@ -1,2 +1,2 @@
 default['kafkaMirroring']['instanceid']={ "tzkf4003" => 1 }
-default['kafkaMirroring']['version']= '0.3.2'
+default['kafkaMirroring']['version']= '0.3.3'
