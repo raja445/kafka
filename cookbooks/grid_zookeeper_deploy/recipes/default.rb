@@ -18,8 +18,10 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
   owner "root"
   group "root"
   mode "0644"
+  colo = node['domain'].split(".")[-3]
   variables(
-    :zookeeper_quorum => node['zookeeper']['quorum']
+    :colo => colo
+    :zookeeper_quorum => node['zookeeper']['quorum'][colo]
   )
 end
 
@@ -37,6 +39,17 @@ end
 Chef::Log.info("colo: #{node['colo']}")
 
 directory node['zookeeper']['log_dir'] do
+  owner 'zookeeper'
+  group 'zookeeper'
+  mode '0755'
+  action :create
+end
+
+
+file "#{node['zookeeper']['log_dir']}/myid" do
+  colo = node['domain'].split(".")[-3]
+  ids = node['zookeeper']['quorum'][colo].invert
+  content ids[node['hostname']]
   owner 'zookeeper'
   group 'zookeeper'
   mode '0755'
