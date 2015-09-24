@@ -20,7 +20,7 @@ default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kaf
 default["kafka"]["brokers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com","tzkf4003.grid.uj1.inmobi.com","tzkf4004.grid.uj1.inmobi.com"]
 default["kafka"]["zookeepers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com:2181","tzkf4003.grid.uj1.inmobi.com:2181","tzkf4004.grid.uj1.inmobi.com:2181"]
 
-default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com"]
+default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com", "krkf4005.grid.uh1.inmobi.com"]
 default["kafka"]["zookeepers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com:2181","krkf4003.grid.uh1.inmobi.com:2181","krkf4004.grid.uh1.inmobi.com:2181"]
 
 default["kafka"]["shutdown_timeout"] = 30     # init.d script shutdown time-out in seconds
