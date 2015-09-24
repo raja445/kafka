@@ -28,5 +28,5 @@ dataDir=/var/lib/zookeeper
 clientPort=2181
 
 <% @zookeeper_quorum.each do |key,value| -%>
-server.<%= key %>=<%= value %>.grid.uj1.inmobi.com:2888:3888
+server.<%= key %>=<%= value %>.grid.<%= colo %>.inmobi.com:2888:3888
 <% end %>
