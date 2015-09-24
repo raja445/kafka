@@ -9,12 +9,13 @@ errors = Array.new
 ruby_block 'assert broker and zookeeper lists are correct' do # ~FC014
   block_name 'attribute_assertions'
   block do
-    if (node['kafka']['brokers'].to_a.empty?) && !node['kafka']['server.properties'].has_key?('broker.id')
+    colo = node['domain'].split(".")[-3]
+    if (node['kafka']['brokers'][colo].to_a.empty?) && !node['kafka']['server.properties'].has_key?('broker.id')
       errors.push 'node[:kafka][:brokers] or node[:kafka][:server.properties][:broker.id] must be set properly'
     elsif !node['kafka']['server.properties'].has_key?('broker.id')
       # Generate brokerId for Kafka (uses the index of the brokers list to figure out which ID this broker should have). We add 1 to ensure
       # we have a positive (non zero) number
-      brokerId = ( node['kafka']['brokers'].to_a.index do |broker| 
+      brokerId = ( node['kafka']['brokers'][colo].to_a.index do |broker| 
           broker == node["fqdn"] || broker == node["ipaddress"] || broker == node["hostname"]
         end
       )
@@ -28,10 +29,10 @@ ruby_block 'assert broker and zookeeper lists are correct' do # ~FC014
     end
 
     # Verify we have a list of zookeeper instances
-    if (node['kafka']['zookeepers'].to_a.empty?) && !node['kafka']['server.properties'].has_key?('zookeeper.connect')
+    if (node['kafka']['zookeepers'][colo].to_a.empty?) && !node['kafka']['server.properties'].has_key?('zookeeper.connect')
       errors.push 'node[:kafka][:zookeepers] or node[:kafka][:server.properties][:zookeeper.connect] was not set properly'
     elsif !node['kafka']['server.properties'].has_key?('zookeeper.connect')
-      node.default['kafka']['server.properties']['zookeeper.connect'] = node['kafka']['zookeepers'].to_a.join ','
+      node.default['kafka']['server.properties']['zookeeper.connect'] = node['kafka']['zookeepers'][colo].to_a.join ','
     end
 
     # Raise an exception if there are any problems

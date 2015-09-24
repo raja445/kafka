@@ -17,8 +17,11 @@ default["kafka"]["service"]["stdout"] = File.join node["kafka"]["log_dir"], "kaf
 default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kafka_init_stderr.log"
 
 # These are required to be supplied by the consumer so setting to nil
-default["kafka"]["brokers"] = ["tzkf4002.grid.uj1.inmobi.com","tzkf4003.grid.uj1.inmobi.com","tzkf4004.grid.uj1.inmobi.com","precise64"]
-default["kafka"]["zookeepers"] = ["tzkf4002.grid.uj1.inmobi.com:2181","tzkf4003.grid.uj1.inmobi.com:2181","tzkf4004.grid.uj1.inmobi.com:2181"]
+default["kafka"]["brokers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com","tzkf4003.grid.uj1.inmobi.com","tzkf4004.grid.uj1.inmobi.com"]
+default["kafka"]["zookeepers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com:2181","tzkf4003.grid.uj1.inmobi.com:2181","tzkf4004.grid.uj1.inmobi.com:2181"]
+
+default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com"]
+default["kafka"]["zookeepers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com:2181","krkf4003.grid.uh1.inmobi.com:2181","krkf4004.grid.uh1.inmobi.com:2181"]
 
 default["kafka"]["shutdown_timeout"] = 30     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
@@ -82,4 +85,4 @@ default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'uj1'=> 'UJ1_Topaz'}
+default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'uh1' => 'UH1_Krypton'}
