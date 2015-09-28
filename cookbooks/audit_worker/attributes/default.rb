@@ -1,1 +1,1 @@
-default['KafkaAudit']['version']= '0.2.11'
+default['KafkaAudit']['version']= '0.4.9'
