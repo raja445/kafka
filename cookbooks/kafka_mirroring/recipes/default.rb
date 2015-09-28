@@ -12,7 +12,7 @@ template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
   mode "0644"
   colo = node['fqdn'].split(".")[-3]
   variables(
-    :colo => colo
+    :colo => colo,
     :instance_id => node['kafkaMirroring']['instanceid'][colo][node['hostname']]
   )
 end
