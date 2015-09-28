@@ -10,8 +10,9 @@ template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
   owner "root"
   owner "root"
   mode "0644"
+  colo = node['fqdn'].split(".")[-3]
   variables(
-    :colo => node['fqdn'].split(".")[-3],
-    :instance_id => node['kafkaMirroring']['instanceid'][node['hostname']]
+    :colo => colo
+    :instance_id => node['kafkaMirroring']['instanceid'][colo][node['hostname']]
   )
 end
