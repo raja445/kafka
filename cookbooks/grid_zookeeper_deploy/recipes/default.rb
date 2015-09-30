@@ -46,7 +46,7 @@ directory node['zookeeper']['log_dir'] do
 end
 
 
-file "#{node['zookeeper']['log_dir']}/myid" do
+file "#{node['zookeeper']['lib_dir']}/myid" do
   colo = node['domain'].split(".")[-3]
   ids = node['zookeeper']['quorum'][colo].invert
   content ids[node['hostname']]

@@ -23,6 +23,14 @@ default["kafka"]["zookeepers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com:2181","tz
 default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com", "krkf4005.grid.uh1.inmobi.com"]
 default["kafka"]["zookeepers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com:2181","krkf4003.grid.uh1.inmobi.com:2181","krkf4004.grid.uh1.inmobi.com:2181"]
 
+default["kafka"]["brokers"]["hkg1"] = ["opkf4002.grid.hkg1.inmobi.com","opkf4003.grid.hkg1.inmobi.com","opkf4004.grid.hkg1.inmobi.com", "opkf4005.grid.hkg1.inmobi.com"]
+default["kafka"]["zookeepers"]["hkg1"] = ["opkf4002.grid.hkg1.inmobi.com:2181","opkf4003.grid.hkg1.inmobi.com:2181","opkf4004.grid.hkg1.inmobi.com:2181"]
+
+default["kafka"]["brokers"]["lhr1"] = ["erkf4002.grid.lhr1.inmobi.com","erkf4003.grid.lhr1.inmobi.com","erkf4004.grid.lhr1.inmobi.com", "erkf4005.grid.lhr1.inmobi.com"]
+default["kafka"]["zookeepers"]["lhr1"] = ["erkf4002.grid.lhr1.inmobi.com:2181","erkf4003.grid.lhr1.inmobi.com:2181","erkf4004.grid.lhr1.inmobi.com:2181"]
+
+
+
 default["kafka"]["shutdown_timeout"] = 30     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
 default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G\""
@@ -85,4 +93,4 @@ default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'uh1' => 'UH1_Krypton'}
+default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Topaz', 'lhr1' => 'LHR1_Emerald'}
