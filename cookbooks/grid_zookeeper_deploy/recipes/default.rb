@@ -20,7 +20,7 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
   mode "0644"
   colo = node['domain'].split(".")[-3]
   variables(
-    :colo => colo
+    :colo => colo,
     :zookeeper_quorum => node['zookeeper']['quorum'][colo]
   )
 end
