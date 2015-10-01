@@ -3,7 +3,7 @@
   {
    "numQueryThreads": 8, 
    "alias": "<%= @host %>", 
-   "host": "<%= @host %>.grid.uj1.inmobi.com", 
+   "host": "<%= @host %>.grid.<%= @colo %>.inmobi.com", 
    "port": 9999, 
    "queries": [
     {
@@ -19,9 +19,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -40,9 +40,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -62,9 +62,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -89,9 +89,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -112,9 +112,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -136,9 +136,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -156,9 +156,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
@@ -180,9 +180,9 @@
         "typeNames": [
          "name"
         ], 
-        "host": "grid-metrics-relay.uj1.inmobi.com", 
+        "host": "grid-metrics-relay.<%= @colo %>.inmobi.com", 
         "port": 2020, 
-        "rootPrefix": "prod.uj1.grid.UJ1_Topaz.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
