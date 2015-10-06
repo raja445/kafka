@@ -39,18 +39,19 @@ default["kafka"]["lib_jars"] = []
 
 default["kafka"]["server.properties"]["log.dirs"] = "/data/d1/kafka,/data/d2/kafka"
 default["kafka"]["server.properties"]["port"] = 9092
-default["kafka"]["server.properties"]["num.partitions"] = 25
+default["kafka"]["server.properties"]["num.partitions"] = 10
 default["kafka"]["server.properties"]["default.replication.factor"] = 3
 default["kafka"]["server.properties"]["log.flush.interval.messages"] = 1
-default["kafka"]["server.properties"]["log.retention.hours"] = 24
+default["kafka"]["server.properties"]["log.retention.hours"] = 48
 default["kafka"]["server.properties"]["log.retention.check.interval.ms"] = 3600000
 default["kafka"]["server.properties"]["num.replica.fetchers"] = 5
 default["kafka"]["server.properties"]["replica.fetch.wait.max.ms"] = 5000
-default["kafka"]["server.properties"]["leader.imbalance.check.interval.seconds"] = 300
+default["kafka"]["server.properties"]["leader.imbalance.check.interval.seconds"] = 10
 default["kafka"]["server.properties"]["replica.lag.max.messages"] = 10000
 default["kafka"]["server.properties"]["auto.leader.rebalance.enable"] = true
 default["kafka"]["server.properties"]["num.network.threads"] = 15
-default["kafka"]["server.properties"]["delete.topic.enable"] = true
+default["kafka"]["server.properties"]["num.io.threads"] = 12
+default["kafka"]["server.properties"]["delete.topic.enable"] = false
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 
 # Log4J config
