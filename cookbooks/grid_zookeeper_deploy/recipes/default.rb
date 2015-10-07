@@ -11,6 +11,7 @@ end
 package "zookeeper-server-startup" do
   version node['zookeeper']['zookeeper_startup_version']
   action :install
+  options '--force-yes'
 end
 
 
