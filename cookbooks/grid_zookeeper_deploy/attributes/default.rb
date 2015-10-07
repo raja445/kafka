@@ -1,5 +1,7 @@
 default['hdp']['version']='2.2.4.2-2'
 default['zookeeper']['zookeeper_version'] = '3.4.6.2.2.4.2-2'
+default['zookeeper']['zookeeper_startup_version'] = '2.6.2.2.4.2-2-inm-5'
+
 default['zookeeper']['quorum']['uj1'] =  {'1' => 'tzkf4002','2' => 'tzkf4003','3' => 'tzkf4004'}
 default['zookeeper']['quorum']['uh1'] =  {'1' => 'krkf4002','2' => 'krkf4003','3' => 'krkf4004'}
 default['zookeeper']['quorum']['hkg1'] =  {'1' => 'opkf4002','2' => 'opkf4003','3' => 'opkf4004'}

@@ -220,6 +220,12 @@ package "jmxtrans" do
   version node['jmxtrans_version']
   action :install
 end
+
+cookbook_file "/usr/share/jmxtrans/jmxtrans.sh" do
+  source "jmxtrans.sh"
+  mode "0655"
+end
+
 template "/usr/share/jmxtrans/kafka.json" do
   source "kafka.json.erb"
   owner "jmxtrans"
