@@ -17,8 +17,8 @@ default["kafka"]["service"]["stdout"] = File.join node["kafka"]["log_dir"], "kaf
 default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kafka_init_stderr.log"
 
 # These are required to be supplied by the consumer so setting to nil
-default["kafka"]["brokers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com","tzkf4003.grid.uj1.inmobi.com","tzkf4004.grid.uj1.inmobi.com", "tzkf4005.grid.uj1.inmobi.com"]
-default["kafka"]["zookeepers"]["uj1"] = ["tzkf4002.grid.uj1.inmobi.com:2181","tzkf4003.grid.uj1.inmobi.com:2181","tzkf4004.grid.uj1.inmobi.com:2181"]
+default["kafka"]["brokers"]["uj1"] = ["tzkf4005.grid.uj1.inmobi.com","tzkf4006.grid.uj1.inmobi.com","tzkf4007.grid.uj1.inmobi.com", "tzkf4008.grid.uj1.inmobi.com"]
+default["kafka"]["zookeepers"]["uj1"] = ["tzkf4005.grid.uj1.inmobi.com:2181","tzkf4006.grid.uj1.inmobi.com:2181","tzkf4007.grid.uj1.inmobi.com:2181"]
 
 default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com", "krkf4005.grid.uh1.inmobi.com"]
 default["kafka"]["zookeepers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com:2181","krkf4003.grid.uh1.inmobi.com:2181","krkf4004.grid.uh1.inmobi.com:2181"]
