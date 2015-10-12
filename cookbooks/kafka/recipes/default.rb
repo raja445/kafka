@@ -237,6 +237,7 @@ template "/usr/share/jmxtrans/kafka.json" do
     :fqdn => node['fqdn'],
     :colo => colo,
     :cluster_name => node['cluster_name'][colo],
-    :graphite_host => "grid-metrics-relay.#{colo}.inmobi.com"
+    :graphite_host => "grid-metrics-relay.#{colo}.inmobi.com",
+    :topics => node['kafka']['topics']
   )
 end
