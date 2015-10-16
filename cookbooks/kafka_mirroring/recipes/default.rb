@@ -2,6 +2,7 @@
 
 package ['kafkaMirroring','kafkaMirroringConfig'] do
   version [node['kafkaMirroring']['version'],node['kafkaMirroring']['version']]
+  options '--force-yes'
   action :install
 end
 
