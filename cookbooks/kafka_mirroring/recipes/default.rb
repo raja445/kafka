@@ -1,7 +1,7 @@
 # could be improved to run only on update
 
 package ['kafkaMirroring','kafkaMirroringConfig'] do
-  version node['kafkaMirroring']['version']
+  version [node['kafkaMirroring']['version'],node['kafkaMirroring']['version']]
   action :install
 end
 
