@@ -226,7 +226,7 @@ cookbook_file "/usr/share/jmxtrans/jmxtrans.sh" do
   mode "0655"
 end
 
-template "/usr/share/jmxtrans/kafka.json" do
+template "/var/lib/jmxtrans/kafka.json" do
   source "kafka.json.erb"
   owner "jmxtrans"
   group "jmxtrans"
