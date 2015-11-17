@@ -241,3 +241,10 @@ template "/var/lib/jmxtrans/kafka.json" do
     :topics => node['kafka']['topics']
   )
 end
+
+
+template "/etc/logrotate.d/kafka" do
+  source "log_rotate.erb"
+  mode "0655"
+end
+  
