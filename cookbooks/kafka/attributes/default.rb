@@ -53,12 +53,13 @@ default["kafka"]["server.properties"]["num.network.threads"] = 15
 default["kafka"]["server.properties"]["num.io.threads"] = 12
 default["kafka"]["server.properties"]["delete.topic.enable"] = false
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
+default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 
 # Log4J config
-default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, stdout "
-default["kafka"]["log4j.properties"]["log4j.appender.stdout"] = "org.apache.log4j.ConsoleAppender"
-default["kafka"]["log4j.properties"]["log4j.appender.stdout.layout"] = "org.apache.log4j.PatternLayout"
-default["kafka"]["log4j.properties"]["log4j.appender.stdout.layout.ConversionPattern"] = "[%d] %p %m (%c)%n"
+default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, DRFA"
+default["kafka"]["log4j.properties"]["log4j.appender.DRFA"] = "org.apache.log4j.DailyRollingFileAppender"
+default["kafka"]["log4j.properties"]["log4j.appender.DRFA.layout"] = "org.apache.log4j.PatternLayout"
+default["kafka"]["log4j.properties"]["log4j.appender.DRFA.layout.ConversionPattern"] = "[%d] %p %m (%c)%n"
 default["kafka"]["log4j.properties"]["log4j.appender.kafkaAppender"] = "org.apache.log4j.RollingFileAppender"
 default["kafka"]["log4j.properties"]["log4j.appender.kafkaAppender.MaxBackupIndex"] = "20"
 default["kafka"]["log4j.properties"]["log4j.appender.kafkaAppender.layout"] = "org.apache.log4j.PatternLayout"
