@@ -95,8 +95,6 @@ default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 
-#kafka topics to monitor
-default["kafka"]["topics"]=["georrlite"]
 
 default['jmxtrans_version'] = '250-1'
 default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald'}
