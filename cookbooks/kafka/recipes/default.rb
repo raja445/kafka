@@ -2,6 +2,17 @@
 # Cookbook Name:: cerner_kafka
 # Recipe:: default
 
+include_recipe 'ohai'
+ohai "reload" do
+  action :reload
+end
+
+template "#{node[:ohai][:plugin_path]}/kafkadisks.rb" do
+  source "kafkadisks.erb"
+  notifies :reload, "ohai[reload]"
+end
+
+
 # Create an array for storing errors we should verify before doing anything
 errors = Array.new
 
@@ -104,7 +115,7 @@ directory node["kafka"]["log_dir"] do
 end
 
 # Ensure the Kafka broker log (kafka data) directories exist
-node["kafka"]["server.properties"]["log.dirs"].split(",").each do |log_dir|
+node['kafkadisks']['mounts'].split(",").each do |log_dir|
   directory log_dir do
     action :create
     owner node["kafka"]["user"]
@@ -191,20 +202,41 @@ template "#{node["kafka"]["install_dir"]}/bin/kafka-server-start.sh" do
 end
 
 # Configure kafka properties
+#%w[server.properties log4j.properties].each do |template_file|
+#  template "#{node["kafka"]["install_dir"]}/config/#{template_file}" do
+#    source  "key_equals_value.erb"
+#    owner node["kafka"]["user"]
+#    group node["kafka"]["group"]
+#    mode  00755
+#    variables(
+#      lazy { 
+#        { :properties => node["kafka"][template_file].to_hash }
+#      }
+#    )
+#    notifies :restart, "service[kafka]"
+#  end
+#end
+
 %w[server.properties log4j.properties].each do |template_file|
-  template "#{node["kafka"]["install_dir"]}/config/#{template_file}" do
-    source  "key_equals_value.erb"
-    owner node["kafka"]["user"]
-    group node["kafka"]["group"]
-    mode  00755
-    variables(
-      lazy { 
-        { :properties => node["kafka"][template_file].to_hash }
-      }
-    )
-    notifies :restart, "service[kafka]"
-  end
+ template "#{node["kafka"]["install_dir"]}/config/#{template_file}" do
+   source  "key_equals_value.erb"
+   owner node["kafka"]["user"]
+   group node["kafka"]["group"]
+   mode  00755
+   if template_file == "server.properties"
+     props =node["kafka"][template_file].to_hash.merge({"log.dirs" => node['kafkadisks']['mounts']})
+   else
+     props =node["kafka"][template_file].to_hash
+   end
+   variables(
+     lazy {
+       { :properties => props }
+     }
+   )
+   notifies :restart, "service[kafka]"
+ end
 end
+
 
 # Link kafka config to /etc/kafka
 link "/etc/kafka" do
