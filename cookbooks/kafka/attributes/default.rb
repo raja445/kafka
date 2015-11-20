@@ -37,7 +37,6 @@ default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:PermSize=48m -XX:MaxPermSize=48m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
-default["kafka"]["server.properties"]["log.dirs"] = "/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/data/d4/kafka,/data/d5/kafka"
 default["kafka"]["server.properties"]["port"] = 9092
 default["kafka"]["server.properties"]["num.partitions"] = 10
 default["kafka"]["server.properties"]["default.replication.factor"] = 3
