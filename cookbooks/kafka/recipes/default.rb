@@ -230,7 +230,7 @@ end
    end
    variables(
      lazy {
-       { :properties => props }
+       { :properties => node["kafka"][template_file].to_hash }
      }
    )
    notifies :restart, "service[kafka]"
