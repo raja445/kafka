@@ -1,4 +1,5 @@
 name              "kafka"
+depends           'ohai'
 maintainer        "gridops"
 maintainer_email  "gridops@imobi.com"
 description       'Installs and configures a Kafka'
