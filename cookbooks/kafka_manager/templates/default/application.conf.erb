@@ -1,0 +1,24 @@
+application.secret="kafka_manager"
+application.secret=${?APPLICATION_SECRET}
+
+application.langs="en"
+
+logger.root=ERROR
+
+logger.play=INFO
+
+logger.application=DEBUG
+
+db.default.driver=org.h2.Driver
+db.default.url="jdbc:h2:file:./data/db"
+
+kafka-manager.zkhosts=""
+kafka-manager.zkhosts=${?ZK_HOSTS}
+pinned-dispatcher.type="PinnedDispatcher"
+pinned-dispatcher.executor="thread-pool-executor"
+application.features=["KMClusterManagerFeature","KMTopicManagerFeature","KMPreferredReplicaElectionFeature","KMReassignPartitionsFeature"]
+
+akka {
+  loggers = ["akka.event.slf4j.Slf4jLogger"]
+  loglevel = "DEBUG"
+}
