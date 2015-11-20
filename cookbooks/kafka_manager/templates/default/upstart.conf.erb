@@ -15,7 +15,7 @@ respawn
 
 script
   chdir <%= @install_dir %>/current
-  exec bin/kafka-manager -Dhttp.port=<%= @port %>
+  exec bin/kafka-manager -Dconfig.file=conf/application.conf -Dhttp.port=<%= @port %>
 end script
 
 post-start script
