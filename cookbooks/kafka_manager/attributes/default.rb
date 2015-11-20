@@ -1,6 +1,7 @@
 #
 # Downloading
 default['kafka_manager']['version'] = "1.2.9.10"
+default['nginx']['version'] = "1.1.19-1ubuntu0.8"
 default['kafka_manager']['mirror'] = "http://artifactory.corp.inmobi.com/artifactory/releases/com/inmobi/kafka-manager/kafka-manager/"
 
 # Installation

@@ -67,6 +67,7 @@
   end
 
   package "nginx" do
+    version node['nginx']['version']
     action :install
     options '--force-yes'
   end
