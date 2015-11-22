@@ -117,7 +117,7 @@ end
 
 # Ensure the Kafka broker log (kafka data) directories exist
 node['kafkadisks']['mounts'].split(",").each do |log_dir|
-  directory log_dir do
+  directory log_dir.strip do
     action :create
     owner node["kafka"]["user"]
     group node["kafka"]["group"]
