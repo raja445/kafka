@@ -51,6 +51,7 @@ ruby_block 'assert broker and zookeeper lists are correct' do # ~FC014
   end
 end
 
+node.default['kafka']['server.properties']['log.dir'] = node['kafkadisks']['mounts'].strip
 # Set all default attributes that are built from other attributes
 node.default["kafka"]["install_dir"] = "#{node["kafka"]["base_dir"]}/kafka"
 
