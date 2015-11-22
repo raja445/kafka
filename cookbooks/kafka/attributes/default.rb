@@ -49,7 +49,6 @@ default["kafka"]["server.properties"]["leader.imbalance.check.interval.seconds"]
 default["kafka"]["server.properties"]["replica.lag.max.messages"] = 10000
 default["kafka"]["server.properties"]["auto.leader.rebalance.enable"] = true
 default["kafka"]["server.properties"]["num.network.threads"] = 15
-default["kafka"]["server.properties"]["num.io.threads"] = 12
 default["kafka"]["server.properties"]["delete.topic.enable"] = false
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
