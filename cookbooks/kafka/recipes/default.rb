@@ -203,20 +203,6 @@ template "#{node["kafka"]["install_dir"]}/bin/kafka-server-start.sh" do
 end
 
 # Configure kafka properties
-#%w[server.properties log4j.properties].each do |template_file|
-#  template "#{node["kafka"]["install_dir"]}/config/#{template_file}" do
-#    source  "key_equals_value.erb"
-#    owner node["kafka"]["user"]
-#    group node["kafka"]["group"]
-#    mode  00755
-#    variables(
-#      lazy { 
-#        { :properties => node["kafka"][template_file].to_hash }
-#      }
-#    )
-#    notifies :restart, "service[kafka]"
-#  end
-#end
 
 %w[server.properties log4j.properties].each do |template_file|
  template "#{node["kafka"]["install_dir"]}/config/#{template_file}" do
@@ -224,11 +210,6 @@ end
    owner node["kafka"]["user"]
    group node["kafka"]["group"]
    mode  00755
-   if template_file == "server.properties"
-     props =node["kafka"][template_file].to_hash.merge({"log.dirs" => node['kafkadisks']['mounts']})
-   else
-     props =node["kafka"][template_file].to_hash
-   end
    variables(
      lazy {
        { :properties => node["kafka"][template_file].to_hash }
