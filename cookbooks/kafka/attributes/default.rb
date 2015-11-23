@@ -52,6 +52,7 @@ default["kafka"]["server.properties"]["num.network.threads"] = 15
 default["kafka"]["server.properties"]["delete.topic.enable"] = false
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
+default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 3
 
 # Log4J config
 default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, DRFA"
