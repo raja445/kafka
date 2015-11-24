@@ -3,6 +3,7 @@ package ['scandium'] do
   action :install
 end
 
+#
 template "/opt/inmobi/bin/Scandium/conf.sh" do
   source "conf.sh.erb"
   owner "root"
