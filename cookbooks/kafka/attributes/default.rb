@@ -6,7 +6,7 @@ default["kafka"]["user"] = "kafka"
 default["kafka"]["group"] = "kafka"
 
 default["kafka"]["scala_version"] = "2.11"
-default["kafka"]["version"] = "0.8.2.1"
+default["kafka"]["version"] = "0.8.2.2"
 default["kafka"]["download_url"] = "https://archive.apache.org/dist/kafka"
 
 default["kafka"]["base_dir"]  = "/opt/inmobi"
