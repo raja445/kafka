@@ -44,25 +44,31 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-env.sh" do
   )
 end
 
-directory "/etc/service_scribe/scribe_healthcheck" do
+directory "/etc/zk_health" do
   owner 'root'
   group 'root'
   mode '0755'
   action :create
 end
-directory "/etc/service_scribe/scribe_healthcheck/log" do
+directory "/etc/zk_health/zk_healthcheck" do
   owner 'root'
   group 'root'
   mode '0755'
   action :create
 end
-template "/etc/service_scribe/scribe_healthcheck/run" do
+directory "/etc/zk_health/zk_healthcheck/log" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+template "/etc/zk_health/zk_healthcheck/run" do
   source "zookeeper_healthcheck.erb"
   owner "root"
   group "root"
   mode "0644"
 end
-template "/etc/service_scribe/scribe_healthcheck/log/run" do
+template "/etc/zk_health/zk_healthcheck/log/run" do
   source "zk_logrun.erb"
   owner "root"
   group "root"
