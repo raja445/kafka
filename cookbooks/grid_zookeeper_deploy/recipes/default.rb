@@ -66,13 +66,17 @@ template "/etc/zk_health/zk_healthcheck/run" do
   source "zookeeper_healthcheck.erb"
   owner "root"
   group "root"
-  mode "0644"
+  mode "0755"
 end
 template "/etc/zk_health/zk_healthcheck/log/run" do
   source "zk_logrun.erb"
   owner "root"
   group "root"
-  mode "0644"
+  mode "0755"
+end
+
+link '/service/zk_healthcheck' do
+  to '/etc/zk_health/zk_healthcheck'
 end
 
 Chef::Log.info("colo: #{node['colo']}")
