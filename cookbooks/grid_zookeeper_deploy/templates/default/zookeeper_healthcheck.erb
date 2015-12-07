@@ -1,0 +1,16 @@
+#!/bin/sh
+exec 2>&1
+
+DAEMON=/usr/bin/scribe_hcs
+
+ZOOKEEPER_SERVER_PORT=2181
+ZOOKEEPER_HEARTBEAT_PORT=8090
+
+if [ ` /bin/nc -z localhost $ZOOKEEPER_HEARTBEAT_PORT ` ]; then
+        echo "Zookeeper Heartbeat port:$ZOOKEEPER_SERVER_PORT : Already in USE"
+        exit 1
+else
+        echo "Starting Listener to Zookeeper Heartbeat port:$ZOOKEEPER_SERVER_PORT : OK"
+fi
+
+exec setuidgid databus ${DAEMON} --scribe_port $ZOOKEEPER_SERVER_PORT --listen_port $ZOOKEEPER_HEARTBEAT_PORT
