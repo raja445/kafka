@@ -242,6 +242,11 @@ cookbook_file "/usr/share/jmxtrans/jmxtrans.sh" do
   mode "0655"
 end
 
+cookbook_file "/etc/default/jmxtrans" do
+  source "jmxtrans_default"
+  mode "0644"
+end
+
 template "/var/lib/jmxtrans/kafka.json" do
   source "kafka.json.erb"
   owner "jmxtrans"
