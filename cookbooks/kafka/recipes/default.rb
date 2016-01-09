@@ -264,8 +264,8 @@ template "/var/lib/jmxtrans/kafka.json" do
 end
 
 
-template "/etc/logrotate.d/kafka" do
-  source "log_rotate.erb"
-  mode "0655"
-end
+#template "/etc/logrotate.d/kafka" do
+#  source "log_rotate.erb"
+#  mode "0655"
+#end
   
