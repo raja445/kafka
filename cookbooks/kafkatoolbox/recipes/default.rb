@@ -5,6 +5,13 @@ directory "#{node["kafkatoolbox"]["kafkatools_cache_dir"]}" do
   action :create
 end
 
+directory "#{node["kafkatoolbox"]["base_dir"]}" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
 toolboxDirname = "KafkaToolbox-#{node["kafkatoolbox"]["kafkatools_version"]}"
 
 binFileName="KafkaToolbox-#{node["kafkatoolbox"]["kafkatools_version"]}.tar.gz"
