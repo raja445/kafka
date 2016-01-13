@@ -45,6 +45,7 @@ default["kafka"]["server.properties"]["num.partitions"] = 10
 default["kafka"]["server.properties"]["default.replication.factor"] = 3
 default["kafka"]["server.properties"]["log.flush.interval.messages"] = 100000
 default["kafka"]["server.properties"]["log.retention.hours"] = 48
+default["kafka"]["server.properties"]["log.roll.hours"] = 1
 default["kafka"]["server.properties"]["log.retention.check.interval.ms"] = 3600000
 default["kafka"]["server.properties"]["num.replica.fetchers"] = 5
 default["kafka"]["server.properties"]["replica.fetch.wait.max.ms"] = 5000
