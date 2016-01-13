@@ -17,3 +17,10 @@ template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
     :instance_id => node['kafkaMirroring']['instanceid'][colo][node['hostname']]
   )
 end
+
+template "/opt/inmobi/config/KafkaMirroringConfig/log4j.xml" do
+  source "log4j.erb"
+  owner "root"
+  owner "root"
+  mode "0644"
+end
