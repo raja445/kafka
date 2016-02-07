@@ -7,3 +7,4 @@ export NEW_SIZE=64
 export CPU_CORES=40
 export NEW_RATIO=8
 export LOG_LEVEL=info
+export JAR_FILE="/usr/share/jmxtrans/lib/jmxtrans-all.jar"
