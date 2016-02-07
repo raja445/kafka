@@ -232,10 +232,10 @@ service "kafka" do
   action [:enable, :start]
 end
 
-package "jmxtrans" do
-  version node['jmxtrans_version']
-  action :install
-end
+#package "jmxtrans" do
+#  version node['jmxtrans_version']
+#  action :install
+#end
 
 cookbook_file "/usr/share/jmxtrans/jmxtrans.sh" do
   source "jmxtrans.sh"
