@@ -4,3 +4,5 @@ default['kafkaMirroring']['instanceid']['hkg1']={ "opkf4003" => 1, "opkf4004" =>
 default['kafkaMirroring']['instanceid']['lhr1']={ "erkf4003" => 1, "erkf4004" => 2  }
 default['kafkaMirroring']['version']= '0.5.40'
 default['kafkaMirroringConfig']['version']= '0.5.40'
+default['kafkaMirroringConfig']['prodconf']= '/opt/inmobi/config/KafkaMirroringConfig/prod/'
+default['kafkaMirroringConfig']['confighome']= '/opt/inmobi/config/KafkaMirroringConfig/'
