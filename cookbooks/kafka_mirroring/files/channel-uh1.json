@@ -401,10 +401,10 @@
       }
     },
     {
-      "streamName": "networkActivityUh1Uh1 ",
+      "streamName": "networkActivityUh1Uh1",
       "source": [
         {
-          "topic": "network_activity_uh1_uh1 ",
+          "topic": "network_activity_uh1_uh1",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
       ],
