@@ -341,6 +341,21 @@
       }
     },
     {
+      "streamName": "networkActivityLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_activity_lhr1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
             "streamName": "ifc_activity_lhr1_lhr1", 
             "source": [
                 {
