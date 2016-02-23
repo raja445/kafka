@@ -1,5 +1,6 @@
-package ['scandium'] do
-  version node['scandium']['version']
+package ['Scandium','ScandiumConfig'] do
+  version [node['Scandium']['version'],node['ScandiumConfig']['version']]
+  options '--force-yes'
   action :install
 end
 
