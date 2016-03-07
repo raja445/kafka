@@ -51,72 +51,8 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-hkg1.json" do
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1.properties" do
-  source 'server-uh1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uj1.properties" do
-  source 'server-uj1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-lhr1.properties" do
-  source 'server-lhr1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-hkg1.properties" do
-  source 'server-hkg1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server.properties" do
-  source 'server.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/producer.properties" do
-  source 'producer.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/consumer.properties" do
-  source 'consumer.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
 cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/conf.sh" do
   source 'conf.sh'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/default.properties" do
-  source 'default.properties'
   owner 'root'
   group 'root'
   mode '0664'
