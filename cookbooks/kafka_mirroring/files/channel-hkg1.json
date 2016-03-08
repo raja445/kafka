@@ -49,36 +49,6 @@
       }
     },
     {
-      "streamName": "networkActivityAdd",
-      "source": [
-        {
-          "topic": "NESTED_ACTIVITY_ADD-networkActivity",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "attrChangeCoreAttr",
-      "source": [
-        {
-          "topic": "ATTRIBUTE_CHANGE-coreAttr",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "perfRR",
       "source": [
         {
@@ -225,36 +195,6 @@
       "source": [
         {
           "topic": "napp",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nestedActivityAddNetwork",
-      "source": [
-        {
-          "topic": "nested_activity_add-networkactivity",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "attributeChangeCoreAttr",
-      "source": [
-        {
-          "topic": "attribute_change-coreattr",
           "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
         }
       ],
