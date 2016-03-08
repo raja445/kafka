@@ -169,36 +169,6 @@
       }
      },
     {
-      "streamName": "nestedActivityAddNetwork",
-      "source": [
-        {
-          "topic": "nested_activity_add-networkactivity",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "attributeChangeCoreAttr",
-      "source": [
-        {
-          "topic": "attribute_change-coreattr",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "nestedActivityAddNw",
       "source": [
         {
