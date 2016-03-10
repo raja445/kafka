@@ -287,7 +287,6 @@
         "hdfsUrl": "hdfs://topaz:8020",
         "compression": "gz",
         "retention": "48",
-        "removeHeaders": "true"
       }
     },
     {
@@ -303,7 +302,6 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48",
-        "removeHeaders": "true"
       }
     },
     {
@@ -319,7 +317,6 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48",
-        "removeHeaders": "true"
       }
     },
     {
@@ -335,7 +332,6 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48",
-        "removeHeaders": "true"
       }
     },
     {
@@ -351,7 +347,6 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48",
-        "removeHeaders": "true"
       }
     },
     {
@@ -367,7 +362,6 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48",
-        "removeHeaders": "true"
       }
     },
     {
