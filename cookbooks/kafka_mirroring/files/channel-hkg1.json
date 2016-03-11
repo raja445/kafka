@@ -33,6 +33,22 @@
       }
     },
     {
+      "streamName": "ifcOrganicActivity",
+      "source": [
+        {
+          "topic": "ifc_organic_activity",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "ifcActivityLowFreq",
       "source": [
         {
