@@ -59,3 +59,10 @@ cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/conf.sh" do
   action :create
 end
 
+cookbook_file "#{node['kafkaSupervisorConfig']['confighome']}/kafkaMirror.conf" do
+  source 'kafkaMirrorSupervisor.conf'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
