@@ -343,6 +343,19 @@
             }
     },
     {
+            "streamName": "ifcOrganicActivityUh1Uh1",
+            "source": [
+                {
+                    "topic": "ifc_organic_activity_hkg1_uh1",
+                    "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+                }
+            ],
+            "kafkaDestination": {
+                "topic": "ifc_organic_activity_uh1_uh1",
+                "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+            }
+    },
+    {
       "streamName": "userHkg1Mapping",
       "source": [
         {

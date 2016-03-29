@@ -328,6 +328,23 @@
             }
     },
     {
+            "streamName": "ifcOrganicActivityLhr1Lhr1",
+            "source": [
+                {
+                    "topic": "ifc_organic_activity_uh1_lhr1",
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                },
+                {
+                    "topic": "ifc_organic_activity_hkg1_lhr1",
+                    "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+                }
+            ],
+            "kafkaDestination": {
+                "topic": "ifc_organic_activity_lhr1_lhr1",
+                "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+            }
+    },
+    {
       "streamName": "napp",
       "source": [
         {
