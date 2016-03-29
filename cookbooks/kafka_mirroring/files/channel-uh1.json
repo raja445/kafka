@@ -418,6 +418,97 @@
             }
     },
     {
+            "streamName": "perfFlatActivityUj1Uj1", 
+            "source": [
+                {
+                    "topic": "perf_flat_activity_uh1_uj1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "perf_flat_activity_uj1_uj1", 
+                "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+            }
+    },
+    {
+            "streamName": "perfFlatActivityLhr1Lhr1", 
+            "source": [
+                {
+                    "topic": "perf_flat_activity_uh1_lhr1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "perf_flat_activity_lhr1_lhr1", 
+                "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+            }
+    },
+    {
+            "streamName": "perfFlatActivityHkg1Hkg1", 
+            "source": [
+                {
+                    "topic": "perf_flat_activity_uh1_hkg1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "perf_flat_activity_hkg1_hkg1", 
+                "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+            }
+    },
+    {
+            "streamName": "perfNestedActivityUj1Uj1", 
+            "source": [
+                {
+                    "topic": "perf_nested_activity_uh1_uj1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "perf_nested_activity_uj1_uj1", 
+                "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+            }
+    },
+    {
+            "streamName": "perfNestedActivityLhr1Lhr1", 
+            "source": [
+                {
+                    "topic": "perf_nested_activity_uh1_lhr1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "perf_nested_activity_lhr1_lhr1", 
+                "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+            }
+    },
+    {
+            "streamName": "perfNestedActivityHkg1Hkg1", 
+            "source": [
+                {
+                    "topic": "perf_nested_activity_uh1_hkg1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "perf_nested_activity_hkg1_hkg1", 
+                "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+            }
+    },
+    {
+            "streamName": "ifcOrganicActivityHkg1Hkg1", 
+            "source": [
+                {
+                    "topic": "ifc_organic_activity_uh1_hkg1", 
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ], 
+            "kafkaDestination": {
+                "topic": "ifc_organic_activity_hkg1_hkg1", 
+                "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+            }
+    },
+    {
       "streamName": "napp",
       "source": [
         {
@@ -428,6 +519,36 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "perfFlatActivity",
+      "source": [
+        {
+          "topic": "perf_flat_activity",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "perfNestedActivity",
+      "source": [
+        {
+          "topic": "perf_nested_activity",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
         "compression": "gz",
         "retention": "48"
       }
