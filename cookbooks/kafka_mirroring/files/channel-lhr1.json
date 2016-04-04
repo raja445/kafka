@@ -242,7 +242,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "thresholdSize":'32212254720',
+        "thresholdSize":32212254720,
         "retention": "48"
       }
     },
