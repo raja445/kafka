@@ -525,10 +525,10 @@
       }
     },
     {
-      "streamName": "perfFlatActivity",
+      "streamName": "appdFlatActivity",
       "source": [
         {
-          "topic": "perf_flat_activity",
+          "topic": "appd_flat_activity",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -540,10 +540,10 @@
       }
     },
     {
-      "streamName": "perfNestedActivity",
+      "streamName": "appdNestedActivity",
       "source": [
         {
-          "topic": "perf_nested_activity",
+          "topic": "appd_nested_activity",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
       ],
