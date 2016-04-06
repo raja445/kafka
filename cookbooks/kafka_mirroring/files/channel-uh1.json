@@ -419,80 +419,80 @@
             }
     },
     {
-            "streamName": "perfFlatActivityUj1Uj1", 
+            "streamName": "appdFlatActivityUj1Uj1", 
             "source": [
                 {
-                    "topic": "perf_flat_activity_uh1_uj1", 
+                    "topic": "appd_flat_activity_uh1_uj1", 
                     "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
                 }
             ], 
             "kafkaDestination": {
-                "topic": "perf_flat_activity_uj1_uj1", 
+                "topic": "appd_flat_activity_uj1_uj1", 
                 "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
             }
     },
     {
-            "streamName": "perfFlatActivityLhr1Lhr1", 
+            "streamName": "appdFlatActivityLhr1Lhr1", 
             "source": [
                 {
-                    "topic": "perf_flat_activity_uh1_lhr1", 
+                    "topic": "appd_flat_activity_uh1_lhr1", 
                     "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
                 }
             ], 
             "kafkaDestination": {
-                "topic": "perf_flat_activity_lhr1_lhr1", 
+                "topic": "appd_flat_activity_lhr1_lhr1", 
                 "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
             }
     },
     {
-            "streamName": "perfFlatActivityHkg1Hkg1", 
+            "streamName": "appdFlatActivityHkg1Hkg1", 
             "source": [
                 {
-                    "topic": "perf_flat_activity_uh1_hkg1", 
+                    "topic": "appd_flat_activity_uh1_hkg1", 
                     "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
                 }
             ], 
             "kafkaDestination": {
-                "topic": "perf_flat_activity_hkg1_hkg1", 
+                "topic": "appd_flat_activity_hkg1_hkg1", 
                 "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
             }
     },
     {
-            "streamName": "perfNestedActivityUj1Uj1", 
+            "streamName": "appdNestedActivityUj1Uj1", 
             "source": [
                 {
-                    "topic": "perf_nested_activity_uh1_uj1", 
+                    "topic": "appd_nested_activity_uh1_uj1", 
                     "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
                 }
             ], 
             "kafkaDestination": {
-                "topic": "perf_nested_activity_uj1_uj1", 
+                "topic": "appd_nested_activity_uj1_uj1", 
                 "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
             }
     },
     {
-            "streamName": "perfNestedActivityLhr1Lhr1", 
+            "streamName": "appdNestedActivityLhr1Lhr1", 
             "source": [
                 {
-                    "topic": "perf_nested_activity_uh1_lhr1", 
+                    "topic": "appd_nested_activity_uh1_lhr1", 
                     "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
                 }
             ], 
             "kafkaDestination": {
-                "topic": "perf_nested_activity_lhr1_lhr1", 
+                "topic": "appd_nested_activity_lhr1_lhr1", 
                 "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
             }
     },
     {
-            "streamName": "perfNestedActivityHkg1Hkg1", 
+            "streamName": "appdNestedActivityHkg1Hkg1", 
             "source": [
                 {
-                    "topic": "perf_nested_activity_uh1_hkg1", 
+                    "topic": "appd_nested_activity_uh1_hkg1", 
                     "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
                 }
             ], 
             "kafkaDestination": {
-                "topic": "perf_nested_activity_hkg1_hkg1", 
+                "topic": "appd_nested_activity_hkg1_hkg1", 
                 "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
             }
     },
