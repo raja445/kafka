@@ -460,6 +460,21 @@
         "compression": "gz",
         "retention": "48"
       }
+    },
+    {
+      "streamName": "brandattributehkg1",
+      "source": [
+        {
+          "topic": "brand_attribute_hkg1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
     }
   ]
 }
