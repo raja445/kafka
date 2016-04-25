@@ -334,6 +334,21 @@
         "compression": "gz",
         "retention": "48"
       }
+    },
+    {
+      "streamName": "brandAttributeUj1Uj1",
+      "source": [
+        {
+          "topic": "brand_attribute_uj1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://topaz:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
     }
   ]
 }
