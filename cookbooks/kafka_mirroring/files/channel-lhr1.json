@@ -257,7 +257,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "thresholdSize":32212254720,
+        "thresholdSize": 32212254720,
         "retention": "48"
       }
     },
@@ -322,43 +322,43 @@
       }
     },
     {
-            "streamName": "ifc_activity_lhr1_lhr1", 
-            "source": [
-                {
-                    "topic": "ifc_activity_hkg1_lhr1", 
-                    "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-                }, 
-                {
-                    "topic": "ifc_activity_uj1_lhr1", 
-                    "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-                }, 
-                {
-                    "topic": "ifc_activity_uh1_lhr1", 
-                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-                }
-            ], 
-            "kafkaDestination": {
-                "topic": "ifc_activity_lhr1_lhr1", 
-                "workers": 5, 
-                "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-            }
+      "streamName": "ifc_activity_lhr1_lhr1",
+      "source": [
+        {
+          "topic": "ifc_activity_hkg1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_activity_uj1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_activity_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_activity_lhr1_lhr1",
+        "workers": 5,
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
     },
     {
-            "streamName": "ifcOrganicActivityLhr1Lhr1",
-            "source": [
-                {
-                    "topic": "ifc_organic_activity_uh1_lhr1",
-                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-                },
-                {
-                    "topic": "ifc_organic_activity_hkg1_lhr1",
-                    "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-                }
-            ],
-            "kafkaDestination": {
-                "topic": "ifc_organic_activity_lhr1_lhr1",
-                "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-            }
+      "streamName": "ifcOrganicActivityLhr1Lhr1",
+      "source": [
+        {
+          "topic": "ifc_organic_activity_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_organic_activity_hkg1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_organic_activity_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
     },
     {
       "streamName": "flatActivityAddAppddownloadactivity",

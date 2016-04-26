@@ -194,7 +194,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://topaz:8020",
         "compression": "gz",
-        "thresholdSize":32212254720,
+        "thresholdSize": 32212254720,
         "retention": "48"
       }
     },
@@ -304,21 +304,21 @@
       }
     },
     {
-            "streamName": "ifcOrganicActivityUj1Uj1",
-            "source": [
-                {
-                    "topic": "ifc_organic_activity_hkg1_uj1",
-                    "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-                },
-                {
-                    "topic": "ifc_organic_activity_uh1_uj1",
-                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-                }
-            ],
-            "kafkaDestination": {
-                "topic": "ifc_organic_activity_uj1_uj1",
-                "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-            }
+      "streamName": "ifcOrganicActivityUj1Uj1",
+      "source": [
+        {
+          "topic": "ifc_organic_activity_hkg1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_organic_activity_uh1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_organic_activity_uj1_uj1",
+        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+      }
     },
     {
       "streamName": "napp",
