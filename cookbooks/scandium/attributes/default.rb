@@ -1,2 +1,2 @@
-default['Scandium']['version']= '0.4.27'
-default['ScandiumConfig']['version']= '0.4.27'
+default['Scandium']['version']= '0.5.71'
+default['ScandiumConfig']['version']= '0.5.71'
