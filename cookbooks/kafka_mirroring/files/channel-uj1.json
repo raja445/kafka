@@ -216,7 +216,7 @@
       "streamName": "billingDownloadUh1",
       "source": [
         {
-          "topic": "",
+          "topic": "billing_download_uh1",
           "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
         }
       ],
