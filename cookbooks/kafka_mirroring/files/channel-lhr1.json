@@ -464,7 +464,7 @@
         "compression": "gz",
         "retention": "48"
       }
-    }
+    },
     {
       "streamName": "nwClickCpcLhr1",
       "source": [
