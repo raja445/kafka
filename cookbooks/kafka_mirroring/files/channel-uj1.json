@@ -424,7 +424,7 @@
         "compression": "gz",
         "retention": "48"
       }
-    }
+    },
     {
       "streamName": "nwClickCpcUj1",
       "source": [
