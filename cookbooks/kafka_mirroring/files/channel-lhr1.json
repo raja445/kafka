@@ -186,6 +186,36 @@
       }
     },
     {
+      "streamName": "nestedActivityAddIfcuseractivity",
+      "source": [
+        {
+          "topic": "nested_activity_add-ifcuseractivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "flatActivityAddIfcorganicactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-ifcorganicactivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "droppedActivityLhr1",
       "source": [
         {

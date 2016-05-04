@@ -1005,6 +1005,36 @@
       }
     },
     {
+      "streamName": "nestedActivityAddIfcuseractivity",
+      "source": [
+        {
+          "topic": "nested_activity_add-ifcuseractivity",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "flatActivityAddIfcorganicactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-ifcorganicactivity",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "renderCpcUh1",
       "source": [
         {
