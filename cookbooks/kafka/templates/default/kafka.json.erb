@@ -8,6 +8,7 @@
    "queries": [
     {
      "resultAlias": "memorypool", 
+     "collectIntervalInSeconds": "60", 
      "obj": "java.lang:type=MemoryPool,name=*", 
      "attr": [
       "Usage"
@@ -28,6 +29,7 @@
     }, 
     {
      "resultAlias": "gc", 
+     "collectIntervalInSeconds": "60", 
      "obj": "java.lang:type=GarbageCollector,name=*", 
      "attr": [
       "CollectionCount", 
@@ -49,6 +51,7 @@
     }, 
     {
      "resultAlias": "sys", 
+     "collectIntervalInSeconds": "60", 
      "obj": "java.lang:type=OperatingSystem", 
      "attr": [
       "SystemLoadAverage", 
@@ -76,6 +79,7 @@
     }, 
     {
      "resultAlias": "threads", 
+     "collectIntervalInSeconds": "60", 
      "obj": "java.lang:type=Threading", 
      "attr": [
       "DaemonThreadCount", 
@@ -99,6 +103,7 @@
     }, 
     {
      "resultAlias": "brokertopicmetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.server:type=BrokerTopicMetrics,*", 
      "attr": [
       "MeanRate", 
@@ -123,6 +128,7 @@
     }, 
     {
      "resultAlias": "replicamanagermetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.server:type=ReplicaManager,*", 
      "attr": [
       "Value", 
@@ -144,6 +150,7 @@
     },
     {
      "resultAlias": "topicmetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.server:name=MessagesInPerSec,type=BrokerTopicMetrics,topic=*", 
      "attr": [
       "MeanRate", 
@@ -168,6 +175,7 @@
     },
     {
      "resultAlias": "topicmetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.server:name=BytesInPerSec,type=BrokerTopicMetrics,topic=*", 
      "attr": [
       "MeanRate", 
@@ -192,6 +200,7 @@
     },
     {
      "resultAlias": "topicmetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.server:name=BytesOutPerSec,type=BrokerTopicMetrics,topic=*", 
      "attr": [
       "MeanRate", 
@@ -216,6 +225,7 @@
     },
     {
      "resultAlias": "controllermetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.controller:type=ControllerStats,*", 
      "attr": [
       "MeanRate", 
@@ -240,6 +250,7 @@
     },
        {
      "resultAlias": "partitionmetrics", 
+     "collectIntervalInSeconds": "60", 
      "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
      "attr": [
       "Value"
