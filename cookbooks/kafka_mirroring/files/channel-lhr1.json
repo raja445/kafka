@@ -616,6 +616,21 @@
       }
     },
     {
+      "streamName": "attributeChangeBrand",
+      "source": [
+        {
+          "topic": "attribute_change-brand",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "renderCpcLhr1",
       "source": [
         {
