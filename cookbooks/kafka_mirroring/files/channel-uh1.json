@@ -1110,6 +1110,45 @@
       }
     },
     {
+      "streamName": "brandAttributesHkg1Hkg1",
+      "source": [
+        {
+          "topic": "brand_attributes_uh1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "brand_attributes_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "brandAttributesUj1Uj1",
+      "source": [
+        {
+          "topic": "brand_attributes_uh1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "brand_attributes_uj1_uj1",
+        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "brandAttributesLhr1Lhr1",
+      "source": [
+        {
+          "topic": "brand_attributes_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "brand_attributes_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "appdAttributionEvent",
       "source": [
         {
