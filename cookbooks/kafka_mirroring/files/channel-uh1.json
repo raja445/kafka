@@ -1158,7 +1158,7 @@
       ],
       "hdfsDestination": {
         "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
+        "hdfsUrl": "hdfs://gold:8020",
         "compression": "gz",
         "retention": "48"
       }
