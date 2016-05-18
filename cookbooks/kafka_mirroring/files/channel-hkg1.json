@@ -506,111 +506,6 @@
         "retention": "48"
       }
     },
-   {
-      "streamName": "nwClickCpcHkg1",
-      "source": [
-        {
-          "topic": "nw_click_cpc_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-   {
-      "streamName": "nwClickCpmHkg1",
-      "source": [
-        {
-          "topic": "nw_click_cpm_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-   {
-      "streamName": "nwClickInvalidHkg1",
-      "source": [
-        {
-          "topic": "nw_click_invalid_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nonNwClickCpcHkg1",
-      "source": [
-        {
-          "topic": "non_nw_click_cpc_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nonNwClickCpmHkg1",
-      "source": [
-        {
-          "topic": "non_nw_click_cpm_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nonNwClickInvalidHkg1",
-      "source": [
-        {
-          "topic": "non_nw_click_invalid_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "renderCpmHkg1",
-      "source": [
-        {
-          "topic": "render_cpm_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
     {
       "streamName": "flatActivityAddAppds2scustomsegmentactivity",
       "source": [
@@ -631,21 +526,6 @@
       "source": [
         {
           "topic": "attribute_change-brand",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "renderCpcHkg1",
-      "source": [
-        {
-          "topic": "render_cpc_hkg1",
           "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
         }
       ],

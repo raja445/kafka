@@ -501,111 +501,6 @@
       }
     },
     {
-      "streamName": "nwClickCpcUj1",
-      "source": [
-        {
-          "topic": "nw_click_cpc_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nwClickCpmUj1",
-      "source": [
-        {
-          "topic": "nw_click_cpm_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nwClickInvalidUj1",
-      "source": [
-        {
-          "topic": "nw_click_invalid_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nonNwClickCpcUj1",
-      "source": [
-        {
-          "topic": "non_nw_click_cpc_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nonNwClickCpmUj1",
-      "source": [
-        {
-          "topic": "non_nw_click_cpm_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "nonNwClickInvalidUj1",
-      "source": [
-        {
-          "topic": "non_nw_click_invalid_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "renderCpmUj1",
-      "source": [
-        {
-          "topic": "render_cpm_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "attributeChangeBrand",
       "source": [
         {
@@ -619,21 +514,6 @@
         "compression": "gz",
         "retention": "48"
       }
-    },
-    {
-      "streamName": "renderCpcUj1",
-      "source": [
-        {
-          "topic": "render_cpc_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    }   
+    }
   ]
 }
