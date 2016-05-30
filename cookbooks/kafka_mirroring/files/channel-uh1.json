@@ -1110,6 +1110,21 @@
       }
     },
     {
+      "streamName": "nestedActivityAddCas",
+      "source": [
+        {
+          "topic": "nested_activity_add-cas",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "fdsUh1",
       "source": [
         {
