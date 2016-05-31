@@ -651,6 +651,21 @@
       }
     },
     {
+      "streamName": "supplyRR",
+      "source": [
+        {
+          "topic": "supplyRR",
+          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://topaz:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "ifc_activity_uj1_uj1",
       "source": [
         {
