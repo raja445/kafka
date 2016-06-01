@@ -669,7 +669,8 @@
         "hdfsUrl": "hdfs://opal:8020",
         "compression": "gz",
         "retention": "48"
-      },
+      }
+    },
     {
       "streamName": "flatActivityAddAppds2scustomsegmentactivity",
       "source": [
