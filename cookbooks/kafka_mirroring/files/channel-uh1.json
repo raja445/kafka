@@ -675,6 +675,21 @@
       }
     },
     {
+      "streamName": "billingCpaHkg1Hkg1",
+      "source": [
+        {
+          "topic": "billing_cpa_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://opal:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingCpaLhr1",
       "source": [
         {
@@ -685,6 +700,21 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "billingCpaLhr1Lhr1",
+      "source": [
+        {
+          "topic": "billing_cpa_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -720,6 +750,21 @@
       }
     },
     {
+      "streamName": "billingCpaUj1Uj1",
+      "source": [
+        {
+          "topic": "billing_cpa_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://topaz:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingCpcHkg1",
       "source": [
         {
@@ -735,6 +780,21 @@
       }
     },
     {
+      "streamName": "billingCpcHkg1Hkg1",
+      "source": [
+        {
+          "topic": "billing_cpc_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://opal:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingCpcLhr1",
       "source": [
         {
@@ -745,6 +805,21 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "billingCpcLhr1Lhr1",
+      "source": [
+        {
+          "topic": "billing_cpc_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -780,6 +855,21 @@
       }
     },
     {
+      "streamName": "billingCpcUj1Uj1",
+      "source": [
+        {
+          "topic": "billing_cpc_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://topaz:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingCpmHkg1",
       "source": [
         {
@@ -795,6 +885,21 @@
       }
     },
     {
+      "streamName": "billingCpmHkg1Hkg1",
+      "source": [
+        {
+          "topic": "billing_cpm_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://opal:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingCpmLhr1",
       "source": [
         {
@@ -805,6 +910,21 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "billingCpmLhr1Lhr1",
+      "source": [
+        {
+          "topic": "billing_cpm_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -840,6 +960,21 @@
       }
     },
     {
+      "streamName": "billingCpmUj1Uj1",
+      "source": [
+        {
+          "topic": "billing_cpm_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://topaz:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingDownloadHkg1",
       "source": [
         {
@@ -855,6 +990,21 @@
       }
     },
     {
+      "streamName": "billingDownloadHkg1Hkg1",
+      "source": [
+        {
+          "topic": "billing_download_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://opal:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingDownloadLhr1",
       "source": [
         {
@@ -865,6 +1015,21 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "billingDownloadLhr1Lhr1",
+      "source": [
+        {
+          "topic": "billing_download_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -900,6 +1065,21 @@
       }
     },
     {
+      "streamName": "billingDownloadUj1Uj1",
+      "source": [
+        {
+          "topic": "billing_download_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://topaz:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "billingChannelPartnership",
       "source": [
         {
@@ -910,6 +1090,21 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "billingChannelPartnershipGold",
+      "source": [
+        {
+          "topic": "billing_channel_partnership",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
         "compression": "gz",
         "retention": "48"
       }
