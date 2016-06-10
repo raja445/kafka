@@ -1389,6 +1389,45 @@
       }
     },
     {
+      "streamName": "audienceAttributesUj1Uj1",
+      "source": [
+        {
+          "topic": "audience-attributes_uh1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "audience-attributes_uj1_uj1",
+        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "audienceAttributesLhr1Lhr1",
+      "source": [
+        {
+          "topic": "audience-attributes_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "audience-attributes_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "audienceAttributesHkg1Hkg1 ",
+      "source": [
+        {
+          "topic": "audience-attributes_uh1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "audience-attributes_hkg1_hkg1 ",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "casNestedActivityUh1Uh1",
       "source": [
         {
