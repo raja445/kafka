@@ -149,6 +149,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://topaz:8020",
         "compression": "gz",
+        "poolSize": "0",
         "thresholdSize": 32212254720,
         "retention": "48"
       }
@@ -541,6 +542,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://topaz:8020",
         "compression": "gz",
+        "poolSize": "0",
         "retention": "48"
       }
     }
