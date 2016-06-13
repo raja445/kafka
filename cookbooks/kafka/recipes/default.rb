@@ -217,7 +217,7 @@ end
        { :properties => node["kafka"][template_file].to_hash }
      }
    )
-   notifies :restart, "service[kafka]"
+   #notifies :restart, "service[kafka]"
  end
 end
 
