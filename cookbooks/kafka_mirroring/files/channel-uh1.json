@@ -1430,7 +1430,7 @@
       }
     },
     {
-      "streamName": "audienceAttributesHkg1Hkg1 ",
+      "streamName": "audienceAttributesHkg1Hkg1",
       "source": [
         {
           "topic": "audience-attributes_uh1_hkg1",
