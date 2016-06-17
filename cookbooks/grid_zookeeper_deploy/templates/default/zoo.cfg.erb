@@ -27,6 +27,9 @@ dataDir=/var/lib/zookeeper
 # the port at which the clients will connect
 clientPort=2181
 
+autopurge.snapRetainCount=12
+autopurge.purgeInterval=1
+
 <% @zookeeper_quorum.each do |key,value| -%>
 server.<%= key %>=<%= value %>.grid.<%= @colo %>.inmobi.com:2888:3888
 <% end %>
