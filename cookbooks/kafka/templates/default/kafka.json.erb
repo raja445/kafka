@@ -313,6 +313,46 @@
      ]
     },
     {
+     "resultAlias": "delayedFetchRequest",
+     "obj": "kafka.server:name=NumDelayedRequests,type=FetchRequestPurgatory",
+     "attr": [
+      "Value"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name"
+        ],
+        "host": "metrics-relay.grid.hkg1.inmobi.com",
+        "port": 2020,
+        "rootPrefix": "prod.hkg1.grid.HKG1_Opal.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "delayedProducerRequest",
+     "obj": "kafka.server:name=NumDelayedRequests,type=ProducerRequestPurgatory",
+     "attr": [
+      "Value"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name"
+        ],
+        "host": "metrics-relay.grid.hkg1.inmobi.com",
+        "port": 2020,
+        "rootPrefix": "prod.hkg1.grid.HKG1_Opal.app"
+       }
+      }
+     ]
+    },
+    {
      "resultAlias": "controllermetrics", 
      "obj": "kafka.controller:type=ControllerStats,*", 
      "attr": [
