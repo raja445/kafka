@@ -217,7 +217,7 @@
     },
     {
      "resultAlias": "totaltimems",
-     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request={Produce|FetchConsumer|FetchFollower}",
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=*",
      "attr": [
       "Count",
       "StdDev",
@@ -242,7 +242,7 @@
     },
     {
      "resultAlias": "requestspersec",
-     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request={Produce|FetchConsumer|FetchFollower}",
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=*",
      "attr": [
       "Count",
       "MeanRate",
@@ -256,6 +256,30 @@
        "settings": {
         "typeNames": [
          "name","request"
+        ],
+        "host": "metrics-relay.grid.hkg1.inmobi.com",
+        "port": 2020,
+        "rootPrefix": "prod.hkg1.grid.HKG1_Opal.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "requestHandlerAvgIdlePercent",
+     "obj": "kafka.server:name=RequestHandlerAvgIdlePercent,type=KafkaRequestHandlerPool",
+     "attr": [
+      "Count",
+      "MeanRate",
+      "OneMinuteRate",
+      "FiveMinuteRate",
+      "FifteenMinuteRate"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name"
         ],
         "host": "metrics-relay.grid.hkg1.inmobi.com",
         "port": 2020,
