@@ -216,6 +216,31 @@
      ]
     },
     {
+     "resultAlias": "totaltimems",
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request={Produce|FetchConsumer|FetchFollower}",
+     "attr": [
+      "Count",
+      "StdDev",
+      "99thPercentile",
+      "Mean",
+      "StdDev",
+      "95thPercentile"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "topic","partition"
+        ],
+        "host": "metrics-relay.grid.hkg1.inmobi.com",
+        "port": 2020,
+        "rootPrefix": "prod.hkg1.grid.HKG1_Opal.app"
+       }
+      }
+     ]
+    },
+    {
      "resultAlias": "controllermetrics", 
      "obj": "kafka.controller:type=ControllerStats,*", 
      "attr": [
