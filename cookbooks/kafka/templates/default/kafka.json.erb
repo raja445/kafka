@@ -217,7 +217,7 @@
     },
     {
      "resultAlias": "totaltimems",
-     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request={Produce|FetchConsumer|FetchFollower}",
+     "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=*",
      "attr": [
       "Count",
       "StdDev",
@@ -242,7 +242,7 @@
     },
     {
      "resultAlias": "requestspersec",
-     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request={Produce|FetchConsumer|FetchFollower}",
+     "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=*",
      "attr": [
       "Count",
       "MeanRate",
