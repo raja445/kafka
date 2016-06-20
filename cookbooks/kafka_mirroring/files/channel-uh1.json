@@ -1365,6 +1365,21 @@
       }
     },
     {
+      "streamName": "ifcAttributes",
+      "source": [
+        {
+          "topic": "ifc_attributes",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "brandAttributesHkg1Hkg1",
       "source": [
         {
