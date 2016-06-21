@@ -1549,6 +1549,66 @@
       }
     },
     {
+      "streamName": "ifcAttributesLhr1Lhr1",
+      "source": [
+        {
+          "topic": "ifc_attributes_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_attributes_hkg1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_attributes_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcAttributesUj1Uj1",
+      "source": [
+        {
+          "topic": "ifc_attributes_hkg1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_attributes_uh1_uj1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_attributes_uj1_uj1",
+        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcAttributesHkg1Hkg1",
+      "source": [
+        {
+          "topic": "ifc_attributes_uh1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_attributes_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcAttributesUh1Uh1",
+      "source": [
+        {
+          "topic": "ifc_attributes_hkg1_uh1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_attributes_uh1_uh1",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "appdAttributionEvent",
       "source": [
         {
