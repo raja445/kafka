@@ -1410,7 +1410,7 @@
       }
     },
     {
-      "streamName": "ttdRequestGold",
+      "streamName": "ttdRequestGlobal",
       "source": [
         {
           "topic": "ttd-request",
@@ -1425,7 +1425,7 @@
       }
     },
     {
-      "streamName": "ttdBeaconGold",
+      "streamName": "ttdBeaconGlobal",
       "source": [
         {
           "topic": "ttd-beacon",
