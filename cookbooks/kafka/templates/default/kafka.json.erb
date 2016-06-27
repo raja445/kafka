@@ -376,6 +376,26 @@
       }
      ]
     },
+    {
+     "resultAlias": "kafkacontroller",
+     "obj": "kafka.controller:type=KafkaController,*",
+     "attr": [
+      "Value"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name"
+        ],
+        "host": "metrics-relay.grid.hkg1.inmobi.com",
+        "port": 2020,
+        "rootPrefix": "prod.hkg1.grid.HKG1_Opal.app"
+       }
+      }
+     ]
+    },
        {
      "resultAlias": "partitionmetrics", 
      "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount", 
