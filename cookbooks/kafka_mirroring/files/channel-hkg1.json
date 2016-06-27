@@ -717,6 +717,36 @@
       }
     },
     {
+      "streamName": "ttdRequestGold",
+      "source": [
+        {
+          "topic": "ttd-request",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ttdBeaconGold",
+      "source": [
+        {
+          "topic": "ttd-beacon",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "flatActivityAddAppds2scustomsegmentactivity",
       "source": [
         {

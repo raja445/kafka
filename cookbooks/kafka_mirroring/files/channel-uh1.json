@@ -1415,18 +1415,6 @@
         {
           "topic": "ttd-request",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        },
-        {
-          "topic": "ttd-request",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        },
-        {
-          "topic": "ttd-request",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        },
-        {
-          "topic": "ttd-request",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
@@ -1442,18 +1430,6 @@
         {
           "topic": "ttd-beacon",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        },
-        {
-          "topic": "ttd-beacon",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        },
-        {
-          "topic": "ttd-beacon",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        },
-        {
-          "topic": "ttd-beacon",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
