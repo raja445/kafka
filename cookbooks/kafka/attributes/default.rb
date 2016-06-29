@@ -21,6 +21,10 @@ default["kafka"]["brokers"]["uj1"] = ["tzkf4005.grid.uj1.inmobi.com","tzkf4006.g
 default["kafka"]["zookeepers"]["uj1"] = ["kafka-zookeeper.grid.uj1.inmobi.com:2181"]
 default['kafka']['mrelay']['uj1'] = "metrics-relay.grid.uj1.inmobi.com"
 
+default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002.grid.dfw1.inmobi.com","oxkf4003.grid.dfw1.inmobi.com"]
+default["kafka"]["zookeepers"]["dfw1"] = ["kafka-zookeeper.grid.dfw1.inmobi.com:2181"]
+default['kafka']['mrelay']['dfw1'] = "metrics-relay.grid.dfw1.inmobi.com"
+
 default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com", "krkf4005.grid.uh1.inmobi.com","krkf4001.grid.uh1.inmobi.com","krkf4006.grid.uh1.inmobi.com","krkf4007.grid.uh1.inmobi.com","krkf4008.grid.uh1.inmobi.com","krkf4009.grid.uh1.inmobi.com","krkf4010.grid.uh1.inmobi.com"]
 default["kafka"]["zookeepers"]["uh1"] = ["kafka-zookeeper.grid.uh1.inmobi.com:2181"]
 default['kafka']['mrelay']['uh1'] = "metrics-relay.grid.uh1.inmobi.com"
@@ -100,4 +104,4 @@ default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald'}
+default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'dfw1' => 'DFW1_Onyx', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald'}
