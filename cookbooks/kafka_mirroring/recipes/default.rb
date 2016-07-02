@@ -35,7 +35,7 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uj1.json" do
 end
 
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-dfw1.json" do
-  source 'channel-uj1.json'
+  source 'channel-dfw1.json'
   owner 'root'
   group 'root'
   mode '0664'
