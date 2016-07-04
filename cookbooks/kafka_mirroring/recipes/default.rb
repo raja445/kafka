@@ -6,6 +6,13 @@ package ['kafkaMirroring','kafkaMirroringConfig'] do
   action :install
 end
 
+directory node["kafkaMirroring"]["staging_dir"] do
+  action :create
+  owner "kafka"
+  mode 00755
+  recursive true
+end
+
 template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
   source "conf.sh.erb"
   owner "root"
