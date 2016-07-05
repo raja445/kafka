@@ -1335,6 +1335,21 @@
       }
     },
     {
+      "streamName": "appdDebug",
+      "source": [
+        {
+          "topic": "appd-debug",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "brandAttributesHkg1Hkg1",
       "source": [
         {
