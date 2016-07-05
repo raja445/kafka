@@ -260,23 +260,6 @@
       }
     },
     {
-      "streamName": "ifcOrganicActivityUj1Uj1",
-      "source": [
-        {
-          "topic": "ifc_organic_activity_hkg1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        },
-        {
-          "topic": "ifc_organic_activity_uh1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "ifc_organic_activity_uj1_uj1",
-        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "napp",
       "source": [
         {
@@ -559,50 +542,6 @@
         "hdfsUrl": "hdfs://topaz:8020",
         "compression": "gz",
         "retention": "48"
-      }
-    },
-    {
-      "streamName": "ifc_activity_uj1_uj1",
-      "source": [
-        {
-          "topic": "ifc_activity_lhr1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        },
-        {
-          "topic": "ifc_activity_hkg1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        },
-        {
-          "topic": "ifc_activity_uh1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "ifc_activity_uj1_uj1",
-        "workers": 5,
-        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "casNestedActivityUj1Uj1",
-      "source": [
-        {
-          "topic": "cas_nested_activity_lhr1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        },
-        {
-          "topic": "cas_nested_activity_hkg1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        },
-        {
-          "topic": "cas_nested_activity_uh1_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "cas_nested_activity_uj1_uj1",
-        "workers": 5,
-        "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
       }
     },
     {
