@@ -307,21 +307,6 @@
       }
     },
     {
-      "streamName": "adroitFeedbackV2Delta",
-      "source": [
-        {
-          "topic": "adroit_feedback_v2_delta",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "adroitReportObjUj1",
       "source": [
         {
@@ -733,21 +718,6 @@
       }
     },
     {
-      "streamName": "billingCpcUj1Uj1",
-      "source": [
-        {
-          "topic": "billing_cpc_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "billingCpmHkg1",
       "source": [
         {
@@ -838,21 +808,6 @@
       }
     },
     {
-      "streamName": "billingCpmUj1Uj1",
-      "source": [
-        {
-          "topic": "billing_cpm_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "billingDownloadHkg1",
       "source": [
         {
@@ -938,21 +893,6 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "billingDownloadUj1Uj1",
-      "source": [
-        {
-          "topic": "billing_download_uj1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
         "compression": "gz",
         "retention": "48"
       }
