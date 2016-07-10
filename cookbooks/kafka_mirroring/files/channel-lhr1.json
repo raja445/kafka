@@ -81,21 +81,6 @@
       }
     },
     {
-      "streamName": "adroitFeedbackV2Delta",
-      "source": [
-        {
-          "topic": "adroit_feedback_v2_delta",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://topaz:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "adroitReportObjUj1",
       "source": [
         {
@@ -357,10 +342,6 @@
         {
           "topic": "ifc_activity_hkg1_lhr1",
           "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        },
-        {
-          "topic": "ifc_activity_uj1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
         },
         {
           "topic": "ifc_activity_uh1_lhr1",
@@ -768,10 +749,6 @@
     {
       "streamName": "casNestedActivityLhr1Lhr1",
       "source": [
-        {
-          "topic": "cas_nested_activity_uj1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        },
         {
           "topic": "cas_nested_activity_hkg1_lhr1",
           "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
