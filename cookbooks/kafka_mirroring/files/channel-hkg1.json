@@ -374,10 +374,6 @@
           "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
         },
         {
-          "topic": "ifc_activity_uj1_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
-        },
-        {
           "topic": "ifc_activity_uh1_hkg1",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
@@ -782,10 +778,6 @@
         {
           "topic": "cas_nested_activity_lhr1_hkg1",
           "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        },
-        {
-          "topic": "cas_nested_activity_uj1_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uj1.inmobi.com:2181"
         },
         {
           "topic": "cas_nested_activity_uh1_hkg1",
