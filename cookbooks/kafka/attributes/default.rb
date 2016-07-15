@@ -21,7 +21,7 @@ default["kafka"]["brokers"]["uj1"] = ["tzkf4005.grid.uj1.inmobi.com","tzkf4006.g
 default["kafka"]["zookeepers"]["uj1"] = ["kafka-zookeeper.grid.uj1.inmobi.com:2181"]
 default['kafka']['mrelay']['uj1'] = "metrics-relay.grid.uj1.inmobi.com"
 
-default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002.grid.dfw1.inmobi.com","oxkf4003.grid.dfw1.inmobi.com","oxkf4012.grid.dfw1.inmobi.com","oxkf4013.grid.dfw1.inmobi.com","oxkf4014.grid.dfw1.inmobi.com","oxkf4015.grid.dfw1.inmobi.com","oxkf4016.grid.dfw1.inmobi.com","oxkf4008.grid.dfw1.inmobi.com","oxkf4009.grid.dfw1.inmobi.com","oxkf4010.grid.dfw1.inmobi.com","oxkf4011.grid.dfw1.inmobi.com","oxkf4017.grid.dfw1.inmobi.com"]
+default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002.grid.dfw1.inmobi.com","oxkf4003.grid.dfw1.inmobi.com","oxkf4008.grid.dfw1.inmobi.com","oxkf4009.grid.dfw1.inmobi.com","oxkf4010.grid.dfw1.inmobi.com","oxkf4011.grid.dfw1.inmobi.com","oxkf4012.grid.dfw1.inmobi.com","oxkf4013.grid.dfw1.inmobi.com","oxkf4014.grid.dfw1.inmobi.com","oxkf4015.grid.dfw1.inmobi.com","oxkf4016.grid.dfw1.inmobi.com","oxkf4017.grid.dfw1.inmobi.com"]
 default["kafka"]["zookeepers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com:2181","oxkf4002.grid.dfw1.inmobi.com:2181","oxkf4003.grid.dfw1.inmobi.com:2181"]
 default['kafka']['mrelay']['dfw1'] = "metrics-relay.grid.dfw1.inmobi.com"
 
