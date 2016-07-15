@@ -1,10 +1,10 @@
 {
   "streams": [
     {
-      "streamName": "soorajTest",
+      "streamName": "ttdRequest",
       "source": [
         {
-          "topic": "soorajTest",
+          "topic": "ttd-request",
           "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
         }
       ],
@@ -12,8 +12,22 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://onyx:8020",
         "compression": "gz",
-        "retention": "48",
-        "removeHeaders": "true"
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ttdBeacon",
+      "source": [
+        {
+          "topic": "ttd-beacon",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://onyx:8020",
+        "compression": "gz",
+        "retention": "48"
       }
     }
   ]
