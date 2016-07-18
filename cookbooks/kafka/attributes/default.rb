@@ -26,7 +26,7 @@ default["kafka"]["zookeepers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com:2181","
 default['kafka']['mrelay']['dfw1'] = "metrics-relay.grid.dfw1.inmobi.com"
 
 default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com", "krkf4005.grid.uh1.inmobi.com","krkf4001.grid.uh1.inmobi.com","krkf4006.grid.uh1.inmobi.com","krkf4007.grid.uh1.inmobi.com","krkf4008.grid.uh1.inmobi.com","krkf4009.grid.uh1.inmobi.com","krkf4010.grid.uh1.inmobi.com"]
-default["kafka"]["zookeepers"]["uh1"] = ["kafka-zookeeper.grid.uh1.inmobi.com:2181"]
+default["kafka"]["zookeepers"]["uh1"] = ["krkf4001.grid.uh1.inmobi.com:2181","krkf4002.grid.uh1.inmobi.com:2181","krkf4003.grid.uh1.inmobi.com:2181","krkf4004.grid.uh1.inmobi.com:2181","krkf4005.grid.uh1.inmobi.com:2181"]
 default['kafka']['mrelay']['uh1'] = "metrics-relay.grid.uh1.inmobi.com"
 
 default["kafka"]["brokers"]["hkg1"] = ["opkf4002.grid.hkg1.inmobi.com","opkf4003.grid.hkg1.inmobi.com","opkf4004.grid.hkg1.inmobi.com", "opkf4005.grid.hkg1.inmobi.com","opkf4001.grid.hkg1.inmobi.com","opkf4006.grid.hkg1.inmobi.com","opkf4007.grid.hkg1.inmobi.com","opkf4008.grid.hkg1.inmobi.com","opkf4009.grid.hkg1.inmobi.com","opkf4010.grid.hkg1.inmobi.com"]
