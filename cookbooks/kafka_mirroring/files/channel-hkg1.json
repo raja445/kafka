@@ -96,51 +96,6 @@
       }
     },
     {
-      "streamName": "adroitReportObjUj1",
-      "source": [
-        {
-          "topic": "adroit_report_obj_uj1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "adroitReportObjLhr1",
-      "source": [
-        {
-          "topic": "adroit_report_obj_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "adroitReportObjUh1",
-      "source": [
-        {
-          "topic": "adroit_report_obj_uh1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "adroitReportObjHkg1",
       "source": [
         {
@@ -150,22 +105,7 @@
       ],
       "hdfsDestination": {
         "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "adroitReportObjUa2",
-      "source": [
-        {
-          "topic": "adroit_report_obj_ua2",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
+        "hdfsUrl": "hdfs://opal:8020",
         "compression": "gz",
         "retention": "48"
       }

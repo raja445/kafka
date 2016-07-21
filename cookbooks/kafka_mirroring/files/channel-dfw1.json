@@ -31,6 +31,21 @@
       }
     },
     {
+      "streamName": "adroitReportObjDfw1",
+      "source": [
+        {
+          "topic": "adroit_report_obj_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://onyx:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "georrcore",
       "source": [
         {
