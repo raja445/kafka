@@ -16,6 +16,21 @@
       }
     },
     {
+      "streamName": "renderCpcDfw1",
+      "source": [
+        {
+          "topic": "renderCpcDfw1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://onyx:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "beaconRrUh1CpcRender",
       "source": [
         {
