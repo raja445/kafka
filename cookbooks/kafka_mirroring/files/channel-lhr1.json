@@ -17,66 +17,6 @@
       }
     },
     {
-      "streamName": "beaconRrUh1CpcRender",
-      "source": [
-        {
-          "topic": "beacon_rr_uh1_cpc_render",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "beaconRrLhr1CpcRender",
-      "source": [
-        {
-          "topic": "beacon_rr_lhr1_cpc_render",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://emerald:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "beaconRrHkg1CpcRender",
-      "source": [
-        {
-          "topic": "beacon_rr_hkg1_cpc_render",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://opal:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "beaconRrDfw1CpcRender",
-      "source": [
-        {
-          "topic": "beacon_rr_dfw1_cpc_render",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://onyx:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "profileDeleteAppd",
       "source": [
         {
