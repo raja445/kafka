@@ -33,6 +33,13 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uh1.json" do
   action :create
 end
 
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uh1collector.json" do
+  source 'channel-uh1collector.json'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
 #cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uj1.json" do
 #  source 'channel-uj1.json'
 #  owner 'root'
