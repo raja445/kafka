@@ -1,7 +1,19 @@
 {
   "streams": [
     {
-      "streamName": "billingCpcHkg1Collector",
+      "streamName": "billing_channel_partnership_validate",
+      "source": [
+        {
+          "topic": "billing_channel_partnership",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "billing_cpc_hkg1_validate",
       "source": [
         {
           "topic": "billing_cpc_hkg1",
@@ -13,19 +25,7 @@
       }
     },
     {
-      "streamName": "billingCpcHkg1Hkg1Collector",
-      "source": [
-        {
-          "topic": "billing_cpc_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://opal:8020"
-      }
-    },
-    {
-      "streamName": "billingCpcLhr1Collector",
+      "streamName": "billing_cpc_lhr1_validate",
       "source": [
         {
           "topic": "billing_cpc_lhr1",
@@ -37,19 +37,7 @@
       }
     },
     {
-      "streamName": "billingCpcLhr1Lhr1Collector",
-      "source": [
-        {
-          "topic": "billing_cpc_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://emerald:8020"
-      }
-    },
-    {
-      "streamName": "billingCpcUh1Collector",
+      "streamName": "billing_cpc_uh1_validate",
       "source": [
         {
           "topic": "billing_cpc_uh1",
@@ -61,7 +49,19 @@
       }
     },
     {
-      "streamName": "billingCpmHkg1Collector",
+      "streamName": "billing_cpc_dfw1_validate",
+      "source": [
+        {
+          "topic": "billing_cpc_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "billing_cpm_hkg1_validate",
       "source": [
         {
           "topic": "billing_cpm_hkg1",
@@ -73,19 +73,7 @@
       }
     },
     {
-      "streamName": "billingCpmHkg1Hkg1Collector",
-      "source": [
-        {
-          "topic": "billing_cpm_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://opal:8020"
-      }
-    },
-    {
-      "streamName": "billingCpmLhr1Collector",
+      "streamName": "billing_cpm_lhr1_validate",
       "source": [
         {
           "topic": "billing_cpm_lhr1",
@@ -97,19 +85,7 @@
       }
     },
     {
-      "streamName": "billingCpmLhr1Lhr1Collector",
-      "source": [
-        {
-          "topic": "billing_cpm_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://emerald:8020"
-      }
-    },
-    {
-      "streamName": "billingCpmUh1Collector",
+      "streamName": "billing_cpm_uh1_validate",
       "source": [
         {
           "topic": "billing_cpm_uh1",
@@ -121,7 +97,19 @@
       }
     },
     {
-      "streamName": "billingDownloadHkg1Collector",
+      "streamName": "billing_cpm_dfw1_validate",
+      "source": [
+        {
+          "topic": "billing_cpm_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "billing_download_hkg1_validate",
       "source": [
         {
           "topic": "billing_download_hkg1",
@@ -133,19 +121,7 @@
       }
     },
     {
-      "streamName": "billingDownloadHkg1Hkg1Collector",
-      "source": [
-        {
-          "topic": "billing_download_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://opal:8020"
-      }
-    },
-    {
-      "streamName": "billingDownloadLhr1Collector",
+      "streamName": "billing_download_lhr1_validate",
       "source": [
         {
           "topic": "billing_download_lhr1",
@@ -157,19 +133,7 @@
       }
     },
     {
-      "streamName": "billingDownloadLhr1Lhr1Collector",
-      "source": [
-        {
-          "topic": "billing_download_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://emerald:8020"
-      }
-    },
-    {
-      "streamName": "billingDownloadUh1Collector",
+      "streamName": "billing_download_uh1_validate",
       "source": [
         {
           "topic": "billing_download_uh1",
@@ -181,27 +145,15 @@
       }
     },
     {
-      "streamName": "billingChannelPartnershipCollector",
+      "streamName": "billing_download_dfw1_validate",
       "source": [
         {
-          "topic": "billing_channel_partnership",
+          "topic": "billing_download_dfw1",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
       ],
       "hdfsCollectorDestination": {
         "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
-      "streamName": "billingChannelPartnershipGoldCollector",
-      "source": [
-        {
-          "topic": "billing_channel_partnership",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://gold:8020"
       }
     }
   ]
