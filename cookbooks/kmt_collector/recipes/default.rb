@@ -42,7 +42,7 @@ template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
   colo = node['domain'].split(".")[-3]
   variables(
     :colo => colo,
-    :instance_id => node['kafkaMirroring']['instanceid'][colo][node['hostname']]
+    :collector_id => node['kafkaMirroring']['collectorid'][colo]
   )
 end
 
