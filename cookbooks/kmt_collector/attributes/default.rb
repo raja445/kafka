@@ -1,5 +1,7 @@
 default['kafkaMirroring']['instanceid']['uh1']={ "krkf4013" => 1}
+default['kafkaMirroring']['instanceid']['dfw1']={ "oxkm4004" => 1}
 default['kafkaMirroring']['collectorid']['uh1']='uh1collector'
+default['kafkaMirroring']['collectorid']['dfw1']='staging'
 default['kafkaMirroring']['version']= '0.5.93'
 default['kafkaMirroringConfig']['version']= '0.5.93'
 default['kafkaMirroring']['staging_dir']= '/data/kafka/staging'
