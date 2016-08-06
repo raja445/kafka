@@ -241,7 +241,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -386,7 +386,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -401,7 +401,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -416,7 +416,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -746,7 +746,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
