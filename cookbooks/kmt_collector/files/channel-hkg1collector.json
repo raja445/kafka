@@ -193,18 +193,6 @@
       }
     },
     {
-      "streamName": "bluekai",
-      "source": [
-        {
-          "topic": "bluekai",
-          "zookeeper": "kafka-zookeeper-1.grid.hkg1.inmobi.com:2181,kafka-zookeeper-2.grid.hkg1.inmobi.com:2181,kafka-zookeeper-3.grid.hkg1.inmobi.com:2181,kafka-zookeeper-4.grid.hkg1.inmobi.com:2181,kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://opal:8020"
-      }
-    },
-    {
       "streamName": "click_rr_dfw1",
       "source": [
         {
