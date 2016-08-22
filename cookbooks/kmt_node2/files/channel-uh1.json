@@ -138,6 +138,36 @@
       }
     },
     {
+      "streamName": "customTypeRecordUpdateAppduserrenderhistory",
+      "source": [
+        {
+          "topic": "custom_type_record_update-appduserrenderhistory",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "customTypeRecordUpdateAppduserclickhistory",
+      "source": [
+        {
+          "topic": "custom_type_record_update-appduserclickhistory",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "customTypeRecordUpdateBranduseractivityhistory",
       "source": [
         {
