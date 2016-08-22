@@ -30,6 +30,84 @@
       }
     },
     {
+      "streamName": "appd_ltv_events_hkg1",
+      "source": [
+        {
+          "topic": "appd_ltv_events_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_ltv_events_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "appd_install_events_hkg1",
+      "source": [
+        {
+          "topic": "appd_install_events_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_install_events_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "appd_ltv_events_lhr1",
+      "source": [
+        {
+          "topic": "appd_ltv_events_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_ltv_events_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "appd_install_events_lhr1",
+      "source": [
+        {
+          "topic": "appd_install_events_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_install_events_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "appd_ltv_events_dfw1",
+      "source": [
+        {
+          "topic": "appd_ltv_events_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_ltv_events_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "appd_install_events_dfw1",
+      "source": [
+        {
+          "topic": "appd_install_events_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_install_events_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkActivityUh1Uh1",
       "source": [
         {
