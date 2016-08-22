@@ -32,6 +32,21 @@
       }
     },
     {
+      "streamName": "customTypeRecordUpdateBranduseractivityhistory",
+      "source": [
+        {
+          "topic": "custom_type_record_update-branduseractivityhistory",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "profileDeleteIfc",
       "source": [
         {
