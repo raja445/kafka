@@ -887,6 +887,18 @@
       "hdfsCollectorDestination": {
         "hdfsUrl": "hdfs://onyx:8020"
       }
+    },
+    {
+      "streamName": "fds_dfw1",
+      "source": [
+        {
+          "topic": "fds_dfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://onyx:8020"
+      }
     }
   ]
 }
