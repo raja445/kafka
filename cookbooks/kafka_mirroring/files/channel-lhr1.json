@@ -830,6 +830,21 @@
         "compression": "gz",
         "retention": "48"
       }
+    },
+    {
+      "streamName": "networkAttributeRawLhr1",
+      "source": [
+        {
+          "topic": "network_attribute_raw_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
     }
   ]
 }

@@ -719,6 +719,21 @@
         "compression": "gz",
         "retention": "48"
       }
+    },
+    {
+      "streamName": "networkAttributeRawDfw1",
+      "source": [
+        {
+          "topic": "network_attribute_raw_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://onyx:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
     }
   ]
 }
