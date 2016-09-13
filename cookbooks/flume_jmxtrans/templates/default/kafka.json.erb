@@ -8,7 +8,7 @@
    "queries": [
     {
      "resultAlias": "flumekafkasink",
-     "obj": "org.apache.flume.sink:type=kafkasink,*",
+     "obj": "org.apache.flume.sink:type=*,*",
      "attr": [
      ],
      "outputWriters": [
@@ -16,7 +16,7 @@
        "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
        "settings": {
         "typeNames": [
-         "name"
+         "name","type"
         ],
         "host": "<%= @graphite_host %>",
         "port": 2020,
@@ -46,7 +46,7 @@
     },
     {
      "resultAlias": "flumechannel",
-     "obj": "org.apache.flume.channel:type=spillable,*",
+     "obj": "org.apache.flume.channel:type=*,*",
      "attr": [
      ],
      "outputWriters": [
@@ -54,7 +54,7 @@
        "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
        "settings": {
         "typeNames": [
-         "name"
+         "name","type"
         ],
         "host": "<%= @graphite_host %>",
         "port": 2020,
