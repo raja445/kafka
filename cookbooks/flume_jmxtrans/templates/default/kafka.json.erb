@@ -62,6 +62,25 @@
        }
       }
      ]
+    },
+    {
+     "resultAlias": "producer",
+     "obj": "kafka.producer:client-id=*,node-id=*,type=producer-node-metrics,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","client-id","node-id"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
     }
   ]
  }
