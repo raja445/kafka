@@ -7,7 +7,7 @@
    "port": 2520,
    "queries": [
     {
-     "resultAlias": "flumekafkasink",
+     "resultAlias": "flume.sink",
      "obj": "org.apache.flume.sink:type=*,*",
      "attr": [
      ],
@@ -26,9 +26,11 @@
      ]
     },
     {
-     "resultAlias": "flumesource",
-     "obj": "org.apache.flume.source:type=avrosrc,*",
+     "resultAlias": "flume.gc",
+     "obj": "java.lang:type=GarbageCollector,name=*",
      "attr": [
+      "CollectionCount",
+      "CollectionTime"
      ],
      "outputWriters": [
       {
@@ -45,7 +47,26 @@
      ]
     },
     {
-     "resultAlias": "flumechannel",
+     "resultAlias": "flume.source",
+     "obj": "org.apache.flume.source:type=*,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "flume.channel",
      "obj": "org.apache.flume.channel:type=*,*",
      "attr": [
      ],
