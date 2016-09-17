@@ -1,0 +1,4 @@
+#! /bin/bash
+hadoop jar <%= @kafkadatacheck_home %>/checkKafkaData.jar <%= @kafkadatacheck_home %>/kafkadata.properties 2>/dev/null
+status=$?
+exit $status
