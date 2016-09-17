@@ -1,0 +1,4 @@
+#!/bin/sh
+echo sleeping 45 seconds before next run...
+sleep 45;
+exec setuidgid root /usr/local/perftools/toolsbin/send_cachestat.py 15 2>&1;
