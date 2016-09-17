@@ -22,6 +22,11 @@ execute "unzip perftools binary" do
   end
 end
 
+cookbook_file "#{perfbin}/cachestat" do
+  source "cachestat"
+  mode "0655"
+end
+
 link "/usr/bin/cachestat" do
   to "#{perfbin}/cachestat"
   link_type :symbolic
