@@ -41,8 +41,8 @@ end
  end
 end
 
-cookbook_file "#{node["perftools"]["base_dir"]}/toolsbin/send_cachestat.py" do
-  source "send_cachestat.py"
+cookbook_file "#{node["perftools"]["base_dir"]}/toolsbin/send_cachehitratio.py" do
+  source "send_cachehitratio.py"
   mode "0655"
 end
 
