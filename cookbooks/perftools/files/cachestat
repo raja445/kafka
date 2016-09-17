@@ -130,7 +130,6 @@ while (( !quit && (!opt_duration || secs < duration) )); do
 	(( secs += interval ))
 	echo 0 > function_profile_enabled
 	echo 1 > function_profile_enabled
-        echo $cnt
         if [ $optcount == 0 ]
         then
           exit 0
