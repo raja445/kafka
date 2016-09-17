@@ -32,3 +32,33 @@ link "/usr/bin/cachestat" do
   link_type :symbolic
 end
 
+%w{svc_cachestat toolsbin}.each do |dir|
+ directory "#{node["perftools"]["base_dir"]}/#{dir}" do
+   owner 'root'
+   group 'root'
+   mode '0755'
+   action :create
+ end
+end
+
+cookbook_file "#{node["perftools"]["base_dir"]}/toolsbin/send_cachestat.py" do
+  source "send_cachestat.py"
+  mode "0655"
+end
+
+directory "#{node["perftools"]["base_dir"]}/svc_cachestat/log" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+cookbook_file "#{node["perftools"]["base_dir"]}/svc_cachestat/run" do
+  source "svc_run"
+  mode "0755"
+end
+
+cookbook_file "#{node["perftools"]["base_dir"]}/svc_cachestat/log/run" do
+  source "svc_log_run"
+  mode "0755"
+end
