@@ -62,3 +62,15 @@ cookbook_file "#{node["perftools"]["base_dir"]}/svc_cachestat/log/run" do
   source "svc_log_run"
   mode "0755"
 end
+
+link "/service/svc_cachehitratio" do
+  to "/usr/local/perftools/svc_cachestat"
+  link_type :symbolic
+end
+
+directory "/service/svc_cachehitratio/log/main" do
+  owner 'nobody'
+  group 'nogroup'
+  mode '0755'
+  action :create
+end
