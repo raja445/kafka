@@ -34,7 +34,7 @@ template "#{node['kafkadatacheck']['base_dir']}/kafkadatacheck/check_kafka_data"
   source "check_kafka_data"
   owner "root"
   group "root"
-  mode "0644"
+  mode "0755"
   variables(
     :kafkadatacheck_home => "#{node['kafkadatacheck']['base_dir']}/kafkadatacheck"
   )
