@@ -287,6 +287,21 @@
         "compression": "gz",
         "retention": "48"
       }
+    },
+    {
+      "streamName": "normalizedPostback",
+      "source": [
+        {
+          "topic": "normalized_postback",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
     }
   ]
 }
