@@ -52,11 +52,17 @@ end
 cookbook_file "#{flumeConf}/flume-end-collector.properties" do
   source "flume-end-collector.properties"
   mode "0644"
+  only_if do
+    File.exists? "#{flumeConf}"
+  end
 end
 
 cookbook_file "#{flumeConf}/flume-env.sh" do
   source "flume-env.sh"
   mode "0644"
+  only_if do
+    File.exists? "#{flumeConf}"
+  end
 end
 
 execute "chown flume directory" do
