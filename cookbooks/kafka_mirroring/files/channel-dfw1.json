@@ -814,7 +814,7 @@
       }
     },
    {
-      "streamName": "userMapping",
+      "streamName": "ucmMapping",
       "source": [
         {
           "topic": "ucm_mapping",
