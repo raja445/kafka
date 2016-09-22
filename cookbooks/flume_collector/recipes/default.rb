@@ -63,3 +63,45 @@ execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
 end
 
+#HEALTH CHECK
+package "scribe-scripts" do
+  version node['flume_collector']['scribescripts']
+  action :install
+  options '--force-yes'
+end
+
+directory "/etc/flume_health" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+directory "/etc/flume_health/flume_healthcheck" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+directory "/etc/flume_health/flume_healthcheck/log" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+template "/etc/flume_health/flume_healthcheck/run" do
+  source "flume_healthcheck.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+end
+template "/etc/flume_health/flume_healthcheck/log/run" do
+  source "flume_logrun.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+end
+
+link '/service/flume_healthcheck' do
+  to '/etc/flume_health/flume_healthcheck'
+end
+
