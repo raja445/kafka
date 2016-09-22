@@ -14,6 +14,12 @@ directory "#{flumeInstallDir}" do
   mode 00755
 end
 
+link "#{flumeHome}" do
+  owner 'flume'
+  to "#{flumeInstallDir}"
+  link_type :symbolic
+end
+
 remote_file "#{flumeTmp}" do
   action :create_if_missing
   source node["flume_collector"]["download_url"]
@@ -27,13 +33,6 @@ execute "untar flume binary" do
     File.exists? "#{lockFile}"
   end
 end
-
-link "#{flumeHome}" do
-  owner 'flume'
-  to "#{flumeInstallDir}"
-  link_type :symbolic
-end
-
 
 execute "Create Lock file" do
   command "touch #{lockFile}"
