@@ -66,6 +66,10 @@ execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
 end
 
+execute "bin execute permissions" do
+  command "chmod +x #{flumeInstallDir}/bin/*"
+end
+
 link "#{flumeHome}" do
   owner 'flume'
   to "#{flumeInstallDir}"
