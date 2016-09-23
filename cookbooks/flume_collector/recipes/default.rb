@@ -14,6 +14,12 @@ directory "#{flumeInstallDir}" do
   mode 00755
 end
 
+directory node["flume_collector"]["pid_dir"] do
+  action :create
+  owner 'flume'
+  mode 00755
+end
+
 %w[/data/d1/flume /data/d1/flume/spool /var/log/flume].each do |path|
   directory path do
     owner 'flume'
