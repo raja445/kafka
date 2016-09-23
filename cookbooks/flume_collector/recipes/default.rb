@@ -56,6 +56,11 @@ execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
 end
 
+execute "create link" do
+  command "ln -s #{flumeInstallDir} #{flumeHome}"
+  not_if { File.exist?("#{flumeHome}") }
+end
+
 #link "#{flumeHome}" do
 #  to "#{flumeInstallDir}"
 #end
