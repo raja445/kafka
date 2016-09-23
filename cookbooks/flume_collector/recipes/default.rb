@@ -56,9 +56,9 @@ execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
 end
 
-link "#{flumeHome}" do
-  to "#{flumeInstallDir}"
-end
+#link "#{flumeHome}" do
+#  to "#{flumeInstallDir}"
+#end
 
 #HEALTH CHECK
 package "scribe-scripts" do
