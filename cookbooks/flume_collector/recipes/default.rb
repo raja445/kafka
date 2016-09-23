@@ -5,19 +5,13 @@
 flumeInstallDir="#{node["flume_collector"]["base_dir"]}/flume_#{node["flume_collector"]["version"]}"
 flumeTmp="/tmp/flume_#{node["flume_collector"]["version"]}.tar.gz"
 flumeHome="#{node["flume_collector"]["base_dir"]}/flume"
-flumeConf="#{flumeHome}/conf"
+flumeConf="#{flumeInstallDir}/conf"
 lockFile="#{flumeInstallDir}/LOCK"
 
 directory "#{flumeInstallDir}" do
   action :create
   owner 'flume'
   mode 00755
-end
-
-link "#{flumeHome}" do
-  owner 'flume'
-  to "#{flumeInstallDir}"
-  link_type :symbolic
 end
 
 remote_file "#{flumeTmp}" do
@@ -51,21 +45,19 @@ end
 cookbook_file "#{flumeConf}/flume-end-collector.properties" do
   source "flume-end-collector.properties"
   mode "0644"
-  only_if do
-    File.exists? "#{flumeConf}"
-  end
 end
 
 cookbook_file "#{flumeConf}/flume-env.sh" do
   source "flume-env.sh"
   mode "0644"
-  only_if do
-    File.exists? "#{flumeConf}"
-  end
 end
 
 execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
+end
+
+link "#{flumeHome}" do
+  to "#{flumeInstallDir}"
 end
 
 #HEALTH CHECK
