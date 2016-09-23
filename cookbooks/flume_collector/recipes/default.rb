@@ -4,6 +4,7 @@
 colo = node['domain'].split(".")[-3]
 flumeInstallDir="#{node["flume_collector"]["base_dir"]}/flume_#{node["flume_collector"]["version"]}"
 flumeTmp="/tmp/flume_#{node["flume_collector"]["version"]}.tar.gz"
+flumeTmpDir="/tmp/flume"
 flumeHome="#{node["flume_collector"]["base_dir"]}/flume"
 flumeConf="#{flumeInstallDir}/conf"
 lockFile="#{flumeInstallDir}/LOCK"
@@ -15,6 +16,12 @@ directory "#{flumeInstallDir}" do
 end
 
 directory node["flume_collector"]["pid_dir"] do
+  action :create
+  owner 'flume'
+  mode 00755
+end
+
+directory "#{flumeTmpDir}" do
   action :create
   owner 'flume'
   mode 00755
@@ -35,8 +42,8 @@ remote_file "#{flumeTmp}" do
 end
 
 execute "untar flume binary" do
-  cwd flumeInstallDir
-  command "tar -xvf #{flumeTmp}"
+  cwd flumeTmpDir
+  command "tar -xvf #{flumeTmp}; mv apache-flume-#{node["flume_collector"]["version"]}-bin/* #{flumeInstallDir}/"
   not_if do
     File.exists? "#{lockFile}"
   end
