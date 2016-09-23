@@ -3,7 +3,7 @@ exec 2>&1
 
 DAEMON=/usr/bin/scribe_hcs
 
-FLUME_SERVER_PORT=2540
+FLUME_SERVER_PORT=2510
 FLUME_HEARTBEAT_PORT=9183
 
 if [ ` /bin/nc -z localhost $FLUME_HEARTBEAT_PORT` ]; then
