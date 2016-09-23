@@ -14,6 +14,13 @@ directory "#{flumeInstallDir}" do
   mode 00755
 end
 
+%w[["/data/d1/flume","/data/d1/flume/spool","/var/log/flume"] ].each do |path|
+  directory path do
+    owner 'flume'
+    mode '0755'
+  end
+end
+
 remote_file "#{flumeTmp}" do
   action :create_if_missing
   source node["flume_collector"]["download_url"]
@@ -34,6 +41,8 @@ execute "Create Lock file" do
     File.exists? "#{lockFile}"
   end
 end
+
+
 
 # Make it a template
 #template "#{flumeConf}/flume-end-collector.properties" do
@@ -56,14 +65,11 @@ execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
 end
 
-#execute "create link" do
-#  command "ln -s #{flumeInstallDir} #{flumeHome}"
-#  not_if { File.exist?("#{flumeHome}") }
-#end
-
-#link "#{flumeHome}" do
-#  to "#{flumeInstallDir}"
-#end
+link "#{flumeHome}" do
+  owner 'flume'
+  to "#{flumeInstallDir}"
+  link_type :symbolic
+end
 
 #HEALTH CHECK
 package "scribe-scripts" do
