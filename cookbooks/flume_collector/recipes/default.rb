@@ -18,6 +18,7 @@ end
   directory path do
     owner 'flume'
     mode '0755'
+    action :create
   end
 end
 
