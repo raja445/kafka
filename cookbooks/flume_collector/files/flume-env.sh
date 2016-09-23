@@ -26,7 +26,7 @@ export CURRENT_USER=$(whoami)
 export FLUME_ROOT_LOG_LEVEL=INFO
 export FLUME_LOGS_HOME=/var/log/flume
 export FLUME_LOGS_BACKUP_HOME=$FLUME_LOGS_HOME
-export FLUME_PID_DIR=$FLUME_LOGS_HOME
+export FLUME_PID_DIR=/var/run/flume
 
 export MIN_HEAPSIZE=3G
 export MAX_HEAPSIZE=4G
