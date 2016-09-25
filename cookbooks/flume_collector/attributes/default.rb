@@ -18,7 +18,7 @@ default["flume_collector"]["endcollector_sources"]['hkg1']  = {
          :bind => "0.0.0.0",
          :port => "2540"} }
 
-default["flume_collector"]["endcollector_sources"]['hkg1']  = {
+default["flume_collector"]["endcollector_sources"]['uh1']  = {
      "avrosrc" => {
          :type => "avro",
          :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10",
