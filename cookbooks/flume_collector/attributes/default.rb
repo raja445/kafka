@@ -214,7 +214,7 @@ default["flume_collector"]["endcollector_sinks"]['uh1']  = {
          :flumeBatchSize => "400",
          :'kafka.bootstrap.servers' => node["flume_collector"]["kafka_brokers"]['uh1'],
          :'kafka.topic' => "dummy",
-         :'kafka.producer.compression.type' => "gzip"}
+         :'kafka.producer.compression.type' => "gzip"},
          }
      "kafkasink7" => {
          :type => "org.apache.flume.sink.kafka.KafkaSink",
@@ -223,7 +223,7 @@ default["flume_collector"]["endcollector_sinks"]['uh1']  = {
          :flumeBatchSize => "400",
          :'kafka.bootstrap.servers' => node["flume_collector"]["kafka_brokers"]['uh1'],
          :'kafka.topic' => "dummy",
-         :'kafka.producer.compression.type' => "gzip"}
+         :'kafka.producer.compression.type' => "gzip"},
          }
      "kafkasink8" => {
          :type => "org.apache.flume.sink.kafka.KafkaSink",
@@ -232,7 +232,7 @@ default["flume_collector"]["endcollector_sinks"]['uh1']  = {
          :flumeBatchSize => "400",
          :'kafka.bootstrap.servers' => node["flume_collector"]["kafka_brokers"]['uh1'],
          :'kafka.topic' => "dummy",
-         :'kafka.producer.compression.type' => "gzip"}
+         :'kafka.producer.compression.type' => "gzip"},
          }
      "kafkasink9" => {
          :type => "org.apache.flume.sink.kafka.KafkaSink",
@@ -241,7 +241,7 @@ default["flume_collector"]["endcollector_sinks"]['uh1']  = {
          :flumeBatchSize => "400",
          :'kafka.bootstrap.servers' => node["flume_collector"]["kafka_brokers"]['uh1'],
          :'kafka.topic' => "dummy",
-         :'kafka.producer.compression.type' => "gzip"}
+         :'kafka.producer.compression.type' => "gzip"},
          }
      "kafkasink10" => {
          :type => "org.apache.flume.sink.kafka.KafkaSink",
