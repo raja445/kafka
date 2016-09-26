@@ -7,7 +7,7 @@
 #    group "root"
 #    mode "0444"
 #end
-colo = node['domain'].split(".")[-3]
+
 package 'inmobi-adserve-collectd' do
   version '1.4'
   action :install
@@ -28,6 +28,7 @@ template '/etc/collectd/collectd.conf' do
   owner "root"
   group "root"
   mode "0755"
+  colo = node['domain'].split(".")[-3]
   variables(
     :colo => colo
   )
