@@ -1135,7 +1135,7 @@ LoadPlugin write_graphite
     Port "<%= @graphite_port %>"
     Protocol "tcp"
     LogSendErrors true
-    Prefix <%= @graphite_env %>.<%= @colo %>.grid.<%= @cluster %>.<%= @metrics_type %>.
+    Prefix "<%= @graphite_env %>.<%= @colo %>.grid.<%= @cluster %>.<%= @metrics_type %>."
 #    Postfix '.collectd'
     StoreRates true
     AlwaysAppendDS false
