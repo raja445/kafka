@@ -10,7 +10,7 @@
 # Global settings for the daemon.                                            #
 ##############################################################################
 
-Hostname    node["hostname"]
+Hostname   <%= node["hostname"] %>
 #FQDNLookup   true
 #BaseDir     "${prefix}/var/lib/collectd"
 #PIDFile     "${prefix}/var/run/collectd.pid"
