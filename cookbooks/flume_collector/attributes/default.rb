@@ -25,7 +25,7 @@ default["flume_collector"]["endcollector_sources"]['hkg1']  = {
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :bind => "0.0.0.0",
          :'enable_compression' => true,
-         :'compression-type' = 'deflate',
+         :'compression-type' => 'deflate',
          :port => "2541"}
        }
 
