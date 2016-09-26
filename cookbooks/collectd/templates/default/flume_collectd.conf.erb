@@ -1,4 +1,4 @@
-#
+a
 # Config file for collectd(1).
 # Please read collectd.conf(5) for a list of options.
 # http://collectd.org/
@@ -1132,11 +1132,11 @@ LoadPlugin write_graphite
 
 <Plugin write_graphite>
   <Node "grahite">
-    Host <%= node["collectd"]["graphite"][:colo] %>
-    Port <%= node["collectd"]["graphite"]['port'] %>
+    Host "<%= node["collectd"]["graphite"][:colo] %>"
+    Port "<%= node["collectd"]["graphite"]['port'] %>"
     Protocol "tcp"
     LogSendErrors true
-    Prefix <%= node["collectd"]["graphite"]['env'] %>"."<%= @colo %>".grid."<%= node["collectd"]["cluster"][:colo] %>"."<%= node["collectd"]["graphite"]['metrics_type'] %>"."
+    Prefix "<%= node["collectd"]["graphite"]['env'] %>"."<%= @colo %>".grid."<%= node["collectd"]["cluster"][:colo] %>"."<%= node["collectd"]["graphite"]['metrics_type'] %>".
 #    Postfix '.collectd'
     StoreRates true
     AlwaysAppendDS false
