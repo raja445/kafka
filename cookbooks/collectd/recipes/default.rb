@@ -30,6 +30,11 @@ template '/etc/collectd/collectd.conf' do
   mode "0755"
   colo = node['domain'].split(".")[-3]
   variables(
+    :cluster =>node["collectd"]["cluster"][colo],
+    :graphite_host =>node["collectd"]["graphite"][colo],
+    :graphite_port =>node["collectd"]["graphite"]['port'],
+    :metrics_type =>node["collectd"]["graphite"]['metrics_type'],
+    :graphite_env =>node["collectd"]["graphite"]['env'],
     :colo => colo
   )
 end
