@@ -39,6 +39,9 @@ end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
 <% if details[:'enable_compression'] == true -%>
 end-collector.sinks.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
 <% end -%>
+
+
+
 <% end %>
 
 # keep in sync with previous collector in the chain
