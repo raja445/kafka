@@ -1,0 +1,4 @@
+#!/bin/sh
+echo sleeping 120 seconds before next run...
+sleep 120;
+exec setuidgid root /opt/inmobi/ops/collectd/sbin/collectd -C /etc/collectd/collectd.conf -f 2>&1;
