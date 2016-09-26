@@ -27,5 +27,8 @@ template '/etc/collectd/collectd.conf' do
   owner "root"
   group "root"
   mode "0755"
+  variables(
+    :colo => colo
+  )
 end
 
