@@ -1132,11 +1132,11 @@ LoadPlugin write_graphite
 
 <Plugin write_graphite>
   <Node "grahite">
-    Host "<%= node["collectd"]["graphite"][:colo] %>"
-    Port "<%= node["collectd"]["graphite"]['port'] %>"
+    Host "<%= @graphite_host %>"
+    Port "<%= @graphite_port %>"
     Protocol "tcp"
     LogSendErrors true
-    Prefix "<%= node["collectd"]["graphite"]['env'] %>"."<%= @colo %>".grid."<%= node["collectd"]["cluster"][:colo] %>"."<%= node["collectd"]["graphite"]['metrics_type'] %>".
+    Prefix <%= @graphite_env %>.<%= @colo %>.grid.<%= @cluster %>.<%= @metrics_type %>.
 #    Postfix '.collectd'
     StoreRates true
     AlwaysAppendDS false
