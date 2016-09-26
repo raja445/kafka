@@ -33,7 +33,7 @@ cookbook_file "/etc/default/jmxtrans" do
   mode "0644"
 end
 
-template "/var/lib/jmxtrans/kafka.json" do
+template "/var/lib/jmxtrans/flume.json" do
   source "kafka.json.erb"
   owner "jmxtrans"
   group "jmxtrans"
