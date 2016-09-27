@@ -35,14 +35,6 @@ end
   end
 end
 
-%w[/data/flume /data/flume/spool].each do |path|
-  directory path do
-    owner 'flume'
-    mode '0755'
-    action :create
-  end
-end
-
 remote_file "#{flumeTmp}" do
   action :create_if_missing
   source node["flume_collector"]["download_url"]
