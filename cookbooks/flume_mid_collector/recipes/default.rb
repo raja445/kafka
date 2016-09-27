@@ -1,7 +1,6 @@
 # coding: UTF-8
 # Cookbook Name:: cerner_kafka
 # Recipe:: default
-colo = node['domain'].split(".")[-3]
 flumeInstallDir="#{node["flume_collector"]["base_dir"]}/flume_#{node["flume_collector"]["version"]}"
 flumeTmp="/tmp/flume_#{node["flume_collector"]["version"]}.tar.gz"
 flumeTmpDir="/tmp/flume"
@@ -60,6 +59,7 @@ template "#{flumeConf}/flume-mid-collector.properties" do
   source "flume-mid-collector.properties.erb"
   owner "flume"
   mode  00644
+  colo = node['domain'].split(".")[-3]
   variables(
     :sources =>node["flume_collector"]["midcollector_sources"][colo],
     :channels =>node["flume_collector"]["midcollector_channels"][colo],
