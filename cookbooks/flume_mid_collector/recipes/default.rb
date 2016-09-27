@@ -56,22 +56,8 @@ execute "Create Lock file" do
   end
 end
 
-
-
-# Make it a template
-#template "#{flumeConf}/flume-end-collector.properties" do
-#  source "flume-end-collector.properties.erb"
-#  owner "flume"
-#  mode  00644
-#end
-
-#cookbook_file "#{flumeConf}/flume-end-collector.properties" do
-#  source "flume-end-collector.properties"
-#  mode "0644"
-#end
-
-template "#{flumeConf}/flume-end-collector.properties" do
-  source "flume-end-collector.properties.erb"
+template "#{flumeConf}/flume-mid-collector.properties" do
+  source "flume-mid-collector.properties.erb"
   owner "flume"
   mode  00644
   variables(
@@ -101,47 +87,5 @@ link "#{flumeHome}" do
   owner 'flume'
   to "#{flumeInstallDir}"
   link_type :symbolic
-end
-
-#HEALTH CHECK
-package "scribe-scripts" do
-  version node['flume_collector']['scribescripts']
-  action :install
-  options '--force-yes'
-end
-
-directory "/etc/flume_health" do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-end
-directory "/etc/flume_health/flume_healthcheck" do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-end
-directory "/etc/flume_health/flume_healthcheck/log" do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-end
-template "/etc/flume_health/flume_healthcheck/run" do
-  source "flume_healthcheck.erb"
-  owner "root"
-  group "root"
-  mode "0755"
-end
-template "/etc/flume_health/flume_healthcheck/log/run" do
-  source "flume_logrun.erb"
-  owner "root"
-  group "root"
-  mode "0755"
-end
-
-link '/service/flume_healthcheck' do
-  to '/etc/flume_health/flume_healthcheck'
 end
 
