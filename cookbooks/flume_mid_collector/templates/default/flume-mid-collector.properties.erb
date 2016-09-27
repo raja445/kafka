@@ -56,7 +56,7 @@ mid-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 mid-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:hostname] %>
 mid-collector.sinks.<%= "#{sink}" %>.port = <%= details[:port] %>
 <% if details[:'enable_compression'] == true -%>
-mid-collector.sinks.<%= "#{src}" %>.compression-type = <%= details[:'compression-type'] %>
+mid-collector.sinks.<%= "#{sink}" %>.compression-type = <%= details[:'compression-type'] %>
 <% end -%>
 mid-collector.sinks.<%= "#{sink}" %>.batch-size = <%= details[:'batch-size'] %>
 mid-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = <%= details[:'reset-connection-interval'] %>
