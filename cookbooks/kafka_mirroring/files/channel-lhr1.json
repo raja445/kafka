@@ -845,6 +845,21 @@
         "compression": "gz",
         "retention": "72"
       }
+    },
+   {
+      "streamName": "AdUnitEnhancedBeaconEgretTest",
+      "source": [
+        {
+          "topic": "AdUnitEnhancedBeacon_EgretTest",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
     }
   ]
 }
