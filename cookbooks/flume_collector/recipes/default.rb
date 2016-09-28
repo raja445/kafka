@@ -128,6 +128,12 @@ directory "/etc/flume_health/flume_healthcheck/log" do
   mode '0755'
   action :create
 end
+directory "/etc/flume_health/flume_healthcheck/log/main" do
+  owner 'nobody'
+  group 'nogroup'
+  mode '0755'
+  action :create
+end
 template "/etc/flume_health/flume_healthcheck/run" do
   source "flume_healthcheck.erb"
   owner "root"
