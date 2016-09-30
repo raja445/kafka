@@ -14,6 +14,45 @@
       }
     },
     {
+      "streamName": "networkPostImpressionDfw1Dfw1",
+      "source": [
+        {
+          "topic": "network_post_impression_uh1_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_post_impression_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkPostImpressionHkg1Hkg1",
+      "source": [
+        {
+          "topic": "network_post_impression_uh1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_post_impression_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkPostImpressionLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_post_impression_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_post_impression_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "georrlite",
       "source": [
         {
