@@ -1,35 +1,6 @@
 {
   "streams": [
     {
-      "streamName": "georrlite",
-      "source": [
-        {
-          "topic": "georrlite",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "base64": "false",
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "audienceAttributesHkg1Hkg1",
-      "source": [
-        {
-          "topic": "audience-attributes_uh1_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "audience-attributes_hkg1_hkg1",
-        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "appd_ltv_events_hkg1",
       "source": [
         {
