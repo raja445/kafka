@@ -245,21 +245,6 @@
       }
     },
     {
-      "streamName": "droppedActivityLhr1",
-      "source": [
-        {
-          "topic": "dropped_activity_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://emerald:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "georrmetrics",
       "source": [
         {
