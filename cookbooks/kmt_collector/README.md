@@ -1,2 +1,2 @@
-Cookbook for kafka-mirroring
+Cookbook for kmt collector
 ============================
