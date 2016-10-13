@@ -49,7 +49,7 @@ inprogress.jobs.oldage=10
 #If a file is more than 60 mins, this should be alerted
 oldfiles.age=60
 #Maximum number jobs allowed per node
-max.jobspernode=65
+max.jobspernode=100
 
 prod.colos=<%= @collector_id %>
 <%= @collector_id %>.config={"configs":[{"name":"<%= @colo %>","url":"hdfs://<%= @hdfs_id %>:8020","regex":"hdfs://[a-z]*:[0-9]*"}]}
