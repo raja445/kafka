@@ -1061,6 +1061,7 @@
       "source": [
         {
           "topic": "tpce_download",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1073,6 +1074,7 @@
       "source": [
         {
           "topic": "tpce_custom_goal",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1085,6 +1087,7 @@
       "source": [
         {
           "topic": "tpce_purchase",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1097,6 +1100,7 @@
       "source": [
         {
           "topic": "tpce_ltv_summary",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1109,6 +1113,7 @@
       "source": [
         {
           "topic": "tpce_user_segment_summary",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1121,6 +1126,7 @@
       "source": [
         {
           "topic": "tpce_enriched_download",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1133,6 +1139,7 @@
       "source": [
         {
           "topic": "tpce_custom_goal_summary",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1145,6 +1152,7 @@
       "source": [
         {
           "topic": "tpce_purchase_summary",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1157,6 +1165,7 @@
       "source": [
         {
           "topic": "tpce_rtfb_conversions",
+          "startTime": "2016/10/14/04/15",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
