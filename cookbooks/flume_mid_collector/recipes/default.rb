@@ -76,8 +76,8 @@ template "#{flumeConf}/flume-env.sh" do
   mode  00644
   colo = node['domain'].split(".")[-3]
   variables(
-    :xms =>node["flume_mid_collector"]["xms"],
-    :xmx =>node["flume_mid_collector"]["xmx"]
+    :xms =>node["flume_mid_collector"]["xms"][colo],
+    :xmx =>node["flume_mid_collector"]["xmx"][colo]
   )
 end
 
