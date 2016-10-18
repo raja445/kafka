@@ -70,6 +70,17 @@ template "#{flumeConf}/flume-mid-collector.properties" do
 
 end
 
+template "#{flumeConf}/flume-env.sh" do
+  source "flume-env.erb"
+  owner "flume"
+  mode  00644
+  colo = node['domain'].split(".")[-3]
+  variables(
+    :xms =>node["flume_mid_collector"]["xms"],
+    :xmx =>node["flume_mid_collector"]["xmx"]
+  )
+end
+
 cookbook_file "#{flumeConf}/flume-env.sh" do
   source "flume-env.sh"
   mode "0644"
