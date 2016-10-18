@@ -81,10 +81,10 @@ template "#{flumeConf}/flume-env.sh" do
   )
 end
 
-cookbook_file "#{flumeConf}/flume-env.sh" do
-  source "flume-env.sh"
-  mode "0644"
-end
+#cookbook_file "#{flumeConf}/flume-env.sh" do
+#  source "flume-env.sh"
+#  mode "0644"
+#end
 
 execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
