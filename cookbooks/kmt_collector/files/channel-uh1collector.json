@@ -1235,6 +1235,66 @@
       }
     },
     {
+      "streamName": "adroit_report_obj_dfw1",
+      "source": [
+        {
+          "topic": "adroit_report_obj_dfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "adroit_report_obj_hkg1",
+      "source": [
+        {
+          "topic": "adroit_report_obj_hkg1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "adroit_report_obj_lhr1",
+      "source": [
+        {
+          "topic": "adroit_report_obj_lhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "adroit_report_obj_uh1",
+      "source": [
+        {
+          "topic": "adroit_report_obj_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "adroit_report_object_rtbs",
+      "source": [
+        {
+          "topic": "adroit_report_object_rtbs",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
       "streamName": "fds_uh1",
       "source": [
         {
