@@ -72,6 +72,14 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-hkg1.json" do
   action :create
 end
 
+cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/default.properties" do
+  source 'default.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
 cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/conf.sh" do
   source 'conf.sh'
   owner 'root'
