@@ -14,6 +14,45 @@
       }
     },
     {
+      "streamName": "networkBeaconDfw1Dfw1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconHkg1Hkg1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkPostImpressionDfw1Dfw1",
       "source": [
         {
@@ -1543,6 +1582,21 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "72"
+      }
+    },
+    {
+      "streamName": "networkBeaconUh1Uh1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_uh1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
       }
     },
     {
