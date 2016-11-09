@@ -397,8 +397,9 @@
         }
       ],
       "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
         "topic": "ifc_activity_hkg1_hkg1",
-        "workers": 5,
         "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
       }
     },
@@ -411,6 +412,8 @@
         }
       ],
       "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
         "topic": "network_post_impression_dfw1_dfw1",
         "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
       }
@@ -424,6 +427,8 @@
         }
       ],
       "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
         "topic": "network_post_impression_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
       }
@@ -437,6 +442,8 @@
         }
       ],
       "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
         "topic": "network_post_impression_uh1_uh1",
         "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
@@ -450,6 +457,8 @@
         }
       ],
       "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
         "topic": "ifc_organic_activity_uh1_uh1",
         "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
@@ -846,8 +855,9 @@
         }
       ],
       "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
         "topic": "cas_nested_activity_hkg1_hkg1",
-        "workers": 5,
         "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
       }
     },
