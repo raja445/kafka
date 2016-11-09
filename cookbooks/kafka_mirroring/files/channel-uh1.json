@@ -121,45 +121,6 @@
       }
     },
     {
-      "streamName": "photonOptoutDfw1Dfw1",
-      "source": [
-        {
-          "topic": "photon_optout_uh1_dfw1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "photon_optout_dfw1_dfw1",
-        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "photonOptoutHkg1Hkg1",
-      "source": [
-        {
-          "topic": "photon_optout_uh1_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "photon_optout_hkg1_hkg1",
-        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "photonOptoutLhr1Lhr1",
-      "source": [
-        {
-          "topic": "photon_optout_uh1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "photon_optout_lhr1_lhr1",
-        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "appdNestedActivityDfw1Dfw1",
       "source": [
         {
