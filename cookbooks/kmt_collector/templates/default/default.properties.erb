@@ -23,11 +23,12 @@ local.staging.dealy=5
 local.staging.path=/data/kafka/staging/
 
 #timer tasks
-populate.streams=30
-cleanup.deadnodes=30
+populate.streams=300
+cleanup.deadnodes=120
 try.streams=120
-clean.streams=60
+clean.streams=120
 reaload.config=120
+streams.perrun=20
 
 #zk/file/hdfs
 zk.basesleeptime=1000
@@ -39,6 +40,8 @@ channelpool.size=10
 enable.zero.bytes.file=false
 auto.commit.interval=10000
 reload.newpartitions=300
+
+enable.audit=false
 
 hdfs.retries=10
 hdfs.write.retries=1
