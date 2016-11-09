@@ -16,6 +16,51 @@
       }
     },
     {
+      "streamName": "networkBeaconDfw1Dfw1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_beacon_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconHkg1Hkg1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_beacon_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_beacon_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkPostImpressionDfw1Dfw1",
       "source": [
         {
@@ -89,51 +134,6 @@
         "batchSize": 10000,
         "topic": "audience-attributes_hkg1_hkg1",
         "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "photonOptoutDfw1Dfw1",
-      "source": [
-        {
-          "topic": "photon_optout_uh1_dfw1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "photon_optout_dfw1_dfw1",
-        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "photonOptoutHkg1Hkg1",
-      "source": [
-        {
-          "topic": "photon_optout_uh1_hkg1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "photon_optout_hkg1_hkg1",
-        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "photonOptoutLhr1Lhr1",
-      "source": [
-        {
-          "topic": "photon_optout_uh1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "photon_optout_lhr1_lhr1",
-        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
       }
     },
     {
@@ -1218,6 +1218,7 @@
         "waitTime": 5000,
         "batchSize": 10000,
         "topic": "cas_nested_activity_uh1_uh1",
+        "workers": 5,
         "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
@@ -1241,6 +1242,7 @@
         "waitTime": 5000,
         "batchSize": 10000,
         "topic": "cas_nested_activity_dfw1_dfw1",
+        "workers": 5,
         "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
       }
     },
@@ -1264,6 +1266,7 @@
         "waitTime": 5000,
         "batchSize": 10000,
         "topic": "ifc_activity_dfw1_dfw1",
+        "workers": 5,
         "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
       }
     },
@@ -1622,6 +1625,21 @@
       }
     },
     {
+      "streamName": "networkBeaconUh1Uh1",
+      "source": [
+        {
+          "topic": "network_beacon_uh1_uh1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "blueKai",
       "source": [
         {
@@ -1653,4 +1671,3 @@
     }
   ]
 }
-
