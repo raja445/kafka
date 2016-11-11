@@ -1351,7 +1351,8 @@
         }
       ],
       "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize":100
       }
     },
     {
@@ -1363,7 +1364,8 @@
         }
       ],
       "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize":100
       }
     },
     {
@@ -1375,7 +1377,8 @@
         }
       ],
       "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize":100
       }
     },
     {
@@ -1387,7 +1390,8 @@
         }
       ],
       "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize":100
       }
     },
     {
