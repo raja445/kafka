@@ -62,6 +62,12 @@ directory "/etc/zk_health/zk_healthcheck/log" do
   mode '0755'
   action :create
 end
+directory "/etc/zk_health/zk_healthcheck/log/main" do
+  owner 'nobody'
+  group 'nogroup'
+  mode '0755'
+  action :create
+end
 template "/etc/zk_health/zk_healthcheck/run" do
   source "zookeeper_healthcheck.erb"
   owner "root"
