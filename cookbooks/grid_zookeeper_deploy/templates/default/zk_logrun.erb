@@ -1,5 +1,2 @@
 #!/bin/sh
-
-service_dir=`echo $PWD|cut -d'/' -f3`
-service_name=`echo $PWD|cut -d'/' -f4`
-exec setuidgid nobody multilog t  s8291456  n200  '!/bin/gzip' /var/log/zookeeper
+exec setuidgid nobody multilog t ./main
