@@ -95,3 +95,35 @@ cookbook_file "#{node['kafkaSupervisorConfig']['confighome']}/kafkaMirror.conf" 
   mode '0664'
   action :create
 end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-lhr1.properties" do
+  source 'server-lhr1.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-hkg1.properties" do
+  source 'server-hkg1.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1.properties" do
+  source 'server-uh1.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-dfw1.properties" do
+  source 'server-dfw1.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
