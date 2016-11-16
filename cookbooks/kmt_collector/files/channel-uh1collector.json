@@ -104,8 +104,10 @@
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize": 100
       }
     },
     {
@@ -116,8 +118,10 @@
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize": 100
       }
     },
     {
@@ -128,8 +132,10 @@
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize": 100
       }
     },
     {
@@ -140,8 +146,10 @@
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize": 100
       }
     },
     {
@@ -1352,7 +1360,7 @@
       ],
       "hdfsCollectorDestination": {
         "hdfsUrl": "hdfs://krypton:8020",
-        "batchSize":100
+        "batchSize": 100
       }
     },
     {
@@ -1365,7 +1373,7 @@
       ],
       "hdfsCollectorDestination": {
         "hdfsUrl": "hdfs://krypton:8020",
-        "batchSize":100
+        "batchSize": 100
       }
     },
     {
@@ -1378,7 +1386,7 @@
       ],
       "hdfsCollectorDestination": {
         "hdfsUrl": "hdfs://krypton:8020",
-        "batchSize":100
+        "batchSize": 100
       }
     },
     {
@@ -1391,7 +1399,7 @@
       ],
       "hdfsCollectorDestination": {
         "hdfsUrl": "hdfs://krypton:8020",
-        "batchSize":100
+        "batchSize": 100
       }
     },
     {
