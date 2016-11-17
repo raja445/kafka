@@ -161,7 +161,9 @@
         }
       ],
       "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "batchSize": 100
       }
     },
     {
