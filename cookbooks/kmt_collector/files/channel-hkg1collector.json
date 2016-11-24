@@ -949,6 +949,19 @@
       }
     },
     {
+      "streamName": "tpce_download",
+      "source": [
+        {
+          "topic": "tpce_download",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_download",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "iat_click_hkg1",
       "source": [
         {
