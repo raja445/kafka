@@ -962,6 +962,110 @@
       }
     },
     {
+      "streamName": "tpce_enriched_download",
+      "source": [
+        {
+          "topic": "tpce_enriched_download",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_enriched_download",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "tpce_purchase",
+      "source": [
+        {
+          "topic": "tpce_purchase",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_purchase",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "tpce_purchase_summary",
+      "source": [
+        {
+          "topic": "tpce_purchase_summary",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_purchase_summary",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "tpce_custom_goal",
+      "source": [
+        {
+          "topic": "tpce_custom_goal",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_custom_goal",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "tpce_custom_goal_summary",
+      "source": [
+        {
+          "topic": "tpce_custom_goal_summary",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_custom_goal_summary",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "tpce_user_segment_summary",
+      "source": [
+        {
+          "topic": "tpce_user_segment_summary",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_user_segment_summary",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "tpce_ltv_summary",
+      "source": [
+        {
+          "topic": "tpce_ltv_summary",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "tpce_ltv_summary",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "appd_attribution_event",
+      "source": [
+        {
+          "topic": "appd_attribution_event",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "appd_attribution_event",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "iat_click_hkg1",
       "source": [
         {
