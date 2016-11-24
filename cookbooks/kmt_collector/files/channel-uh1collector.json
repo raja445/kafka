@@ -1445,6 +1445,30 @@
       }
     },
     {
+      "streamName": "iat_click_uh1",
+      "source": [
+        {
+          "topic": "iat_click_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
+      "streamName": "iat_goal_uh1",
+      "source": [
+        {
+          "topic": "iat_goal_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
       "streamName": "fds_uh1",
       "source": [
         {
