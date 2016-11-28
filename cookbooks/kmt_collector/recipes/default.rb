@@ -126,6 +126,14 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-hkg1collector.
   action :create
 end
 
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1collector.properties" do
+  source 'server-uh1collector.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-dfw1.json" do
   source 'channel-dfw1.json'
   owner 'root'
