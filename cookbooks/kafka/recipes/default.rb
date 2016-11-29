@@ -7,11 +7,23 @@ ohai "reload" do
   action :reload
 end
 
-template "#{node[:ohai][:plugin_path]}/kafkadisks.rb" do
+#template "#{node[:ohai][:plugin_path]}/kafkadisks.rb" do
+#  source "kafkadisks.erb"
+#  notifies :reload, "ohai[reload]"
+#end
+
+%w{/etc/chef /etc/chef/ohai_plugins}.each do |dir|
+  directory "#{dir}" do
+    owner 'root'
+    mode '0755'
+    action :create
+  end
+end
+
+template "/etc/chef/ohai_plugins/kafkadisks.rb" do
   source "kafkadisks.erb"
   notifies :reload, "ohai[reload]"
 end
-
 
 # Create an array for storing errors we should verify before doing anything
 errors = Array.new
