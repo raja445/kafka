@@ -1655,6 +1655,22 @@
       }
     },
     {
+      "streamName": "appd_attribute_uh1_uh1",
+      "source": [
+        {
+          "topic": "appd_attribute_uh1_uh1",
+          "startTime": "2016/12/04/00/00",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "normalizedPostbackGold",
       "source": [
         {
