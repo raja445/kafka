@@ -1502,7 +1502,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://krypton:8020",
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
     },
     {
       "streamName": "ifcp_uh1",
@@ -1514,7 +1515,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://krypton:8020",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
     },
     {
       "streamName": "fds_uh1",
