@@ -302,7 +302,7 @@
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
         "thresholdSize": 32212254720,
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
@@ -317,7 +317,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
@@ -901,7 +901,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
