@@ -935,6 +935,36 @@
       }
     },
     {
+      "streamName": "usermetaChange",
+      "source": [
+        {
+          "topic": "usermeta_change",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "usermetaChangeLhr1",
+      "source": [
+        {
+          "topic": "usermeta_change",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "AdUnitEnhancedBeaconEgretTest",
       "source": [
         {
