@@ -950,6 +950,36 @@
       }
     },
     {
+      "streamName": "usermetaChange",
+      "source": [
+        {
+          "topic": "usermeta_change",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://onyx:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "usermetaChangeDfw1",
+      "source": [
+        {
+          "topic": "usermeta_change",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "blueKai",
       "source": [
         {
