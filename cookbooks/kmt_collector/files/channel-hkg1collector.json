@@ -1141,6 +1141,19 @@
        }
     },
     {
+      "streamName": "adroit_attribution_stats",
+      "source": [
+        {
+          "topic": "adroit_attribution_stats",
+          "zookeeper": "kafka-zookeeper-1.grid.hkg1.inmobi.com:2181,kafka-zookeeper-2.grid.hkg1.inmobi.com:2181,kafka-zookeeper-3.grid.hkg1.inmobi.com:2181,kafka-zookeeper-4.grid.hkg1.inmobi.com:2181,kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://opal:8020"
+       }
+    },
+    {
       "streamName": "iat_goal_hkg1",
       "source": [
         {
