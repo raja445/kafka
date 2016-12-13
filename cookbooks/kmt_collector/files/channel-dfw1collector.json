@@ -973,7 +973,7 @@
       }
     },
     {
-      "streamName": "ifc_ff_dfw1",
+      "streamName": "ifc_ff_colo",
       "source": [
         {
           "topic": "ifc_ff_dfw1",
@@ -986,7 +986,7 @@
        }
     },
     {
-      "streamName": "ifcp_dfw1",
+      "streamName": "ifcp_colo",
       "source": [
         {
           "topic": "ifcp_dfw1",

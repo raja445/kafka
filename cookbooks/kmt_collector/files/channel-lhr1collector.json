@@ -949,7 +949,7 @@
       }
     },
     {
-      "streamName": "ifc_ff_lhr1",
+      "streamName": "ifc_ff_colo",
       "source": [
         {
           "topic": "ifc_ff_lhr1",
@@ -962,7 +962,7 @@
        }
     },
     {
-      "streamName": "ifcp_lhr1",
+      "streamName": "ifcp_colo",
       "source": [
         {
           "topic": "ifcp_lhr1",

@@ -1102,7 +1102,7 @@
       }
     },
     {
-      "streamName": "ifc_ff_hkg1",
+      "streamName": "ifc_ff_colo",
       "source": [
         {
           "topic": "ifc_ff_hkg1",
@@ -1115,7 +1115,7 @@
        }
     },
     {
-      "streamName": "ifcp_hkg1",
+      "streamName": "ifcp_colo",
       "source": [
         {
           "topic": "ifcp_hkg1",
