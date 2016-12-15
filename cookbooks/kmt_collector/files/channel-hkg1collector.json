@@ -1078,6 +1078,18 @@
       }
     },
     {
+      "streamName": "carb_user_relevance",
+      "source": [
+        {
+          "topic": "carb_user_relevance",
+          "zookeeper": "kafka-zookeeper-1.grid.hkg1.inmobi.com:2181,kafka-zookeeper-2.grid.hkg1.inmobi.com:2181,kafka-zookeeper-3.grid.hkg1.inmobi.com:2181,kafka-zookeeper-4.grid.hkg1.inmobi.com:2181,kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://opal:8020"
+      }
+    },
+    {
       "streamName": "sdkpubreq",
       "source": [
         {
