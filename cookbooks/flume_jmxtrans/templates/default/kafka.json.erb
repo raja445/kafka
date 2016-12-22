@@ -66,6 +66,28 @@
      ]
     },
     {
+     "resultAlias": "flume.interceptor",
+     "obj": "org.apache.flume.interceptor:type=*",
+     "attr": [
+      "EventReceivedCount",
+      "EventAcceptedCount",
+      "EventDroppedCount"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
      "resultAlias": "flume.channel",
      "obj": "org.apache.flume.channel:type=*,*",
      "attr": [
