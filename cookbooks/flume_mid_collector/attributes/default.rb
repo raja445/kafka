@@ -1,8 +1,8 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["flume_collector"]["version"] = "1.6.0.11"
-default["flume_collector"]["download_url"] = "https://artifactory.corp.inmobi.com/artifactory/generic-tarball/flume/1.6.0.11/apache-flume-1.6.0.11-bin.tar.gz"
+default["flume_collector"]["version"] = "1.6.0.12"
+default["flume_collector"]["download_url"] = "https://artifactory.corp.inmobi.com/artifactory/generic-tarball/flume/1.6.0.12/apache-flume-1.6.0.12-bin.tar.gz"
 default["flume_collector"]["base_dir"]  = "/opt/inmobi"
 default["flume_collector"]["spool_dir"]  = "/data/d1/flume/spool"
 default["flume_collector"]["pid_dir"]  = "/var/run/flume"
@@ -13,6 +13,8 @@ default["flume_mid_collector"]["xmx"]['hkg1']  = "4G"
 default["flume_collector"]["kafka_brokers"]['hkg1']  = "opkf4001.grid.hkg1.inmobi.com:9092,opkf4002.grid.hkg1.inmobi.com:9092,opkf4003.grid.hkg1.inmobi.com:9092,opkf4004.grid.hkg1.inmobi.com:9092,opkf4005.grid.hkg1.inmobi.com:9092,opkf4006.grid.hkg1.inmobi.com:9092,opkf4007.grid.hkg1.inmobi.com:9092,opkf4008.grid.hkg1.inmobi.com:9092,opkf4009.grid.hkg1.inmobi.com:9092,opkf4010.grid.hkg1.inmobi.com:9092"
 default["flume_collector"]["kafka_brokers"]['uh1']  = "krkf4001.grid.uh1.inmobi.com:9092,krkf4002.grid.uh1.inmobi.com:9092,krkf4003.grid.uh1.inmobi.com:9092,krkf4004.grid.uh1.inmobi.com:9092,krkf4005.grid.uh1.inmobi.com:9092,krkf4006.grid.uh1.inmobi.com:9092,krkf4007.grid.uh1.inmobi.com:9092,krkf4008.grid.uh1.inmobi.com:9092,krkf4009.grid.uh1.inmobi.com:9092,krkf4010.grid.uh1.inmobi.com:9092"
 
+default["flume_collector"]["kafka_zookeeper"]['hkg1']  = "kafka-zookeeper-1.grid.hkg1.inmobi.com:2181,kafka-zookeeper-2.grid.hkg1.inmobi.com:2181,kafka-zookeeper-3.grid.hkg1.inmobi.com:2181,kafka-zookeeper-4.grid.hkg1.inmobi.com:2181,kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"
+
 #Configure the sources for the Flume Collector
 default["flume_collector"]["midcollector_sources"]['hkg1']  = {
      "avrosrc" => {
@@ -20,6 +22,7 @@ default["flume_collector"]["midcollector_sources"]['hkg1']  = {
          :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :bind => "0.0.0.0",
+         :'kafka.zookeeper' => node["flume_collector"]["kafka_zookeeper"]['hkg1'],
          :'enable_compression' => false,
          :port => "2540"},
      "zipavrosrc" => {
@@ -27,6 +30,7 @@ default["flume_collector"]["midcollector_sources"]['hkg1']  = {
          :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :bind => "0.0.0.0",
+         :'kafka.zookeeper' => node["flume_collector"]["kafka_zookeeper"]['hkg1'],
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
          :port => "2541"}
