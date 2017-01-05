@@ -946,6 +946,21 @@
       }
     },
     {
+      "streamName": "customTypeRecordUpdateIfcinorg",
+      "source": [
+        {
+          "topic": "custom_type_record_update-ifcinorg",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://opal:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "usermetaChangeHkg1",
       "source": [
         {
