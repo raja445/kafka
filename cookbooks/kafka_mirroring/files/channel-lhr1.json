@@ -138,6 +138,22 @@
       }
     },
     {
+      "streamName": "ifcPhotonEnrichedPbLhr1",
+      "source": [
+        {
+          "topic": "ifc_photon_enriched_pb_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "iatClick",
       "source": [
         {

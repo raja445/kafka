@@ -137,6 +137,22 @@
       }
     },
     {
+      "streamName": "ifcPhotonEnrichedPbHkg1",
+      "source": [
+        {
+          "topic": "ifc_photon_enriched_pb_hkg1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "ifcActivityHighFreq",
       "source": [
         {
