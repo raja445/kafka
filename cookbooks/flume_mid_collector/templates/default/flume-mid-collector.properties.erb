@@ -39,9 +39,9 @@ mid-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
 <% if details[:'enable_compression'] == true -%>
 mid-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
 <% end -%>
-end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
-end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= details[:'kafka.zookeeper'] %>
+mid-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
+mid-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
+mid-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= details[:'kafka.zookeeper'] %>
 <% end %>
 
 # keep in sync with previous collector in the chain
