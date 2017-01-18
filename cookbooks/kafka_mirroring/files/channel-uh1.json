@@ -1015,7 +1015,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
