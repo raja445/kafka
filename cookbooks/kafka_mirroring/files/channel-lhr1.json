@@ -765,7 +765,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
