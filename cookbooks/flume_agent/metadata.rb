@@ -1,8 +1,8 @@
-name             'optout_flume_deploy'
+name             'flume_agent'
 maintainer       'YOUR_COMPANY_NAME'
 maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
-description      'Installs/Configures optout_flume_deploy'
+description      'Installs/Configures flume_agent'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.1'
 
