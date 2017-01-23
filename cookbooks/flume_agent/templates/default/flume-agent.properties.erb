@@ -1,0 +1,106 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources,
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent,
+# in this case called 'agent'
+
+####################################################################################################
+## Flume agent configuration
+## scribe => disk backed memory => avro sink (collector)
+####################################################################################################
+
+agent.sources = scribe
+agent.channels = spillable
+agent.sinks = avro1 avro2 avro3 avro4 avro5
+
+#agent.sinks = avro
+
+agent.sinkgroups = g1
+agent.sinkgroups.g1.sinks = avro1 avro2 avro3 avro4 avro5
+agent.sinkgroups.g1.processor.type = load_balance
+
+agent.sources.scribe.type = org.apache.flume.source.scribe.ScribeSource
+agent.sources.scribe.channels = spillable
+agent.sources.scribe.port = 2530
+agent.sources.scribe.maxReadBufferBytes = 67108864
+agent.sources.scribe.workerThreads = 16
+
+agent.sinks.avro1.type = avro
+agent.sinks.avro1.channel = spillable
+agent.sinks.avro1.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro1.port = 2541
+# keep in sync with collector configuration
+agent.sinks.avro1.compression-type = deflate
+# tune based on the setup and performance.
+agent.sinks.avro1.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro1.reset-connection-interval = 60
+
+agent.sinks.avro2.type = avro
+agent.sinks.avro2.channel = spillable
+agent.sinks.avro2.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro2.port = 2541
+## keep in sync with collector configuration
+agent.sinks.avro2.compression-type = deflate
+# tune based on the setup and performance.
+agent.sinks.avro2.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro2.reset-connection-interval = 60
+
+agent.sinks.avro3.type = avro
+agent.sinks.avro3.channel = spillable
+agent.sinks.avro3.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro3.port = 2541
+## keep in sync with collector configuration
+agent.sinks.avro3.compression-type = deflate
+# tune based on the setup and performance.
+agent.sinks.avro3.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro3.reset-connection-interval = 60
+
+
+agent.sinks.avro4.type = avro
+agent.sinks.avro4.channel = spillable
+agent.sinks.avro4.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro4.port = 2541
+# keep in sync with collector configuration
+agent.sinks.avro4.compression-type = deflate
+## tune based on the setup and performance.
+agent.sinks.avro4.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro4.reset-connection-interval = 60
+
+agent.sinks.avro5.type = avro
+agent.sinks.avro5.channel = spillable
+agent.sinks.avro5.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro5.port = 2541
+## keep in sync with collector configuration
+agent.sinks.avro5.compression-type = deflate
+## tune based on the setup and performance.
+agent.sinks.avro5.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro5.reset-connection-interval = 60
+
+
+agent.channels.spillable.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable.capacity = 50000
+agent.channels.spillable.transactionCapacity = 500
+agent.channels.spillable.spoolDirectories =  /data/d1/flume/spool
+agent.channels.spillable.spoolDiskCapacityMB = 51200
