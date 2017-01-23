@@ -21,7 +21,7 @@
 # Enviroment variables can be set here.
 
 # export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 export CURRENT_USER=$(whoami)
 export FLUME_ROOT_LOG_LEVEL=INFO
 export FLUME_LOGS_HOME=/var/log/flume
