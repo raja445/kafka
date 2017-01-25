@@ -145,7 +145,6 @@
         }
       ],
       "hdfsDestination": {
-        "base64": "false",
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://gold:8020",
         "compression": "gz",
