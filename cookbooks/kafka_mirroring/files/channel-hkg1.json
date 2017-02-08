@@ -529,7 +529,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://opal:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "192"
       }
     },
     {
@@ -589,7 +589,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://opal:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "192"
       }
     },
     {
