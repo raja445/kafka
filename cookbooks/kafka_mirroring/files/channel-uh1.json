@@ -122,6 +122,36 @@
       }
     },
     {
+      "streamName": "cookieMappingUh1",
+      "source": [
+        {
+          "topic": "cookie_mapping",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "webPostbacksUh1",
+      "source": [
+        {
+          "topic": "web_postbacks",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "audienceAttributesHkg1Hkg1",
       "source": [
         {
