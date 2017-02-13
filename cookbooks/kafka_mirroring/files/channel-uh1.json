@@ -122,6 +122,21 @@
       }
     },
     {
+      "streamName": "droppedActivityUh1",
+      "source": [
+        {
+          "topic": "dropped_activity_uh1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "cookieMappingUh1",
       "source": [
         {
