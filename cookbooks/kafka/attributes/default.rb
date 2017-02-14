@@ -17,9 +17,6 @@ default["kafka"]["service"]["stdout"] = File.join node["kafka"]["log_dir"], "kaf
 default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kafka_init_stderr.log"
 
 # These are required to be supplied by the consumer so setting to nil
-default["kafka"]["brokers"]["uj1"] = ["tzkf4005.grid.uj1.inmobi.com","tzkf4006.grid.uj1.inmobi.com","tzkf4007.grid.uj1.inmobi.com", "tzkf4008.grid.uj1.inmobi.com","tzkf4004.grid.uj1.inmobi.com","tzkf4009.grid.uj1.inmobi.com","tzkf4010.grid.uj1.inmobi.com","tzkf4011.grid.uj1.inmobi.com","tzkf4012.grid.uj1.inmobi.com","tzkf4013.grid.uj1.inmobi.com"]
-default["kafka"]["zookeepers"]["uj1"] = ["kafka-zookeeper.grid.uj1.inmobi.com:2181"]
-default['kafka']['mrelay']['uj1'] = "metrics-relay.grid.uj1.inmobi.com"
 
 default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002.grid.dfw1.inmobi.com","oxkf4003.grid.dfw1.inmobi.com","oxkf4008.grid.dfw1.inmobi.com","oxkf4009.grid.dfw1.inmobi.com","oxkf4010.grid.dfw1.inmobi.com","oxkf4011.grid.dfw1.inmobi.com","oxkf4012.grid.dfw1.inmobi.com","oxkf4013.grid.dfw1.inmobi.com","oxkf4014.grid.dfw1.inmobi.com","oxkf4015.grid.dfw1.inmobi.com","oxkf4016.grid.dfw1.inmobi.com","oxkf4017.grid.dfw1.inmobi.com"]
 default["kafka"]["zookeepers"]["dfw1"] = ["kafka-zookeeper-1.grid.dfw1.inmobi.com:2181","kafka-zookeeper-2.grid.dfw1.inmobi.com:2181","kafka-zookeeper-3.grid.dfw1.inmobi.com:2181","kafka-zookeeper-4.grid.dfw1.inmobi.com:2181","kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"]
@@ -37,6 +34,9 @@ default["kafka"]["brokers"]["lhr1"] = ["erkf4002.grid.lhr1.inmobi.com","erkf4003
 default["kafka"]["zookeepers"]["lhr1"] = ["kafka-zookeeper-1.grid.lhr1.inmobi.com:2181","kafka-zookeeper-2.grid.lhr1.inmobi.com:2181","kafka-zookeeper-3.grid.lhr1.inmobi.com:2181","kafka-zookeeper-4.grid.lhr1.inmobi.com:2181","kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"]
 default['kafka']['mrelay']['lhr1'] = "metrics-relay.grid.lhr1.inmobi.com"
 
+default["kafka"]["brokers"]["pek1"] = ["pykf4002.grid.pek1.inmobi.com","pykf4003.grid.pek1.inmobi.com","pykf4004.grid.pek1.inmobi.com", "pykf4005.grid.pek1.inmobi.com","pykf4001.grid.pek1.inmobi.com","pykf4006.grid.pek1.inmobi.com","pykf4007.grid.pek1.inmobi.com","pykf4008.grid.pek1.inmobi.com","pykf4009.grid.pek1.inmobi.com","pykf4010.grid.pek1.inmobi.com"]
+default["kafka"]["zookeepers"]["pek1"] = ["kafka-zookeeper-1.grid.pek1.inmobi.com:2181","kafka-zookeeper-2.grid.pek1.inmobi.com:2181","kafka-zookeeper-3.grid.pek1.inmobi.com:2181","kafka-zookeeper-4.grid.pek1.inmobi.com:2181","kafka-zookeeper-5.grid.pek1.inmobi.com:2181"]
+default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
@@ -104,4 +104,4 @@ default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'uj1'=> 'UJ1_Topaz', 'dfw1' => 'DFW1_Onyx', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald'}
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'PEK1_Pyrite'}
