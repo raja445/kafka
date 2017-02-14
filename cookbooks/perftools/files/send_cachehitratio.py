@@ -16,6 +16,7 @@ graphite_hosts={
      'uh1':'metrics-relay.grid.uh1.inmobi.com',
      'dfw1':'metrics-relay.grid.dfw1.inmobi.com',
      'lhr1':'metrics-relay.grid.lhr1.inmobi.com',
+     'pek1':'metrics-relay.grid.pek1.inmobi.com',
      'hkg1':'metrics-relay.grid.hkg1.inmobi.com'}
 
 graphite_port=2020
@@ -24,6 +25,7 @@ prefix_dict={
      'uh1':'prod.uh1.grid.UH1_Krypton.sys',
      'dfw1':'prod.dfw1.grid.DFW1_Onyx.sys',
      'lhr1':'prod.lhr1.grid.LHR1_Emerald.sys',
+     'pek1':'prod.pek1.grid.pek1-pyrite.sys',
      'hkg1':'prod.hkg1.grid.HKG1_Opal.sys'}
 
 prefix=prefix_dict[colo.strip()]
