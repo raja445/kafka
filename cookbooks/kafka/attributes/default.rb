@@ -104,4 +104,4 @@ default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'PEK1_Pyrite'}
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite'}
