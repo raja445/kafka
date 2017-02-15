@@ -10,4 +10,4 @@ default['zookeeper']['quorum']['dfw1'] =  {'1' => 'oxkf4001','2' => 'oxkf4002','
 default['zookeeper']['quorum']['pek1'] =  {'1' => 'pykf4001','2' => 'pykf4002','3' => 'pykf4003','4' => 'pykf4004','5' => 'pykf4005'}
 default['zookeeper']['log_dir'] = '/var/log/zookeeper'
 default['zookeeper']['lib_dir'] = '/var/lib/zookeeper'
-default['cluster_name'] = {'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald', 'dfw1' => 'DFW1_Onyx', 'pek1' => 'PEK1_Pyrite'}
+default['cluster_name'] = {'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald', 'dfw1' => 'DFW1_Onyx', 'pek1' => 'pek1-pyrite'}
