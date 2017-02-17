@@ -32,6 +32,21 @@
       }
     },
     {
+      "streamName": "ifcCookieOrganicActivityLhr1",
+      "source": [
+        {
+          "topic": "ifc_cookie_organic_activity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "webPostbacksLhr1",
       "source": [
         {
