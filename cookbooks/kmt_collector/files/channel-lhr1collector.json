@@ -325,6 +325,18 @@
       }
     },
     {
+      "streamName": "iat_report_event",
+      "source": [
+        {
+          "topic": "iat_report_event",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://emerald:8020"
+      }
+    },
+    {
       "streamName": "network_beacon_adunit_interaction_dfw1",
       "source": [
         {
