@@ -16,11 +16,11 @@ package "zookeeper-server-startup" do
   options '--force-yes'
 end
 
-package "scribe-scripts" do
-  version node['zookeeper']['scribescripts']
-  action :install
-  options '--force-yes'
-end
+#package "scribe-scripts" do
+#  version node['zookeeper']['scribescripts']
+#  action :install
+#  options '--force-yes'
+#end
 
 template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
   source "zoo.cfg.erb"
