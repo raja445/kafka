@@ -1,12 +1,12 @@
 # could be improved to run only on update
 
-package ['kafkaMirroring'] do
+package 'kafkaMirroring' do
   version node['kafkaMirroring']['version']
   options '--force-yes'
   action :install
 end
 
-package ['kafkaMirroringConfig'] do
+package 'kafkaMirroringConfig' do
   version node['kafkaMirroringConfig']['version']
   options '--force-yes'
   action :install
