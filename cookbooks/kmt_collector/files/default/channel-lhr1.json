@@ -1,0 +1,790 @@
+{
+  "streams": [
+    {
+      "streamName": "georrlite",
+      "source": [
+        {
+          "topic": "georrlite",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "profileDeleteAppd",
+      "source": [
+        {
+          "topic": "profile_delete-appd",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "profileDeleteIfc",
+      "source": [
+        {
+          "topic": "profile_delete-ifc",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "profileDeleteBrand",
+      "source": [
+        {
+          "topic": "profile_delete-brand",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "profileDeleteCore",
+      "source": [
+        {
+          "topic": "profile_delete-core",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ifcActivityHighFreq",
+      "source": [
+        {
+          "topic": "ifc_activity_high_freq",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "iatClick",
+      "source": [
+        {
+          "topic": "iat_click",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://krypton:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ifcActivityLowFreq",
+      "source": [
+        {
+          "topic": "ifc_activity_low_freq",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "perfRR",
+      "source": [
+        {
+          "topic": "perfRR",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48",
+        "removeHeaders": "true"
+      }
+    },
+    {
+      "streamName": "adroitReportObjLhr1",
+      "source": [
+        {
+          "topic": "adroit_report_obj_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "georrcore",
+      "source": [
+        {
+          "topic": "georrcore",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nestedActivityAddIfcuseractivity",
+      "source": [
+        {
+          "topic": "nested_activity_add-ifcuseractivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "flatActivityAddIfcorganicactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-ifcorganicactivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "droppedActivityLhr1",
+      "source": [
+        {
+          "topic": "dropped_activity_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "georrmetrics",
+      "source": [
+        {
+          "topic": "georrmetrics",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nestedActivityAddNw",
+      "source": [
+        {
+          "topic": "nested_activity_add-network",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
+      "streamName": "nestedActivityAddIfc",
+      "source": [
+        {
+          "topic": "nested_activity_add-ifc",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "attributeChangeCore",
+      "source": [
+        {
+          "topic": "attribute_change-core",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "thresholdSize": 32212254720,
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "attributeChangeIfc",
+      "source": [
+        {
+          "topic": "attribute_change-ifc",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "customTypeRecordUpdateCore",
+      "source": [
+        {
+          "topic": "custom_type_record_update-core",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "customTypeRecordUpdateIfc",
+      "source": [
+        {
+          "topic": "custom_type_record_update-ifc",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "networkActivityLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_activity_lhr1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ifc_activity_lhr1_lhr1",
+      "source": [
+        {
+          "topic": "ifc_activity_hkg1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_activity_dfw1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_activity_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_activity_lhr1_lhr1",
+        "workers": 5,
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcOrganicActivityLhr1Lhr1",
+      "source": [
+        {
+          "topic": "ifc_organic_activity_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_organic_activity_hkg1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "ifc_organic_activity_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "flatActivityAddAppddownloadactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-appddownloadactivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
+      "streamName": "flatActivityAddAppdcustomactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-appdcustomactivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
+      "streamName": "flatActivityAddAppdpurchaseactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-appdpurchaseactivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
+      "streamName": "nestedActivityAddAppd",
+      "source": [
+        {
+          "topic": "nested_activity_add-appd",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "attributeChangeAppd",
+      "source": [
+        {
+          "topic": "attribute_change-appd",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nwClickCpcLhr1",
+      "source": [
+        {
+          "topic": "nwClickCpcLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nwClickCpmLhr1",
+      "source": [
+        {
+          "topic": "nwClickCpmLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nwClickInvalidLhr1",
+      "source": [
+        {
+          "topic": "nwClickInvalidLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nonNwClickCpcLhr1",
+      "source": [
+        {
+          "topic": "nonNwClickCpcLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nonNwClickCpmLhr1",
+      "source": [
+        {
+          "topic": "nonNwClickCpmLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nonNwClickInvalidLhr1",
+      "source": [
+        {
+          "topic": "nonNwClickInvalidLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "renderCpmLhr1",
+      "source": [
+        {
+          "topic": "renderCpmLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "renderCpcLhr1",
+      "source": [
+        {
+          "topic": "renderCpcLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "fdsLhr1",
+      "source": [
+        {
+          "topic": "fdsLhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "napp",
+      "source": [
+        {
+          "topic": "napp",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "nestedActivityAddCas",
+      "source": [
+        {
+          "topic": "nested_activity_add-cas",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "brandAttributeLhr1Lhr1",
+      "source": [
+        {
+          "topic": "brand_attribute_lhr1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ttdRequest",
+      "source": [
+        {
+          "topic": "ttd-request",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ttdBeacon",
+      "source": [
+        {
+          "topic": "ttd-beacon",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ttdRequestGlobal",
+      "source": [
+        {
+          "topic": "ttd-request",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ttdBeaconGlobal",
+      "source": [
+        {
+          "topic": "ttd-beacon",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "appdDebug",
+      "source": [
+        {
+          "topic": "appd-debug",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "supplyRR",
+      "source": [
+        {
+          "topic": "supplyRR",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "customTypeRecordUpdateAppdlookaliketype",
+      "source": [
+        {
+          "topic": "custom_type_record_update-appdlookaliketype",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "flatActivityAddAppds2scustomsegmentactivity",
+      "source": [
+        {
+          "topic": "flat_activity_add-appds2scustomsegmentactivity",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
+      "streamName": "casNestedActivityLhr1Lhr1",
+      "source": [
+        {
+          "topic": "cas_nested_activity_hkg1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        },
+        {
+          "topic": "cas_nested_activity_dfw1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        },
+        {
+          "topic": "cas_nested_activity_uh1_lhr1",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "cas_nested_activity_lhr1_lhr1",
+        "workers": 5,
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "attributeChangeBrand",
+      "source": [
+        {
+          "topic": "attribute_change-brand",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    }
+  ]
+}
