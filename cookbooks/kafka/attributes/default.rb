@@ -17,7 +17,7 @@ default["kafka"]["service"]["stdout"] = File.join node["kafka"]["log_dir"], "kaf
 default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kafka_init_stderr.log"
 
 #hack for pek1
-#default['kafkadisks']['mounts']="/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/data/d4/kafka,/data/d5/kafka,/data/d6/kafka"
+default['kafkadisks']['mounts']="/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/data/d4/kafka,/data/d5/kafka,/data/d6/kafka"
 # These are required to be supplied by the consumer so setting to nil
 
 default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002.grid.dfw1.inmobi.com","oxkf4003.grid.dfw1.inmobi.com","oxkf4008.grid.dfw1.inmobi.com","oxkf4009.grid.dfw1.inmobi.com","oxkf4010.grid.dfw1.inmobi.com","oxkf4011.grid.dfw1.inmobi.com","oxkf4012.grid.dfw1.inmobi.com","oxkf4013.grid.dfw1.inmobi.com","oxkf4014.grid.dfw1.inmobi.com","oxkf4015.grid.dfw1.inmobi.com","oxkf4016.grid.dfw1.inmobi.com","oxkf4017.grid.dfw1.inmobi.com"]
