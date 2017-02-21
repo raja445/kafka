@@ -16,6 +16,21 @@
       }
     },
     {
+      "streamName": "ifcCookieOrganicActivityPek1",
+      "source": [
+        {
+          "topic": "ifc_cookie_organic_activity",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "webPostbacksPek1",
       "source": [
         {
@@ -136,17 +151,16 @@
       }
     },
     {
-      "streamName": "ifcActivityHighFreq",
+      "streamName": "iatClick",
       "source": [
         {
-          "topic": "ifc_activity_high_freq",
+          "topic": "iat_click",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
-        "base64": "false",
         "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
+        "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -160,6 +174,22 @@
         }
       ],
       "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ifcActivityHighFreq",
+      "source": [
+        {
+          "topic": "ifc_activity_high_freq",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://gold:8020",
         "compression": "gz",
@@ -274,6 +304,21 @@
       }
     },
     {
+      "streamName": "napp",
+      "source": [
+        {
+          "topic": "napp",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://pyrite:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "nestedActivityAddNw",
       "source": [
         {
@@ -285,7 +330,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
@@ -316,7 +361,7 @@
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
         "thresholdSize": 32212254720,
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -331,7 +376,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -383,8 +428,8 @@
       "streamName": "ifc_activity_pek1_pek1",
       "source": [
         {
-          "topic": "ifc_activity_hkg1_pek1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+          "topic": "ifc_activity_lhr1_pek1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
         },
         {
           "topic": "ifc_activity_dfw1_pek1",
@@ -403,22 +448,102 @@
       }
     },
     {
-      "streamName": "ifcOrganicActivityPek1Pek1",
+      "streamName": "networkBeaconUh1Uh1",
       "source": [
         {
-          "topic": "ifc_organic_activity_uh1_pek1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        },
+          "topic": "network_beacon_pek1_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_uh1_uh1",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconDfw1Dfw1",
+      "source": [
         {
-          "topic": "ifc_organic_activity_hkg1_pek1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+          "topic": "network_beacon_pek1_dfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_beacon_pek1_lhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkPostImpressionDfw1Dfw1",
+      "source": [
+        {
+          "topic": "network_post_impression_pek1_dfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
       ],
       "kafkaDestination": {
         "waitTime": 5000,
         "batchSize": 10000,
-        "topic": "ifc_organic_activity_pek1_pek1",
-        "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        "topic": "network_post_impression_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkPostImpressionLhr1Lhr1",
+      "source": [
+        {
+          "topic": "network_post_impression_pek1_lhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_post_impression_lhr1_lhr1",
+        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkPostImpressionUh1Uh1",
+      "source": [
+        {
+          "topic": "network_post_impression_pek1_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_post_impression_uh1_uh1",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcOrganicActivityUh1Uh1",
+      "source": [
+        {
+          "topic": "ifc_organic_activity_pek1_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "ifc_organic_activity_uh1_uh1",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
@@ -448,7 +573,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
@@ -463,7 +588,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
@@ -494,6 +619,36 @@
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
         "retention": "192"
+      }
+    },
+    {
+      "streamName": "userPek1Mapping",
+      "source": [
+        {
+          "topic": "user_pek1_mapping",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "brandAttributePek1Pek1",
+      "source": [
+        {
+          "topic": "brand_attribute_pek1_pek1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://pyrite:8020",
+        "compression": "gz",
+        "retention": "48"
       }
     },
     {
@@ -617,6 +772,21 @@
       }
     },
     {
+      "streamName": "nestedActivityAddCas",
+      "source": [
+        {
+          "topic": "nested_activity_add-cas",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://pyrite:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
       "streamName": "fdsPek1",
       "source": [
         {
@@ -632,10 +802,10 @@
       }
     },
     {
-      "streamName": "napp",
+      "streamName": "supplyRR",
       "source": [
         {
-          "topic": "napp",
+          "topic": "supplyRR",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
       ],
@@ -643,29 +813,14 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
-      "streamName": "nestedActivityAddCas",
+      "streamName": "customTypeRecordUpdateAppdlookaliketype",
       "source": [
         {
-          "topic": "nested_activity_add-cas",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "brandAttributePek1Pek1",
-      "source": [
-        {
-          "topic": "brand_attribute_pek1_pek1",
+          "topic": "custom_type_record_update-appdlookaliketype",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
       ],
@@ -752,36 +907,6 @@
       }
     },
     {
-      "streamName": "supplyRR",
-      "source": [
-        {
-          "topic": "supplyRR",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "compression": "gz",
-        "retention": "72"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateAppdlookaliketype",
-      "source": [
-        {
-          "topic": "custom_type_record_update-appdlookaliketype",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "flatActivityAddAppds2scustomsegmentactivity",
       "source": [
         {
@@ -793,15 +918,15 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "72"
       }
     },
     {
       "streamName": "casNestedActivityPek1Pek1",
       "source": [
         {
-          "topic": "cas_nested_activity_hkg1_pek1",
-          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+          "topic": "cas_nested_activity_lhr1_pek1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
         },
         {
           "topic": "cas_nested_activity_dfw1_pek1",
@@ -820,105 +945,6 @@
       }
     },
     {
-      "streamName": "networkBeaconUh1Uh1",
-      "source": [
-        {
-          "topic": "network_beacon_pek1_uh1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "network_beacon_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkBeaconDfw1Dfw1",
-      "source": [
-        {
-          "topic": "network_beacon_pek1_dfw1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "network_beacon_dfw1_dfw1",
-        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkBeaconHkg1Hkg1",
-      "source": [
-        {
-          "topic": "network_beacon_pek1_hkg1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "network_beacon_hkg1_hkg1",
-        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkPostImpressionUh1Uh1",
-      "source": [
-        {
-          "topic": "network_post_impression_pek1_uh1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_post_impression_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkPostImpressionDfw1Dfw1",
-      "source": [
-        {
-          "topic": "network_post_impression_pek1_dfw1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_post_impression_dfw1_dfw1",
-        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkPostImpressionHkg1Hkg1",
-      "source": [
-        {
-          "topic": "network_post_impression_pek1_hkg1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_post_impression_hkg1_hkg1",
-        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "attributeChangeBrand",
-      "source": [
-        {
-          "topic": "attribute_change-brand",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "compression": "gz",
-        "retention": "72"
-      }
-    },
-    {
       "streamName": "networkBeaconPek1Pek1",
       "source": [
         {
@@ -934,10 +960,10 @@
       }
     },
     {
-      "streamName": "networkAttributeRawPek1",
+      "streamName": "attributeChangeBrand",
       "source": [
         {
-          "topic": "network_attribute_raw_pek1",
+          "topic": "attribute_change-brand",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
       ],
@@ -945,7 +971,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "48"
       }
     },
     {
@@ -989,6 +1015,21 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
+      "streamName": "networkAttributeRawPek1",
+      "source": [
+        {
+          "topic": "network_attribute_raw_pek1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
         "retention": "72"
       }
