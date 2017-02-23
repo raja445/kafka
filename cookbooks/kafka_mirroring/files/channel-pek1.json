@@ -432,6 +432,10 @@
           "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
         },
         {
+          "topic": "ifc_activity_hkg1_pek1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
+        },
+        {
           "topic": "ifc_activity_dfw1_pek1",
           "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
         },
@@ -458,6 +462,19 @@
       "kafkaDestination": {
         "topic": "network_beacon_uh1_uh1",
         "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconHkg1Hkg1",
+      "source": [
+        {
+          "topic": "network_beacon_pek1_hkg1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_beacon_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
       }
     },
     {
@@ -499,6 +516,21 @@
         "batchSize": 10000,
         "topic": "network_post_impression_dfw1_dfw1",
         "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkPostImpressionHkg1Hkg1",
+      "source": [
+        {
+          "topic": "network_post_impression_pek1_hkg1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_post_impression_hkg1_hkg1",
+        "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
       }
     },
     {
@@ -927,6 +959,10 @@
         {
           "topic": "cas_nested_activity_lhr1_pek1",
           "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        },
+        {
+          "topic": "cas_nested_activity_hkg1_pek1",
+          "zookeeper": "kafka-zookeeper.grid.hkg1.inmobi.com:2181"
         },
         {
           "topic": "cas_nested_activity_dfw1_pek1",
