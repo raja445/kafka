@@ -1,0 +1,67 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called 'end-collector'
+
+####################################################################################################
+#avro source => disk backed memory => kafka
+####################################################################################################
+
+end-collector.sources =<% @sources.each do |src, details| %><%= " #{src}" %><% end %>
+end-collector.channels = <% @channels.each do |channel, details| %><%= " #{channel}" %><% end %>
+end-collector.sinks = <% @sinks.each do |sink, details| %><%= " #{sink}" %><% end %>
+
+
+<% @sources.each do |src, details| %>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
+end-collector.sources.<%= "#{src}" %>.bind = <%= details[:bind] %>
+end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
+<% if details[:'enable_compression'] == true -%>
+end-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
+<% end -%>
+end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= details[:'kafka.zookeeper'] %> 
+<% end %>
+
+
+<% @sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = <%= details[:type] %>
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.topicHeader = <%= details[:topicHeader] %>
+end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = <%= details[:flumeBatchSize] %>
+end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= details[:'kafka.bootstrap.servers'] %>
+end-collector.sinks.<%= "#{sink}" %>.kafka.topic = <%= details[:'kafka.topic'] %>
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
+# valid values none, gzip, snappy
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = <%= details[:'kafka.producer.compression.type'] %>
+<% end %>
+
+
+<% @channels.each do |channel, details| %>
+end-collector.channels.<%= "#{channel}" %>.type = <%= details[:type] %>
+end-collector.channels.<%= "#{channel}" %>.capacity = <%= details[:capacity] %>
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = <%= details[:transactionCapacity] %>
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = <%= details[:spoolDiskCapacityMB] %>
+<% end %>
