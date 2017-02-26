@@ -1,4 +1,4 @@
-name              "flume_collector"
+name              "flume_end_collector"
 maintainer        "gridops"
 maintainer_email  "gridops@imobi.com"
 description       'Installs and configures Flume Collector'
