@@ -9,18 +9,6 @@ flumeHome="#{node["flume_collector"]["base_dir"]}/flume"
 flumeConf="#{flumeInstallDir}/conf"
 lockFile="#{flumeInstallDir}/LOCK"
 
-if node['flume_end_collector']['sources'].attribute?(colo)
-  sources=node["flume_end_collector"]["sources"][colo]
-else
-  sources=node["flume_end_collector"]["sources"]["default"]
-end
-
-if node["flume_end_collector"]["channels"].attribute?(colo)
-  channels=node["flume_end_collector"]["channels"][colo]
-else
-  channels=node["flume_end_collector"]["channels"]["default"]
-end
-
 directory "#{flumeInstallDir}" do
   action :create
   owner 'flume'
@@ -68,16 +56,24 @@ execute "Create Lock file" do
   end
 end
 
+
 template "#{flumeConf}/flume-end-collector.properties" do
   source "flume-end-collector.properties.erb"
   owner "flume"
   mode  00644
   variables(
-    :sources =>sources,
-    :channels =>channels,
+    :sources =>node["flume_collector"]["endcollector_sources"][colo],
+    :normal_avroreceive_channels =>node["flume_collector"]["endcollector_normal_avroreceive_channels"][colo],
+    :merge_avroreceive_channels =>node["flume_collector"]["endcollector_merge_avroreceive_channels"][colo],
+    :merge_kafkaread_channels =>node["flume_collector"]["endcollector_merge_kafkaread_channels"][colo],
+    :normal_kafka_sinks =>node["flume_collector"]["endcollector_normal_kafka_sinks"][colo],
+    :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
+    :merged_avro_sinks =>node["flume_collector"]["endcollector_merged_avro_sinks"][colo],
     :sinks =>node["flume_collector"]["endcollector_sinks"][colo],
+    :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
+    :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
+    :flumevip =>node["flume_collector"]["vip"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
-    :'kafka.zookeeper' =>node["flume_collector"]["kafka_zookeeper"][colo],
     :colo => colo
   )
 
