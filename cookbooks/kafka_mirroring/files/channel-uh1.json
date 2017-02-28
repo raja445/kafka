@@ -147,19 +147,6 @@
       }
     },
     {
-      "streamName": "networkAttributeUh1Pek1",
-      "source": [
-        {
-          "topic": "network_attribute_uh1_pek1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "network_attribute_pek1_pek1",
-        "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "networkClickUh1Pek1",
       "source": [
         {
