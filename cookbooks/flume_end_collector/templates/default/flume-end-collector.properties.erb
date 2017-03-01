@@ -26,8 +26,8 @@
 ####################################################################################################
 
 end-collector.sources =<% @sources.each do |src, details| %><%= " #{src}" %><% end %>
-end-collector.channels = <% @channels.each do |channel, details| %><%= " #{channel}" %><% end %>
-end-collector.sinks = <% @sinks.each do |sink, details| %><%= " #{sink}" %><% end %>
+end-collector.channels = <%= @allchannels %>
+end-collector.sinks = <%= @allsinks %>
 
 
 <% @sources.each do |src, details| %>
@@ -55,6 +55,8 @@ end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
+end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 <% end -%>
 <% end -%>
 
@@ -90,7 +92,7 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
 end-collector.sinks.<%= "#{sink}" %>.type = avro
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.hostname = <%= @flumevip %>
-end-collector.sinks.<%= "#{sink}" %>.port = 2542
+end-collector.sinks.<%= "#{sink}" %>.port = 2540
 end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
 # tune based on the setup and performance. must be less than the transaction capacity of the channel attached
 end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
@@ -113,10 +115,11 @@ end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
 <% end %>
-<% @merge_avroreceive_channels.each do |channel| %>
+<% @merge_kafkaread_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-end-collector.channels.<%= "#{channel}" %>.capacity = 50000
+end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
 <% end %>
+

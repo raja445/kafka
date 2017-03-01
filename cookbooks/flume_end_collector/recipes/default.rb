@@ -69,10 +69,11 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :normal_kafka_sinks =>node["flume_collector"]["endcollector_normal_kafka_sinks"][colo],
     :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
     :merged_avro_sinks =>node["flume_collector"]["endcollector_merged_avro_sinks"][colo],
-    :sinks =>node["flume_collector"]["endcollector_sinks"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
     :flumevip =>node["flume_collector"]["vip"][colo],
+    :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
+    :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
     :colo => colo
   )
@@ -145,4 +146,5 @@ end
 link '/service/flume_healthcheck' do
   to '/etc/flume_health/flume_healthcheck'
 end
+
 
