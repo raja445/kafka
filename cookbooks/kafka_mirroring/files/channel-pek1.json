@@ -1267,7 +1267,7 @@
         },
         {
             "kafkaDestination": {
-                "topic": "rk_conversion_uh1_uh1",
+                "topic": "network_conversion_uh1_uh1",
                 "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
             },
             "source": [
