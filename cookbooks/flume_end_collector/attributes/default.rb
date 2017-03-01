@@ -21,12 +21,6 @@ default["flume_collector"]["kafka_zookeeper"]['lhr1']  = "kafka-zookeeper-1.grid
 default["flume_collector"]["kafka_zookeeper"]['hkg1']  = "kafka-zookeeper-1.grid.hkg1.inmobi.com:2181,kafka-zookeeper-2.grid.hkg1.inmobi.com:2181,kafka-zookeeper-3.grid.hkg1.inmobi.com:2181,kafka-zookeeper-4.grid.hkg1.inmobi.com:2181,kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"
 default["flume_collector"]["kafka_zookeeper"]['pek1']  = "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
 
-# Flume VIPs in each colo
-default["flume_collector"]["vip"]['uh1']  = "flume.grid.uh1.inmobi.com"
-default["flume_collector"]["vip"]['dfw1']  = "flume.grid.dfw1.inmobi.com"
-default["flume_collector"]["vip"]['lhr1']  = "flume.grid.lhr1.inmobi.com"
-default["flume_collector"]["vip"]['hkg1']  = "flume.grid.hkg1.inmobi.com"
-
 
 ######################################################### UH1 ###################################################################
 
@@ -130,16 +124,16 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['uh1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
-     "uh1-mergesink1" => {:channel => "uh1-to-uh1-channel1"},
-     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel2"},
-     "hkg1-mergesink1" => {:channel => "uh1-to-hkg1-channel1"},
-     "hkg1-mergesink2" => {:channel => "uh1-to-hkg1-channel2"},
-     "dfw1-mergesink1" => {:channel => "uh1-to-dfw1-channel1"},
-     "dfw1-mergesink2" => {:channel => "uh1-to-dfw1-channel2"},
-     "lhr1-mergesink1" => {:channel => "uh1-to-lhr1-channel1"},
-     "lhr1-mergesink2" => {:channel => "uh1-to-lhr1-channel2"},
-     "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel1"},
-     "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel2"}
+     "uh1-mergesink1" => {:channel => "uh1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "hkg1-mergesink1" => {:channel => "uh1-to-hkg1-channel1",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "hkg1-mergesink2" => {:channel => "uh1-to-hkg1-channel2",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "uh1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "uh1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "uh1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "uh1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
 ######################################################### End Of UH1 ###################################################################
@@ -253,16 +247,16 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
-     "uh1-mergesink1" => {:channel => "dfw1-to-uh1-channel1"},
-     "uh1-mergesink2" => {:channel => "dfw1-to-uh1-channel2"},
-     "hkg1-mergesink1" => {:channel => "dfw1-to-hkg1-channel1"},
-     "hkg1-mergesink2" => {:channel => "dfw1-to-hkg1-channel2"},
-     "dfw1-mergesink1" => {:channel => "dfw1-to-dfw1-channel1"},
-     "dfw1-mergesink2" => {:channel => "dfw1-to-dfw1-channel2"},
-     "lhr1-mergesink1" => {:channel => "dfw1-to-lhr1-channel1"},
-     "lhr1-mergesink2" => {:channel => "dfw1-to-lhr1-channel2"},
-     "pek1-mergesink1" => {:channel => "dfw1-to-pek1-channel1"},
-     "pek1-mergesink2" => {:channel => "dfw1-to-pek1-channel2"}
+     "uh1-mergesink1" => {:channel => "dfw1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "dfw1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "hkg1-mergesink1" => {:channel => "dfw1-to-hkg1-channel1",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "hkg1-mergesink2" => {:channel => "dfw1-to-hkg1-channel2",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "dfw1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "dfw1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "dfw1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "dfw1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "dfw1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "dfw1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
 ######################################################### End Of DFW1 ###################################################################
@@ -377,16 +371,16 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['lhr1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['lhr1']  = {
-     "uh1-mergesink1" => {:channel => "lhr1-to-uh1-channel1"},
-     "uh1-mergesink2" => {:channel => "lhr1-to-uh1-channel2"},
-     "hkg1-mergesink1" => {:channel => "lhr1-to-hkg1-channel1"},
-     "hkg1-mergesink2" => {:channel => "lhr1-to-hkg1-channel2"},
-     "dfw1-mergesink1" => {:channel => "lhr1-to-dfw1-channel1"},
-     "dfw1-mergesink2" => {:channel => "lhr1-to-dfw1-channel2"},
-     "lhr1-mergesink1" => {:channel => "lhr1-to-lhr1-channel1"},
-     "lhr1-mergesink2" => {:channel => "lhr1-to-lhr1-channel2"},
-     "pek1-mergesink1" => {:channel => "lhr1-to-pek1-channel1"},
-     "pek1-mergesink2" => {:channel => "lhr1-to-pek1-channel2"}
+     "uh1-mergesink1" => {:channel => "lhr1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "lhr1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "hkg1-mergesink1" => {:channel => "lhr1-to-hkg1-channel1",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "hkg1-mergesink2" => {:channel => "lhr1-to-hkg1-channel2",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "lhr1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "lhr1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "lhr1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "lhr1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "lhr1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "lhr1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
 ######################################################### End Of LHR1 ###################################################################
@@ -503,16 +497,16 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['hkg1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['hkg1']  = {
-     "uh1-mergesink1" => {:channel => "hkg1-to-uh1-channel1"},
-     "uh1-mergesink2" => {:channel => "hkg1-to-uh1-channel2"},
-     "hkg1-mergesink1" => {:channel => "hkg1-to-hkg1-channel1"},
-     "hkg1-mergesink2" => {:channel => "hkg1-to-hkg1-channel2"},
-     "dfw1-mergesink1" => {:channel => "hkg1-to-dfw1-channel1"},
-     "dfw1-mergesink2" => {:channel => "hkg1-to-dfw1-channel2"},
-     "lhr1-mergesink1" => {:channel => "hkg1-to-lhr1-channel1"},
-     "lhr1-mergesink2" => {:channel => "hkg1-to-lhr1-channel2"},
-     "pek1-mergesink1" => {:channel => "hkg1-to-pek1-channel1"},
-     "pek1-mergesink2" => {:channel => "hkg1-to-pek1-channel2"}
+     "uh1-mergesink1" => {:channel => "hkg1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "hkg1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "hkg1-mergesink1" => {:channel => "hkg1-to-hkg1-channel1",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "hkg1-mergesink2" => {:channel => "hkg1-to-hkg1-channel2",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "hkg1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "hkg1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "hkg1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "hkg1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "hkg1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "hkg1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
 ######################################################### End Of HKG1 ###################################################################
@@ -622,17 +616,18 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['pek1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['pek1']  = {
-     "uh1-mergesink1" => {:channel => "pek1-to-uh1-channel1"},
-     "uh1-mergesink2" => {:channel => "pek1-to-uh1-channel2"},
-     "hkg1-mergesink1" => {:channel => "pek1-to-hkg1-channel1"},
-     "hkg1-mergesink2" => {:channel => "pek1-to-hkg1-channel2"},
-     "dfw1-mergesink1" => {:channel => "pek1-to-dfw1-channel1"},
-     "dfw1-mergesink2" => {:channel => "pek1-to-dfw1-channel2"},
-     "lhr1-mergesink1" => {:channel => "pek1-to-lhr1-channel1"},
-     "lhr1-mergesink2" => {:channel => "pek1-to-lhr1-channel2"},
-     "pek1-mergesink1" => {:channel => "pek1-to-pek1-channel1"},
-     "pek1-mergesink2" => {:channel => "pek1-to-pek1-channel2"}
+     "uh1-mergesink1" => {:channel => "pek1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "pek1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "hkg1-mergesink1" => {:channel => "pek1-to-hkg1-channel1",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "hkg1-mergesink2" => {:channel => "pek1-to-hkg1-channel2",:flumevip =>"flume.grid.hkg1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "pek1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "pek1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "pek1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "pek1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "pek1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "pek1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
 ######################################################### End Of PEK1 ###################################################################
+
 
