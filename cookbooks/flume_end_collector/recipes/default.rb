@@ -71,7 +71,6 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :merged_avro_sinks =>node["flume_collector"]["endcollector_merged_avro_sinks"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
-    :flumevip =>node["flume_collector"]["vip"][colo],
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
     :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
