@@ -13,6 +13,30 @@
       }
     },
     {
+      "streamName": "network_beacon_pek1_adunit",
+      "source": [
+        {
+          "topic": "network_beacon_pek1_adunit",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://pyrite:8020"
+      }
+    },
+    {
+      "streamName": "network_beacon_pek1_publisherfill",
+      "source": [
+        {
+          "topic": "network_beacon_pek1_publisherfill",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://pyrite:8020"
+      }
+    },
+    {
       "streamName": "beacon_rr_dfw1_cpc_render",
       "source": [
         {
