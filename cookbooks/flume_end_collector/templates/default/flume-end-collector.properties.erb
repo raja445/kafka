@@ -57,6 +57,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
 <% end -%>
 <% end -%>
 
