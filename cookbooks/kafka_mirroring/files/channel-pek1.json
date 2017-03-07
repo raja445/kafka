@@ -1369,6 +1369,21 @@
             ],
             "streamName": "networkRenderCpmPek1Lhr1"
         },
+    {
+      "streamName": "cookieMappingUh1Merge",
+      "source": [
+        {
+          "topic": "cookie_mapping",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "cookie_mapping",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
         {
             "kafkaDestination": {
                 "topic": "network_render_cpm_uh1_uh1",
