@@ -31,7 +31,7 @@ end-collector.sinks = <%= @allsinks %>
 
 
 <% @sources.each do |src, details| %>
-<% if details[:'type'] == 'avro' -%>
+<% if details[:'src_category'] == 'avro' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
@@ -44,7 +44,7 @@ end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= @kafkazookeeper %>
 <% end %>
-<% if details[:'type'] == 'org.apache.flume.source.kafka.MultiKafkaSource' -%>
+<% if details[:'src_category'] == 'kafkamerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
@@ -58,6 +58,18 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+<% end -%>
+<% if details[:'src_category'] == 'hdfslocal' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
 <% end -%>
 <% end -%>
 
