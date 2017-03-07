@@ -1,8 +1,9 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["flume_collector"]["version"] = "1.6.0.13"
+default["flume_collector"]["version"] = "1.6.0.13.2"
 default["flume_collector"]["download_url"] = "https://artifactory.corp.inmobi.com/artifactory/generic-tarball/flume/1.6.0.13/apache-flume-1.6.0.13-bin.tar.gz"
+default["flume_collector"]["download_url"] = "https://build-dev.corp.inmobi.com/job/hdfssink_Dev_hdfssink/9/artifact/flume-ng-dist/target/apache-flume-1.6.0.14-SNAPSHOT-bin.tar.gz"
 default["flume_collector"]["base_dir"]  = "/opt/inmobi"
 default["flume_collector"]["spool_dir"]  = "/data/d1/flume/spool"
 default["flume_collector"]["pid_dir"]  = "/var/run/flume"
@@ -545,6 +546,12 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
          :port => "2542"},
+     "hdfslocalsrc" => {
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocal-channel1 hdfslocal-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge"}
      "pek1-to-uh1-mergesrc1" => {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "pek1-to-uh1-channel1 pek1-to-uh1-channel2",
@@ -581,6 +588,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['pek1']  = ["spillable1","spillable2","spillable3","spillable4","spillable5","spillable6","spillable7","spillable8","spillable9","spillable10","spillable11","spillable12","spillable13","spillable14","spillable15","spillable16","spillable17","spillable18","spillable19","spillable20","spillable21","spillable22","spillable23","spillable24","spillable25","spillable26","spillable27","spillable28","spillable29","spillable30","spillable31","spillable32"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['pek1']  = ["mergespillable1","mergespillable2"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['pek1']  = ["pek1-to-uh1-channel1","pek1-to-uh1-channel2","pek1-to-hkg1-channel1","pek1-to-hkg1-channel2","pek1-to-pek1-channel1","pek1-to-pek1-channel2","pek1-to-lhr1-channel1","pek1-to-lhr1-channel2","pek1-to-dfw1-channel1","pek1-to-dfw1-channel2"]
+default["flume_collector"]["endcollector_local_hdfs_channels"]['pek1']  = ["hdfslocal-channel1","hdfslocal-channel2"]
 
 
 #Configure the sinks for the Flume Collector
@@ -638,6 +646,10 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['pek1']  = {
      "pek1-mergesink2" => {:channel => "pek1-to-pek1-channel2",:flumevip =>"pykm4006.grid.pek1.inmobi.com"}
 }
 
+default["flume_collector"]["endcollector_local_hdfs_sinks"]['pek1']  = {
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"pyrite"}
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel2",:cluster =>"pyrite"}
+}
 ######################################################### End Of PEK1 ###################################################################
 
 
