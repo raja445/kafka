@@ -38,6 +38,8 @@ export FLUME_JMX_PORT=2520
 
 export FLUME_STOP_TIMEOUT=180
 
+export HADOOP_REQUIRED=true
+
 # Give Flume more memory and pre-allocate
 export JAVA_OPTS="-Xms$MIN_HEAPSIZE -Xmx$MAX_HEAPSIZE -XX:MaxMetaspaceSize=$MAX_METASPACE_SIZE -XX:MaxDirectMemorySize=$MAX_DIRECT_MEMORY_SIZE -XX:+UseG1GC -XX:+PrintFlagsFinal"
 
