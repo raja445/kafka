@@ -100,7 +100,31 @@ end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
 # addition of new nodes to the load balancer will take affect by resetting the connections periodically.
 end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
 <% end %>
-
+<% @local_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.DatabusHDFSSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/staging/local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/tmp/databus/temp/local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/tmp/databus/staging/local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.min.path = hdfs://<%= details[:cluster] %>/tmp/databus/streams_local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = CompressedStream
+end-collector.sinks.<%= "#{sink}" %>.hdfs.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 5
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 2.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.path = /local/promoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.path = /local/retention
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+<% end %>
 
 <% @normal_avroreceive_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
@@ -117,6 +141,13 @@ end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
 <% end %>
 <% @merge_kafkaread_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+end-collector.channels.<%= "#{channel}" %>.capacity = 10000
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+<% end %>
+<% @local_hdfs_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500

@@ -69,6 +69,8 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :normal_kafka_sinks =>node["flume_collector"]["endcollector_normal_kafka_sinks"][colo],
     :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
     :merged_avro_sinks =>node["flume_collector"]["endcollector_merged_avro_sinks"][colo],
+    :local_hdfs_sinks =>node["flume_collector"]["endcollector_local_hdfs_sinks"][colo],
+    :local_hdfs_channels =>node["flume_collector"]["endcollector_local_hdfs_channels"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
