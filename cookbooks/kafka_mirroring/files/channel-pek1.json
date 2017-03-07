@@ -1,21 +1,6 @@
 {
   "streams": [
     {
-      "streamName": "cookieMappingPek1",
-      "source": [
-        {
-          "topic": "cookie_mapping",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "ifcCookieOrganicActivityPek1",
       "source": [
         {
