@@ -56,7 +56,7 @@ export JAVA_OPTS="$JAVA_OPTS -Dflume.monitoring.type=http -Dflume.monitoring.por
 export JAVA_OPTS="$JAVA_OPTS -Dflume.root.log.level=$FLUME_ROOT_LOG_LEVEL -Dflume.log.dir=$FLUME_LOGS_HOME -Dflume.log.backup.dir=$FLUME_LOGS_BACKUP_HOME"
 
 export HDP_VERSION=2.2.4.2-2
-export LD_LIBRARY_PATH=LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64
+export LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64
 export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$LD_LIBRARY_PATH"
 
 # Note that the Flume conf directory is always included in the classpath.
