@@ -551,7 +551,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "hdfslocal-channel1 hdfslocal-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"}
+         :'kafka.topics' => "testmerge"},
      "pek1-to-uh1-mergesrc1" => {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "pek1-to-uh1-channel1 pek1-to-uh1-channel2",
@@ -647,7 +647,7 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['pek1']  = {
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['pek1']  = {
-     "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"pyrite"}
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"pyrite"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel2",:cluster =>"pyrite"}
 }
 ######################################################### End Of PEK1 ###################################################################
