@@ -67,6 +67,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :batchSize => 500,
          :'kafka.topics' => "testmerge"},
      "uh1-to-uh1-mergesrc1" => {
+         :src_category => "kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "uh1-to-uh1-channel1 uh1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
