@@ -1777,6 +1777,110 @@
        }
     },
     {
+      "streamName": "nonNwClickCpcUh1",
+      "source": [
+        {
+          "topic": "nonNwClickCpcUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "nonNwClickCpmUh1",
+      "source": [
+        {
+          "topic": "nonNwClickCpmUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "nonNwClickInvalidUh1",
+      "source": [
+        {
+          "topic": "nonNwClickInvalidUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "nwClickCpcUh1",
+      "source": [
+        {
+          "topic": "nwClickCpcUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "nwClickCpmUh1",
+      "source": [
+        {
+          "topic": "nwClickCpmUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "nwClickInvalidUh1",
+      "source": [
+        {
+          "topic": "nwClickInvalidUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "renderCpcUh1",
+      "source": [
+        {
+          "topic": "renderCpcUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
+      "streamName": "renderCpmUh1",
+      "source": [
+        {
+          "topic": "renderCpmUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+       }
+    },
+    {
       "streamName": "iat_report_event",
       "source": [
         {

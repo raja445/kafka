@@ -1193,6 +1193,110 @@
        }
     },
     {
+      "streamName": "nonNwClickCpcDfw1",
+      "source": [
+        {
+          "topic": "nonNwClickCpcDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "nonNwClickCpmDfw1",
+      "source": [
+        {
+          "topic": "nonNwClickCpmDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "nonNwClickInvalidDfw1",
+      "source": [
+        {
+          "topic": "nonNwClickInvalidDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "nwClickCpcDfw1",
+      "source": [
+        {
+          "topic": "nwClickCpcDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "nwClickCpmDfw1",
+      "source": [
+        {
+          "topic": "nwClickCpmDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "nwClickInvalidDfw1",
+      "source": [
+        {
+          "topic": "nwClickInvalidDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "renderCpcDfw1",
+      "source": [
+        {
+          "topic": "renderCpcDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "renderCpmDfw1",
+      "source": [
+        {
+          "topic": "renderCpmDfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
       "streamName": "fds_dfw1",
       "source": [
         {

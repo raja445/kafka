@@ -1181,6 +1181,110 @@
        }
     },
     {
+      "streamName": "nonNwClickCpcLhr1",
+      "source": [
+        {
+          "topic": "nonNwClickCpcLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "nonNwClickCpmLhr1",
+      "source": [
+        {
+          "topic": "nonNwClickCpmLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "nonNwClickInvalidLhr1",
+      "source": [
+        {
+          "topic": "nonNwClickInvalidLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "nwClickCpcLhr1",
+      "source": [
+        {
+          "topic": "nwClickCpcLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "nwClickCpmLhr1",
+      "source": [
+        {
+          "topic": "nwClickCpmLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "nwClickInvalidLhr1",
+      "source": [
+        {
+          "topic": "nwClickInvalidLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "renderCpcLhr1",
+      "source": [
+        {
+          "topic": "renderCpcLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
+      "streamName": "renderCpmLhr1",
+      "source": [
+        {
+          "topic": "renderCpmLhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
       "streamName": "fds_lhr1",
       "source": [
         {
