@@ -49,6 +49,13 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
          :port => "2542"},
+     "hdfslocalsrc" => {
+         :src_category => "hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocal-channel1 hdfslocal-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
@@ -93,6 +100,7 @@ default["flume_collector"]["endcollector_normal_avroreceive_channels"]['uh1']  =
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['uh1']  = ["mergespillable1","mergespillable2"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['uh1']  = ["uh1-to-uh1-channel1","uh1-to-uh1-channel2","uh1-to-hkg1-channel1","uh1-to-hkg1-channel2","uh1-to-pek1-channel1","uh1-to-pek1-channel2","uh1-to-lhr1-channel1","uh1-to-lhr1-channel2","uh1-to-dfw1-channel1","uh1-to-dfw1-channel2"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['uh1']  = ["hdfsmerge-channel1","hdfsmerge-channel2"]
+default["flume_collector"]["endcollector_local_hdfs_channels"]['uh1']  = ["hdfslocal-channel1","hdfslocal-channel2"]
 
 
 #Configure the sinks for the Flume Collector
@@ -148,6 +156,11 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
 #     "lhr1-mergesink2" => {:channel => "uh1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
      "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel1",:flumevip =>"pykm4006.grid.pek1.inmobi.com"},
      "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel2",:flumevip =>"pykm4006.grid.pek1.inmobi.com"}
+}
+
+default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"krypton"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel2",:cluster =>"krypton"}
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['uh1']  = {
