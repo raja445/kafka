@@ -42,7 +42,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -57,7 +57,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -72,7 +72,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -87,7 +87,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -102,7 +102,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -117,7 +117,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -132,7 +132,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -255,7 +255,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -270,7 +270,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -315,7 +315,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -346,7 +346,7 @@
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
         "thresholdSize": 32212254720,
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -361,7 +361,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -376,7 +376,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -391,7 +391,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -575,7 +575,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -590,7 +590,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -605,7 +605,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -620,7 +620,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -635,7 +635,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -680,7 +680,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -725,7 +725,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -815,7 +815,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -872,7 +872,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
@@ -902,7 +902,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://pyrite:8020",
         "compression": "gz",
-        "retention": "120"
+        "retention": "48"
       }
     },
     {
