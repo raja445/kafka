@@ -38,14 +38,6 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :port => "2540"},
-     "scribesrc" => {
-         :src_category => "scribe",
-         :type => "org.apache.flume.source.scribe.ScribeSource",
-         :channels => "scribespillable1, scribespillable2",
-         :maxReadBufferBytes => 67108864,
-         :workerThreads => 16,
-         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-         :port => "2530"},
      "zipavrosrc" => {
          :src_category => "avro",
          :type => "avro",
@@ -112,7 +104,6 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['uh1']  = ["spillable1","spillable2","spillable3","spillable4","spillable5","spillable6","spillable7","spillable8","spillable9","spillable10","spillable11","spillable12","spillable13","spillable14","spillable15","spillable16","spillable17","spillable18","spillable19","spillable20","spillable21","spillable22","spillable23","spillable24","spillable25","spillable26","spillable27","spillable28","spillable29","spillable30","spillable31","spillable32"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['uh1']  = ["mergespillable1","mergespillable2"]
-default["flume_collector"]["endcollector_audit_avro_channels"]['uh1']  = ["scribespillable1","scribespillable2"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['uh1']  = ["uh1-to-uh1-channel1","uh1-to-uh1-channel2","uh1-to-hkg1-channel1","uh1-to-hkg1-channel2","uh1-to-pek1-channel1","uh1-to-pek1-channel2","uh1-to-lhr1-channel1","uh1-to-lhr1-channel2","uh1-to-dfw1-channel1","uh1-to-dfw1-channel2"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['uh1']  = ["hdfsmerge-channel1","hdfsmerge-channel2"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['uh1']  = ["hdfslocal-channel1","hdfslocal-channel2"]
@@ -171,11 +162,6 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
 #     "lhr1-mergesink2" => {:channel => "uh1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
      "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel1",:flumevip =>"pykm4006.grid.pek1.inmobi.com"},
      "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel2",:flumevip =>"pykm4006.grid.pek1.inmobi.com"}
-}
-
-default["flume_collector"]["endcollector_audit_avro_sinks"]['uh1']  = {
-     "audit_avrosink1" => {:channel => "auditchannel1",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-     "audit_avrosink2" => {:channel => "auditchannel2",:flumevip =>"krkf4012.grid.uh1.inmobi.com"}
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
