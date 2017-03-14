@@ -691,6 +691,10 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['pek1']  = {
      "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"pyrite"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel2",:cluster =>"pyrite"}
 }
+default["flume_collector"]["endcollector_merged_hdfs_sinks"]['pek1']  = {
+     "hdfsmerge-sink1" => {:channel => "hdfsmerge-channel1",:cluster =>"pyrite"},
+     "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel2",:cluster =>"pyrite"}
+}
 ######################################################### End Of PEK1 ###################################################################
 
 
