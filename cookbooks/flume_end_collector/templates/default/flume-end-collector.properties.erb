@@ -170,8 +170,7 @@ end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
 end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
-end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = CompressedStream
-end-collector.sinks.<%= "#{sink}" %>.hdfs.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
 end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
