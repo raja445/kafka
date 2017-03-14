@@ -151,7 +151,7 @@ end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 8.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.path = /local/promoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.path = /local/retention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.path = /local/audit
-end-collector.sinks.<%= "#{sink}" %>.scribe.host = localhost
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
@@ -182,7 +182,7 @@ end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 2.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.path = /merge/promoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.path = /merge/retention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.path = /merge/audit
-end-collector.sinks.<%= "#{sink}" %>.scribe.host = localhost
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
