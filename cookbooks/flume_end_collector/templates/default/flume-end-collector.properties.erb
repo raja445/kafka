@@ -155,7 +155,7 @@ end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
-end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
 <% @merged_hdfs_sinks.each do |sink, details| %>
@@ -165,6 +165,7 @@ end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/staging/m
 end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/tmp/databus/temp/merge
 end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/tmp/databus/staging/merge
 end-collector.sinks.<%= "#{sink}" %>.hdfs.min.path = hdfs://<%= details[:cluster] %>/tmp/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
 end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
@@ -175,9 +176,9 @@ end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
-end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 5
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 8
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
-end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 2.0
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 8.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.path = /merge/promoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.path = /merge/retention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.path = /merge/audit
@@ -185,7 +186,7 @@ end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
-end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
 
@@ -201,27 +202,27 @@ end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskB
 end-collector.channels.<%= "#{channel}" %>.capacity = 50000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
 <% end %>
 <% @merge_kafkaread_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
 <% end %>
 <% @local_hdfs_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
 <% end %>
 <% @merge_hdfs_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
 <% end %>
 
