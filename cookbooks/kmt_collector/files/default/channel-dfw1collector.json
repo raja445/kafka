@@ -1297,6 +1297,32 @@
        }
     },
     {
+      "streamName": "egret_lambda_AdUnitBeacon_dfw1_defer",
+      "source": [
+        {
+          "topic": "egret_lambda_AdUnitBeacon_dfw1_defer",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
+      "streamName": "egret_lambda_AdUnitBeacon_dfw1_enhanced",
+      "source": [
+        {
+          "topic": "egret_lambda_AdUnitBeacon_dfw1_enhanced",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
       "streamName": "fds_dfw1",
       "source": [
         {
