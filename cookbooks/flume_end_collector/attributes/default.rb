@@ -1,7 +1,7 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["flume_collector"]["version"] = "1.6.0.14.2-SNAPSHOT"
+default["flume_collector"]["version"] = "1.6.0.14-SNAPSHOT"
 #default["flume_collector"]["download_url"] = "https://artifactory.corp.inmobi.com/artifactory/generic-tarball/flume/1.6.0.13/apache-flume-1.6.0.13-bin.tar.gz"
 default["flume_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.14.2-SNAPSHOT-bin.tar.gz"
 default["flume_collector"]["base_dir"]  = "/opt/inmobi"
