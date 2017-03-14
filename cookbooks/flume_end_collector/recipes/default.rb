@@ -65,10 +65,12 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :sources =>node["flume_collector"]["endcollector_sources"][colo],
     :normal_avroreceive_channels =>node["flume_collector"]["endcollector_normal_avroreceive_channels"][colo],
     :merge_avroreceive_channels =>node["flume_collector"]["endcollector_merge_avroreceive_channels"][colo],
+    :audit_avro_channels =>node["flume_collector"]["endcollector_audit_avro_channels"][colo],
     :merge_kafkaread_channels =>node["flume_collector"]["endcollector_merge_kafkaread_channels"][colo],
     :normal_kafka_sinks =>node["flume_collector"]["endcollector_normal_kafka_sinks"][colo],
     :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
     :merged_avro_sinks =>node["flume_collector"]["endcollector_merged_avro_sinks"][colo],
+    :audit_avro_sinks =>node["flume_collector"]["endcollector_audit_avro_sinks"][colo],
     :local_hdfs_sinks =>node["flume_collector"]["endcollector_local_hdfs_sinks"][colo],
     :local_hdfs_channels =>node["flume_collector"]["endcollector_local_hdfs_channels"][colo],
     :merged_hdfs_sinks =>node["flume_collector"]["endcollector_merged_hdfs_sinks"][colo],
@@ -78,6 +80,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
     :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
+    :retention_topics=>node["flume_collector"]["endcollector_retention_topics"][colo]
     :colo => colo
   )
 
