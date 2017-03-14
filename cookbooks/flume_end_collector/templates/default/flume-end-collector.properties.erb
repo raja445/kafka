@@ -44,14 +44,6 @@ end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= @kafkazookeeper %>
 <% end %>
-<% if details[:'src_category'] == 'scribe' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
-end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
-end-collector.sources.<%= "#{src}" %>.maxReadBufferBytes = <%= details[:maxReadBufferBytes] %>
-end-collector.sources.<%= "#{src}" %>.workerThreads = <%= details[:workerThreads] %>
-<% end %>
 
 <% if details[:'src_category'] == 'kafkamerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -101,16 +93,6 @@ end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "
 # end-collector.sinks.avrosrc.compression-type = deflate
 # for tuning
 # end-collector.sinks.avrosrc.batch-size = 100
-
-<% @audit_avro_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = avro
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:flumevip] %>
-end-collector.sinks.<%= "#{sink}" %>.port = 2541
-end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
-end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
-end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
-<% end %>
 
 <% @normal_kafka_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKafkaSink
@@ -208,13 +190,6 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
 
-<% @audit_avro_channels.each do |channel| %>
-end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-end-collector.channels.<%= "#{channel}" %>.capacity = 50000
-end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
-end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
-<% end %>
 <% @normal_avroreceive_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 end-collector.channels.<%= "#{channel}" %>.capacity = 50000
