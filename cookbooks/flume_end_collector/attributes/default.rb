@@ -29,7 +29,7 @@ default["flume_collector"]["flume_agent_host"]['pek1']  = "pyns4002.grid.pek1.in
 
 ######################################################### UH1 ###################################################################
 
-default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "testmerge1"
+default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "testmerge1,testmerge2"
 default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "testmerge2"
 
 default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 uh1-to-uh1-channel1 uh1-to-uh1-channel2 uh1-to-hkg1-channel1 uh1-to-hkg1-channel2 uh1-to-pek1-channel1 uh1-to-pek1-channel2 uh1-to-lhr1-channel1 uh1-to-lhr1-channel2 uh1-to-dfw1-channel1 uh1-to-dfw1-channel2 hdfsmerge-channel1 hdfsmerge-channel2 hdfslocal-channel1 hdfslocal-channel2"
@@ -79,7 +79,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :channels => "uh1-to-uh1-channel1 uh1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge2"}
+         :'kafka.topics' => "testmerge2"},
 #     "uh1-to-hkg1-mergesrc1" => {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "uh1-to-hkg1-channel1 uh1-to-hkg1-channel2",
@@ -98,12 +98,12 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
 #         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
 #         :batchSize => 500,
 #         :'kafka.topics' => "topic1,topic2,topic3"},
-#     "uh1-to-pek1-mergesrc1" => {
-#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-#         :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
-#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-#         :batchSize => 500,
-#         :'kafka.topics' => "topic1,topic2,topic3"}
+     "uh1-to-pek1-mergesrc1" => {
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge1"}
        }
 
 #Configure the channels for the Flume Collector
@@ -557,7 +557,7 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['hkg1']  = {
 
 
 ######################################################### PEK1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge2"
+default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge1,testmerge2"
 default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "testmerge1"
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 pek1-to-uh1-channel1 pek1-to-uh1-channel2 pek1-to-hkg1-channel1 pek1-to-hkg1-channel2 pek1-to-pek1-channel1 pek1-to-pek1-channel2 pek1-to-lhr1-channel1 pek1-to-lhr1-channel2 pek1-to-dfw1-channel1 pek1-to-dfw1-channel2 hdfslocal-channel1 hdfslocal-channel2"
@@ -607,7 +607,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "pek1-to-uh1-channel1 pek1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge2"}
+         :'kafka.topics' => "testmerge2"},
 #     "pek1-to-hkg1-mergesrc1" => {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "pek1-to-hkg1-channel1 pek1-to-hkg1-channel2",
@@ -626,12 +626,12 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
 #         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
 #         :batchSize => 500,
 #         :'kafka.topics' => "topic1,topic2,topic3"},
-#     "pek1-to-pek1-mergesrc1" => {
-#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-#         :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
-#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-#         :batchSize => 500,
-#         :'kafka.topics' => "topic1,topic2,topic3"}
+     "pek1-to-pek1-mergesrc1" => {
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge1"}
        }
 
 #Configure the channels for the Flume Collector
