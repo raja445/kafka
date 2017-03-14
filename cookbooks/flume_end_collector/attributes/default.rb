@@ -79,7 +79,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :channels => "uh1-to-uh1-channel1 uh1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge2"}
+         :'kafka.topics' => "testmerge2"},
 #     "uh1-to-hkg1-mergesrc1" => {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "uh1-to-hkg1-channel1 uh1-to-hkg1-channel2",
@@ -98,12 +98,12 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
 #         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
 #         :batchSize => 500,
 #         :'kafka.topics' => "topic1,topic2,topic3"},
-#     "uh1-to-pek1-mergesrc1" => {
-#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-#         :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
-#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-#         :batchSize => 500,
-#         :'kafka.topics' => "topic1,topic2,topic3"}
+     "uh1-to-pek1-mergesrc1" => {
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge1"}
        }
 
 #Configure the channels for the Flume Collector
@@ -607,7 +607,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "pek1-to-uh1-channel1 pek1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge2"}
+         :'kafka.topics' => "testmerge2"},
 #     "pek1-to-hkg1-mergesrc1" => {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "pek1-to-hkg1-channel1 pek1-to-hkg1-channel2",
@@ -626,12 +626,12 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
 #         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
 #         :batchSize => 500,
 #         :'kafka.topics' => "topic1,topic2,topic3"},
-#     "pek1-to-pek1-mergesrc1" => {
-#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-#         :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
-#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-#         :batchSize => 500,
-#         :'kafka.topics' => "topic1,topic2,topic3"}
+     "pek1-to-pek1-mergesrc1" => {
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge1"}
        }
 
 #Configure the channels for the Flume Collector
