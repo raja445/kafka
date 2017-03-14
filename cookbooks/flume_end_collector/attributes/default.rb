@@ -592,6 +592,13 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
          :'kafka.topics' => "testmerge1,testmerge2"},
+     "hdfsmergesrc" => {
+         :src_category => "hdfsmerge",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfsmerge-channel1 hdfsmerge-channel2",
+         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge1"},
      "pek1-to-uh1-mergesrc1" => {
          :src_category => "kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
@@ -630,6 +637,7 @@ default["flume_collector"]["endcollector_normal_avroreceive_channels"]['pek1']  
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['pek1']  = ["mergespillable1","mergespillable2"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['pek1']  = ["pek1-to-uh1-channel1","pek1-to-uh1-channel2","pek1-to-hkg1-channel1","pek1-to-hkg1-channel2","pek1-to-pek1-channel1","pek1-to-pek1-channel2","pek1-to-lhr1-channel1","pek1-to-lhr1-channel2","pek1-to-dfw1-channel1","pek1-to-dfw1-channel2"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['pek1']  = ["hdfslocal-channel1","hdfslocal-channel2"]
+default["flume_collector"]["endcollector_merge_hdfs_channels"]['pek1']  = ["hdfsmerge-channel1","hdfsmerge-channel2"]
 
 
 #Configure the sinks for the Flume Collector
