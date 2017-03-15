@@ -60,7 +60,7 @@ execute "Create Lock file" do
 end
 
 template "#{flumeConf}/flume-agent.properties" do
-  source "flume-agent.properties.erb"
+  source "flume-agent.properties_new.erb"
   owner "flume"
   mode  00644
   variables(
