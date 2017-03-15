@@ -1,0 +1,169 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called 'agent'
+####################################################################################################
+## Flume agent configuration
+## scribe => disk backed memory => avro sink (collector)
+####################################################################################################
+agent.sources = scribe
+agent.channels = spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10
+agent.sinks = avro1 avro2 avro3 avro4 avro5 avro6 avro7 avro8 avro9 avro10
+agent.sources.scribe.type = org.apache.flume.source.scribe.ScribeSource
+agent.sources.scribe.channels = spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10
+agent.sources.scribe.selector.type = org.apache.flume.channel.RoundRobinChannelSelector
+agent.sources.scribe.maxReadBufferBytes = 67108864
+agent.sources.scribe.port = 2530
+agent.sources.scribe.workerThreads = 16
+agent.sinks.avro1.type = avro
+agent.sinks.avro1.channel = spillable1
+agent.sinks.avro1.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro1.port = 2541
+# keep in sync with collector configuration
+agent.sinks.avro1.compression-type = deflate
+# tune based on the setup and performance.
+agent.sinks.avro1.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro1.reset-connection-interval = 60
+agent.sinks.avro2.type = avro
+agent.sinks.avro2.channel = spillable2
+agent.sinks.avro2.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro2.port = 2541
+## keep in sync with collector configuration
+agent.sinks.avro2.compression-type = deflate
+# tune based on the setup and performance.
+agent.sinks.avro2.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro2.reset-connection-interval = 60
+agent.sinks.avro3.type = avro
+agent.sinks.avro3.channel = spillable3
+agent.sinks.avro3.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro3.port = 2541
+## keep in sync with collector configuration
+agent.sinks.avro3.compression-type = deflate
+# tune based on the setup and performance.
+agent.sinks.avro3.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro3.reset-connection-interval = 60
+agent.sinks.avro4.type = avro
+agent.sinks.avro4.channel = spillable4
+agent.sinks.avro4.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro4.port = 2541
+# keep in sync with collector configuration
+agent.sinks.avro4.compression-type = deflate
+## tune based on the setup and performance.
+agent.sinks.avro4.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro4.reset-connection-interval = 60
+agent.sinks.avro5.type = avro
+agent.sinks.avro5.channel = spillable5
+agent.sinks.avro5.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro5.port = 2541
+## keep in sync with collector configuration
+agent.sinks.avro5.compression-type = deflate
+## tune based on the setup and performance.
+agent.sinks.avro5.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+agent.sinks.avro5.reset-connection-interval = 60
+agent.sinks.avro6.type = avro
+agent.sinks.avro6.channel = spillable6
+agent.sinks.avro6.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro6.port = 2541
+agent.sinks.avro6.compression-type = deflate
+agent.sinks.avro6.batch-size = 500
+agent.sinks.avro6.reset-connection-interval = 60
+agent.sinks.avro7.type = avro
+agent.sinks.avro7.channel = spillable7
+agent.sinks.avro7.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro7.port = 2541
+agent.sinks.avro7.compression-type = deflate
+agent.sinks.avro7.batch-size = 500
+agent.sinks.avro7.reset-connection-interval = 60
+agent.sinks.avro8.type = avro
+agent.sinks.avro8.channel = spillable8
+agent.sinks.avro8.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro8.port = 2541
+agent.sinks.avro8.compression-type = deflate
+agent.sinks.avro8.batch-size = 500
+agent.sinks.avro8.reset-connection-interval = 60
+agent.sinks.avro9.type = avro
+agent.sinks.avro9.channel = spillable9
+agent.sinks.avro9.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro9.port = 2541
+agent.sinks.avro9.compression-type = deflate
+agent.sinks.avro9.batch-size = 500
+agent.sinks.avro9.reset-connection-interval = 60
+agent.sinks.avro10.type = avro
+agent.sinks.avro10.channel = spillable10
+agent.sinks.avro10.hostname = <%= @flume_collector_vip %>
+agent.sinks.avro10.port = 2541
+agent.sinks.avro10.compression-type = deflate
+agent.sinks.avro10.batch-size = 500
+agent.sinks.avro10.reset-connection-interval = 60
+agent.channels.spillable1.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable1.capacity = 10000
+agent.channels.spillable1.transactionCapacity = 500
+agent.channels.spillable1.spoolDirectories = /var/spool/kafka/spillable1
+agent.channels.spillable1.spoolDiskCapacityMB = 51200
+agent.channels.spillable2.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable2.capacity = 10000
+agent.channels.spillable2.transactionCapacity = 500
+agent.channels.spillable2.spoolDirectories = /var/spool/kafka/spillable2
+agent.channels.spillable2.spoolDiskCapacityMB = 51200
+agent.channels.spillable3.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable3.capacity = 10000
+agent.channels.spillable3.transactionCapacity = 500
+agent.channels.spillable3.spoolDirectories = /var/spool/kafka/spillable3
+agent.channels.spillable3.spoolDiskCapacityMB = 51200
+agent.channels.spillable4.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable4.capacity = 10000
+agent.channels.spillable4.transactionCapacity = 500
+agent.channels.spillable4.spoolDirectories = /var/spool/kafka/spillable4
+agent.channels.spillable4.spoolDiskCapacityMB = 51200
+agent.channels.spillable5.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable5.capacity = 10000
+agent.channels.spillable5.transactionCapacity = 500
+agent.channels.spillable5.spoolDirectories = /var/spool/kafka/spillable5
+agent.channels.spillable5.spoolDiskCapacityMB = 51200
+agent.channels.spillable6.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable6.capacity = 10000
+agent.channels.spillable6.transactionCapacity = 500
+agent.channels.spillable6.spoolDirectories = /var/spool/kafka/spillable6
+agent.channels.spillable6.spoolDiskCapacityMB = 51200
+agent.channels.spillable7.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable7.capacity = 10000
+agent.channels.spillable7.transactionCapacity = 500
+agent.channels.spillable7.spoolDirectories = /var/spool/kafka/spillable7
+agent.channels.spillable7.spoolDiskCapacityMB = 51200
+agent.channels.spillable8.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable8.capacity = 10000
+agent.channels.spillable8.transactionCapacity = 500
+agent.channels.spillable8.spoolDirectories = /var/spool/kafka/spillable8
+agent.channels.spillable8.spoolDiskCapacityMB = 51200
+agent.channels.spillable9.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable9.capacity = 10000
+agent.channels.spillable9.transactionCapacity = 500
+agent.channels.spillable9.spoolDirectories = /var/spool/kafka/spillable9
+agent.channels.spillable9.spoolDiskCapacityMB = 51200
+agent.channels.spillable10.type = org.apache.flume.channel.DiskBackedMemoryChannel
+agent.channels.spillable10.capacity = 10000
+agent.channels.spillable10.transactionCapacity = 500
+agent.channels.spillable10.spoolDirectories = /var/spool/kafka/spillable10
+agent.channels.spillable10.spoolDiskCapacityMB = 51200
+####################################################################################################
