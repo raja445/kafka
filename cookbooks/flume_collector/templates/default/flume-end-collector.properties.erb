@@ -57,7 +57,7 @@ end-collector.sinks.<%= "#{sink}" %>.topicHeader = <%= details[:topicHeader] %>
 end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = <%= details[:flumeBatchSize] %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= details[:'kafka.bootstrap.servers'] %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.topic = <%= details[:'kafka.topic'] %>
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
+#end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
 # valid values none, gzip, snappy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = <%= details[:'kafka.producer.compression.type'] %>
 <% end %>
