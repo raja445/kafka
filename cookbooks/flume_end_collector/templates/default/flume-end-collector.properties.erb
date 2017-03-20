@@ -51,7 +51,7 @@ end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= @consumer_group %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -66,7 +66,7 @@ end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= @consumer_group %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -78,7 +78,7 @@ end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= @consumer_group %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
