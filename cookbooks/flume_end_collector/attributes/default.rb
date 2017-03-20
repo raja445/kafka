@@ -27,14 +27,22 @@ default["flume_collector"]["kafka_zookeeper"]['pek1']  = "kafka-zookeeper-1.grid
 default["flume_collector"]["flume_agent_host"]['uh1']  = "krvm4109.grid.uh1.inmobi.com"
 default["flume_collector"]["flume_agent_host"]['pek1']  = "pyns4002.grid.pek1.inmobi.com"
 
+
+
+
+
+
+
+
+
 ######################################################### UH1 ###################################################################
 
-default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "testmerge1,testmerge2"
-default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "testmerge2"
+default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "testmerge"
+default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "testmerge"
 
-default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 uh1-to-uh1-channel1 uh1-to-uh1-channel2 uh1-to-uh1-channel3 uh1-to-uh1-channel4 uh1-to-uh1-channel5 uh1-to-uh1-channel6 uh1-to-hkg1-channel1 uh1-to-hkg1-channel2 uh1-to-pek1-channel1 uh1-to-pek1-channel2 uh1-to-lhr1-channel1 uh1-to-lhr1-channel2 uh1-to-dfw1-channel1 uh1-to-dfw1-channel2 hdfsmerge-channel1 hdfsmerge-channel2 hdfslocal-channel1 hdfslocal-channel2"
+default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 uh1-to-uh1-channel1 uh1-to-uh1-channel2 hdfsmerge-channel1 hdfsmerge-channel2 hdfslocal-channel1 hdfslocal-channel2"
 
-default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 kafkasink6 kafkasink7 kafkasink8 kafkasink9 kafkasink10 kafkasink11 kafkasink12 kafkasink13 kafkasink14 kafkasink15 kafkasink16 kafkasink17 kafkasink18 kafkasink19 kafkasink20 kafkasink21 kafkasink22 kafkasink23 kafkasink24 kafkasink25 kafkasink26 kafkasink27 kafkasink28 kafkasink29 kafkasink30 kafkasink31 kafkasink32 mergekafkasink1 mergekafkasink2 uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 uh1-mergesink4 uh1-mergesink5 uh1-mergesink6 hkg1-mergesink1 hkg1-mergesink2 dfw1-mergesink1 dfw1-mergesink2 lhr1-mergesink1 lhr1-mergesink2 pek1-mergesink1 pek1-mergesink2 hdfsmerge-sink1 hdfsmerge-sink2 hdfslocal-sink1 hdfslocal-sink2"
+default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 kafkasink6 kafkasink7 kafkasink8 kafkasink9 kafkasink10 kafkasink11 kafkasink12 kafkasink13 kafkasink14 kafkasink15 kafkasink16 kafkasink17 kafkasink18 kafkasink19 kafkasink20 kafkasink21 kafkasink22 kafkasink23 kafkasink24 kafkasink25 kafkasink26 kafkasink27 kafkasink28 kafkasink29 kafkasink30 kafkasink31 kafkasink32 mergekafkasink1 mergekafkasink2 uh1-mergesink1 uh1-mergesink2 hdfsmerge-sink1 hdfsmerge-sink2 hdfslocal-sink1 hdfslocal-sink2"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['uh1']  = {
      "avrosrc" => {
@@ -61,25 +69,28 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :port => "2542"},
      "hdfslocalsrc" => {
          :src_category => "hdfslocal",
+         :consumer_group => "uh1hdfslocal",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel1 hdfslocal-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge1,testmerge2"},
+         :'kafka.topics' => "testmerge"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
+         :consumer_group => "uh1hdfsmerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfsmerge-channel1 hdfsmerge-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge2"},
+         :'kafka.topics' => "merge_testmerge"},
      "uh1-to-uh1-mergesrc1" => {
          :src_category => "kafkamerge",
+         :consumer_group => "uh1-to-uh1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "uh1-to-uh1-channel1 uh1-to-uh1-channel2 uh1-to-uh1-channel3 uh1-to-uh1-channel4 uh1-to-uh1-channel5 uh1-to-uh1-channel6",
+         :channels => "uh1-to-uh1-channel1 uh1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge2"},
+         :'kafka.topics' => "testmerge"}
 #     "uh1-to-hkg1-mergesrc1" => {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "uh1-to-hkg1-channel1 uh1-to-hkg1-channel2",
@@ -98,19 +109,20 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
 #         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
 #         :batchSize => 500,
 #         :'kafka.topics' => "topic1,topic2,topic3"},
-     "uh1-to-pek1-mergesrc1" => {
-         :src_category => "kafkamerge",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
-         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-         :batchSize => 500,
-         :'kafka.topics' => "testmerge1"}
+#     "uh1-to-pek1-mergesrc1" => {
+#         :src_category => "kafkamerge",
+#         :consumer_group => "uh1-to-pek1-kafkamerge",
+#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+#         :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
+#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+#         :batchSize => 500,
+#         :'kafka.topics' => "testmerge"}
        }
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['uh1']  = ["spillable1","spillable2","spillable3","spillable4","spillable5","spillable6","spillable7","spillable8","spillable9","spillable10","spillable11","spillable12","spillable13","spillable14","spillable15","spillable16","spillable17","spillable18","spillable19","spillable20","spillable21","spillable22","spillable23","spillable24","spillable25","spillable26","spillable27","spillable28","spillable29","spillable30","spillable31","spillable32"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['uh1']  = ["mergespillable1","mergespillable2"]
-default["flume_collector"]["endcollector_merge_kafkaread_channels"]['uh1']  = ["uh1-to-uh1-channel1","uh1-to-uh1-channel2","uh1-to-uh1-channel3","uh1-to-uh1-channel4","uh1-to-uh1-channel5","uh1-to-uh1-channel6","uh1-to-hkg1-channel1","uh1-to-hkg1-channel2","uh1-to-pek1-channel1","uh1-to-pek1-channel2","uh1-to-lhr1-channel1","uh1-to-lhr1-channel2","uh1-to-dfw1-channel1","uh1-to-dfw1-channel2"]
+default["flume_collector"]["endcollector_merge_kafkaread_channels"]['uh1']  = ["uh1-to-uh1-channel1","uh1-to-uh1-channel2"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['uh1']  = ["hdfsmerge-channel1","hdfsmerge-channel2"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['uh1']  = ["hdfslocal-channel1","hdfslocal-channel2"]
 
@@ -159,19 +171,7 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['uh1']  = {
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
      "uh1-mergesink1" => {:channel => "uh1-to-uh1-channel1",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel2",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-     "uh1-mergesink3" => {:channel => "uh1-to-uh1-channel3",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-     "uh1-mergesink4" => {:channel => "uh1-to-uh1-channel4",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-     "uh1-mergesink5" => {:channel => "uh1-to-uh1-channel5",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-     "uh1-mergesink6" => {:channel => "uh1-to-uh1-channel6",:flumevip =>"krkf4012.grid.uh1.inmobi.com"},
-#     "hkg1-mergesink1" => {:channel => "uh1-to-hkg1-channel1",:flumevip =>"flume.grid.hkg1.inmobi.com"},
-#     "hkg1-mergesink2" => {:channel => "uh1-to-hkg1-channel2",:flumevip =>"flume.grid.hkg1.inmobi.com"},
-#     "dfw1-mergesink1" => {:channel => "uh1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
-#     "dfw1-mergesink2" => {:channel => "uh1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
-#     "lhr1-mergesink1" => {:channel => "uh1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
-#     "lhr1-mergesink2" => {:channel => "uh1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
-     "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel1",:flumevip =>"pykm4006.grid.pek1.inmobi.com"},
-     "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel2",:flumevip =>"pykm4006.grid.pek1.inmobi.com"}
+     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel2",:flumevip =>"krkf4012.grid.uh1.inmobi.com"}
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
@@ -184,6 +184,15 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['uh1']  = {
      "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel2",:cluster =>"krypton"}
 }
 ######################################################### End Of UH1 ###################################################################
+
+
+
+
+
+
+
+
+
 
 
 
@@ -311,6 +320,12 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
 
 
 
+
+
+
+
+
+
 ######################################################### LHR1 ###################################################################
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-hkg1-channel1 lhr1-to-hkg1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2"
@@ -431,6 +446,12 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['lhr1']  = {
 }
 
 ######################################################### End Of LHR1 ###################################################################
+
+
+
+
+
+
 
 
 
@@ -562,8 +583,8 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['hkg1']  = {
 
 
 ######################################################### PEK1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge1,testmerge2"
-default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "testmerge1"
+default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge"
+default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "testmerge"
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 pek1-to-uh1-channel1 pek1-to-uh1-channel2 pek1-to-hkg1-channel1 pek1-to-hkg1-channel2 pek1-to-pek1-channel1 pek1-to-pek1-channel2 pek1-to-lhr1-channel1 pek1-to-lhr1-channel2 pek1-to-dfw1-channel1 pek1-to-dfw1-channel2 hdfslocal-channel1 hdfslocal-channel2 hdfsmerge-channel1 hdfsmerge-channel2"
 
@@ -594,25 +615,28 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :port => "2542"},
      "hdfslocalsrc" => {
          :src_category => "hdfslocal",
+         :consumer_group => "pek1hdfslocal",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel1 hdfslocal-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
          :'kafka.topics' => "testmerge1,testmerge2"},
-     "hdfsmergesrc" => {
-         :src_category => "hdfsmerge",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfsmerge-channel1 hdfsmerge-channel2",
-         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-         :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge1"},
+#     "hdfsmergesrc" => {
+#         :src_category => "hdfsmerge",
+#         :consumer_group => "pek1hdfsmerge",
+#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+#         :channels => "hdfsmerge-channel1 hdfsmerge-channel2",
+#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+#         :batchSize => 500,
+#         :'kafka.topics' => "merge_testmerge1"},
      "pek1-to-uh1-mergesrc1" => {
          :src_category => "kafkamerge",
+         :consumer_group => "pek1-to-uh1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "pek1-to-uh1-channel1 pek1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge2"},
+         :'kafka.topics' => "testmerge"},
 #     "pek1-to-hkg1-mergesrc1" => {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "pek1-to-hkg1-channel1 pek1-to-hkg1-channel2",
@@ -631,13 +655,13 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
 #         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
 #         :batchSize => 500,
 #         :'kafka.topics' => "topic1,topic2,topic3"},
-     "pek1-to-pek1-mergesrc1" => {
-         :src_category => "kafkamerge",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
-         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
-         :batchSize => 500,
-         :'kafka.topics' => "testmerge1"}
+#     "pek1-to-pek1-mergesrc1" => {
+#         :src_category => "kafkamerge",
+#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+#         :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
+#         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+#         :batchSize => 500,
+#         :'kafka.topics' => "testmerge1"}
        }
 
 #Configure the channels for the Flume Collector
