@@ -56,6 +56,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
+#end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -154,7 +155,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /local/audit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = agent
+end-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
@@ -185,7 +186,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = agent
+end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
