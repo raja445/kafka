@@ -31,7 +31,7 @@ export FLUME_PID_DIR=/var/run/flume
 export MIN_HEAPSIZE=12G
 export MAX_HEAPSIZE=12G
 export MAX_METASPACE_SIZE=64M
-export MAX_DIRECT_MEMORY_SIZE=64M
+export MAX_DIRECT_MEMORY_SIZE=512M
 
 export FLUME_HTTP_PORT=2510
 export FLUME_JMX_PORT=2520
@@ -39,8 +39,6 @@ export FLUME_JMX_PORT=2520
 export FLUME_STOP_TIMEOUT=180
 
 export HADOOP_REQUIRED=true
-
-export MAX_DIRECT_MEMORY_SIZE=512M
 
 # Give Flume more memory and pre-allocate
 export JAVA_OPTS="-Xms$MIN_HEAPSIZE -Xmx$MAX_HEAPSIZE -XX:MaxMetaspaceSize=$MAX_METASPACE_SIZE -XX:MaxDirectMemorySize=$MAX_DIRECT_MEMORY_SIZE -XX:+UseG1GC -XX:+PrintFlagsFinal"
