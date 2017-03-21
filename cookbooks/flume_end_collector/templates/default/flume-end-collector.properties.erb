@@ -199,7 +199,7 @@ end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
 <% end %>
 <% @merge_avroreceive_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-end-collector.channels.<%= "#{channel}" %>.capacity = 50000
+end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
