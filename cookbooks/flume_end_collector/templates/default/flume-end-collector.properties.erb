@@ -131,9 +131,9 @@ end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/local
-end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/tmp/databus/flume/local/temp
-end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/tmp/databus/flume/local/staging
-end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/tmp/databus/streams_local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/local/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/local/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams_local
 end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
 end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
@@ -162,9 +162,9 @@ end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/merge
-end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/tmp/databus/flume/merge/temp
-end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/tmp/databus/flume/merge/staging
-end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/tmp/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams
 end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
 end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
