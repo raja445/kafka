@@ -201,6 +201,8 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['uh1']  = {
 
 
 ######################################################### DFW1 ###################################################################
+default["flume_collector"]["endcollector_local_retention_topics"]['dfw1']  = "testmerge"
+default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "testmerge"
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 dfw1-to-uh1-channel1 dfw1-to-uh1-channel2 dfw1-to-pek1-channel1 dfw1-to-pek1-channel2 dfw1-to-lhr1-channel1 dfw1-to-lhr1-channel2 dfw1-to-dfw1-channel1 dfw1-to-dfw1-channel2"
 
@@ -283,6 +285,8 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['dfw1']  = ["spillable1","spillable2","spillable3","spillable4","spillable5","spillable6","spillable7","spillable8","spillable9","spillable10","spillable11","spillable12","spillable13","spillable14","spillable15","spillable16","spillable17","spillable18","spillable19","spillable20","spillable21","spillable22","spillable23","spillable24","spillable25","spillable26","spillable27","spillable28","spillable29","spillable30","spillable31","spillable32"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable1","mergespillable2"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['dfw1']  = ["dfw1-to-uh1-channel1","dfw1-to-uh1-channel2","dfw1-to-pek1-channel1","dfw1-to-pek1-channel2","dfw1-to-lhr1-channel1","dfw1-to-lhr1-channel2","dfw1-to-dfw1-channel1","dfw1-to-dfw1-channel2"]
+default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel1","hdfsmerge-channel2"]
+default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw1']  = ["hdfslocal-channel1","hdfslocal-channel2"]
 
 #Configure the sinks for the Flume Collector
 default["flume_collector"]["endcollector_normal_kafka_sinks"]['dfw1']  = {
@@ -337,6 +341,15 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
      "pek1-mergesink2" => {:channel => "dfw1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
+default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"onyx"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel2",:cluster =>"onyx"}
+}
+
+default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
+     "hdfsmerge-sink1" => {:channel => "hdfsmerge-channel1",:cluster =>"onyx"},
+     "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel2",:cluster =>"onyx"}
+}
 ######################################################### End Of DFW1 ###################################################################
 
 
