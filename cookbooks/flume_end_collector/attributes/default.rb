@@ -416,7 +416,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "lhr1-to-uh1-channel1 lhr1-to-uh1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "topic1,topic2,topic3"},
+         :'kafka.topics' => "testmerge"},
      "lhr1-to-dfw1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "lhr1-to-dfw1-kafkamerge",
@@ -424,7 +424,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "topic1,topic2,topic3"},
+         :'kafka.topics' => "testmerge"},
      "lhr1-to-lhr1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "lhr1-to-lhr1-kafkamerge",
@@ -432,7 +432,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "topic1,topic2,topic3"},
+         :'kafka.topics' => "testmerge"},
      "lhr1-to-pek1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "lhr1-to-pek1-kafkamerge",
@@ -440,7 +440,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "lhr1-to-pek1-channel1 lhr1-to-pek1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "topic1,topic2,topic3"}
+         :'kafka.topics' => "testmerge"}
        }
 
 #Configure the channels for the Flume Collector
