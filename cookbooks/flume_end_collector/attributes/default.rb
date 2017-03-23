@@ -26,7 +26,8 @@ default["flume_collector"]["kafka_zookeeper"]['pek1']  = "kafka-zookeeper-1.grid
 #Flume Agents
 default["flume_collector"]["flume_agent_host"]['uh1']  = "krvm4109.grid.uh1.inmobi.com"
 default["flume_collector"]["flume_agent_host"]['pek1']  = "pyns4002.grid.pek1.inmobi.com"
-
+default["flume_collector"]["flume_agent_host"]['dfw1']  = "oxns4002.grid.dfw1.inmobi.com"
+default["flume_collector"]["flume_agent_host"]['lhr1']  = "erdc4002.grid.lhr1.inmobi.com"
 
 
 
