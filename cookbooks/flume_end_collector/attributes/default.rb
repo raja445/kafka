@@ -812,14 +812,14 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['hkg1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['hkg1']  = {
-     "uh1-mergesink1" => {:channel => "pek1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
-     "uh1-mergesink2" => {:channel => "pek1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
-     "dfw1-mergesink1" => {:channel => "pek1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
-     "dfw1-mergesink2" => {:channel => "pek1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink1" => {:channel => "pek1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
-     "lhr1-mergesink2" => {:channel => "pek1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
-     "pek1-mergesink1" => {:channel => "pek1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
-     "pek1-mergesink2" => {:channel => "pek1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
+     "uh1-mergesink1" => {:channel => "hkg1-to-uh1-channel1",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "hkg1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "hkg1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "hkg1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "hkg1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "hkg1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "hkg1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "hkg1-to-pek1-channel2",:flumevip =>"flume.grid.pek1.inmobi.com"}
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['hkg1']  = {
