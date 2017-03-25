@@ -1491,6 +1491,19 @@
       }
     },
     {
+      "streamName": "ifc_ff_hkg1",
+      "source": [
+        {
+          "topic": "merge_ifc_ff_hkg1",
+          "zookeeper": "kafka-zookeeper-1.grid.hkg1.inmobi.com:2181,kafka-zookeeper-2.grid.hkg1.inmobi.com:2181,kafka-zookeeper-3.grid.hkg1.inmobi.com:2181,kafka-zookeeper-4.grid.hkg1.inmobi.com:2181,kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://opal:8020"
+       }
+    },
+    {
       "streamName": "iat_goal_hkg1",
       "source": [
         {

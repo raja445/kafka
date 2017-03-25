@@ -1350,6 +1350,19 @@
       }
     },
     {
+      "streamName": "ifc_ff_lhr1",
+      "source": [
+        {
+          "topic": "merge_ifc_ff_lhr1",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
       "streamName": "fds_lhr1",
       "source": [
         {
