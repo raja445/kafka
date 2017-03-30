@@ -784,6 +784,21 @@
       }
     },
     {
+      "streamName": "wclickDfw1",
+      "source": [
+        {
+          "topic": "wclick_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "ttdRequestGlobal",
       "source": [
         {
