@@ -42,14 +42,15 @@ default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
-default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G\""
+default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx6G -Xms6G\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:PermSize=48m -XX:MaxPermSize=48m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
 default["kafka"]["server.properties"]["port"] = 9092
 default["kafka"]["server.properties"]["num.partitions"] = 10
 default["kafka"]["server.properties"]["default.replication.factor"] = 3
-default["kafka"]["server.properties"]["log.flush.interval.messages"] = 100000
+default["kafka"]["server.properties"]["log.flush.interval.messages"] = 40000
+default["kafka"]["server.properties"]["log.flush.interval.ms"] = 120000
 default["kafka"]["server.properties"]["log.retention.hours"] = 48
 default["kafka"]["server.properties"]["log.roll.hours"] = 1
 default["kafka"]["server.properties"]["log.retention.check.interval.ms"] = 1200000
