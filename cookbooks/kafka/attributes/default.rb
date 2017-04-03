@@ -42,7 +42,7 @@ default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
-default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx6G -Xms6G\""
+default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx8G -Xms8G\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:PermSize=48m -XX:MaxPermSize=48m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
