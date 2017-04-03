@@ -159,12 +159,12 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['uh1']  = {
      "kafkasink29" => {:channel => "spillable29"},
      "kafkasink30" => {:channel => "spillable30"},
      "kafkasink31" => {:channel => "spillable31"},
-     "kafkasink32" => {:channel => "spillable32"}
-     "kafkasink33" => {:channel => "spillable33"}
-     "kafkasink34" => {:channel => "spillable34"}
-     "kafkasink35" => {:channel => "spillable35"}
-     "kafkasink36" => {:channel => "spillable36"}
-     "kafkasink37" => {:channel => "spillable37"}
+     "kafkasink32" => {:channel => "spillable32"},
+     "kafkasink33" => {:channel => "spillable33"},
+     "kafkasink34" => {:channel => "spillable34"},
+     "kafkasink35" => {:channel => "spillable35"},
+     "kafkasink36" => {:channel => "spillable36"},
+     "kafkasink37" => {:channel => "spillable37"},
      "kafkasink38" => {:channel => "spillable38"}
 }
 
