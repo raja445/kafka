@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="LOGFILE"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="append" value="false"/>
+    <param name="DatePattern" value="'.'yyyy-MM-dd-HH"/>
+    <param name="File" value="/var/log/flume/kafka.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="DEBUG"/>
+      <param name="LevelMax" value="ERROR"/>
+      <param name="AcceptOnMatch" value="true"/>
+    </filter>
+  </appender>
+
+  <appender name="OTHERS"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="append" value="false"/>
+    <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+    <param name="File" value="/var/log/flume/kafka-others.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="ERROR"/>
+      <param name="LevelMax" value="ERROR"/>
+      <param name="AcceptOnMatch" value="true"/>
+    </filter>
+  </appender>
+
+<logger name="kafka.consumer.PartitionTopicInfo" additivity="false">
+    <level value="INFO"/>
+    <appender-ref ref="LOGFILE"/>
+  </logger>
+
+  <logger name="org.apache.hadoop" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="OTHERS"/>
+  </logger>
+
+  <logger name="com.inmobi.messaging.netty" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="OTHERS"/>
+  </logger>
+
+  <root>
+    <level value="DEBUG"/>
+    <appender-ref ref="LOGFILE"/>
+    <appender-ref ref="OTHERS"/>
+  </root>
+
+</log4j:configuration>
