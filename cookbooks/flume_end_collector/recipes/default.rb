@@ -92,9 +92,11 @@ cookbook_file "#{flumeConf}/flume-env.sh" do
   mode "0644"
 end
 
+if colo == 'uh1'
 cookbook_file "#{flumeConf}/log4j.xml" do
   source "log4j.xml"
   mode "0644"
+end
 end
 
 execute "chown flume directory" do
