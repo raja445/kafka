@@ -92,6 +92,11 @@ cookbook_file "#{flumeConf}/flume-env.sh" do
   mode "0644"
 end
 
+cookbook_file "#{flumeConf}/log4j.xml" do
+  source "log4j.xml"
+  mode "0644"
+end
+
 execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
 end
