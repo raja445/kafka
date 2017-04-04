@@ -29,6 +29,12 @@ default["flume_collector"]["flume_agent_host"]['dfw1']  = "oxns4002.grid.dfw1.in
 default["flume_collector"]["flume_agent_host"]['lhr1']  = "erdc4002.grid.lhr1.inmobi.com"
 default["flume_collector"]["flume_agent_host"]['hkg1']  = "opns4007.grid.hkg1.inmobi.com"
 
+#Flume merge source consumer groupsize
+default["flume_collector"]["mergesrc_consumer_gpsize"]['uh1']  = "8"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "8"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "6"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "6"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['hkg1']  = "6"
 
 
 
