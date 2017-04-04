@@ -381,7 +381,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 
 
 ######################################################### LHR1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "testmerge"
+default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "testmerge,rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "testmerge"
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 hdfsmerge-channel1 hdfsmerge-channel2 hdfslocal-channel1 hdfslocal-channel2"
@@ -418,7 +418,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "hdfslocal-channel1 hdfslocal-channel2",
         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "rr"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "lhr1hdfsmerge",
