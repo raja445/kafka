@@ -76,6 +76,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
     :flumeagent =>node["flume_collector"]["flume_agent_host"][colo],
+    :mergesrc_consumer_gpsize =>node["flume_collector"]["mergesrc_consumer_gpsize"][colo],
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
     :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],

@@ -55,7 +55,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 #end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -71,7 +71,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 <% end -%>
 <% if details[:'src_category'] == 'hdfsmerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -83,7 +83,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = 6
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
