@@ -104,3 +104,8 @@ file "#{node['zookeeper']['lib_dir']}/myid" do
   mode '0755'
   action :create
 end
+
+cookbook_file "/usr/hdp/current/zookeeper-server/bin/zookeeper-server" do
+  source "zookeeper-server.sh"
+  mode '0755'
+end
