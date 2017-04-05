@@ -1,5 +1,5 @@
 # Define some default values that can be overridden by system properties
-zookeeper.root.logger=INFO, CONSOLE, ROLLINGFILE
+zookeeper.root.logger=INFO, CONSOLE
 zookeeper.console.threshold=INFO
 zookeeper.log.dir=.
 zookeeper.log.file=zookeeper.log
@@ -21,6 +21,22 @@ log4j.rootLogger=${zookeeper.root.logger}
 
 # Example with rolling log file and tracing
 #log4j.rootLogger=TRACE, CONSOLE, ROLLINGFILE, TRACEFILE
+
+#
+# Daily Rolling File Appender
+#
+log4j.appender.DRFA=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.DRFA.File=${zookeeper.log.dir}/${zookeeper.log.file}
+
+# Rollver at midnight
+log4j.appender.DRFA.DatePattern=.yyyy-MM-dd
+
+# 30-day backup
+#log4j.appender.DRFA.MaxBackupIndex=30
+log4j.appender.DRFA.layout=org.apache.log4j.PatternLayout
+
+# Pattern format: Date LogLevel LoggerName LogMessage
+log4j.appender.DRFA.layout.ConversionPattern=%d{ISO8601} [myid:%X{myid}] - %-5p [%t:%C{1}@%L] - %m%n
 
 #
 # Log INFO level and above messages to the console
