@@ -1,5 +1,5 @@
 # Define some default values that can be overridden by system properties
-zookeeper.root.logger=INFO, CONSOLE
+zookeeper.root.logger=INFO, CONSOLE, DRFA
 zookeeper.console.threshold=INFO
 zookeeper.log.dir=.
 zookeeper.log.file=zookeeper.log
@@ -23,6 +23,14 @@ log4j.rootLogger=${zookeeper.root.logger}
 #log4j.rootLogger=TRACE, CONSOLE, ROLLINGFILE, TRACEFILE
 
 #
+# Log INFO level and above messages to the console
+#
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.CONSOLE.Threshold=${zookeeper.console.threshold}
+log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+log4j.appender.CONSOLE.layout.ConversionPattern=%d{ISO8601} [myid:%X{myid}] - %-5p [%t:%C{1}@%L] - %m%n
+
+#
 # Daily Rolling File Appender
 #
 log4j.appender.DRFA=org.apache.log4j.DailyRollingFileAppender
@@ -37,14 +45,6 @@ log4j.appender.DRFA.layout=org.apache.log4j.PatternLayout
 
 # Pattern format: Date LogLevel LoggerName LogMessage
 log4j.appender.DRFA.layout.ConversionPattern=%d{ISO8601} [myid:%X{myid}] - %-5p [%t:%C{1}@%L] - %m%n
-
-#
-# Log INFO level and above messages to the console
-#
-log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
-log4j.appender.CONSOLE.Threshold=${zookeeper.console.threshold}
-log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
-log4j.appender.CONSOLE.layout.ConversionPattern=%d{ISO8601} [myid:%X{myid}] - %-5p [%t:%C{1}@%L] - %m%n
 
 #
 # Add ROLLINGFILE to rootLogger to get log file output
