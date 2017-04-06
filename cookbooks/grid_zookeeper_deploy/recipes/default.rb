@@ -34,6 +34,13 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zoo.cfg" do
   )
 end
 
+cookbook_file "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/log4j.properties" do
+  source "log4j.properties"
+  owner "root"
+  group "root"
+  mode "0644"
+end
+
 template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-env.sh" do
   source "zookeeper-env.sh.erb"
   owner "root"
