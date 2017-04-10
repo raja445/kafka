@@ -1111,6 +1111,21 @@
         "compression": "gz",
         "retention": "48"
       }
+    },
+    {
+            "hdfsDestination": {
+                "basePath": "kafka/data",
+                "compression": "gz",
+                "hdfsUrl": "hdfs://emerald:8020",
+                "retention": "48"
+            },
+            "source": [
+                {
+                    "topic": "wadogorr",
+                    "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+                }
+            ],
+            "streamName": "wadogorr"
     }
   ]
 }

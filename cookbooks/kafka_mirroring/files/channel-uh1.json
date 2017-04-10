@@ -1991,6 +1991,21 @@
         "compression": "gz",
         "retention": "72"
       }
+    },
+    {
+            "hdfsDestination": {
+                "basePath": "kafka/data",
+                "compression": "gz",
+                "hdfsUrl": "hdfs://krypton:8020",
+                "retention": "48"
+            },
+            "source": [
+                {
+                    "topic": "wadogorr",
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ],
+            "streamName": "wadogorr"
     }
   ]
 }
