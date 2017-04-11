@@ -224,9 +224,9 @@ end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskB
 end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
-end-collector.channels.<%= "#{channel}" %>.despoolThresholdPct=99
-end-collector.channels.<%= "#{channel}" %>.spoolThresholdPct=100
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+#end-collector.channels.<%= "#{channel}" %>.despoolThresholdPct=99
+#end-collector.channels.<%= "#{channel}" %>.spoolThresholdPct=100
 <% end %>
 <% @merge_hdfs_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
