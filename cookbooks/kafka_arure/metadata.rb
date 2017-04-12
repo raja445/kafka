@@ -1,4 +1,4 @@
-name              "kafka_azure"
+name              "kafka_arure"
 depends           'ohai'
 maintainer        "gridops"
 maintainer_email  "gridops@imobi.com"
