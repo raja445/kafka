@@ -64,6 +64,7 @@ default["kafka"]["server.properties"]["delete.topic.enable"] = true
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
+default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
 
 # Log4J config
 default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, DRFA"
