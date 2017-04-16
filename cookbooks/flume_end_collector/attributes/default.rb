@@ -33,7 +33,7 @@ default["flume_collector"]["flume_agent_host"]['hkg1']  = "opns4007.grid.hkg1.in
 default["flume_collector"]["mergesrc_consumer_gpsize"]['uh1']  = "8"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "8"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "6"
-default["flume_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "6"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "8"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['hkg1']  = "6"
 
 
@@ -384,21 +384,21 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "testmerge"
 
-default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 mergespillable1 mergespillable2 lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 hdfsmerge-channel1 hdfsmerge-channel2 hdfslocal-channel1 hdfslocal-channel2"
+default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 spillable33 spillable34 spillable35 spillable36 spillable37 spillable38 mergespillable1 mergespillable2 lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 hdfsmerge-channel1 hdfsmerge-channel2 hdfslocal-channel1 hdfslocal-channel2"
 
-default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 kafkasink6 kafkasink7 kafkasink8 kafkasink9 kafkasink10 kafkasink11 kafkasink12 kafkasink13 kafkasink14 kafkasink15 kafkasink16 kafkasink17 kafkasink18 kafkasink19 kafkasink20 kafkasink21 kafkasink22 kafkasink23 kafkasink24 kafkasink25 kafkasink26 kafkasink27 kafkasink28 kafkasink29 kafkasink30 kafkasink31 kafkasink32 mergekafkasink1 mergekafkasink2 uh1-mergesink1 uh1-mergesink2 dfw1-mergesink1 dfw1-mergesink2 lhr1-mergesink1 lhr1-mergesink2 pek1-mergesink1 pek1-mergesink2 hdfsmerge-sink1 hdfsmerge-sink2 hdfslocal-sink1 hdfslocal-sink2"
+default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 kafkasink6 kafkasink7 kafkasink8 kafkasink9 kafkasink10 kafkasink11 kafkasink12 kafkasink13 kafkasink14 kafkasink15 kafkasink16 kafkasink17 kafkasink18 kafkasink19 kafkasink20 kafkasink21 kafkasink22 kafkasink23 kafkasink24 kafkasink25 kafkasink26 kafkasink27 kafkasink28 kafkasink29 kafkasink30 kafkasink31 kafkasink32 kafkasink33 kafkasink34 kafkasink35 kafkasink36 kafkasink37 kafkasink38 mergekafkasink1 mergekafkasink2 uh1-mergesink1 uh1-mergesink2 dfw1-mergesink1 dfw1-mergesink2 lhr1-mergesink1 lhr1-mergesink2 pek1-mergesink1 pek1-mergesink2 hdfsmerge-sink1 hdfsmerge-sink2 hdfslocal-sink1 hdfslocal-sink2"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['lhr1']  = {
      "avrosrc" => {
          :src_category => "avro",
          :type => "avro",
-         :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32",
+         :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 spillable33 spillable34 spillable35 spillable36 spillable37 spillable38",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :port => "2540"},
      "zipavrosrc" => {
          :src_category => "avro",
          :type => "avro",
-         :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32",
+         :channels => "spillable1 spillable2 spillable3 spillable4 spillable5 spillable6 spillable7 spillable8 spillable9 spillable10 spillable11 spillable12 spillable13 spillable14 spillable15 spillable16 spillable17 spillable18 spillable19 spillable20 spillable21 spillable22 spillable23 spillable24 spillable25 spillable26 spillable27 spillable28 spillable29 spillable30 spillable31 spillable32 spillable33 spillable34 spillable35 spillable36 spillable37 spillable38",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
@@ -462,7 +462,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
        }
 
 #Configure the channels for the Flume Collector
-default["flume_collector"]["endcollector_normal_avroreceive_channels"]['lhr1']  = ["spillable1","spillable2","spillable3","spillable4","spillable5","spillable6","spillable7","spillable8","spillable9","spillable10","spillable11","spillable12","spillable13","spillable14","spillable15","spillable16","spillable17","spillable18","spillable19","spillable20","spillable21","spillable22","spillable23","spillable24","spillable25","spillable26","spillable27","spillable28","spillable29","spillable30","spillable31","spillable32"]
+default["flume_collector"]["endcollector_normal_avroreceive_channels"]['lhr1']  = ["spillable1","spillable2","spillable3","spillable4","spillable5","spillable6","spillable7","spillable8","spillable9","spillable10","spillable11","spillable12","spillable13","spillable14","spillable15","spillable16","spillable17","spillable18","spillable19","spillable20","spillable21","spillable22","spillable23","spillable24","spillable25","spillable26","spillable27","spillable28","spillable29","spillable30","spillable31","spillable32","spillable33","spillable34","spillable35","spillable36","spillable37","spillable38"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['lhr1']  = ["mergespillable1","mergespillable2"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['lhr1']  = ["lhr1-to-uh1-channel1","lhr1-to-uh1-channel2","lhr1-to-pek1-channel1","lhr1-to-pek1-channel2","lhr1-to-lhr1-channel1","lhr1-to-lhr1-channel2","lhr1-to-dfw1-channel1","lhr1-to-dfw1-channel2"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['lhr1']  = ["hdfsmerge-channel1","hdfsmerge-channel2"]
@@ -501,7 +501,13 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['lhr1']  = {
      "kafkasink29" => {:channel => "spillable29"},
      "kafkasink30" => {:channel => "spillable30"},
      "kafkasink31" => {:channel => "spillable31"},
-     "kafkasink32" => {:channel => "spillable32"}
+     "kafkasink32" => {:channel => "spillable32"},
+     "kafkasink33" => {:channel => "spillable33"},
+     "kafkasink34" => {:channel => "spillable34"},
+     "kafkasink35" => {:channel => "spillable35"},
+     "kafkasink36" => {:channel => "spillable36"},
+     "kafkasink37" => {:channel => "spillable37"},
+     "kafkasink38" => {:channel => "spillable38"}
 }
 
 
