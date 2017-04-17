@@ -139,7 +139,7 @@ end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluste
 end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/local/staging
 end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams_local
 end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
-end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 193
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
@@ -233,8 +233,8 @@ end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskB
 end-collector.channels.<%= "#{channel}" %>.capacity = 10000
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
-end-collector.channels.<%= "#{channel}" %>.despoolThresholdPct=99
-end-collector.channels.<%= "#{channel}" %>.spoolThresholdPct=100
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+#end-collector.channels.<%= "#{channel}" %>.despoolThresholdPct=99
+#end-collector.channels.<%= "#{channel}" %>.spoolThresholdPct=100
 <% end %>
 
