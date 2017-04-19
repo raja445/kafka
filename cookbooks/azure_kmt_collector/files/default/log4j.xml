@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="console" class="org.apache.log4j.ConsoleAppender">
+    <param name="Threshold" value="ERROR"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+  </appender>
+
+  <!-- Leaders Loggers starts -->
+  <appender name="APIAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="10"/>
+    <param name="append" value="false"/>
+    <param name="File"
+           value="/var/log/kafkamirroring/kafkamirroring-api.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+  </appender>
+  <logger name="com.inmobi.databus.mirror.api" additivity="false">
+    <level value="DEBUG"/>
+    <appender-ref ref="APIAppender"/>
+  </logger>
+
+  <appender name="JobExecutorAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="10"/>
+    <param name="append" value="false"/>
+    <param name="File"
+           value="/var/log/kafkamirroring/kafkamirroring-executor.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+  </appender>
+  <logger name="com.inmobi.databus.mirror.leader.KMTNode"
+          additivity="false">
+    <level value="DEBUG"/>
+    <appender-ref ref="JobExecutorAppender"/>
+  </logger>
+
+  <appender name="ControllerAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="10"/>
+    <param name="append" value="false"/>
+    <param name="File"
+           value="/var/log/kafkamirroring/kafkamirroring-controller.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+  </appender>
+  <logger name="com.inmobi.databus.mirror.leader.KMTController"
+          additivity="false">
+    <level value="DEBUG"/>
+    <appender-ref ref="ControllerAppender"/>
+  </logger>
+
+  <appender name="NotificationsAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="10"/>
+    <param name="append" value="false"/>
+    <param name="File"
+           value="/var/log/kafkamirroring/kafkamirroring-alerts.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+  </appender>
+  <logger name="NotificationsLogger" additivity="false">
+    <level value="DEBUG"/>
+    <appender-ref ref="NotificationsAppender"/>
+  </logger>
+  <!-- Leaders Loggers ends -->
+
+  <appender name="DebugAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="10"/>
+    <param name="append" value="false"/>
+    <param name="File" value="/var/log/kafkamirroring/kafkamirroring.debug"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="DEBUG"/>
+      <param name="LevelMax" value="WARN"/>
+      <param name="AcceptOnMatch" value="true"/>
+    </filter>
+  </appender>
+
+  <appender name="ErrorAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="100"/>
+    <param name="append" value="false"/>
+    <param name="File" value="/var/log/kafkamirroring/kafkamirroring.error"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="ERROR"/>
+      <param name="LevelMax" value="ERROR"/>
+      <param name="AcceptOnMatch" value="true"/>
+    </filter>
+  </appender>
+
+  <appender name="NonAppAppender"
+            class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="append" value="false"/>
+    <param name="Threshold" value="DEBUG"/>
+    <param name="MaxFileSize" value="10MB"/>
+    <param name="MaxBackupIndex" value="100"/>
+    <param name="File"
+           value="/var/log/kafkamirroring/kafkamirroring-others.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%d{dd/MM/yyyy:HH:mm:ss}] (%C{1}:%-L) - %m%n"/>
+    </layout>
+  </appender>
+
+  <logger name="zookeeper.root.logger" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="org.apache.zookeeper" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="org.apache" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="org.apache.curator" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="org.I0Itec" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="kafka.network" additivity="false">
+    <level value="INFO"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="kafka.consumer" additivity="false">
+    <level value="INFO"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+  <logger name="com.inmobi.messaging" additivity="false">
+    <level value="INFO"/>
+    <appender-ref ref="NonAppAppender"/>
+  </logger>
+
+  <root>
+    <level value="DEBUG"/>
+    <appender-ref ref="ErrorAppender"/>
+    <appender-ref ref="DebugAppender"/>
+  </root>
+
+</log4j:configuration>
