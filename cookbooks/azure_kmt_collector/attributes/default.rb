@@ -1,8 +1,4 @@
-default['kafkaMirroring']['instanceid']['uh1']={ "krkf4013" => 1}
-default['kafkaMirroring']['instanceid']['dfw1']={ "oxkm4002" => 1}
-default['kafkaMirroring']['instanceid']['lhr1']={ "erkf4013" => 1}
-default['kafkaMirroring']['instanceid']['hkg1']={ "opkf4013" => 1, "opkf4015" => 2}
-default['kafkaMirroring']['instanceid']['pek1']={ "pykm4001" => 1}
+default['kafkaMirroring']['instanceid']['lhr1']={ "skyhook-fl3" => 1}
 default['kafkaMirroring']['collectorid']['lhr1']='lhr1collector'
 default['kafkaMirroring']['hdfsid']['lhr1']='azure'
 default['kafkaMirroring']['version']= '0.6.13'
