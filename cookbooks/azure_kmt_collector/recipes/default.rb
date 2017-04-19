@@ -84,14 +84,6 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-lhr1collector.
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/conf.sh" do
-  source 'conf.sh'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
 cookbook_file "#{node['kafkaSupervisorConfig']['confighome']}/kafkaMirror.conf" do
   source 'kafkaMirrorSupervisor.conf'
   owner 'root'
