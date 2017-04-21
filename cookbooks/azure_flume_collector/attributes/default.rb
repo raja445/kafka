@@ -8,6 +8,7 @@ default["flume_collector"]["spool_dir"]  = "/data/d1/flume/spool"
 default["flume_collector"]["pid_dir"]  = "/var/run/flume"
 default["flume_mid_collector"]["xms"]['lhr1']  = "2G"
 default["flume_mid_collector"]["xmx"]['lhr1']  = "4G"
+default['flume_mid_collector']['scribescripts'] = '0.0.8-1350543662'
 default["flume_collector"]["kafka_brokers"]['lhr1']  = "erkf4001.grid.lhr1.inmobi.com:9092,erkf4002.grid.lhr1.inmobi.com:9092,erkf4003.grid.lhr1.inmobi.com:9092,erkf4004.grid.lhr1.inmobi.com:9092,erkf4005.grid.lhr1.inmobi.com:9092,erkf4006.grid.lhr1.inmobi.com:9092,erkf4007.grid.lhr1.inmobi.com:9092,erkf4008.grid.lhr1.inmobi.com:9092,erkf4009.grid.lhr1.inmobi.com:9092,erkf4010.grid.lhr1.inmobi.com:9092"
 default["flume_collector"]["kafka_brokers"]['azure']  = "skyhook-kf1.grid.lhr1.inmobi.com:9092,skyhook-kf2.grid.lhr1.inmobi.com:9092,skyhook-kf3.grid.lhr1.inmobi.com:9092,skyhook-kf4.grid.lhr1.inmobi.com:9092,skyhook-kf5.grid.lhr1.inmobi.com:9092"
 
