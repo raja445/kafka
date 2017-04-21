@@ -1275,7 +1275,7 @@
       "source": [
         {
           "topic": "tpce_ltv",
-          "startTime": "2017/04/20/06/15",
+          "startTime": "2017/04/20/00/00",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
