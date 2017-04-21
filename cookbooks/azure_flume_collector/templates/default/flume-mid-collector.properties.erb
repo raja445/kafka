@@ -34,6 +34,7 @@ mid-collector.sinks = <% @sinks.each do |sink, details| %><%= " #{sink}" %><% en
 mid-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 mid-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 mid-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
+mid-collector.sources.<%= "#{src}" %>.selector.optional  = <%= details[:optionalchannels] %>
 mid-collector.sources.<%= "#{src}" %>.bind = <%= details[:bind] %>
 mid-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
 <% if details[:'enable_compression'] == true -%>
