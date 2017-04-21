@@ -65,15 +65,15 @@ mid-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = <%= details[:'r
 <% end %>
 
 <% if details[:'sink_category'] == 'azurekafka' -%>
-end-collector.sinks.<%= "#{sink}" %>.type = <%= details[:type] %>
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.topicHeader = <%= details[:topicHeader] %>
-end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = <%= details[:flumeBatchSize] %>
-end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= details[:'kafka.bootstrap.servers'] %>
-end-collector.sinks.<%= "#{sink}" %>.kafka.topic = <%= details[:'kafka.topic'] %>
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
+mid-collector.sinks.<%= "#{sink}" %>.type = <%= details[:type] %>
+mid-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+mid-collector.sinks.<%= "#{sink}" %>.topicHeader = <%= details[:topicHeader] %>
+mid-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = <%= details[:flumeBatchSize] %>
+mid-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= details[:'kafka.bootstrap.servers'] %>
+mid-collector.sinks.<%= "#{sink}" %>.kafka.topic = <%= details[:'kafka.topic'] %>
+mid-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
 # valid values none, gzip, snappy
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = <%= details[:'kafka.producer.compression.type'] %>
+mid-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = <%= details[:'kafka.producer.compression.type'] %>
 <% end %>
 <% end %>
 
