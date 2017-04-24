@@ -106,21 +106,6 @@
       }
     },
     {
-      "streamName": "iatClick",
-      "source": [
-        {
-          "topic": "iat_click",
-          "zookeeper": "skyhook-kf1.grid.lhr1.inmobi.com:2181,skyhook-kf2.grid.lhr1.inmobi.com:2181,skyhook-kf3.grid.lhr1.inmobi.com:2181,skyhook-kf4.grid.lhr1.inmobi.com:2181,skyhook-kf5.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "perfRR",
       "source": [
         {
@@ -338,7 +323,7 @@
         {
           "topic": "ifc_organic_activity_uh1_lhr1",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        },
+        }
       ],
       "kafkaDestination": {
         "waitTime": 5000,
