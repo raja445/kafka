@@ -1,4 +1,4 @@
-name              "kafka_mirroring"
+name              "azure_kafka_mirroring"
 maintainer        "GRIDOPS"
 maintainer_email  "grid-ops@inmobi.com"
 description       "Installs kafkaMirroring"
