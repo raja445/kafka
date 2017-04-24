@@ -25,37 +25,6 @@ template "/opt/inmobi/bin/KafkaMirroring/conf.sh" do
   )
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uh1.json" do
-  source 'channel-uh1.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uh1collector.json" do
-  source 'channel-uh1collector.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-pek1.json" do
-  source 'channel-pek1.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-dfw1.json" do
-  source 'channel-dfw1.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
 
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-lhr1.json" do
   source 'channel-lhr1.json'
@@ -65,13 +34,6 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-lhr1.json" do
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-hkg1.json" do
-  source 'channel-hkg1.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
 
 cookbook_file "#{node['kafkaMirroringConfig']['confighome']}/default.properties" do
   source 'default.properties'
@@ -105,14 +67,6 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-lhr1.propertie
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-hkg1.properties" do
-  source 'server-hkg1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1.properties" do
   source 'server-uh1.properties'
   owner 'root'
@@ -121,18 +75,3 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1.properties
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-dfw1.properties" do
-  source 'server-dfw1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-pek1.properties" do
-  source 'server-pek1.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
