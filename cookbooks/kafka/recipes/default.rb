@@ -240,9 +240,9 @@ link "/etc/kafka" do
 end
 
 # Start/Enable Kafka
-service "kafka" do
-  action [:enable, :start]
-end
+#service "kafka" do
+#  action [:enable, :start]
+#end
 
 #package "jmxtrans" do
 #  version node['jmxtrans_version']
