@@ -147,7 +147,7 @@ template "/etc/init.d/kafka" do
   owner "root"
   group "root"
   mode  00755
-  notifies :restart, "service[kafka]"
+  #notifies :restart, "service[kafka]"
 end
 
 # Download kafka binary file if it does not exist already
