@@ -147,7 +147,7 @@ template "/etc/init.d/kafka" do
   owner "root"
   group "root"
   mode  00755
-  #notifies :restart, "service[kafka]"
+  notifies :restart, "service[kafka]"
 end
 
 # Download kafka binary file if it does not exist already
@@ -240,9 +240,9 @@ link "/etc/kafka" do
 end
 
 # Start/Enable Kafka
-#service "kafka" do
-#  action [:enable, :start]
-#end
+service "kafka" do
+  action [:enable, :start]
+end
 
 #package "jmxtrans" do
 #  version node['jmxtrans_version']
