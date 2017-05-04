@@ -50,7 +50,7 @@ end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 #Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /tmp/locker
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
@@ -68,7 +68,7 @@ end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 #Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /tmp/locker
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
@@ -81,7 +81,7 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 #Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /tmp/locker
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
@@ -124,6 +124,8 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
 # valid values none, gzip, snappy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
+#Single channel
+end-collector.sinks.<%= "#{sink}" %>.workerThreads = 4
 <% end %>
 <% @merged_avro_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = avro
@@ -156,7 +158,8 @@ end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
 end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
-end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 6.0
+#Single Channel
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /local/promoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /local/retention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /local/audit
@@ -187,7 +190,8 @@ end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
 end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
-end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 6.0
+#Single Channel
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/promoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/retention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
