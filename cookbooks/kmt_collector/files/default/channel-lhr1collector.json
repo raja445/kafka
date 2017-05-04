@@ -1351,6 +1351,19 @@
        }
     },
     {
+      "streamName": "beeswax_user_segment",
+      "source": [
+        {
+          "topic": "beeswax_user_segment",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmo
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "merge_beeswax_user_segment",
+        "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.co
+      }
+    },
+    {
       "streamName": "fds_lhr1",
       "source": [
         {
