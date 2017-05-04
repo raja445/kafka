@@ -1,0 +1,248 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called 'end-collector'
+
+####################################################################################################
+#avro source => disk backed memory => kafka
+####################################################################################################
+
+end-collector.sources =<% @sources.each do |src, details| %><%= " #{src}" %><% end %>
+end-collector.channels = <%= @allchannels %>
+end-collector.sinks = <%= @allsinks %>
+
+
+<% @sources.each do |src, details| %>
+<% if details[:'src_category'] == 'avro' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.bind = 0.0.0.0
+end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
+<% if details[:'enable_compression'] == true -%>
+end-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
+<% end -%>
+end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= @kafkazookeeper %>
+<% end %>
+
+<% if details[:'src_category'] == 'kafkamerge' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /tmp/locker
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+#end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
+end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+<% end -%>
+<% if details[:'src_category'] == 'hdfslocal' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /tmp/locker
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+<% end -%>
+<% if details[:'src_category'] == 'hdfsmerge' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /tmp/locker
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
+<% end -%>
+<% end -%>
+
+# keep in sync with previous collector in the chain
+# end-collector.sinks.avrosrc.compression-type = deflate
+# for tuning
+# end-collector.sinks.avrosrc.batch-size = 100
+
+<% @normal_kafka_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
+end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
+end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
+# valid values none, gzip, snappy
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
+#Single channel
+end-collector.sinks.<%= "#{sink}" %>.workerThreads = 38
+<% end %>
+<% @merged_kafka_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
+end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
+end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
+# valid values none, gzip, snappy
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
+<% end %>
+<% @merged_avro_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = avro
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:flumevip] %>
+end-collector.sinks.<%= "#{sink}" %>.port = 2542
+end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
+<% end %>
+<% @local_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/local/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/local/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams_local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 6.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /local/promoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /local/retention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /local/audit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
+end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+<% end %>
+<% @merged_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/merge
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 6.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/promoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/retention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
+end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+<% end %>
+
+<% @normal_avroreceive_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 2000000
+end-collector.channels.<%= "#{channel}" %>.spoolWorkers = 16
+end-collector.channels.<%= "#{channel}" %>.despoolWorkers = 16
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+<% end %>
+<% @merge_avroreceive_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
+<% end %>
+<% @merge_kafkaread_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
+<% end %>
+<% @local_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
+<% @merge_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
+
