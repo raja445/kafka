@@ -31,6 +31,6 @@ cookbook_file '/etc/logrotate.d/kafka.conf' do
   source 'kafka_all_logrotate.conf'
   owner 'root'
   group 'root'
-  mode '0664'
+  mode '0644'
   action :create
 end
