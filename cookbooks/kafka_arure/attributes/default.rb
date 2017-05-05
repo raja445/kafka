@@ -22,7 +22,7 @@ default['kafkadisks']['mounts']="/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/d
 
 default["kafka"]["brokers"]["lhr1"] = ["skyhook-kf1.grid.lhr1.inmobi.com","skyhook-kf2.grid.lhr1.inmobi.com","skyhook-kf3.grid.lhr1.inmobi.com", "skyhook-kf4.grid.lhr1.inmobi.com","skyhook-kf5.grid.lhr1.inmobi.com"]
 default["kafka"]["zookeepers"]["lhr1"] = ["skyhook-kf1.grid.lhr1.inmobi.com:2181","skyhook-kf2.grid.lhr1.inmobi.com:2181","skyhook-kf3.grid.lhr1.inmobi.com:2181","skyhook-kf4.grid.lhr1.inmobi.com:2181","skyhook-kf5.grid.lhr1.inmobi.com:2181"]
-default['kafka']['mrelay']['lhr1'] = "metrics-relay.grid.lhr1.inmobi.com"
+default['kafka']['mrelay']['lhr1'] = "skyhook-metrics-relay.grid.lhr1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
