@@ -167,6 +167,19 @@
       }
     },
     {
+      "streamName": "azure_test",
+      "source": [
+        {
+          "topic": "azure_test",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "merge_azure_test",
+        "zookeeper": "skyhook-kf1.grid.lhr1.inmobi.com:2181,skyhook-kf2.grid.lhr1.inmobi.com:2181,skyhook-kf3.grid.lhr1.inmobi.com:2181,skyhook-kf4.grid.lhr1.inmobi.com:2181,skyhook-kf5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "ifcActivityHighFreq",
       "source": [
         {
