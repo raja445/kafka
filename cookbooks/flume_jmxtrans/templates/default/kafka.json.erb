@@ -88,6 +88,46 @@
      ]
     },
     {
+     "resultAlias": "kafka.consumer",
+     "obj": "kafka.consumer:type=ZookeeperConsumerConnector,clientId=*,groupId=*,name=OwnedPartitionsCount",
+     "attr": [
+      "Value"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","clientId","groupId"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "kafka.consumer",
+     "obj": "kafka.consumer:type=ZookeeperConsumerConnector,clientId=*,name=RebalanceRateAndTime",
+     "attr": [
+      "Count"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","clientId"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
      "resultAlias": "flume.channel",
      "obj": "org.apache.flume.channel:type=*,*",
      "attr": [
