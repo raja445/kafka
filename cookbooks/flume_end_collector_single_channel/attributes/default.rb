@@ -154,13 +154,11 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
-     "hdfslocal-sink1" => {:channel => "hdfslocal-channel1",:cluster =>"krypton"},
-     "hdfslocal-sink2" => {:channel => "hdfslocal-channel2",:cluster =>"krypton"}
+     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"krypton"}
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['uh1']  = {
-     "hdfsmerge-sink1" => {:channel => "hdfsmerge-channel1",:cluster =>"krypton"},
-     "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel2",:cluster =>"krypton"}
+     "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"krypton"}
 }
 ######################################################### End Of UH1 ###################################################################
 
