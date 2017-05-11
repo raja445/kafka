@@ -411,7 +411,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['lhr1']  = {
 
 
 ######################################################### PEK1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge"
+default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge,rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "testmerge"
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable  pek1-to-uh1-channel1 pek1-to-uh1-channel2 pek1-to-pek1-channel1 pek1-to-pek1-channel2 pek1-to-lhr1-channel1 pek1-to-lhr1-channel2 pek1-to-dfw1-channel1 pek1-to-dfw1-channel2 hdfslocal-channel  hdfsmerge-channel"
@@ -444,7 +444,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "testmerge,rr"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "pek1hdfsmerge",
