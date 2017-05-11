@@ -92,6 +92,11 @@ cookbook_file "#{flumeConf}/flume-env.sh" do
   mode "0644"
 end
 
+cookbook_file "#{flumeConf}/logback.xml" do
+  source "flume-logback.xml"
+  mode "0664"
+end
+
 if colo == 'uh1'
 cookbook_file "#{flumeConf}/log4j.xml" do
   source "log4j.xml"
