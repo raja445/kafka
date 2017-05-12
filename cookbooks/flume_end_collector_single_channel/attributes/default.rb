@@ -169,7 +169,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['uh1']  = {
 
 
 ######################################################### DFW1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['dfw1']  = "testmerge"
+default["flume_collector"]["endcollector_local_retention_topics"]['dfw1']  = "testmerge,rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "testmerge"
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable dfw1-to-uh1-channel1 dfw1-to-uh1-channel2 dfw1-to-pek1-channel1 dfw1-to-pek1-channel2 dfw1-to-lhr1-channel1 dfw1-to-lhr1-channel2 dfw1-to-dfw1-channel1 dfw1-to-dfw1-channel2 hdfsmerge-channel hdfslocal-channel"
@@ -202,7 +202,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "testmerge,rr"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "dfw1hdfsmerge",
