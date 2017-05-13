@@ -108,14 +108,6 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-pek1collector
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-hkg1collector.json" do
-  source 'channel-hkg1collector.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-dfw1collector.properties" do
   source 'server-dfw1collector.properties'
   owner 'root'
@@ -140,13 +132,6 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-pek1collector.
   action :create
 end
 
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-hkg1collector.properties" do
-  source 'server-hkg1collector.properties'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
 
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1collector.properties" do
   source 'server-uh1collector.properties'
@@ -166,14 +151,6 @@ end
 
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-lhr1.json" do
   source 'channel-lhr1.json'
-  owner 'root'
-  group 'root'
-  mode '0664'
-  action :create
-end
-
-cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-hkg1.json" do
-  source 'channel-hkg1.json'
   owner 'root'
   group 'root'
   mode '0664'
