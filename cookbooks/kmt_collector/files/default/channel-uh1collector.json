@@ -131,6 +131,19 @@
       }
     },
     {
+      "streamName": "beaconDefaultUh1",
+      "source": [
+        {
+          "topic": "beaconDefaultUh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
       "streamName": "billing_cpm_hkg1_validate",
       "source": [
         {
