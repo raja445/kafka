@@ -168,7 +168,6 @@
       "hdfsDestination": {
         "basePath": "databus/streams_local",
         "hdfsUrl": "hdfs://gold:8020",
-        "batchSize": 100
       }
     },
     {
@@ -182,7 +181,6 @@
       "hdfsDestination": {
         "basePath": "databus/streams_local",
         "hdfsUrl": "hdfs://gold:8020",
-        "batchSize": 100
       }
     },
     {
