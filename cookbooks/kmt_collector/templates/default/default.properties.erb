@@ -55,4 +55,4 @@ oldfiles.age=60
 max.jobspernode=200
 
 prod.colos=<%= @collector_id %>
-<%= @collector_id %>.config={"configs":[{"name":"<%= @colo %>","url":"hdfs://<%= @hdfs_id %>:8020","regex":"hdfs://[a-z]*:[0-9]*"}]}
+<%= @collector_id %>.config={"configs":[{"name":"<%= @colo %>","url":"hdfs://<%= @hdfs_id %>:8020","regex":"hdfs://[a-z]*:[0-9]*"}<% if @colo  == 'uh1' -%>,{"name":"uh1","url":"hdfs://gold:8020","regex":"hdfs://[a-z]*:[0-9]*"}<% end -%>]}
