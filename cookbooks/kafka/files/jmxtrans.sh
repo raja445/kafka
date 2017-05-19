@@ -19,6 +19,7 @@ PSCMD="$JPS | grep -i jmxtrans | awk '{ print \$1 };'"
 JAVA_OPTS=${JAVA_OPTS:-"-Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djmxtrans.log.dir=$LOG_DIR"}
 NEW_SIZE=${NEW_SIZE:-"64"}
 NEW_RATIO=${NEW_RATIO:-"8"}
+XMS_HEAP_SIZE=${XMS_HEAP_SIZE:-"512"}
 HEAP_SIZE=${HEAP_SIZE:-"1024"}
 PERM_SIZE=${PERM_SIZE:-"384"}
 MAX_PERM_SIZE=${MAX_PERM_SIZE:-"384"}
@@ -30,7 +31,8 @@ JMXTRANS_OPTS="$JMXTRANS_OPTS -Djmxtrans.log.level=${LOG_LEVEL}"
 
 
 MONITOR_OPTS=${MONITOR_OPTS:-"-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=${JMX_PORT}"}
-GC_OPTS=${GC_OPTS:-"-Xms${HEAP_SIZE}M -Xmx${HEAP_SIZE}M -XX:+UseConcMarkSweepGC -XX:NewRatio=${NEW_RATIO} -XX:NewSize=${NEW_SIZE}m -XX:MaxNewSize=${NEW_SIZE}m  -XX:GCTimeRatio=9 -XX:PermSize=${PERM_SIZE}m -XX:MaxPermSize=${MAX_PERM_SIZE}m -XX:+UseTLAB -XX:CMSInitiatingOccupancyFraction=${IO_FRACTION} -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:ParallelGCThreads=${CPU_CORES} -Dsun.rmi.dgc.server.gcInterval=28800000 -Dsun.rmi.dgc.client.gcInterval=28800000  -Xloggc:${LOG_DIR}/gc_jmxtrans.log"}
+#GC_OPTS=${GC_OPTS:-"-Xms${XMS_HEAP_SIZE}M -Xmx${HEAP_SIZE}M -XX:+UseConcMarkSweepGC -XX:NewRatio=${NEW_RATIO} -XX:NewSize=${NEW_SIZE}m -XX:MaxNewSize=${NEW_SIZE}m  -XX:GCTimeRatio=9 -XX:PermSize=${PERM_SIZE}m -XX:MaxPermSize=${MAX_PERM_SIZE}m -XX:+UseTLAB -XX:CMSInitiatingOccupancyFraction=${IO_FRACTION} -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:ParallelGCThreads=${CPU_CORES} -Dsun.rmi.dgc.server.gcInterval=28800000 -Dsun.rmi.dgc.client.gcInterval=28800000  -Xloggc:${LOG_DIR}/gc_jmxtrans.log"}
+GC_OPTS=${GC_OPTS:-"-Xms${XMS_HEAP_SIZE}M -Xmx${HEAP_SIZE}M -XX:+UseConcMarkSweepGC -XX:MaxDirectMemorySize=128m -XX:NewRatio=${NEW_RATIO} -XX:NewSize=${NEW_SIZE}m -XX:MaxNewSize=${NEW_SIZE}m  -XX:GCTimeRatio=9 -XX:+UseTLAB -XX:CMSInitiatingOccupancyFraction=${IO_FRACTION} -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:ParallelGCThreads=${CPU_CORES} -Dsun.rmi.dgc.server.gcInterval=28800000 -Dsun.rmi.dgc.client.gcInterval=28800000  -Xloggc:${LOG_DIR}/gc_jmxtrans.log"}
 
 JPS_RUNNABLE=`$JPS 2>&1`
 if [ $? != 0 ]; then
