@@ -167,30 +167,6 @@
      ]
     },
     {
-     "resultAlias": "topicbytesoutpersec", 
-     "obj": "kafka.server:name=BytesOutPerSec,type=BrokerTopicMetrics,topic=*", 
-     "attr": [
-      "MeanRate", 
-      "OneMinuteRate", 
-      "FiveMinuteRate", 
-      "FifteenMinuteRate", 
-      "Count"
-     ], 
-     "outputWriters": [
-      {
-       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter", 
-       "settings": {
-        "typeNames": [
-         "topic","partition"
-        ], 
-        "host": "<%= @graphite_host %>", 
-        "port": 2020, 
-        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
-       }
-      }
-     ]
-    },
-    {
      "resultAlias": "logflushrateandtime",
      "obj": "kafka.log:name=LogFlushRateAndTimeMs,type=LogFlushStats",
      "attr": [
