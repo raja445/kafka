@@ -1071,6 +1071,36 @@
                 }
             ],
             "streamName": "wadogorr"
+    },
+    {
+            "hdfsDestination": {
+                "basePath": "kafka/data",
+                "compression": "gz",
+                "hdfsUrl": "hdfs://emerald:8020",
+                "retention": "48"
+            },
+            "source": [
+                {
+                    "topic": "ifc_photon_nonenriched_pb_lhr1",
+                    "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+                }
+            ],
+            "streamName": "ifcPhotonNonenrichedPbLhr1"
+    },
+    {
+            "hdfsDestination": {
+                "basePath": "kafka/data",
+                "compression": "gz",
+                "hdfsUrl": "hdfs://gold:8020",
+                "retention": "48"
+            },
+            "source": [
+                {
+                    "topic": "ifc_photon_nonenriched_pb_lhr1",
+                    "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+                }
+            ],
+            "streamName": "ifcPhotonNonenrichedPbLhr1Gold"
     }
   ]
 }
