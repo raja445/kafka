@@ -44,7 +44,7 @@ default["flume_collector"]["mergesrc_consumer_gpsize"]['hkg1']  = "6"
 
 ######################################################### UH1 ###################################################################
 
-default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "testmerge,rr"
+default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "beacon_rr_uh1_cpm_render"
 
 default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable mergespillable uh1-to-uh1-channel1 uh1-to-uh1-channel2 uh1-to-dfw1-channel1 uh1-to-dfw1-channel2 uh1-to-lhr1-channel1 uh1-to-lhr1-channel2 uh1-to-pek1-channel1 uh1-to-pek1-channel2 hdfsmerge-channel  hdfslocal-channel"
@@ -77,7 +77,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge,rr"},
+         :'kafka.topics' => "rr"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "uh1hdfsmerge",
@@ -108,7 +108,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :channels => "uh1-to-lhr1-channel1 uh1-to-lhr1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "beacon_rr_lhr1_cpm_render"},
      "uh1-to-pek1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "uh1-to-pek1-kafkamerge",
@@ -116,7 +116,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :channels => "uh1-to-pek1-channel1 uh1-to-pek1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"}
+         :'kafka.topics' => "beacon_rr_pek1_cpm_render"}
        }
 
 #Configure the channels for the Flume Collector
@@ -233,7 +233,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "dfw1-to-lhr1-channel1 dfw1-to-lhr1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "beacon_rr_lhr1_cpm_render"},
      "dfw1-to-pek1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "dfw1-to-pek1-kafkamerge",
@@ -241,7 +241,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "dfw1-to-pek1-channel1 dfw1-to-pek1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"}
+         :'kafka.topics' => "beacon_rr_pek1_cpm_render"}
        }
 
 #Configure the channels for the Flume Collector
@@ -292,7 +292,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 
 ######################################################### LHR1 ###################################################################
 default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "rr"
-default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "testmerge"
+default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "beacon_rr_lhr1_cpm_render"
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 hdfsmerge-channel hdfslocal-channel"
 
@@ -331,7 +331,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfsmerge-channel",
          :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge"},
+         :'kafka.topics' => "merge_beacon_rr_lhr1_cpm_render"},
      "lhr1-to-uh1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "lhr1-to-uh1-kafkamerge",
@@ -355,7 +355,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "beacon_rr_lhr1_cpm_render"},
      "lhr1-to-pek1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "lhr1-to-pek1-kafkamerge",
@@ -363,7 +363,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :channels => "lhr1-to-pek1-channel1 lhr1-to-pek1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"}
+         :'kafka.topics' => "beacon_rr_pek1_cpm_render"}
        }
 
 #Configure the channels for the Flume Collector
@@ -411,8 +411,8 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['lhr1']  = {
 
 
 ######################################################### PEK1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "testmerge,rr"
-default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "testmerge"
+default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "rr"
+default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "beacon_rr_pek1_cpm_render"
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable  pek1-to-uh1-channel1 pek1-to-uh1-channel2 pek1-to-pek1-channel1 pek1-to-pek1-channel2 pek1-to-lhr1-channel1 pek1-to-lhr1-channel2 pek1-to-dfw1-channel1 pek1-to-dfw1-channel2 hdfslocal-channel  hdfsmerge-channel"
 
@@ -444,14 +444,14 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge,rr"},
+         :'kafka.topics' => "rr"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "pek1hdfsmerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfsmerge-channel",
          :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge"},
+         :'kafka.topics' => "merge_beacon_rr_pek1_cpm_render"},
      "pek1-to-uh1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "pek1-to-uh1-kafkamerge",
@@ -475,7 +475,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "pek1-to-lhr1-channel1 pek1-to-lhr1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
+         :'kafka.topics' => "beacon_rr_lhr1_cpm_render"},
      "pek1-to-pek1-mergesrc1" => {
          :src_category => "kafkamerge",
          :consumer_group => "pek1-to-pek1-kafkamerge",
@@ -484,7 +484,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "pek1-to-pek1-channel1 pek1-to-pek1-channel2",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
-         :'kafka.topics' => "testmerge"}
+         :'kafka.topics' => "beacon_rr_pek1_cpm_render"}
        }
 
 #Configure the channels for the Flume Collector
