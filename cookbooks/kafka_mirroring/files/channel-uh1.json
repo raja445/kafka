@@ -1815,6 +1815,21 @@
                 }
             ],
             "streamName": "ifcPhotonNonenrichedPbUh1Gold"
+    },
+    {
+            "hdfsDestination": {
+                "basePath": "kafka/data",
+                "compression": "gz",
+                "hdfsUrl": "hdfs://krypton:8020",
+                "retention": "48"
+            },
+            "source": [
+                {
+                    "topic": "custom_type_record_update-appduserscore",
+                    "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+                }
+            ],
+            "streamName": "customTypeRecordUpdateAppduserscore"
     }
   ]
 }
