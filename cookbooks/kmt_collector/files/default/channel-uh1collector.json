@@ -298,18 +298,6 @@
       }
     },
     {
-      "streamName": "beacon_rr_pek1_cpm_render",
-      "source": [
-        {
-          "topic": "beacon_rr_pek1_cpm_render",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
       "streamName": "beacon_rr_hkg1_default",
       "source": [
         {
@@ -338,18 +326,6 @@
       "source": [
         {
           "topic": "beacon_rr_lhr1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_lhr1_cpm_render",
-      "source": [
-        {
-          "topic": "beacon_rr_lhr1_cpm_render",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -1909,18 +1885,6 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "batchSize": 100,
         "retention": "96"
-      }
-    },
-    {
-      "streamName": "beacon_rr_uh1_cpm_render",
-      "source": [
-        {
-          "topic": "beacon_rr_uh1_cpm_render",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
       }
     },
     {
