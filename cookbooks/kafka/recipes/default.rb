@@ -226,7 +226,10 @@ end
    mode  00755
    variables(
      lazy {
-       { :properties => node["kafka"][template_file].to_hash }
+       { 
+         :properties => node["kafka"][template_file].to_hash,
+         :colo => node['domain'].split(".")[-3]
+       }
      }
    )
    #notifies :restart, "service[kafka]"
