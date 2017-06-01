@@ -294,7 +294,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "beacon_rr_lhr1_cpm_render,network_beacon_lhr1_adunit,network_beacon_lhr1_publisherfill,beacon_rr_lhr1_default"
 
-default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 hdfsmerge-channel hdfslocal-channel"
+default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 lhr1-to-dfw1-channel3 lhr1-to-dfw1-channel4 lhr1-to-dfw1-channel5 lhr1-to-dfw1-channel6 lhr1-to-dfw1-channel7 lhr1-to-dfw1-channel8 hdfsmerge-channel hdfslocal-channel"
 
 default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink uh1-mergesink1 uh1-mergesink2 dfw1-mergesink1 dfw1-mergesink2 lhr1-mergesink1 lhr1-mergesink2 pek1-mergesink1 pek1-mergesink2 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
@@ -344,7 +344,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :src_category => "kafkamerge",
          :consumer_group => "lhr1-to-dfw1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2",
+         :channels => "lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 lhr1-to-dfw1-channel3 lhr1-to-dfw1-channel4 lhr1-to-dfw1-channel5 lhr1-to-dfw1-channel6 lhr1-to-dfw1-channel7 lhr1-to-dfw1-channel8",
          :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
          :batchSize => 500,
          :'kafka.topics' => "beacon_rr_dfw1_cpm_render,network_beacon_dfw1_adunit,network_beacon_dfw1_publisherfill,beacon_rr_dfw1_default"},
@@ -369,7 +369,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['lhr1']  = ["spillable"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['lhr1']  = ["mergespillable"]
-default["flume_collector"]["endcollector_merge_kafkaread_channels"]['lhr1']  = ["lhr1-to-uh1-channel1","lhr1-to-uh1-channel2","lhr1-to-pek1-channel1","lhr1-to-pek1-channel2","lhr1-to-lhr1-channel1","lhr1-to-lhr1-channel2","lhr1-to-dfw1-channel1","lhr1-to-dfw1-channel2"]
+default["flume_collector"]["endcollector_merge_kafkaread_channels"]['lhr1']  = ["lhr1-to-uh1-channel1","lhr1-to-uh1-channel2","lhr1-to-pek1-channel1","lhr1-to-pek1-channel2","lhr1-to-lhr1-channel1","lhr1-to-lhr1-channel2","lhr1-to-dfw1-channel1","lhr1-to-dfw1-channel2","lhr1-to-dfw1-channel3","lhr1-to-dfw1-channel4","lhr1-to-dfw1-channel5","lhr1-to-dfw1-channel6","lhr1-to-dfw1-channel7","lhr1-to-dfw1-channel8"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['lhr1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['lhr1']  = ["hdfslocal-channel"]
 
@@ -388,6 +388,12 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['lhr1']  = {
      "uh1-mergesink2" => {:channel => "lhr1-to-uh1-channel2",:flumevip =>"flume.grid.uh1.inmobi.com"},
      "dfw1-mergesink1" => {:channel => "lhr1-to-dfw1-channel1",:flumevip =>"flume.grid.dfw1.inmobi.com"},
      "dfw1-mergesink2" => {:channel => "lhr1-to-dfw1-channel2",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink3" => {:channel => "lhr1-to-dfw1-channel3",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink4" => {:channel => "lhr1-to-dfw1-channel4",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink5" => {:channel => "lhr1-to-dfw1-channel5",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink6" => {:channel => "lhr1-to-dfw1-channel6",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink7" => {:channel => "lhr1-to-dfw1-channel7",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink8" => {:channel => "lhr1-to-dfw1-channel8",:flumevip =>"flume.grid.dfw1.inmobi.com"},
      "lhr1-mergesink1" => {:channel => "lhr1-to-lhr1-channel1",:flumevip =>"flume.grid.lhr1.inmobi.com"},
      "lhr1-mergesink2" => {:channel => "lhr1-to-lhr1-channel2",:flumevip =>"flume.grid.lhr1.inmobi.com"},
      "pek1-mergesink1" => {:channel => "lhr1-to-pek1-channel1",:flumevip =>"flume.grid.pek1.inmobi.com"},
