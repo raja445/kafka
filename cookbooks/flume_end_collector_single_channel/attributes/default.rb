@@ -296,7 +296,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable lhr1-to-uh1-channel1 lhr1-to-uh1-channel2 lhr1-to-pek1-channel1 lhr1-to-pek1-channel2 lhr1-to-lhr1-channel1 lhr1-to-lhr1-channel2 lhr1-to-dfw1-channel1 lhr1-to-dfw1-channel2 lhr1-to-dfw1-channel3 lhr1-to-dfw1-channel4 lhr1-to-dfw1-channel5 lhr1-to-dfw1-channel6 lhr1-to-dfw1-channel7 lhr1-to-dfw1-channel8 hdfsmerge-channel hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink uh1-mergesink1 uh1-mergesink2 dfw1-mergesink1 dfw1-mergesink2 lhr1-mergesink1 lhr1-mergesink2 pek1-mergesink1 pek1-mergesink2 hdfsmerge-sink hdfslocal-sink"
+default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink uh1-mergesink1 uh1-mergesink2 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 dfw1-mergesink4 dfw1-mergesink5 dfw1-mergesink6 dfw1-mergesink7 dfw1-mergesink8 lhr1-mergesink1 lhr1-mergesink2 pek1-mergesink1 pek1-mergesink2 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['lhr1']  = {
      "avrosrc" => {
