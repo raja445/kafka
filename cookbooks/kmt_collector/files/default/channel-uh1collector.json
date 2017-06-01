@@ -250,18 +250,6 @@
       }
     },
     {
-      "streamName": "beacon_rr_dfw1_default",
-      "source": [
-        {
-          "topic": "beacon_rr_dfw1_default",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
       "streamName": "beacon_rr_hkg1_cpc_render",
       "source": [
         {
@@ -298,30 +286,6 @@
       }
     },
     {
-      "streamName": "beacon_rr_hkg1_default",
-      "source": [
-        {
-          "topic": "beacon_rr_hkg1_default",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_pek1_default",
-      "source": [
-        {
-          "topic": "beacon_rr_pek1_default",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
       "streamName": "beacon_rr_lhr1_cpc_render",
       "source": [
         {
@@ -334,34 +298,10 @@
       }
     },
     {
-      "streamName": "beacon_rr_lhr1_default",
-      "source": [
-        {
-          "topic": "beacon_rr_lhr1_default",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
       "streamName": "beacon_rr_uh1_cpc_render",
       "source": [
         {
           "topic": "beacon_rr_uh1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_uh1_default",
-      "source": [
-        {
-          "topic": "beacon_rr_uh1_default",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
@@ -386,18 +326,6 @@
       "source": [
         {
           "topic": "beacon_rr_uj1_cpm_render",
-          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://krypton:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_uj1_default",
-      "source": [
-        {
-          "topic": "beacon_rr_uj1_default",
           "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
         }
       ],
