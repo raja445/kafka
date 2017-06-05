@@ -36,6 +36,9 @@ end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.bind = 0.0.0.0
 end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
+<% if "#{src}" == 'mergezipavrosrc' -%>
+end-collector.sources.<%= "#{src}" %>.threads = 32
+<% end -%>
 <% if details[:'enable_compression'] == true -%>
 end-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
 <% end -%>
@@ -82,7 +85,6 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer
 <% if details[:'src_category'] == 'hdfsmerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.threads = 32
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
