@@ -134,10 +134,11 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
 end-collector.sinks.<%= "#{sink}" %>.workerThreads = 4
 <% end %>
 <% @merged_avro_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = avro
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.MultiAvroSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:flumevip] %>
 end-collector.sinks.<%= "#{sink}" %>.port = 2542
+end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @avrosinkworkerthreads %>
 end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
 # tune based on the setup and performance. must be less than the transaction capacity of the channel attached
 end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
@@ -162,7 +163,7 @@ end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
-end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 20
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
 end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
