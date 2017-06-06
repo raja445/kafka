@@ -50,7 +50,7 @@ end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.z
 <% if details[:'src_category'] == 'kafkamerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
+#end-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
