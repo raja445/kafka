@@ -163,7 +163,7 @@ end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
-end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 20
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
 end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
