@@ -131,7 +131,7 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
 # valid values none, gzip, snappy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
 #Single channel
-end-collector.sinks.<%= "#{sink}" %>.workerThreads = 4
+end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads %>
 <% end %>
 <% @merged_avro_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.MultiAvroSink
