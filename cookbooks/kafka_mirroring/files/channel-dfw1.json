@@ -478,7 +478,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://onyx:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "96"
       }
     },
     {
@@ -523,7 +523,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://onyx:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -615,7 +615,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://onyx:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "96"
       }
     },
     {
@@ -630,7 +630,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://onyx:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "96"
       }
     },
     {
