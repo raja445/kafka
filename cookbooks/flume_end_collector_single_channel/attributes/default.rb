@@ -38,6 +38,12 @@ default["flume_collector"]["sinkworkerthreads"]['pek1']  = "38"
 default["flume_collector"]["sinkworkerthreads"]['dfw1']  = "64"
 default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "38"
 
+#number of sinkworkerthreads
+default["flume_collector"]["mergesinkworkerthreads"]['uh1']  = "64"
+default["flume_collector"]["mergesinkworkerthreads"]['pek1']  = "64"
+default["flume_collector"]["mergesinkworkerthreads"]['dfw1']  = "64"
+default["flume_collector"]["mergesinkworkerthreads"]['lhr1']  = "64"
+
 #number of avrosinkworkerthreads
 default["flume_collector"]["avrosinkworkerthreads"]['uh1']  = "16"
 default["flume_collector"]["avrosinkworkerthreads"]['pek1']  = "16"
