@@ -29,7 +29,7 @@ default["flume_collector"]["flume_agent_host"]['lhr1']  = "erdc4002.grid.lhr1.in
 #Flume merge source consumer groupsize
 default["flume_collector"]["mergesrc_consumer_gpsize"]['uh1']  = "8"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "6"
-default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "8"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "9"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "8"
 
 #number of sinkworkerthreads
