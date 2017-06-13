@@ -144,9 +144,9 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['uh1']  = {
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
      "uh1-mergesink" => {:channel => "uh1-to-uh1-channel",:flumevip =>"flume.grid.uh1.inmobi.com"},
-     "dfw1-mergesink" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"flume.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"flume.grid.lhr1.inmobi.com"},
-     "pek1-mergesink" => {:channel => "uh1-to-pek1-channel",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "dfw1-mergesink" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"erkf4013.grid.lhr1.inmobi.com"},
+     "pek1-mergesink" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
