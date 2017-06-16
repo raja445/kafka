@@ -10,7 +10,7 @@
   <appender name="LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${flume.log.dir}/flume-${CURRENT_USER}-${HOSTNAME}.log</file>
     <encoder>
-      <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%t] [%class{24}.%M:%L] - %m%n</pattern>
+      <pattern>%d{dd MMM yyyy HH:mm:ss.SSS} %-5p [%t] [%class{24}.%M:%L] - %m%n</pattern>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
@@ -24,7 +24,7 @@
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <target>System.err</target>
     <encoder>
-      <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%t] - %m%n</pattern>
+      <pattern>%d{dd MMM yyyy HH:mm:ss.SSS} %-5p [%t] - %m%n</pattern>
     </encoder>
   </appender>
 
