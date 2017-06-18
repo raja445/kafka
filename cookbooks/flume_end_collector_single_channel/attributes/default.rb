@@ -58,7 +58,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "bea
 
 default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable mergespillable uh1-to-uh1-channel uh1-to-dfw1-channel uh1-to-lhr1-channel uh1-to-pek1-channel hdfsmerge-channel  hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink mergekafkasink uh1-mergesink dfw1-mergesink lhr1-mergesink pek1-mergesink hdfsmerge-sink hdfslocal-sink"
+default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink1 lhr1-mergesink2 lhr1-mergesink3 pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['uh1']  = {
      "avrosrc" => {
@@ -143,10 +143,18 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['uh1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
-     "uh1-mergesink" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
-     "dfw1-mergesink" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"erkf4013.grid.lhr1.inmobi.com"},
-     "pek1-mergesink" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "uh1-mergesink1" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com"},
+     "uh1-mergesink3" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink3" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"erfl4001.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"erfl4002.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink3" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"erfl4003.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com"},
+     "pek1-mergesink3" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
@@ -175,7 +183,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable dfw1-to-uh1-channel dfw1-to-pek1-channel dfw1-to-lhr1-channel dfw1-to-dfw1-channel hdfsmerge-channel hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink mergekafkasink  uh1-mergesink dfw1-mergesink lhr1-mergesink pek1-mergesink hdfsmerge-sink hdfslocal-sink"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink1 lhr1-mergesink2 lhr1-mergesink3 pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "avrosrc" => {
@@ -259,10 +267,18 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
-     "uh1-mergesink" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
-     "dfw1-mergesink" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink" => {:channel => "dfw1-to-lhr1-channel",:flumevip =>"erkf4013.grid.lhr1.inmobi.com"},
-     "pek1-mergesink" => {:channel => "dfw1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "uh1-mergesink1" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com"},
+     "uh1-mergesink3" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink3" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "dfw1-to-lhr1-channel",:flumevip =>"erfl4001.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "dfw1-to-lhr1-channel",:flumevip =>"erfl4002.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink3" => {:channel => "dfw1-to-lhr1-channel",:flumevip =>"erfl4003.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "dfw1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "dfw1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com"},
+     "pek1-mergesink3" => {:channel => "dfw1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
@@ -289,7 +305,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable lhr1-to-uh1-channel lhr1-to-pek1-channel lhr1-to-lhr1-channel lhr1-to-dfw1-channel hdfsmerge-channel hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink uh1-mergesink dfw1-mergesink lhr1-mergesink pek1-mergesink hdfsmerge-sink hdfslocal-sink"
+default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink1 lhr1-mergesink2 lhr1-mergesink3 pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['lhr1']  = {
      "avrosrc" => {
@@ -373,10 +389,18 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['lhr1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['lhr1']  = {
-     "uh1-mergesink" => {:channel => "lhr1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
-     "dfw1-mergesink" => {:channel => "lhr1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink" => {:channel => "lhr1-to-lhr1-channel",:flumevip =>"erkf4013.grid.lhr1.inmobi.com"},
-     "pek1-mergesink" => {:channel => "lhr1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "uh1-mergesink1" => {:channel => "lhr1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "lhr1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com"},
+     "uh1-mergesink3" => {:channel => "lhr1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "lhr1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "lhr1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink3" => {:channel => "lhr1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "lhr1-to-lhr1-channel",:flumevip =>"erfl4001.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "lhr1-to-lhr1-channel",:flumevip =>"erfl4002.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink3" => {:channel => "lhr1-to-lhr1-channel",:flumevip =>"erfl4003.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "lhr1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "lhr1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com"},
+     "pek1-mergesink3" => {:channel => "lhr1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['lhr1']  = {
@@ -401,7 +425,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable  pek1-to-uh1-channel pek1-to-pek1-channel pek1-to-lhr1-channel pek1-to-dfw1-channel hdfslocal-channel  hdfsmerge-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "kafkasink  mergekafkasink  uh1-mergesink dfw1-mergesink lhr1-mergesink pek1-mergesink hdfslocal-sink  hdfsmerge-sink"
+default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "kafkasink  mergekafkasink  uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink1 lhr1-mergesink2 lhr1-mergesink3 pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfslocal-sink  hdfsmerge-sink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['pek1']  = {
      "avrosrc" => {
@@ -487,10 +511,18 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['pek1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['pek1']  = {
-     "uh1-mergesink" => {:channel => "pek1-to-uh1-channel",:flumevip =>"flume.grid.uh1.inmobi.com"},
-     "dfw1-mergesink" => {:channel => "pek1-to-dfw1-channel",:flumevip =>"flume.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink" => {:channel => "pek1-to-lhr1-channel",:flumevip =>"flume.grid.lhr1.inmobi.com"},
-     "pek1-mergesink" => {:channel => "pek1-to-pek1-channel",:flumevip =>"flume.grid.pek1.inmobi.com"},
+     "uh1-mergesink1" => {:channel => "pek1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
+     "uh1-mergesink2" => {:channel => "pek1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com"},
+     "uh1-mergesink3" => {:channel => "pek1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com"},
+     "dfw1-mergesink1" => {:channel => "pek1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink2" => {:channel => "pek1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com"},
+     "dfw1-mergesink3" => {:channel => "pek1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com"},
+     "lhr1-mergesink1" => {:channel => "pek1-to-lhr1-channel",:flumevip =>"erfl4001.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink2" => {:channel => "pek1-to-lhr1-channel",:flumevip =>"erfl4002.grid.lhr1.inmobi.com"},
+     "lhr1-mergesink3" => {:channel => "pek1-to-lhr1-channel",:flumevip =>"erfl4003.grid.lhr1.inmobi.com"},
+     "pek1-mergesink1" => {:channel => "pek1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
+     "pek1-mergesink2" => {:channel => "pek1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com"},
+     "pek1-mergesink3" => {:channel => "pek1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['pek1']  = {
