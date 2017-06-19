@@ -1678,6 +1678,19 @@
       }
     },
     {
+      "streamName": "appd_attribute_uh1_uh1",
+      "source": [
+        {
+          "topic": "appd_attribute_uh1_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://krypton:8020"
+      }
+    },
+    {
       "streamName": "fds_uh1",
       "source": [
         {
