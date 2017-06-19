@@ -13,42 +13,6 @@
       }
     },
     {
-      "streamName": "beacon_rr_dfw1_cpc_render",
-      "source": [
-        {
-          "topic": "beacon_rr_dfw1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://onyx:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_hkg1_cpc_render",
-      "source": [
-        {
-          "topic": "beacon_rr_hkg1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://onyx:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_pek1_cpc_render",
-      "source": [
-        {
-          "topic": "beacon_rr_pek1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://onyx:8020"
-      }
-    },
-    {
       "streamName": "beacon_rr_hkg1_cpm_render",
       "source": [
         {
@@ -60,42 +24,6 @@
         "hdfsUrl": "hdfs://onyx:8020"
       }
      },
-    {
-      "streamName": "beacon_rr_lhr1_cpc_render",
-      "source": [
-        {
-          "topic": "beacon_rr_lhr1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://onyx:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_uh1_cpc_render",
-      "source": [
-        {
-          "topic": "beacon_rr_uh1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://onyx:8020"
-      }
-    },
-    {
-      "streamName": "beacon_rr_uj1_cpc_render",
-      "source": [
-        {
-          "topic": "beacon_rr_uj1_cpc_render",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://onyx:8020"
-      }
-    },
     {
       "streamName": "beacon_rr_uj1_cpm_render",
       "source": [
