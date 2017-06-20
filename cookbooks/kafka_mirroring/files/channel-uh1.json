@@ -424,7 +424,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -439,7 +439,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -454,7 +454,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -469,7 +469,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -605,7 +605,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -620,7 +620,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -650,7 +650,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -973,7 +973,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -988,7 +988,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -1503,7 +1503,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "72"
+        "retention": "96"
       }
     },
     {
@@ -1518,7 +1518,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -1533,7 +1533,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -1548,7 +1548,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
@@ -1609,7 +1609,7 @@
         "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "thresholdSize": 32212254720,
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
