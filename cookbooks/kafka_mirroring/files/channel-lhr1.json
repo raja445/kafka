@@ -47,6 +47,21 @@
       }
     },
     {
+      "streamName": "appdAttributeErrors",
+      "source": [
+        {
+          "topic": "appd_attribute_errors",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://emerald:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "profileDeleteAppd",
       "source": [
         {
