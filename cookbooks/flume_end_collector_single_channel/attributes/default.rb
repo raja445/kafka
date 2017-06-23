@@ -107,21 +107,21 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "uh1-to-dfw1-channel",
          :batchSize => 500,
-         :'kafka.topics' => "beacon_rr_dfw1_cpm_render,network_beacon_dfw1_adunit,network_beacon_dfw1_publisherfill,beacon_rr_dfw1_default,network_beacon_adunit_interaction_dfw1,beacon_rr_dfw1_cpc_render,ifc_ff_dfw1,non_network_click_cpc_dfw1,non_network_click_cpm_dfw1,network_click_cpc_dfw1,network_click_cpm_dfw1,network_click_invalid_dfw1"},
+         :'kafka.topics' => "beacon_rr_dfw1_cpm_render,network_beacon_dfw1_adunit,network_beacon_dfw1_publisherfill,beacon_rr_dfw1_default,network_beacon_adunit_interaction_dfw1,beacon_rr_dfw1_cpc_render,ifc_ff_dfw1,non_network_click_cpc_dfw1,non_network_click_cpm_dfw1,network_click_cpc_dfw1,network_click_cpm_dfw1,network_click_invalid_dfw1,datasciences-attributes_dfw1"},
      "uh1-to-lhr1-mergesrc" => {
          :src_category => "kafkamerge",
          :consumer_group => "uh1-to-lhr1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "uh1-to-lhr1-channel",
          :batchSize => 500,
-         :'kafka.topics' => "beacon_rr_lhr1_cpm_render,network_beacon_lhr1_adunit,network_beacon_lhr1_publisherfill,beacon_rr_lhr1_default,network_beacon_adunit_interaction_lhr1,beacon_rr_lhr1_cpc_render,ifc_ff_lhr1,non_network_click_cpc_lhr1,non_network_click_cpm_lhr1,network_click_cpc_lhr1,network_click_cpm_lhr1,network_click_invalid_lhr1"},
+         :'kafka.topics' => "beacon_rr_lhr1_cpm_render,network_beacon_lhr1_adunit,network_beacon_lhr1_publisherfill,beacon_rr_lhr1_default,network_beacon_adunit_interaction_lhr1,beacon_rr_lhr1_cpc_render,ifc_ff_lhr1,non_network_click_cpc_lhr1,non_network_click_cpm_lhr1,network_click_cpc_lhr1,network_click_cpm_lhr1,network_click_invalid_lhr1,datasciences-attributes_lhr1"},
      "uh1-to-pek1-mergesrc" => {
          :src_category => "kafkamerge",
          :consumer_group => "uh1-to-pek1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "uh1-to-pek1-channel",
          :batchSize => 500,
-         :'kafka.topics' => "beacon_rr_pek1_cpm_render,network_beacon_pek1_adunit,network_beacon_pek1_publisherfill,beacon_rr_pek1_default,network_beacon_adunit_interaction_pek1,beacon_rr_pek1_cpc_render,ifc_ff_pek1,non_network_click_cpc_pek1,non_network_click_cpm_pek1,network_click_cpc_pek1,network_click_cpm_pek1,network_click_invalid_pek1"}
+         :'kafka.topics' => "beacon_rr_pek1_cpm_render,network_beacon_pek1_adunit,network_beacon_pek1_publisherfill,beacon_rr_pek1_default,network_beacon_adunit_interaction_pek1,beacon_rr_pek1_cpc_render,ifc_ff_pek1,non_network_click_cpc_pek1,non_network_click_cpm_pek1,network_click_cpc_pek1,network_click_cpm_pek1,network_click_invalid_pek1,datasciences-attributes_pek1"}
        }
 
 #Configure the channels for the Flume Collector
