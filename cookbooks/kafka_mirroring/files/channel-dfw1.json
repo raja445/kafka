@@ -724,6 +724,21 @@
       }
     },
     {
+      "streamName": "ifc_photon_enriched_pb_dfw1",
+      "source": [
+        {
+          "topic": "ifc_photon_enriched_pb_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "wclickDfw1",
       "source": [
         {
@@ -1173,6 +1188,21 @@
                 }
             ],
             "streamName": "ifcPhotonNonenrichedPbDfw1Gold"
+    },
+    {
+            "hdfsDestination": {
+                "basePath": "kafka/data",
+                "compression": "gz",
+                "hdfsUrl": "hdfs://platinum:8020",
+                "retention": "48"
+            },
+            "source": [
+                {
+                    "topic": "ifc_photon_nonenriched_pb_dfw1",
+                    "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+                }
+            ],
+            "streamName": "ifc_photon_nonenriched_pb_dfw1"
     },
     {
             "hdfsDestination": {
