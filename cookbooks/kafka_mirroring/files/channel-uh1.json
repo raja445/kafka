@@ -305,51 +305,6 @@
       }
     },
     {
-      "streamName": "adroitReportObjDfw1",
-      "source": [
-        {
-          "topic": "adroit_report_obj_dfw1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "adroit_report_obj_dfw1",
-        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "adroitReportObjLhr1",
-      "source": [
-        {
-          "topic": "adroit_report_obj_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "adroit_report_obj_lhr1",
-        "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "adroitReportObjPek1",
-      "source": [
-        {
-          "topic": "adroit_report_obj_pek1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "adroit_report_obj_pek1",
-        "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "appdAttributeDfw1Dfw1",
       "source": [
         {
