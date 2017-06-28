@@ -171,6 +171,19 @@
       }
     },
     {
+      "streamName": "beeswaxDownloadEvent",
+      "source": [
+        {
+          "topic": "beeswax_download_event",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://platinum:8020"
+      }
+    },
+    {
       "streamName": "beeswax_post_install_event",
       "source": [
         {
@@ -181,6 +194,19 @@
       "hdfsDestination": {
         "basePath": "databus/streams_local",
         "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "beeswaxPostInstallEvent",
+      "source": [
+        {
+          "topic": "beeswax_post_install_event",
+          "zookeeper": "kafka-zookeeper-1.grid.uh1.inmobi.com:2181,kafka-zookeeper-2.grid.uh1.inmobi.com:2181,kafka-zookeeper-3.grid.uh1.inmobi.com:2181,kafka-zookeeper-4.grid.uh1.inmobi.com:2181,kafka-zookeeper-5.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://platinum:8020"
       }
     },
     {
