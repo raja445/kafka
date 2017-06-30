@@ -97,18 +97,6 @@
       }
     },
     {
-      "streamName": "iat_click",
-      "source": [
-        {
-          "topic": "iat_click",
-          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://emerald:8020"
-      }
-    },
-    {
       "streamName": "nnstudio",
       "source": [
         {
