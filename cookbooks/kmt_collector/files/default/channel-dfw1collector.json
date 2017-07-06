@@ -654,7 +654,7 @@
       }
     },
     {
-      "streamName": "beeswaxDownloadEvent",
+      "streamName": "beeswax_download_event",
       "source": [
         {
           "topic": "beeswax_download_event",
@@ -667,7 +667,7 @@
       }
     },
     {
-      "streamName": "beeswaxPostInstallEvent",
+      "streamName": "beeswax_post_install_event",
       "source": [
         {
           "topic": "beeswax_post_install_event",
@@ -680,7 +680,7 @@
       }
     },
     {
-      "streamName": "tpceCustomGoalSummary",
+      "streamName": "tpce_custom_goal_summary",
       "source": [
         {
           "topic": "tpce_custom_goal_summary",
@@ -693,7 +693,7 @@
       }
     },
     {
-      "streamName": "tpcePurchaseSummary",
+      "streamName": "tpce_purchase_summary",
       "source": [
         {
           "topic": "tpce_purchase_summary",
