@@ -662,7 +662,7 @@
         }
       ],
       "hdfsDestination": {
-        "basePath": "databus/streams_local",
+        "basePath": "databus/streams",
         "hdfsUrl": "hdfs://platinum:8020"
       }
     },
@@ -675,7 +675,7 @@
         }
       ],
       "hdfsDestination": {
-        "basePath": "databus/streams_local",
+        "basePath": "databus/streams",
         "hdfsUrl": "hdfs://platinum:8020"
       }
     },
@@ -688,7 +688,7 @@
         }
       ],
       "hdfsDestination": {
-        "basePath": "databus/streams_local",
+        "basePath": "databus/streams",
         "hdfsUrl": "hdfs://platinum:8020"
       }
     },
@@ -701,7 +701,7 @@
         }
       ],
       "hdfsDestination": {
-        "basePath": "databus/streams_local",
+        "basePath": "databus/streams",
         "hdfsUrl": "hdfs://platinum:8020"
       }
     },
