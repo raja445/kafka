@@ -24,17 +24,17 @@
 
 export CURRENT_USER=$(whoami)
 export FLUME_ROOT_LOG_LEVEL=INFO
-export FLUME_LOGS_HOME=/var/log/flume-audit
+export FLUME_LOGS_HOME=/var/log/flume
 export FLUME_LOGS_BACKUP_HOME=$FLUME_LOGS_HOME
-export FLUME_PID_DIR=/var/run/flume-audit
+export FLUME_PID_DIR=/var/run/flume
 
-export MIN_HEAPSIZE=2G
-export MAX_HEAPSIZE=2G
+export MIN_HEAPSIZE=4G
+export MAX_HEAPSIZE=4G
 export MAX_METASPACE_SIZE=64M
-export MAX_DIRECT_MEMORY_SIZE=64M
+export MAX_DIRECT_MEMORY_SIZE=2G
 
-export FLUME_HTTP_PORT=2610
-export FLUME_JMX_PORT=2620
+export FLUME_HTTP_PORT=2510
+export FLUME_JMX_PORT=2520
 
 export FLUME_STOP_TIMEOUT=180
 
@@ -56,7 +56,7 @@ export JAVA_OPTS="$JAVA_OPTS -Dflume.monitoring.type=http -Dflume.monitoring.por
 export JAVA_OPTS="$JAVA_OPTS -Dflume.root.log.level=$FLUME_ROOT_LOG_LEVEL -Dflume.log.dir=$FLUME_LOGS_HOME -Dflume.log.backup.dir=$FLUME_LOGS_BACKUP_HOME"
 
 export HDP_VERSION=2.2.4.2-2
-export LD_LIBRARY_PATH=LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64
+export LD_LIBRARY_PATH=/usr/hdp/${HDP_VERSION}/hadoop/lib/native:/usr/hdp/${HDP_VERSION}/hadoop/lib/native/Linux-amd64-64
 export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$LD_LIBRARY_PATH"
 
 # Note that the Flume conf directory is always included in the classpath.
