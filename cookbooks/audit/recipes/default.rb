@@ -43,7 +43,7 @@ end
 
 execute "untar flume binary" do
   cwd flumeTmpDir
-  command "tar -xvf #{flumeTmp}; mv apache-flume-#{node["audit_collector"]["version"]}-src/*  #{flumeInstallDir}/"
+  command "tar -xvf #{flumeTmp}; mv apache-flume-#{node["audit_collector"]["version"]}-bin/* #{flumeInstallDir}/"
   not_if do
     File.exists? "#{lockFile}"
   end
