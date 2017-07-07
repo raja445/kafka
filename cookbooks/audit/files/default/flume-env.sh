@@ -28,8 +28,8 @@ export FLUME_LOGS_HOME=/var/log/flume-audit
 export FLUME_LOGS_BACKUP_HOME=$FLUME_LOGS_HOME
 export FLUME_PID_DIR=/var/run/flume-audit
 
-export MIN_HEAPSIZE=12G
-export MAX_HEAPSIZE=12G
+export MIN_HEAPSIZE=2G
+export MAX_HEAPSIZE=2G
 export MAX_METASPACE_SIZE=64M
 export MAX_DIRECT_MEMORY_SIZE=64M
 
