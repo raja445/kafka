@@ -34,7 +34,7 @@ audit-collector.sinks = <%= @allsinks %>
 <% if details[:'src_category'] == 'auditkafka' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-audit-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:selector_type] %>
+audit-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 audit-collector.sources.<%= "#{src}" %>.selector.optional = <%= details[:selector_optional] %>
 audit-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 audit-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
@@ -58,7 +58,7 @@ audit-collector.sources.<%= "#{src}" %>.workerThreads = <%= @scribesrcworkerthre
 <% @hdfs_sinks.each do |sink, details| %>
 audit-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 audit-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-audit-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/audit/local
+audit-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume-audit/local
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/data/audit/working/temp
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/data/audit/working/staging
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/data/audit/streams

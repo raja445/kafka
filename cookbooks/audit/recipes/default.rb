@@ -62,7 +62,7 @@ template "#{flumeConf}/flume-audit-collector.properties" do
   owner "flume"
   mode  00644
   variables(
-    :sources =>node["audit_collector"]["auditcollector_sources"][colo],
+    :sources =>node["audit_collector"]["auditcollector_sources"],
     :hdfs_sinks =>node["audit_collector"]["auditcollector_local_hdfs_sinks"][colo],
     :druid_sinks =>node["audit_collector"]["auditcollector_local_druid_sinks"][colo],
     :hdfs_channels =>node["audit_collector"]["auditcollector_local_hdfs_channels"],
