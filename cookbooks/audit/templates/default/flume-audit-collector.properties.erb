@@ -74,7 +74,7 @@ audit-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /data/audit/pro
 audit-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /data/audit/retention
 audit-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /data/audit/audit
 audit-collector.sinks.<%= "#{sink}" %>.retention.topics = _audit
-audit-collector.sinks.<%= "#{sink}" %>.zk.url = zookeeper-server1:port,zookeeper-server2:port
+audit-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 audit-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 audit-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 audit-collector.sinks.<%= "#{sink}" %>.codeC = gzip
@@ -83,8 +83,8 @@ audit-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
 <% @druid_sinks.each do |sink, details| %>
 audit-collector.sinks.<%= "#{sink}" %>.type = com.apache.flume.sink.druid.DruidSink
 audit-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-audit-collector.sinks.<%= "#{sink}" %>.indexService = druid/overlord
-audit-collector.sinks.<%= "#{sink}" %>.discoveryPath = /druid/discovery
+audit-collector.sinks.<%= "#{sink}" %>.indexService = druid/overload
+audit-collector.sinks.<%= "#{sink}" %>.discoveryPath = druid/discovery
 audit-collector.sinks.<%= "#{sink}" %>.dimensions = timeinterval,hostname,tier,topic,cluster
 audit-collector.sinks.<%= "#{sink}" %>.timestampField = timeinterval
 audit-collector.sinks.<%= "#{sink}" %>.queryGranularity = minute
