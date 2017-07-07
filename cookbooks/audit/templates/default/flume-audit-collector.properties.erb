@@ -49,6 +49,7 @@ audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 audit-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 audit-collector.sources.<%= "#{src}" %>.selector.optional = <%= details[:selector_optional] %>
+audit-collector.sources.<%= "#{src}" %>.bind = 0.0.0.0
 audit-collector.sources.<%= "#{src}" %>.port = 2550
 audit-collector.sources.<%= "#{src}" %>.maxReadBufferBytes = 16777216
 audit-collector.sources.<%= "#{src}" %>.workerThreads = <%= @scribesrcworkerthreads %>
