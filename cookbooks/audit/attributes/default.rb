@@ -52,7 +52,7 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :'selector.type' => "replicating",
-         :'selector_optional' => "druid-channel",
+         :'selector_optional' => "druidlocal-channel",
          :channels => "druidlocal-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
@@ -60,7 +60,7 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :src_category => "auditscribe",
          :type => "avro",
          :'selector.type' => "replicating",
-         :'selector_optional' => "druid-channel",
+         :'selector_optional' => "druidlocal-channel",
          :channels => "druidlocal-channel hdfslocal-channel"}
        }
 
