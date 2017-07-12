@@ -1,8 +1,8 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["audit_collector"]["version"] = "1.6.0.27"
-default["audit_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.27-bin.tar.gz"
+default["audit_collector"]["version"] = "1.6.0.28"
+default["audit_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.28-bin.tar.gz"
 default["audit_collector"]["base_dir"]  = "/opt/inmobi"
 default["audit_collector"]["spool_dir"]  = "/data/d1/flume-audit/spool"
 default["audit_collector"]["pid_dir"]  = "/var/run/flume-audit"
@@ -51,7 +51,7 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :src_category => "auditkafka",
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :'selector.type' => "org.apache.flume.channel.RoundRobinChannelSelector",
+         :'selector.type' => "replicating",
          :'selector_optional' => "druid-channel",
          :channels => "druidlocal-channel hdfslocal-channel",
          :batchSize => 500,

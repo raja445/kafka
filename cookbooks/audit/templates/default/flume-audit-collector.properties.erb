@@ -36,7 +36,6 @@ audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 audit-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
 audit-collector.sources.<%= "#{src}" %>.selector.optional = <%= details[:selector_optional] %>
-audit-collector.sources.<%= "#{src}" %>.optional = <%= details[:selector_optional] %>
 audit-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 audit-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
