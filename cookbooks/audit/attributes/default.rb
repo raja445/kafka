@@ -29,10 +29,10 @@ default["audit_collector"]["flume_agent_host"]['dfw1']  = "oxns4002.grid.dfw1.in
 default["audit_collector"]["flume_agent_host"]['lhr1']  = "erdc4002.grid.lhr1.inmobi.com"
 
 #Flume merge source consumer groupsize
-default["audit_collector"]["audit_consumer_gpsize"]['uh1']  = "2"
-default["audit_collector"]["audit_consumer_gpsize"]['pek1']  = "2"
+default["audit_collector"]["audit_consumer_gpsize"]['uh1']  = "1"
+default["audit_collector"]["audit_consumer_gpsize"]['pek1']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['dfw1']  = "2"
-default["audit_collector"]["audit_consumer_gpsize"]['lhr1']  = "2"
+default["audit_collector"]["audit_consumer_gpsize"]['lhr1']  = "1"
 
 #number of sinkworkerthreads
 default["audit_collector"]["scribesrcworkerthreads"]['uh1']  = "16"
@@ -40,7 +40,6 @@ default["audit_collector"]["scribesrcworkerthreads"]['pek1']  = "16"
 default["audit_collector"]["scribesrcworkerthreads"]['dfw1']  = "16"
 default["audit_collector"]["scribesrcworkerthreads"]['lhr1']  = "16"
 
-######################################################### UH1 ###################################################################
 
 default["audit_collector"]["auditcollector_all_channels"]  = "druidlocal-channel  hdfslocal-channel"
 
@@ -84,15 +83,14 @@ default["audit_collector"]["auditcollector_local_hdfs_sinks"]['pek1']  = {
 }
 
 default["audit_collector"]["auditcollector_local_druid_sinks"]['uh1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"krdr4001.grid.uh1.inmobi.com:2181,krdr4002.grid.uh1.inmobi.com:2181,krdr4003.grid.uh1.inmobi.com:2181"}
+     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
 }
 default["audit_collector"]["auditcollector_local_druid_sinks"]['lhr1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"erdr4001.grid.lhr1.inmobi.com:2181,erdr4002.grid.lhr1.inmobi.com:2181,erdr4003.grid.lhr1.inmobi.com:2181"}
+     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
 }
 default["audit_collector"]["auditcollector_local_druid_sinks"]['dfw1']  = {
      "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
 }
 default["audit_collector"]["auditcollector_local_druid_sinks"]['pek1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.uh1.inmobi.com:2181,pydr4002.grid.uh1.inmobi.com:2181,pydr4003.grid.uh1.inmobi.com:2181"}
+     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
 }
-######################################################### End Of UH1 ###################################################################
