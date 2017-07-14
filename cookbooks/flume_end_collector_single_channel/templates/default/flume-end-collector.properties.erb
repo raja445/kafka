@@ -195,6 +195,8 @@ end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
 end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 134217728
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 5
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
 # valid values none, gzip, snappy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
@@ -206,6 +208,8 @@ end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKa
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
 end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 134217728
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 5
 end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
