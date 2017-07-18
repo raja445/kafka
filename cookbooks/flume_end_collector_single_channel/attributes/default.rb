@@ -1,8 +1,8 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["flume_collector"]["version"] = "1.6.0.29"
-default["flume_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.29-bin.tar.gz"
+default["flume_collector"]["version"] = "1.6.0.30"
+default["flume_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.30-bin.tar.gz"
 default["flume_collector"]["base_dir"]  = "/opt/inmobi"
 default["flume_collector"]["spool_dir"]  = "/data/d1/flume/spool"
 default["flume_collector"]["pid_dir"]  = "/var/run/flume"
@@ -33,7 +33,7 @@ default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "4"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "4"
 
 #number of sinkworkerthreads
-default["flume_collector"]["sinkworkerthreads"]['uh1']  = "64"
+default["flume_collector"]["sinkworkerthreads"]['uh1']  = "80"
 default["flume_collector"]["sinkworkerthreads"]['pek1']  = "38"
 default["flume_collector"]["sinkworkerthreads"]['dfw1']  = "78"
 default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "56"
