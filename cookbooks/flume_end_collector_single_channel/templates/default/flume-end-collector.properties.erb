@@ -196,7 +196,7 @@ end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.client.id = flume-kafka-sink
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 134217728
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 268435456
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.batch.size = 65536
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 5
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
@@ -211,7 +211,7 @@ end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
 end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.client.id = flume-merge-kafka-sink
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 134217728
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 268435456
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.batch.size = 65536
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 5
 end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
