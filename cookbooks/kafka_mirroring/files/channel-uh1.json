@@ -200,6 +200,22 @@
       }
     },
     {
+      "streamName": "ifcInmobiApiUserSegments",
+      "source": [
+        {
+          "topic": "ifc_inmobi_api_user_segments",
+          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "cookieMappingUh1",
       "source": [
         {
