@@ -1293,10 +1293,6 @@
       "streamName": "ifcOrganicActivityDfw1Dfw1",
       "source": [
         {
-          "topic": "ifc_organic_activity_pek1_dfw1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        },
-        {
           "topic": "ifc_organic_activity_uh1_dfw1",
           "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
