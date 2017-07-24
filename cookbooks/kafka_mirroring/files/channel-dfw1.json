@@ -239,6 +239,21 @@
       }
     },
     {
+      "streamName": "brandAttributesDfw1Uh1",
+      "source": [
+        {
+          "topic": "brand_attributes_dfw1_uh1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "brand_attributes_uh1_uh1",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "brandAttributesPek1Pek1",
       "source": [
         {
