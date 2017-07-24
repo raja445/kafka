@@ -663,7 +663,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams",
-        "hdfsUrl": "hdfs://platinum:8020"
+        "hdfsUrl": "hdfs://platinum:8020",
+        "retention": "168"
       }
     },
     {
@@ -676,7 +677,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams",
-        "hdfsUrl": "hdfs://platinum:8020"
+        "hdfsUrl": "hdfs://platinum:8020",
+        "retention": "168"
       }
     },
     {
