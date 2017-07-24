@@ -179,6 +179,21 @@
       }
     },
     {
+      "streamName": "audienceAttributesDfw1Uh1",
+      "source": [
+        {
+          "topic": "audience-attributes_dfw1_uh1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "audience-attributes_uh1_uh1",
+        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "audienceAttributesPek1Pek1",
       "source": [
         {
