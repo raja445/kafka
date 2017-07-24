@@ -873,6 +873,19 @@
       }
     },
     {
+      "streamName": "networkAttributeLhr1Dfw1",
+      "source": [
+        {
+          "topic": "network_attribute_lhr1_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_attribute_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkAttributeLhr1Pek1",
       "source": [
         {
