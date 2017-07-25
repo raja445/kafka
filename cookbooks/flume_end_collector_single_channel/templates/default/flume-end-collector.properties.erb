@@ -248,11 +248,10 @@ end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
 
 <% if @colo == 'uh1' -%>
 <% @mid_avro_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.MultiAvroSink
+end-collector.sinks.<%= "#{sink}" %>.type = <%= details[:type] %>
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:flumevip] %>
 end-collector.sinks.<%= "#{sink}" %>.port = 2541
-end-collector.sinks.<%= "#{sink}" %>.workerThreads = 16
 end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
 # tune based on the setup and performance. must be less than the transaction capacity of the channel attached
 end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
