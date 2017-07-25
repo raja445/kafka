@@ -55,7 +55,7 @@ end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
 end-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
 end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181
 <% end %>
 
 <% if details[:'src_category'] == 'kafkamerge' -%>

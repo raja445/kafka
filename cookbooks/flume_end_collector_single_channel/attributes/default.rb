@@ -179,16 +179,16 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['uh1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
-     "uh1-mergesink1" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
-     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com"},
-     "uh1-mergesink3" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com"},
-     "dfw1-mergesink1" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
-     "dfw1-mergesink2" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com"},
-     "dfw1-mergesink3" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com"},
-     "lhr1-mergesink" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"merge-flume.grid.lhr1.inmobi.com"},
-     "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
-     "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com"},
-     "pek1-mergesink3" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com"},
+     "uh1-mergesink1" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com",:flumevip =>"avro"},
+     "uh1-mergesink2" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com",:flumevip =>"avro"},
+     "uh1-mergesink3" => {:channel => "uh1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com",:flumevip =>"avro"},
+     "dfw1-mergesink1" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com",:flumevip =>"avro"},
+     "dfw1-mergesink2" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com",:flumevip =>"avro"},
+     "dfw1-mergesink3" => {:channel => "uh1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com",:flumevip =>"avro"},
+     "lhr1-mergesink" => {:channel => "uh1-to-lhr1-channel",:flumevip =>"merge-flume.grid.lhr1.inmobi.com",:flumevip =>"avro"},
+     "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com",:flumevip =>"avro"},
+     "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com",:flumevip =>"avro"},
+     "pek1-mergesink3" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com",:flumevip =>"avro"},
 }
 
 
