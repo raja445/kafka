@@ -1,8 +1,8 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["flume_collector"]["version"] = "1.6.0.30"
-default["flume_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.30-bin.tar.gz"
+default["flume_collector"]["version"] = "1.6.0.31"
+default["flume_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.31-bin.tar.gz"
 default["flume_collector"]["base_dir"]  = "/opt/inmobi"
 default["flume_collector"]["spool_dir"]  = "/data/d1/flume/spool"
 default["flume_collector"]["pid_dir"]  = "/var/run/flume"
@@ -56,7 +56,7 @@ default["flume_collector"]["avrosinkworkerthreads"]['lhr1']  = "16"
 default["flume_collector"]["endcollector_local_retention_topics"]['uh1']  = "rr"
 default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "beacon_rr_uh1_cpm_render,network_beacon_uh1_adunit,network_beacon_uh1_publisherfill,beacon_rr_uh1_default,network_beacon_adunit_interaction_uh1,beacon_rr_uh1_cpc_render,ifc_ff_uh1,non_network_click_cpc_uh1,non_network_click_cpm_uh1,network_click_cpc_uh1,network_click_cpm_uh1,network_click_invalid_uh1,click_rr_uh1,adroit_report_obj_uh1,billing_cpc_uh1,billing_cpm_uh1,billing_download_uh1"
 
-default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable mergespillable uh1-to-uh1-channel uh1-to-dfw1-channel uh1-to-lhr1-channel uh1-to-pek1-channel hdfsmerge-channel  hdfslocal-channel"
+default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable mergespillable midspillable uh1-to-uh1-channel uh1-to-dfw1-channel uh1-to-lhr1-channel uh1-to-pek1-channel hdfsmerge-channel  hdfslocal-channel"
 
 default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
@@ -73,6 +73,13 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
          :port => "2541"},
+     "midavrosrc" => {
+         :src_category => "midavro",
+         :type => "avro",
+         :channels => "midspillable",
+         :'enable_compression' => true,
+         :'compression-type' => 'deflate',
+         :port => "2543"},
      "mergezipavrosrc" => {
          :src_category => "avro",
          :type => "avro",
@@ -154,6 +161,7 @@ default["flume_collector"]["endcollector_sources"]['uh1']  = {
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['uh1']  = ["spillable"]
+default["flume_collector"]["endcollector_mid_avroreceive_channels"]['uh1']  = ["midspillable"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['uh1']  = ["mergespillable"]
 default["flume_collector"]["endcollector_merge_kafkaread_channels"]['uh1']  = ["uh1-to-uh1-channel","uh1-to-dfw1-channel","uh1-to-lhr1-channel","uh1-to-pek1-channel"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['uh1']  = ["hdfsmerge-channel"]
@@ -181,6 +189,22 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['uh1']  = {
      "pek1-mergesink1" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4001.grid.pek1.inmobi.com"},
      "pek1-mergesink2" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4002.grid.pek1.inmobi.com"},
      "pek1-mergesink3" => {:channel => "uh1-to-pek1-channel",:flumevip =>"pykm4003.grid.pek1.inmobi.com"},
+}
+
+
+default["flume_collector"]["endcollector_mid_avro_sinks"]['uh1']  = {
+     "dfw1-midsink1" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink2" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink3" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink4" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink5" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink6" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink7" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink8" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink9" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink10" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink11" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
+     "dfw1-midsink12" => {:channel => "midspillable",:flumevip =>"flume.grid.dfw1.inmobi.com"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['uh1']  = {
