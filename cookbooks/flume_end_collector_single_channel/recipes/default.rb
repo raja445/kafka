@@ -102,12 +102,12 @@ cookbook_file "#{flumeConf}/logback.xml" do
   mode "0664"
 end
 
-#if colo == 'uh1'
-#cookbook_file "#{flumeConf}/log4j.xml" do
-#  source "log4j.xml"
-#  mode "0644"
-#end
-#end
+if colo == 'uh1'
+cookbook_file "#{flumeConf}/log4j.xml" do
+  source "log4j.xml"
+  mode "0644"
+end
+end
 
 execute "chown flume directory" do
   command "chown -R flume #{flumeInstallDir}"
