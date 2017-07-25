@@ -58,7 +58,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['uh1']  = "bea
 
 default["flume_collector"]["endcollector_all_channels"]['uh1']  = "spillable mergespillable midspillable uh1-to-uh1-channel uh1-to-dfw1-channel uh1-to-lhr1-channel uh1-to-pek1-channel hdfsmerge-channel  hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
+default["flume_collector"]["endcollector_all_sinks"]['uh1'] = "kafkasink mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink dfw1-midsink1 dfw1-midsink2 dfw1-midsink3 dfw1-midsink4 dfw1-midsink5 dfw1-midsink6 dfw1-midsink7 dfw1-midsink8 dfw1-midsink9 dfw1-midsink10 dfw1-midsink11 dfw1-midsink12"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['uh1']  = {
      "avrosrc" => {
