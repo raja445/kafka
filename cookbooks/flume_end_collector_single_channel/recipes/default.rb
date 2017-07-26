@@ -102,7 +102,7 @@ cookbook_file "#{flumeConf}/logback.xml" do
   mode "0664"
 end
 
-if colo == 'uh1'
+if ((colo == 'uh1') || (colo == 'dfw1'))
 cookbook_file "#{flumeConf}/log4j.xml" do
   source "log4j.xml"
   mode "0644"
