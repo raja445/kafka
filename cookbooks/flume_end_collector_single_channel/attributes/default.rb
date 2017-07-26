@@ -376,7 +376,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 
 
 ######################################################### LHR1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "rr"
+default["flume_collector"]["endcollector_local_retention_topics"]['lhr1']  = "rr,egret_lambda_AdUnitBeacon_lhr1_enhanced,egret_lambda_AdUnitPublisherFill_lhr1_enhanced,egret_lambda_RenderCPC_lhr1_enhanced,egret_lambda_RenderCPM_lhr1_enhanced,egret_lambda_BillingCPC_lhr1_enhanced,egret_lambda_BeaconRRDefault_lhr1_enhanced,egret_lambda_BillingCPM_lhr1_enhanced,egret_lambda_BillingDownload_lhr1_enhanced,egret_lambda_NWClickCPC_lhr1_enhanced,egret_lambda_NWClickCPM_lhr1_enhanced,egret_lambda_NWClickInvalid_lhr1_enhanced,egret_lambda_NonNWClickCPC_lhr1_enhanced,egret_lambda_NonNWClickCPM_lhr1_enhanced,egret_lambda_NonNWClickInvalid_lhr1_enhanced,egret_lambda_NWClickInvalid_lhr1_enhanced"
 default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "beacon_rr_lhr1_cpm_render,network_beacon_lhr1_adunit,network_beacon_lhr1_publisherfill,beacon_rr_lhr1_default,network_beacon_adunit_interaction_lhr1,beacon_rr_lhr1_cpc_render,ifc_ff_lhr1,non_network_click_cpc_lhr1,non_network_click_cpm_lhr1,network_click_cpc_lhr1,network_click_cpm_lhr1,network_click_invalid_lhr1,click_rr_lhr1,adroit_report_obj_lhr1,billing_cpc_lhr1,billing_cpm_lhr1,billing_download_lhr1"
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable lhr1-to-uh1-channel lhr1-to-pek1-channel lhr1-to-lhr1-channel lhr1-to-dfw1-channel hdfsmerge-channel hdfslocal-channel"
@@ -409,7 +409,7 @@ default["flume_collector"]["endcollector_sources"]['lhr1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "rr"},
+         :'kafka.topics' => "rr,egret_lambda_AdUnitBeacon_lhr1_enhanced,egret_lambda_AdUnitPublisherFill_lhr1_enhanced,egret_lambda_RenderCPC_lhr1_enhanced,egret_lambda_RenderCPM_lhr1_enhanced,egret_lambda_BillingCPC_lhr1_enhanced,egret_lambda_BeaconRRDefault_lhr1_enhanced,egret_lambda_BillingCPM_lhr1_enhanced,egret_lambda_BillingDownload_lhr1_enhanced,egret_lambda_NWClickCPC_lhr1_enhanced,egret_lambda_NWClickCPM_lhr1_enhanced,egret_lambda_NWClickInvalid_lhr1_enhanced,egret_lambda_NonNWClickCPC_lhr1_enhanced,egret_lambda_NonNWClickCPM_lhr1_enhanced,egret_lambda_NonNWClickInvalid_lhr1_enhanced,egret_lambda_NWClickInvalid_lhr1_enhanced"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "lhr1hdfsmerge",
@@ -522,7 +522,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['lhr1']  = {
 
 
 ######################################################### PEK1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "rr"
+default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "rr,egret_lambda_AdUnitBeacon_pek1_enhanced,egret_lambda_AdUnitPublisherFill_pek1_enhanced,egret_lambda_RenderCPC_pek1_enhanced,egret_lambda_RenderCPM_pek1_enhanced,egret_lambda_BillingCPC_pek1_enhanced,egret_lambda_BeaconRRDefault_pek1_enhanced,egret_lambda_BillingCPM_pek1_enhanced,egret_lambda_BillingDownload_pek1_enhanced,egret_lambda_NWClickCPC_pek1_enhanced,egret_lambda_NWClickCPM_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced,egret_lambda_NonNWClickCPC_pek1_enhanced,egret_lambda_NonNWClickCPM_pek1_enhanced,egret_lambda_NonNWClickInvalid_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced"
 default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "beacon_rr_pek1_cpm_render,network_beacon_pek1_adunit,network_beacon_pek1_publisherfill,beacon_rr_pek1_default,network_beacon_adunit_interaction_pek1,beacon_rr_pek1_cpc_render,ifc_ff_pek1,non_network_click_cpc_pek1,non_network_click_cpm_pek1,network_click_cpc_pek1,network_click_cpm_pek1,network_click_invalid_pek1,click_rr_pek1,adroit_report_obj_pek1,billing_cpc_pek1,billing_cpm_pek1,billing_download_pek1"
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable  pek1-to-uh1-channel pek1-to-pek1-channel pek1-to-lhr1-channel pek1-to-dfw1-channel hdfslocal-channel  hdfsmerge-channel"
@@ -555,7 +555,7 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "rr"},
+         :'kafka.topics' => "rr,egret_lambda_AdUnitBeacon_pek1_enhanced,egret_lambda_AdUnitPublisherFill_pek1_enhanced,egret_lambda_RenderCPC_pek1_enhanced,egret_lambda_RenderCPM_pek1_enhanced,egret_lambda_BillingCPC_pek1_enhanced,egret_lambda_BeaconRRDefault_pek1_enhanced,egret_lambda_BillingCPM_pek1_enhanced,egret_lambda_BillingDownload_pek1_enhanced,egret_lambda_NWClickCPC_pek1_enhanced,egret_lambda_NWClickCPM_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced,egret_lambda_NonNWClickCPC_pek1_enhanced,egret_lambda_NonNWClickCPM_pek1_enhanced,egret_lambda_NonNWClickInvalid_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "pek1hdfsmerge",
