@@ -682,6 +682,110 @@
       }
     },
     {
+      "streamName": "tpce_custom_goal",
+      "source": [
+        {
+          "topic": "merge_tpce_custom_goal",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "tpce_custom_goal_summary",
+      "source": [
+        {
+          "topic": "merge_tpce_custom_goal_summary",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "tpce_download",
+      "source": [
+        {
+          "topic": "merge_tpce_download",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "tpce_enriched_download",
+      "source": [
+        {
+          "topic": "merge_tpce_enriched_download",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "tpce_purchase",
+      "source": [
+        {
+          "topic": "merge_tpce_purchase",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "tpce_purchase_summary",
+      "source": [
+        {
+          "topic": "merge_tpce_purchase_summary",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "tpce_rtfb_conversions",
+      "source": [
+        {
+          "topic": "tpce_rtfb_conversions",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
+      "streamName": "adroit_downloads",
+      "source": [
+        {
+          "topic": "adroit_downloads",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://gold:8020"
+      }
+    },
+    {
       "streamName": "fds_dfw1",
       "source": [
         {
