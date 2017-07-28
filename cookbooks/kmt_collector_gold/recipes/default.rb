@@ -76,8 +76,24 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-uh1collector.
   action :create
 end
 
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-dfw1collector.json" do
+  source 'channel-dfw1collector.json'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1collector.properties" do
   source 'server-uh1collector.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-dfw1collector.properties" do
+  source 'server-dfw1collector.properties'
   owner 'root'
   group 'root'
   mode '0664'
