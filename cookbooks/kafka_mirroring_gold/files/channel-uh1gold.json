@@ -1,0 +1,20 @@
+{
+  "streams": [
+    {
+      "streamName": "testmerge",
+      "source": [
+        {
+          "topic": "testmerge",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "base64": "false",
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://gold:8020",
+        "compression": "gz",
+        "retention": "1"
+      }
+    }
+  ]
+}
