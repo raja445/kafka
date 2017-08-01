@@ -1441,6 +1441,25 @@
             "streamName": "ifc_photon_nonenriched_pb_dfw1"
     },
     {
+      "streamName": "ifc_activity_dfw1_dfw1",
+      "source": [
+        {
+          "topic": "ifc_activity_lhr1_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        },
+        {
+          "topic": "ifc_activity_pek1_dfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "ifc_activity_dfw1_dfw1",
+        "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
             "hdfsDestination": {
                 "basePath": "kafka/data",
                 "compression": "gz",
