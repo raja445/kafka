@@ -179,21 +179,6 @@
       }
     },
     {
-      "streamName": "audienceAttributesDfw1Uh1",
-      "source": [
-        {
-          "topic": "audience-attributes_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "audience-attributes_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "audienceAttributesPek1Pek1",
       "source": [
         {
@@ -236,21 +221,6 @@
         "batchSize": 10000,
         "topic": "brand_attributes_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "brandAttributesDfw1Uh1",
-      "source": [
-        {
-          "topic": "brand_attributes_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "brand_attributes_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
@@ -417,21 +387,6 @@
       }
     },
     {
-      "streamName": "appdAttributeDfw1Uh1",
-      "source": [
-        {
-          "topic": "appd_attribute_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "appd_attribute_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "appdAttributeDfw1Pek1",
       "source": [
         {
@@ -459,36 +414,6 @@
         "batchSize": 10000,
         "topic": "appd_attribute_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkActivityDfw1Uh1",
-      "source": [
-        {
-          "topic": "network_activity_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_activity_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkBeaconUh1Uh1",
-      "source": [
-        {
-          "topic": "network_beacon_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_beacon_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
@@ -522,21 +447,6 @@
       }
     },
     {
-      "streamName": "networkPostImpressionUh1Uh1",
-      "source": [
-        {
-          "topic": "network_post_impression_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_post_impression_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "networkPostImpressionPek1Pek1",
       "source": [
         {
@@ -567,36 +477,6 @@
       }
     },
     {
-      "streamName": "networkAttributeDfw1Uh1",
-      "source": [
-        {
-          "topic": "network_attribute_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_attribute_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "ifcOrganicActivityUh1Uh1",
-      "source": [
-        {
-          "topic": "ifc_organic_activity_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "ifc_organic_activity_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "ifcOrganicActivityLhr1Lhr1",
       "source": [
         {
@@ -624,21 +504,6 @@
         "batchSize": 10000,
         "topic": "ifc_organic_activity_pek1_pek1",
         "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "ifcAttributesUh1Uh1",
-      "source": [
-        {
-          "topic": "ifc_attributes_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "ifc_attributes_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
@@ -757,21 +622,6 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://onyx:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "iatClick",
-      "source": [
-        {
-          "topic": "iat_click",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -1336,21 +1186,6 @@
       }
     },
     {
-      "streamName": "appdFlatActivityUh1Uh1",
-      "source": [
-        {
-          "topic": "appd_flat_activity_dfw1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "appd_flat_activity_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "appdFlatActivityLhr1Lhr1",
       "source": [
         {
@@ -1528,21 +1363,6 @@
         "batchSize": 10000,
         "topic": "network_render_cpm_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "cookieMappingUh1Merge",
-      "source": [
-        {
-          "topic": "cookie_mapping",
-          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "cookie_mapping",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {

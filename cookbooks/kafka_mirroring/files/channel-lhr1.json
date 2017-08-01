@@ -228,21 +228,6 @@
       }
     },
     {
-      "streamName": "iatClick",
-      "source": [
-        {
-          "topic": "iat_click",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://krypton:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "ifcActivityLowFreq",
       "source": [
         {
@@ -465,10 +450,6 @@
         {
           "topic": "ifc_activity_dfw1_lhr1",
           "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        },
-        {
-          "topic": "ifc_activity_uh1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
       ],
       "kafkaDestination": {
@@ -494,27 +475,8 @@
       }
     },
     {
-      "streamName": "cookieMappingUh1Merge",
-      "source": [
-        {
-          "topic": "cookie_mapping",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "cookie_mapping",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-      }
-    },
-    {
       "streamName": "ifcOrganicActivityLhr1Lhr1",
       "source": [
-        {
-          "topic": "ifc_organic_activity_uh1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
-        },
         {
           "topic": "ifc_organic_activity_pek1_lhr1",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
@@ -630,21 +592,6 @@
         "hdfsUrl": "hdfs://emerald:8020",
         "compression": "gz",
         "retention": "48"
-      }
-    },
-    {
-      "streamName": "ifcOrganicActivityLhr1Uh1",
-      "source": [
-        {
-          "topic": "ifc_organic_activity_lhr1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "ifc_organic_activity_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
@@ -807,10 +754,6 @@
         {
           "topic": "cas_nested_activity_dfw1_lhr1",
           "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
-        },
-        {
-          "topic": "cas_nested_activity_uh1_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
         }
       ],
       "kafkaDestination": {
@@ -818,19 +761,6 @@
         "batchSize": 10000,
         "topic": "cas_nested_activity_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkBeaconUh1Uh1",
-      "source": [
-        {
-          "topic": "network_beacon_lhr1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "topic": "network_beacon_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
@@ -948,21 +878,6 @@
       "kafkaDestination": {
         "topic": "network_render_cpm_pek1_pek1",
         "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-      }
-    },
-    {
-      "streamName": "networkPostImpressionUh1Uh1",
-      "source": [
-        {
-          "topic": "network_post_impression_lhr1_uh1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "kafkaDestination": {
-        "waitTime": 5000,
-        "batchSize": 10000,
-        "topic": "network_post_impression_uh1_uh1",
-        "zookeeper": "kafka-zookeeper.grid.uh1.inmobi.com:2181"
       }
     },
     {
