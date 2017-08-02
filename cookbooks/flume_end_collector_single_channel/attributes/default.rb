@@ -231,9 +231,9 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['uh1']  = {
 default["flume_collector"]["endcollector_local_retention_topics"]['dfw1']  = "rr,egret_lambda_AdUnitBeacon_dfw1_defer,egret_lambda_AdUnitBeacon_dfw1_enhanced,egret_lambda_AdUnitPublisherFill_dfw1_enhanced,egret_lambda_BeaconRRDefault_dfw1_enhanced,egret_lambda_BillingCPC_dfw1_enhanced,egret_lambda_BillingCPM_dfw1_enhanced,egret_lambda_BillingDownload_dfw1_enhanced,egret_lambda_NonNWClickCPC_dfw1_enhanced,egret_lambda_NonNWClickCPM_dfw1_enhanced,egret_lambda_NonNWClickInvalid_dfw1_enhanced,egret_lambda_NWClickCPC_dfw1_enhanced,egret_lambda_NWClickCPM_dfw1_enhanced,egret_lambda_NWClickInvalid_dfw1_enhanced,egret_lambda_RenderCPC_dfw1_enhanced,egret_lambda_RenderCPM_enhanced,billing_cpc_dfw1,billing_cpm_dfw1,billing_download_dfw1,conversion_beacon_rtbs,tpce_rtfb_conversions,iat_goal_uh1,iat_click_uh1,iat_report_event,beeswax_download_event,adroit_downloads,beeswax_post_install_event,adroit_report_obj_uh1,dsp-beacon"
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "beacon_rr_dfw1_cpm_render,network_beacon_dfw1_adunit,network_beacon_dfw1_publisherfill,beacon_rr_dfw1_default,network_beacon_adunit_interaction_dfw1,beacon_rr_dfw1_cpc_render,ifc_ff_dfw1,non_network_click_cpc_dfw1,non_network_click_cpm_dfw1,network_click_cpc_dfw1,network_click_cpm_dfw1,network_click_invalid_dfw1,click_rr_dfw1,adroit_report_obj_dfw1,billing_cpc_dfw1,billing_cpm_dfw1,billing_download_dfw1,iat_click,tpce_custom_goal,tpce_custom_goal_summary,tpce_download,tpce_enriched_download,tpce_ltv,tpce_ltv_summary,tpce_purchase,tpce_purchase_summary,tpce_user_segment_summary,billing_cpc_uh1,billing_cpm_uh1,billing_download_uh1"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable dfw1-to-uh1-channel dfw1-to-pek1-channel dfw1-to-lhr1-channel dfw1-to-dfw1-channel hdfsmerge-channel hdfslocal-channel"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable dfw1-to-pek1-channel dfw1-to-lhr1-channel dfw1-to-dfw1-channel hdfsmerge-channel hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink mergekafkasink uh1-mergesink1 uh1-mergesink2 uh1-mergesink3 dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink mergekafkasink dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "avrosrc" => {
@@ -290,20 +290,6 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "mergespillable",
          :batchSize => 500,
          :'kafka.topics' => "beacon_rr_dfw1_cpm_render,network_beacon_dfw1_adunit,network_beacon_dfw1_publisherfill,beacon_rr_dfw1_default,network_beacon_adunit_interaction_dfw1,beacon_rr_dfw1_cpc_render,ifc_ff_dfw1,non_network_click_cpc_dfw1,non_network_click_cpm_dfw1,network_click_cpc_dfw1,network_click_cpm_dfw1,network_click_invalid_dfw1,click_rr_dfw1,beeswax_user_segment,iat_click,iat_click_pek1,iat_goal_pek1,tpce_custom_goal,tpce_custom_goal_summary,tpce_download,tpce_enriched_download,tpce_ltv,tpce_ltv_summary,tpce_purchase,tpce_purchase_summary,tpce_user_segment_summary,cookie_mapping"},
-     "uh1kafkamergesrc" => {
-         :src_category => "uh1kafkamerge",
-         :consumer_group => "uh1-to-dfw1-kafkamerge",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "mergespillable",
-         :batchSize => 500,
-         :'kafka.topics' => "beacon_rr_dfw1_cpm_render,billing_cpc_dfw1,billing_cpm_dfw1,billing_download_dfw1,network_beacon_dfw1_adunit,network_beacon_dfw1_publisherfill,beacon_rr_dfw1_default,network_beacon_adunit_interaction_dfw1,beacon_rr_dfw1_cpc_render,ifc_ff_dfw1,non_network_click_cpc_dfw1,non_network_click_cpm_dfw1,network_click_cpc_dfw1,network_click_cpm_dfw1,network_click_invalid_dfw1,datasciences-attributes_dfw1,click_rr_dfw1,adroit_report_obj_dfw1,beeswax_user_segment,iat_click,cookie_mapping"},
-     "dfw1-to-uh1-mergesrc" => {
-         :src_category => "kafkamerge",
-         :consumer_group => "dfw1-to-uh1-kafkamerge",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "dfw1-to-uh1-channel",
-         :batchSize => 500,
-         :'kafka.topics' => "testmerge"},
      "dfw1-to-dfw1-mergesrc" => {
          :src_category => "kafkamerge",
          :consumer_group => "dfw1-to-dfw1-kafkamerge",
@@ -330,7 +316,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['dfw1']  = ["spillable"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable"]
-default["flume_collector"]["endcollector_merge_kafkaread_channels"]['dfw1']  = ["dfw1-to-uh1-channel","dfw1-to-pek1-channel","dfw1-to-lhr1-channel","dfw1-to-dfw1-channel"]
+default["flume_collector"]["endcollector_merge_kafkaread_channels"]['dfw1']  = ["dfw1-to-pek1-channel","dfw1-to-lhr1-channel","dfw1-to-dfw1-channel"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw1']  = ["hdfslocal-channel"]
 
@@ -345,9 +331,6 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
-     "uh1-mergesink1" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4001.grid.uh1.inmobi.com"},
-     "uh1-mergesink2" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4002.grid.uh1.inmobi.com"},
-     "uh1-mergesink3" => {:channel => "dfw1-to-uh1-channel",:flumevip =>"krfl4003.grid.uh1.inmobi.com"},
      "dfw1-mergesink1" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4001.grid.dfw1.inmobi.com"},
      "dfw1-mergesink2" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4002.grid.dfw1.inmobi.com"},
      "dfw1-mergesink3" => {:channel => "dfw1-to-dfw1-channel",:flumevip =>"oxfl4003.grid.dfw1.inmobi.com"},
