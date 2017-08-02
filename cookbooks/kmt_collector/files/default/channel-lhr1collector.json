@@ -378,7 +378,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://emerald:8020"
+        "hdfsUrl": "hdfs://emerald:8020",
+        "retention": "120"
        }
     },
     {
@@ -417,7 +418,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://emerald:8020"
+        "hdfsUrl": "hdfs://emerald:8020",
+        "retention": "120"
        }
     },
     {
@@ -430,7 +432,8 @@
       ],
       "hdfsDestination": {
         "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://emerald:8020"
+        "hdfsUrl": "hdfs://emerald:8020",
+        "retention": "120"
        }
     },
     {
