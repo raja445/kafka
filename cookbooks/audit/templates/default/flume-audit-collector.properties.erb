@@ -120,14 +120,18 @@ audit-collector.sinks.<%= "#{sink}" %>.dataSource = conduitaudit
 audit-collector.sinks.<%= "#{sink}" %>.batchSize = 500
 audit-collector.sinks.<%= "#{sink}" %>.aggregators = sent,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c15,c30,c60,c120,c240,c600
 audit-collector.sinks.<%= "#{sink}" %>.zookeeperLocation = <%= details[:zookeeper] %>
-audit-collector.sinks.<%= "#{sink}" %>.period = PT1H
-audit-collector.sinks.<%= "#{sink}" %>.segmentGranularity = HOUR
+audit-collector.sinks.<%= "#{sink}" %>.period = PT5H
+audit-collector.sinks.<%= "#{sink}" %>.segmentGranularity = SIX_HOUR
 <% end %>
 
 <% @druid_channels.each do |channel| %>
-audit-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.MemoryChannel
+audit-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 audit-collector.channels.<%= "#{channel}" %>.capacity = 50000
 audit-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+audit-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+audit-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
+audit-collector.channels.<%= "#{channel}" %>.spoolWorkers = 8
+audit-collector.channels.<%= "#{channel}" %>.despoolWorkers = 8
 <% end %>
 <% @hdfs_channels.each do |channel| %>
 audit-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
