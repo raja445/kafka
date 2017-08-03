@@ -54,6 +54,35 @@ audit-collector.sources.<%= "#{src}" %>.port = 2550
 audit-collector.sources.<%= "#{src}" %>.maxReadBufferBytes = 16777216
 audit-collector.sources.<%= "#{src}" %>.workerThreads = <%= @scribesrcworkerthreads %>
 <% end -%>
+<% if details[:'src_category'] == 'pek1kafkamerge' -%>
+audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+audit-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['pek1'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
+audit-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['pek1'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+#audit-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
+<% end -%>
+<% if details[:'src_category'] == 'lhr1kafkamerge' -%>
+audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+audit-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['lhr1'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
+audit-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['lhr1'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+#audit-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
+<% end -%>
 <% end -%>
 
 <% @hdfs_sinks.each do |sink, details| %>
@@ -76,8 +105,6 @@ audit-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /data/audit/re
 audit-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /data/audit/audit
 audit-collector.sinks.<%= "#{sink}" %>.retention.topics = _audit
 audit-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
-audit-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
-audit-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 audit-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 audit-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
 <% end %>
