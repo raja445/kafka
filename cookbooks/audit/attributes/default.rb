@@ -1,8 +1,8 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["audit_collector"]["version"] = "1.6.0.29"
-default["audit_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.29-bin.tar.gz"
+default["audit_collector"]["version"] = "1.6.0.34"
+default["audit_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.34-bin.tar.gz"
 default["audit_collector"]["base_dir"]  = "/opt/inmobi"
 default["audit_collector"]["spool_dir"]  = "/data/d1/flume-audit/spool"
 default["audit_collector"]["pid_dir"]  = "/var/run/flume-audit"
@@ -34,6 +34,12 @@ default["audit_collector"]["audit_consumer_gpsize"]['pek1']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['dfw1']  = "2"
 default["audit_collector"]["audit_consumer_gpsize"]['lhr1']  = "1"
 
+#Flume merge source consumer groupsize
+default["audit_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "1"
+default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "2"
+default["audit_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "1"
+
+
 #number of sinkworkerthreads
 default["audit_collector"]["scribesrcworkerthreads"]['uh1']  = "16"
 default["audit_collector"]["scribesrcworkerthreads"]['pek1']  = "16"
@@ -60,7 +66,21 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :type => "avro",
          :'selector.type' => "replicating",
          :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel"}
+         :channels => "druidlocal-channel hdfslocal-channel"},
+     "pek1kafkamergesrc" => {
+         :src_category => "pek1kafkamerge",
+         :consumer_group => "audit-service",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "mergespillable",
+         :batchSize => 500,
+         :'kafka.topics' => "_audit"},
+     "lhr1kafkamergesrc" => {
+         :src_category => "lhr1kafkamerge",
+         :consumer_group => "audit-service",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "mergespillable",
+         :batchSize => 500,
+         :'kafka.topics' => "_audit"}
        }
 
 #Configure the channels for the Flume Collector
