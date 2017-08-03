@@ -31,20 +31,14 @@ default["audit_collector"]["flume_agent_host"]['lhr1']  = "erdc4002.grid.lhr1.in
 #Flume merge source consumer groupsize
 default["audit_collector"]["audit_consumer_gpsize"]['uh1']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['pek1']  = "1"
-default["audit_collector"]["audit_consumer_gpsize"]['dfw1']  = "2"
+default["audit_collector"]["audit_consumer_gpsize"]['dfw1']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['lhr1']  = "1"
 
 #Flume merge source consumer groupsize
 default["audit_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "1"
-default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "2"
+default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "1"
 default["audit_collector"]["mergesrc_consumer_gpsize"]['lhr1']  = "1"
 
-
-#number of sinkworkerthreads
-default["audit_collector"]["scribesrcworkerthreads"]['uh1']  = "16"
-default["audit_collector"]["scribesrcworkerthreads"]['pek1']  = "16"
-default["audit_collector"]["scribesrcworkerthreads"]['dfw1']  = "16"
-default["audit_collector"]["scribesrcworkerthreads"]['lhr1']  = "16"
 
 
 default["audit_collector"]["auditcollector_all_channels"]  = "druidlocal-channel  hdfslocal-channel"
@@ -61,12 +55,6 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :channels => "druidlocal-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
-     "auditscribesrc" => {
-         :src_category => "auditscribe",
-         :type => "avro",
-         :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel"},
      "pek1kafkamergesrc" => {
          :src_category => "pek1kafkamerge",
          :consumer_group => "audit-service",
