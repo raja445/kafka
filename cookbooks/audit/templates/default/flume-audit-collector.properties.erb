@@ -44,16 +44,6 @@ audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:'batchSize'] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @audit_consumer_gpsize %>
 <% end -%>
-<% if details[:'src_category'] == 'auditscribe' -%>
-audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-audit-collector.sources.<%= "#{src}" %>.selector.type = <%= details[:'selector.type'] %>
-audit-collector.sources.<%= "#{src}" %>.selector.optional = <%= details[:selector_optional] %>
-audit-collector.sources.<%= "#{src}" %>.bind = 0.0.0.0
-audit-collector.sources.<%= "#{src}" %>.port = 2550
-audit-collector.sources.<%= "#{src}" %>.maxReadBufferBytes = 16777216
-audit-collector.sources.<%= "#{src}" %>.workerThreads = <%= @scribesrcworkerthreads %>
-<% end -%>
 <% if details[:'src_category'] == 'pek1kafkamerge' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
@@ -97,6 +87,7 @@ audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+audit-collector.sinks.<%= "#{sink}" %>.audit.enable = false
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
 audit-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 audit-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /data/audit/promoter
