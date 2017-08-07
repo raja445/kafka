@@ -1,8 +1,8 @@
 # coding: UTF-8 
 # Cookbook Name:: flume collector
 # Attributes:: default
-default["audit_collector"]["version"] = "1.6.0.34"
-default["audit_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.34-bin.tar.gz"
+default["audit_collector"]["version"] = "1.6.0.35"
+default["audit_collector"]["download_url"] = "http://glvm1014.grid.uh1.inmobi.com/tar/apache-flume-1.6.0.35-bin.tar.gz"
 default["audit_collector"]["base_dir"]  = "/opt/inmobi"
 default["audit_collector"]["spool_dir"]  = "/data/d1/flume-audit/spool"
 default["audit_collector"]["pid_dir"]  = "/var/run/flume-audit"
