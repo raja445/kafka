@@ -784,8 +784,8 @@
         }
       ],
       "hdfsDestination": {
-        "basePath": "databus/streams",
-        "hdfsUrl": "hdfs://gold:8020"
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
       }
     },
     {
