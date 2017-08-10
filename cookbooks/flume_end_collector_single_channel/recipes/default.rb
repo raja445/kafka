@@ -27,9 +27,18 @@ directory "#{flumeTmpDir}" do
   mode 00755
 end
 
-%w[/data/d1/flume /data/d1/flume/spool /var/log/flume].each do |path|
+%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume].each do |path|
   directory path do
     owner 'flume'
+    mode '0755'
+    action :create
+  end
+end
+
+%w[/data/d1/flume/locker].each do |path|
+  directory path do
+    owner 'flume'
+    group 'users'
     mode '0755'
     action :create
   end
