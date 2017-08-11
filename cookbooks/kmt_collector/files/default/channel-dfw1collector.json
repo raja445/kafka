@@ -277,6 +277,19 @@
       }
     },
     {
+      "streamName": "billing_download_uh1",
+      "source": [
+        {
+          "topic": "billing_download_uh1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://onyx:8020"
+       }
+    },
+    {
       "streamName": "beaconDefaultDfw1",
       "source": [
         {
