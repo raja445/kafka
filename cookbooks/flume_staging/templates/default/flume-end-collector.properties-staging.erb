@@ -1,0 +1,76 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called 'end-collector'
+
+####################################################################################################
+#avro source => disk backed memory => kafka
+####################################################################################################
+
+end-collector.sources = dfw1kafkamergesrc
+end-collector.channels = mergespillable
+end-collector.sinks = mergekafkasink
+
+
+end-collector.sources.dfw1kafkamergesrc.type = org.apache.flume.source.kafka.MultiKafkaSource
+end-collector.sources.dfw1kafkamergesrc.channels = mergespillable
+end-collector.sources.dfw1kafkamergesrc.zookeeper.connect = kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181
+#Single Channel
+end-collector.sources.dfw1kafkamergesrc.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.dfw1kafkamergesrc.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.dfw1kafkamergesrc.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.dfw1kafkamergesrc.kafka.bootstrap.servers = oxkf4001.grid.dfw1.inmobi.com:9092,oxkf4002.grid.dfw1.inmobi.com:9092,oxkf4003.grid.dfw1.inmobi.com:9092,oxkf4008.grid.dfw1.inmobi.com:9092,oxkf4009.grid.dfw1.inmobi.com:9092,oxkf4010.grid.dfw1.inmobi.com:9092,oxkf4011.grid.dfw1.inmobi.com:9092,oxkf4012.grid.dfw1.inmobi.com:9092,oxkf4013.grid.dfw1.inmobi.com:9092,oxkf4014.grid.dfw1.inmobi.com:9092,oxkf4015.grid.dfw1.inmobi.com:9092,oxkf4016.grid.dfw1.inmobi.com:9092,oxkf4017.grid.dfw1.inmobi.com:9092
+end-collector.sources.dfw1kafkamergesrc.kafka.consumer.group.id = flume-staging-dfw1-to-staging1-kafkamerge
+end-collector.sources.dfw1kafkamergesrc.kafka.topics = rr
+end-collector.sources.dfw1kafkamergesrc.batchSize = 500
+end-collector.sources.dfw1kafkamergesrc.topicHeaderKey = category
+end-collector.sources.dfw1kafkamergesrc.consumerGroupSize = 1
+#end-collector.sources.dfw1kafkamergesrc.kafka.auto.offset.reset - smallest
+#end-collector.sources.dfw1kafkamergesrc.interceptors = topic-name-prefix-adder-dfw1kafkamergesrc
+#end-collector.sources.dfw1kafkamergesrc.interceptors.topic-name-prefix-adder-dfw1kafkamergesrc.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+#end-collector.sources.dfw1kafkamergesrc.interceptors.topic-name-prefix-adder-dfw1kafkamergesrc.topicHeaderKey = category
+
+
+i
+end-collector.sinks.mergekafkasink.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.mergekafkasink.channel = mergespillable
+end-collector.sinks.mergekafkasink.topicHeader = category
+end-collector.sinks.mergekafkasink.flumeBatchSize = 500
+end-collector.sinks.mergekafkasink.kafka.producer.client.id = flume-staging-merge-kafka-sink
+end-collector.sinks.mergekafkasink.kafka.producer.buffer.memory = 268435456
+end-collector.sinks.mergekafkasink.kafka.producer.batch.size = 65536
+end-collector.sinks.mergekafkasink.kafka.producer.linger.ms = 5
+end-collector.sinks.mergekafkasink.kafka.bootstrap.servers = oxkm4006.grid.dfw1.inmobi.com:9092,oxkm4007.grid.dfw1.inmobi.com:9092,oxgs4038.grid.dfw1.inmobi.com:9092
+end-collector.sinks.mergekafkasink.kafka.topic = dummy
+end-collector.sinks.mergekafkasink.kafka.producer.acks = all
+# valid values none, gzip, snappy
+end-collector.sinks.mergekafkasink.kafka.producer.compression.type = gzip
+#Single channel
+end-collector.sinks.mergekafkasink.workerThreads = 64
+
+end-collector.channels.mergespillable.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.mergespillable.capacity = 100000
+end-collector.channels.mergespillable.spoolOnlyOnShutdown = true
+end-collector.channels.mergespillable.transactionCapacity = 500
+end-collector.channels.mergespillable.spoolDirectories = /data/d1/flume/spool/mergespillable
+end-collector.channels.mergespillable.spoolDiskCapacityMB = 500
+
