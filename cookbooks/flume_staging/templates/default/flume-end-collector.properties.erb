@@ -1,0 +1,68 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called 'end-collector'
+
+####################################################################################################
+#avro source => disk backed memory => kafka
+####################################################################################################
+
+end-collector.sources = zipavrosrc
+end-collector.channels = spillable
+end-collector.sinks = kafkasink
+
+
+end-collector.sources.zipavrosrc.type = avro
+end-collector.sources.zipavrosrc.channels = spillable
+end-collector.sources.zipavrosrc.bind = 0.0.0.0
+end-collector.sources.zipavrosrc.port = 2541
+end-collector.sources.zipavrosrc.compression-type=deflate
+end-collector.sources.zipavrosrc.interceptors = whitelister_zipavrosrc
+end-collector.sources.zipavrosrc.interceptors.whitelister_zipavrosrc.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
+end-collector.sources.zipavrosrc.interceptors.whitelister_zipavrosrc.zkServers = oxkm4006.grid.dfw1.inmobi.com:2181,oxkm4007.grid.dfw1.inmobi.com:2181,oxgs4038.grid.dfw1.inmobi.com:2181
+
+
+end-collector.sinks.kafkasink.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.kafkasink.channel = spillable
+end-collector.sinks.kafkasink.topicHeader = category
+end-collector.sinks.kafkasink.flumeBatchSize = 500
+end-collector.sinks.kafkasink.kafka.bootstrap.servers = oxkm4006.grid.dfw1.inmobi.com:9092,oxkm4007.grid.dfw1.inmobi.com:9092,oxgs4038.grid.dfw1.inmobi.com:9092
+end-collector.sinks.kafkasink.kafka.topic = dummy
+end-collector.sinks.kafkasink.kafka.producer.client.id = flume-staging-kafka-sink
+end-collector.sinks.kafkasink.kafka.producer.buffer.memory = 268435456
+end-collector.sinks.kafkasink.kafka.producer.batch.size = 65536
+end-collector.sinks.kafkasink.kafka.producer.linger.ms = 5
+end-collector.sinks.kafkasink.kafka.producer.acks = all
+# valid values none, gzip, snappy
+end-collector.sinks.kafkasink.kafka.producer.compression.type = gzip
+#Single channel
+end-collector.sinks.kafkasink.workerThreads = 78
+
+
+end-collector.channels.spillable.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single channel
+end-collector.channels.spillable.capacity = 2000000
+end-collector.channels.spillable.spoolWorkers = 16
+end-collector.channels.spillable.despoolWorkers = 16
+end-collector.channels.spillable.transactionCapacity = 500
+end-collector.channels.spillable.spoolDirectories = /data/d1/flume/spool/spillable
+end-collector.channels.spillable.spoolDiskCapacityMB = 5000000
+
