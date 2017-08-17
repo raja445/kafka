@@ -58,7 +58,8 @@ end
 
 
 template "#{flumeConf}/flume-end-collector.properties" do
-  source "flume-end-collector.properties.erb"
+#  source "flume-end-collector.properties.erb"
+  source "flume-end-collector.properties-staging.erb"
   owner "flume"
   mode  00644
 end
