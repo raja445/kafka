@@ -84,6 +84,22 @@ cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-dfw1collector
   action :create
 end
 
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-pek1collector.json" do
+  source 'channel-pek1collector.json'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/channel-lhr1collector.json" do
+  source 'channel-lhr1collector.json'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-uh1collector.properties" do
   source 'server-uh1collector.properties'
   owner 'root'
@@ -94,6 +110,22 @@ end
 
 cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-dfw1collector.properties" do
   source 'server-dfw1collector.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-pek1collector.properties" do
+  source 'server-pek1collector.properties'
+  owner 'root'
+  group 'root'
+  mode '0664'
+  action :create
+end
+
+cookbook_file "#{node['kafkaMirroringConfig']['prodconf']}/server-lhr1collector.properties" do
+  source 'server-lhr1collector.properties'
   owner 'root'
   group 'root'
   mode '0664'
