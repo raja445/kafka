@@ -24,6 +24,21 @@
         "hdfsUrl": "hdfs://onyx:8020"
       }
      },
+     {
+      "streamName": "ifcCookieOrganicActivityDfw1",
+      "source": [
+        {
+          "topic": "ifc_cookie_organic_activity",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
     {
       "streamName": "beacon_rr_uj1_cpm_render",
       "source": [
@@ -288,6 +303,36 @@
         "basePath": "databus/streams_local",
         "hdfsUrl": "hdfs://onyx:8020"
        }
+    },
+    {
+      "streamName": "wclickDfw1",
+      "source": [
+        {
+          "topic": "wclick_dfw1",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "normalizedPostbackGold",
+      "source": [
+        {
+          "topic": "normalized_postback",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "96"
+      }
     },
     {
       "streamName": "beaconDefaultDfw1",

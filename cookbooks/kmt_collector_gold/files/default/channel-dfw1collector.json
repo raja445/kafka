@@ -27,6 +27,36 @@
       }
     },
     {
+      "streamName": "ifcCookieOrganicActivityDfw1",
+      "source": [
+        {
+          "topic": "ifc_cookie_organic_activity",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "normalizedPostbackGold",
+      "source": [
+        {
+          "topic": "normalized_postback",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "96"
+      }
+    },
+    {
       "streamName": "tpce_custom_goal_summary",
       "source": [
         {
