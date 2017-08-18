@@ -85,7 +85,7 @@
       }
     },
     {
-      "streamName": "wclickPek1",
+      "streamName": "wclick_pek1",
       "source": [
         {
           "topic": "wclick_pek1",
@@ -100,7 +100,7 @@
       }
     },
     {
-      "streamName": "ifcCookieOrganicActivityPek1",
+      "streamName": "ifc_cookie_organic_activity",
       "source": [
         {
           "topic": "ifc_cookie_organic_activity",

@@ -278,7 +278,7 @@
        }
     },
     {
-      "streamName": "ifcCookieOrganicActivityLhr1",
+      "streamName": "ifc_cookie_organic_activity",
       "source": [
         {
           "topic": "ifc_cookie_organic_activity",

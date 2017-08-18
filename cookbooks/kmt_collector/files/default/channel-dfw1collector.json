@@ -25,7 +25,7 @@
       }
      },
      {
-      "streamName": "ifcCookieOrganicActivityDfw1",
+      "streamName": "ifc_cookie_organic_activity",
       "source": [
         {
           "topic": "ifc_cookie_organic_activity",
@@ -305,7 +305,7 @@
        }
     },
     {
-      "streamName": "wclickDfw1",
+      "streamName": "wclick_dfw1",
       "source": [
         {
           "topic": "wclick_dfw1",
@@ -320,7 +320,7 @@
       }
     },
     {
-      "streamName": "normalizedPostbackGold",
+      "streamName": "normalized_postback",
       "source": [
         {
           "topic": "normalized_postback",
