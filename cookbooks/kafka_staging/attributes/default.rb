@@ -10,7 +10,7 @@ default["kafka"]["scala_version"] = "2.11"
 #default["kafka"]["download_url"] = "https://archive.apache.org/dist/kafka"
 #default["kafka"]["download_url"] = "http://www-us.apache.org/dist/kafka"
 default["kafka"]["version"] = "0.8.2.2"
-default["kafka"]["download_url"] = "https://archive.apache.org/dist/kafka
+default["kafka"]["download_url"] = "https://archive.apache.org/dist/kafka"
 
 default["kafka"]["base_dir"]  = "/opt/inmobi"
 default["kafka"]["log_dir"] = "/var/log/kafka"
