@@ -54,5 +54,5 @@ oldfiles.age=60
 #Maximum number jobs allowed per node
 max.jobspernode=200
 
-prod.colos=<%= @collector_id %>
+prod.colos=<%= @collector_id %><% if @colo  == 'dfw1' -%>,pek1collector,lhr1collector<% end -%>
 <%= @collector_id %>.config={"configs":[{"name":"<%= @colo %>","url":"hdfs://<%= @hdfs_id %>:8020","regex":"hdfs://[a-z]*:[0-9]*"}<% if @colo  == 'uh1' -%>,{"name":"uh1","url":"hdfs://gold:8020","regex":"hdfs://[a-z]*:[0-9]*"}<% end -%><% if @colo  == 'dfw1' -%>,{"name":"dfw1","url":"hdfs://platinum:8020","regex":"hdfs://[a-z]*:[0-9]*"}<% end -%>]}
