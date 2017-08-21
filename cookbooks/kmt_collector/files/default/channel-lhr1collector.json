@@ -278,6 +278,19 @@
        }
     },
     {
+      "streamName": "nested_activity_add-ifc_compressed",
+      "source": [
+        {
+          "topic": "nested_activity_add-ifc_compressed",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams_local",
+        "hdfsUrl": "hdfs://emerald:8020"
+       }
+    },
+    {
       "streamName": "ifc_cookie_organic_activity",
       "source": [
         {
