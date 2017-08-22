@@ -309,6 +309,21 @@
       }
     },
     {
+      "streamName": "adroit_attribution_stats",
+      "source": [
+        {
+          "topic": "adroit_attribution_stats",
+          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "ifc_ff_colo",
       "source": [
         {
@@ -648,6 +663,48 @@
         "basePath": "databus/streams",
         "hdfsUrl": "hdfs://emerald:8020"
        }
+    },
+    {
+      "streamName": "tpce_custom_goal_summary",
+      "source": [
+        {
+          "topic": "merge_tpce_custom_goal_summary",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "tpce_enriched_download",
+      "source": [
+        {
+          "topic": "merge_tpce_enriched_download",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "tpce_purchase_summary",
+      "source": [
+        {
+          "topic": "merge_tpce_purchase_summary",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "retention": "168"
+      }
     },
     {
       "streamName": "fds_lhr1",

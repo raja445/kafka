@@ -865,6 +865,21 @@
       }
     },
     {
+      "streamName": "adroit_attribution_stats",
+      "source": [
+        {
+          "topic": "adroit_attribution_stats",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "fds_dfw1",
       "source": [
         {
