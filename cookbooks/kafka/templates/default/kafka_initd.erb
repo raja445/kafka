@@ -90,7 +90,7 @@ status() {
 
 findPid() {
   #FOUND_PID=`pgrep -u $USER -f $KAFKA_MAIN`
-  FOUND_PID=`ps ax | grep -i 'kafka.Kafka' | grep -v grep | awk '{print $1}'`
+  FOUND_PID=`ps ax | grep -i '[k]afka.Kafka' | awk '{print $1}'`
 }
 
 case "$1" in
