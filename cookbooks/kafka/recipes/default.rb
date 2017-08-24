@@ -110,7 +110,7 @@ template "/home/#{node["kafka"]["user"]}/.bash_profile" do
   owner node["kafka"]["user"]
   group node["kafka"]["group"]
   mode  00755
-  notifies :restart, "service[kafka]"
+  ###########notifies :restart, "service[kafka]"
 end
 
 # Ensure the Kafka base directory exists
@@ -147,7 +147,7 @@ template "/etc/init.d/kafka" do
   owner "root"
   group "root"
   mode  00755
-  notifies :restart, "service[kafka]"
+  #######notifies :restart, "service[kafka]"
 end
 
 # Download kafka binary file if it does not exist already
