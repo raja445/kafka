@@ -6,8 +6,10 @@ default["kafka"]["user"] = "kafka"
 default["kafka"]["group"] = "kafka"
 
 default["kafka"]["scala_version"] = "2.11"
-default["kafka"]["version"] = "0.8.2.2"
-default["kafka"]["download_url"] = "https://archive.apache.org/dist/kafka"
+#default["kafka"]["version"] = "0.8.2.2"
+#default["kafka"]["download_url"] = "https://archive.apache.org/dist/kafka"
+default["kafka"]["version"] = "0.10.2.1"
+default["kafka"]["download_url"] = "http://www-us.apache.org/dist/kafka"
 
 default["kafka"]["base_dir"]  = "/opt/inmobi"
 default["kafka"]["log_dir"] = "/var/log/kafka"
@@ -65,6 +67,8 @@ default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
 default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
+default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.8.2'
+default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
 
 # Log4J config
 default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, DRFA"
