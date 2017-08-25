@@ -1,0 +1,214 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# The configuration file needs to define the sources, 
+# the channels and the sinks.
+# Sources, channels and sinks are defined per agent, 
+# in this case called 'end-collector'
+
+####################################################################################################
+#avro source => disk backed memory => kafka
+####################################################################################################
+
+end-collector.sources = midavrosrc
+end-collector.channels = midspillable
+end-collector.sinks = dfw1-midsink1 dfw1-midsink2 dfw1-midsink3 dfw1-midsink4 dfw1-midsink5 dfw1-midsink6 dfw1-midsink7 dfw1-midsink8 dfw1-midsink9 dfw1-midsink10 dfw1-midsink11 dfw1-midsink12 dfw1-midsink13 dfw1-midsink14 dfw1-midsink15 dfw1-midsink16 dfw1-midsink17 dfw1-midsink18
+
+
+end-collector.sources.midavrosrc.type = avro
+end-collector.sources.midavrosrc.channels = midspillable
+end-collector.sources.midavrosrc.bind = 0.0.0.0
+end-collector.sources.midavrosrc.port = 2543
+end-collector.sources.midavrosrc.compression-type=deflate
+end-collector.sources.midavrosrc.interceptors = whitelister_midavrosrc
+end-collector.sources.midavrosrc.interceptors.whitelister_midavrosrc.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
+end-collector.sources.midavrosrc.interceptors.whitelister_midavrosrc.zkServers = kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181
+
+
+
+end-collector.sinks.dfw1-midsink1.type = avro
+end-collector.sinks.dfw1-midsink1.channel = midspillable
+end-collector.sinks.dfw1-midsink1.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink1.port = 2541
+end-collector.sinks.dfw1-midsink1.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink1.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink1.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink2.type = avro
+end-collector.sinks.dfw1-midsink2.channel = midspillable
+end-collector.sinks.dfw1-midsink2.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink2.port = 2541
+end-collector.sinks.dfw1-midsink2.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink2.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink2.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink3.type = avro
+end-collector.sinks.dfw1-midsink3.channel = midspillable
+end-collector.sinks.dfw1-midsink3.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink3.port = 2541
+end-collector.sinks.dfw1-midsink3.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink3.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink3.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink4.type = avro
+end-collector.sinks.dfw1-midsink4.channel = midspillable
+end-collector.sinks.dfw1-midsink4.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink4.port = 2541
+end-collector.sinks.dfw1-midsink4.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink4.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink4.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink5.type = avro
+end-collector.sinks.dfw1-midsink5.channel = midspillable
+end-collector.sinks.dfw1-midsink5.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink5.port = 2541
+end-collector.sinks.dfw1-midsink5.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink5.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink5.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink6.type = avro
+end-collector.sinks.dfw1-midsink6.channel = midspillable
+end-collector.sinks.dfw1-midsink6.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink6.port = 2541
+end-collector.sinks.dfw1-midsink6.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink6.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink6.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink7.type = avro
+end-collector.sinks.dfw1-midsink7.channel = midspillable
+end-collector.sinks.dfw1-midsink7.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink7.port = 2541
+end-collector.sinks.dfw1-midsink7.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink7.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink7.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink8.type = avro
+end-collector.sinks.dfw1-midsink8.channel = midspillable
+end-collector.sinks.dfw1-midsink8.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink8.port = 2541
+end-collector.sinks.dfw1-midsink8.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink8.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink8.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink9.type = avro
+end-collector.sinks.dfw1-midsink9.channel = midspillable
+end-collector.sinks.dfw1-midsink9.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink9.port = 2541
+end-collector.sinks.dfw1-midsink9.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink9.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink9.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink10.type = avro
+end-collector.sinks.dfw1-midsink10.channel = midspillable
+end-collector.sinks.dfw1-midsink10.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink10.port = 2541
+end-collector.sinks.dfw1-midsink10.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink10.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink10.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink11.type = avro
+end-collector.sinks.dfw1-midsink11.channel = midspillable
+end-collector.sinks.dfw1-midsink11.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink11.port = 2541
+end-collector.sinks.dfw1-midsink11.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink11.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink11.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink12.type = avro
+end-collector.sinks.dfw1-midsink12.channel = midspillable
+end-collector.sinks.dfw1-midsink12.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink12.port = 2541
+end-collector.sinks.dfw1-midsink12.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink12.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink12.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink13.type = avro
+end-collector.sinks.dfw1-midsink13.channel = midspillable
+end-collector.sinks.dfw1-midsink13.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink13.port = 2541
+end-collector.sinks.dfw1-midsink13.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink13.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink13.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink14.type = avro
+end-collector.sinks.dfw1-midsink14.channel = midspillable
+end-collector.sinks.dfw1-midsink14.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink14.port = 2541
+end-collector.sinks.dfw1-midsink14.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink14.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink14.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink15.type = avro
+end-collector.sinks.dfw1-midsink15.channel = midspillable
+end-collector.sinks.dfw1-midsink15.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink15.port = 2541
+end-collector.sinks.dfw1-midsink15.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink15.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink15.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink16.type = avro
+end-collector.sinks.dfw1-midsink16.channel = midspillable
+end-collector.sinks.dfw1-midsink16.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink16.port = 2541
+end-collector.sinks.dfw1-midsink16.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink16.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink16.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink17.type = avro
+end-collector.sinks.dfw1-midsink17.channel = midspillable
+end-collector.sinks.dfw1-midsink17.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink17.port = 2541
+end-collector.sinks.dfw1-midsink17.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink17.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink17.reset-connection-interval = 60
+end-collector.sinks.dfw1-midsink18.type = avro
+end-collector.sinks.dfw1-midsink18.channel = midspillable
+end-collector.sinks.dfw1-midsink18.hostname = flume.grid.dfw1.inmobi.com
+end-collector.sinks.dfw1-midsink18.port = 2541
+end-collector.sinks.dfw1-midsink18.compression-type = deflate
+# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
+end-collector.sinks.dfw1-midsink18.batch-size = 500
+# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
+end-collector.sinks.dfw1-midsink18.reset-connection-interval = 60
+
+end-collector.channels.midspillable.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single channel
+end-collector.channels.midspillable.capacity = 2000000
+end-collector.channels.midspillable.spoolWorkers = 16
+end-collector.channels.midspillable.despoolWorkers = 16
+end-collector.channels.midspillable.transactionCapacity = 500
+end-collector.channels.midspillable.spoolDirectories = /data/d1/flume/spool/midspillable
+end-collector.channels.midspillable.spoolDiskCapacityMB = 5000000
