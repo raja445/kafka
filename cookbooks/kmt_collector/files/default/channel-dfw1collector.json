@@ -856,6 +856,36 @@
       }
     },
     {
+      "streamName": "sandboxrr",
+      "source": [
+        {
+          "topic": "sandboxrr",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "sandbox_postimpression",
+      "source": [
+        {
+          "topic": "sandbox_postimpression",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "adroit_attribution_stats",
       "source": [
         {
