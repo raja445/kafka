@@ -841,6 +841,21 @@
       }
     },
     {
+      "streamName": "dsp-beacon",
+      "source": [
+        {
+          "topic": "dsp-beacon",
+          "zookeeper": "kafka-zookeeper.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
       "streamName": "user_context",
       "source": [
         {
