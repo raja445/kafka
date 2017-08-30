@@ -837,7 +837,7 @@
         "basePath": "databus/streams",
         "hdfsUrl": "hdfs://platinum:8020",
         "compression": "gz",
-        "retention": "48"
+        "retention": "96"
       }
     },
     {
