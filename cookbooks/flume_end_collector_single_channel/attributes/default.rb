@@ -341,7 +341,8 @@ default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
-     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
