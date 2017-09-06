@@ -90,6 +90,11 @@ log "Binary URL : #{node["kafka"]["binary_url"]}"
 # include_recipe "java"
 # include_recipe "ulimit"
 
+# add JAAS config location as default JVM parameter if Kerberos is enabled
+if node["kafka"]["kerberos"]["enable"] && node["kafka"]["env_vars"]["KAFKA_OPTS"].nil?
+  node.default["kafka"]["env_vars"]["KAFKA_OPTS"] = "-Djava.security.auth.login.config=#{node["kafka"]["install_dir"]}/config/kafka_jaas.conf"
+end
+
 # setup kafka group
 group node["kafka"]["group"] do
   action :create
@@ -236,12 +241,20 @@ end
  end
 end
 
-# Create kafka_server_jaas.conf fie.
-template "#{node["kafka"]["install_dir"]}/config/kafka_server_jaas.conf" do
-  source "kafka_server_jaas.conf.erb"
-  owner node["kafka"]["user"]
-  group node["kafka"]["group"]
-  mode 00644
+# Write JAAS configuration file if enabled
+if node["kafka"]["kerberos"]["enable"]
+  # Verify required attributes are set
+  raise "Kerberos keytab location must be configured" if node["kafka"]["kerberos"]["keytab"].nil?
+  raise "Kerberos realm or principal must be configured" if node["kafka"]["kerberos"]["principal"].end_with? '@'
+
+  # Create kafka_jaas.conf fie.
+  template "#{node["kafka"]["install_dir"]}/config/kafka_jaas.conf" do
+     source "kafka_jaas_config.erb"
+     owner node["kafka"]["user"]
+     group node["kafka"]["group"]
+     mode 00755
+     notifies :restart, "service[kafka]"
+  end
 end
 
 # Link kafka config to /etc/kafka

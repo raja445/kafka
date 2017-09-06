@@ -27,7 +27,7 @@ default['kafka']['mrelay']['ev1'] = "data1004.grid.ev1.inmobi.com"
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
 default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G -Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_server_jaas.conf\""
-default["kafka"]["env_vars"]["KAFKA_OPTS"] = "\"-Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_server_jaas.conf\""
+default["kafka"]["env_vars"]["KAFKA_OPTS"] = "\"-Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_jaas.conf\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:MaxDirectMemorySize=2G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
@@ -59,7 +59,23 @@ default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
 
 default["kafka"]["kerberos"]["enable"] = 'true'
 default["kafka"]["kerberos"]["keytab"] = '/etc/security/keytabs/kafka.service.keytab'
-default["kafka"]["kerberos"]["principal"] = 'kafka/rmanager1001.grid.ev1.inmobi.com@INMOBI.COM'
+#default["kafka"]["kerberos"]["principal"] = 'kafka/rmanager1001.grid.ev1.inmobi.com@INMOBI.COM'
+default["kafka"]["kerberos"]["realm"] = "INMOBI.COM"
+default["kafka"]["kerberos"]["principal"] = "#{node["kafka"]["user"]}/#{node["fqdn"]}@#{node["kafka"]["kerberos"]["realm"]}"
+
+# Jaas configuration parameters for KafkaServer
+default["kafka"]["kerberos"]["krb5_properties"]["server"]["useKeyTab"] = "true"
+default["kafka"]["kerberos"]["krb5_properties"]["server"]["storeKey"] = "true"
+default["kafka"]["kerberos"]["krb5_properties"]["server"]["useTicketCache"] = "false"
+
+# Jaas configuration parameters for KafkaClient
+default["kafka"]["kerberos"]["krb5_properties"]["client"]["useTicketCache"] = "true"
+default["kafka"]["kerberos"]["krb5_properties"]["client"]["renewTicket"] = "true"
+
+# Jaas configuration parameters for Zoo Keeper Client.
+default["kafka"]["kerberos"]["enable_zk"] = "true"
+default["kafka"]["kerberos"]["zk_krb5_properties"]["useKeyTab"] = "true"
+default["kafka"]["kerberos"]["zk_krb5_properties"]["storeKey"] = "true"
 
 # This should match the principal name of the Kafka brokers which is kafka/datanode1001.grid.ev1.inmobi.com@INMOBI.COM
 default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka' 
