@@ -90,11 +90,6 @@ log "Binary URL : #{node["kafka"]["binary_url"]}"
 # include_recipe "java"
 # include_recipe "ulimit"
 
-# add JAAS config location as default JVM parameter if Kerberos is enabled
-if node["kafka"]["kerberos"]["enable"] && node["kafka"]["env_vars"]["KAFKA_OPTS"].nil?
-  node.default["kafka"]["env_vars"]["KAFKA_OPTS"] = "-Djava.security.auth.login.config=#{node["kafka"]["install_dir"]}/config/kafka_jaas.conf"
-end
-
 # setup kafka group
 group node["kafka"]["group"] do
   action :create
@@ -223,7 +218,7 @@ end
 
 # Configure kafka properties
 
-%w[server.properties log4j.properties consumer.properties producer.properties].each do |template_file|
+%w[server.properties consumer.properties producer.properties log4j.properties].each do |template_file|
  template "#{node["kafka"]["install_dir"]}/config/#{template_file}" do
    source  "key_equals_value.erb"
    owner node["kafka"]["user"]
@@ -249,11 +244,11 @@ if node["kafka"]["kerberos"]["enable"]
 
   # Create kafka_jaas.conf fie.
   template "#{node["kafka"]["install_dir"]}/config/kafka_jaas.conf" do
-     source "kafka_jaas_config.erb"
+     source "kafka_jaas.conf.erb"
      owner node["kafka"]["user"]
      group node["kafka"]["group"]
      mode 00755
-     notifies :restart, "service[kafka]"
+     #notifies :restart, "service[kafka]"
   end
 end
 
@@ -281,7 +276,6 @@ cookbook_file "/etc/default/jmxtrans" do
   source "jmxtrans_default"
   mode "0644"
 end
-
 
 template "/var/lib/jmxtrans/kafka.json" do
   source "kafka.json.erb"
