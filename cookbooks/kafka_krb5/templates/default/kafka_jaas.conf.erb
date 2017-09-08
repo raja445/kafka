@@ -1,0 +1,43 @@
+<%# coding: UTF-8%>
+KafkaServer {
+    com.sun.security.auth.module.Krb5LoginModule required
+<% node["kafka"]["kerberos"]["krb5_properties"]["server"].each do |key, value| -%>
+    <%= key %>=<%= (value.to_s == 'true' || value.to_s == 'false') ? value : "\"#{value}\"" %>
+<% end -%>
+    keyTab="<%= node["kafka"]["kerberos"]["keytab"] %>"
+    serviceName="kafka"
+    principal="<%= node["kafka"]["kerberos"]["principal"] %>";
+};
+
+// JAAS configuration for ZooKeeper client
+<% if node["kafka"]["kerberos"]["enable_zk"] %>
+Client {
+    com.sun.security.auth.module.Krb5LoginModule required
+<% node["kafka"]["kerberos"]["zk_krb5_properties"].each do |key, value| -%>
+    <%= key %>=<%= (value.to_s == 'true' || value.to_s == 'false') ? value : "\"#{value}\"" %>
+<% end -%>
+    keyTab="<%= node["kafka"]["kerberos"]["keytab"] %>"
+    principal="<%= node["kafka"]["kerberos"]["principal"] %>";
+};
+
+// JAAS configuration for Kafka Client
+KafkaClient {
+    com.sun.security.auth.module.Krb5LoginModule required
+<% node["kafka"]["kerberos"]["krb5_properties"]["client"].each do |key, value| -%>
+    <%= key %>=<%= (value.to_s == 'true' || value.to_s == 'false') ? value : "\"#{value}\"" %>
+<% end -%>
+    serviceName="kafka";
+};
+
+// Kafka client configuration with keytab, for producers:
+//KafkaClient {
+//     com.sun.security.auth.module.Krb5LoginModule required
+//     useKeyTab=true
+//     keyTab="/etc/security/keytabs/kafka.service.keytab"
+//     storeKey=true
+//     useTicketCache=false
+//     serviceName="kafka"
+//     principal="kafka@INMOBI.COM";
+//    };
+
+<% end %>

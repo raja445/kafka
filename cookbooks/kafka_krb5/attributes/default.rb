@@ -20,18 +20,18 @@ default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kaf
 default['kafkadisks']['mounts']="/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/data/d4/kafka,/data/d5/kafka,/data/d6/kafka"
 # These are required to be supplied by the consumer so setting to nil
 
-default["kafka"]["brokers"]["ev1"] = ["rmanager1001.grid.ev1.inmobi.com","rmanager1002.grid.ev1.inmobi.com","data1004.grid.ev1.inmobi.com"]
+
+default["kafka"]["brokers"]["ev1"] = ["rmanager1001.grid.ev1.inmobi.com","rmanager1002.grid.ev1.inmobi.com","datanode1004.grid.ev1.inmobi.com"]
 default["kafka"]["zookeepers"]["ev1"] = ["datanode1005.grid.ev1.inmobi.com:2181","datanode1006.grid.ev1.inmobi.com:2181","datanode1007.grid.ev1.inmobi.com:2181"]
-default['kafka']['mrelay']['ev1'] = "data1004.grid.ev1.inmobi.com"
+default['kafka']['mrelay']['dfw1'] = "datanode1004.grid.ev1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
-default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G -Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_server_jaas.conf\""
-default["kafka"]["env_vars"]["KAFKA_OPTS"] = "\"-Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_jaas.conf\""
+default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:MaxDirectMemorySize=2G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
-default["kafka"]["server.properties"]["port"] = 9092 
+default["kafka"]["server.properties"]["port"] = 9092
 default["kafka"]["server.properties"]["num.partitions"] = 10
 default["kafka"]["server.properties"]["default.replication.factor"] = 3
 default["kafka"]["server.properties"]["log.flush.interval.messages"] = 40000
@@ -53,13 +53,10 @@ default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.10.2'
 default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
 
-#
-#----------Kerberos Related Changes goes here-----------#
-#
+#------------Kerberos Related Changes------------------
 
-default["kafka"]["kerberos"]["enable"] = 'true'
-default["kafka"]["kerberos"]["keytab"] = '/etc/security/keytabs/kafka.service.keytab'
-#default["kafka"]["kerberos"]["principal"] = 'kafka/rmanager1001.grid.ev1.inmobi.com@INMOBI.COM'
+default["kafka"]["kerberos"]["enable"] = "true"
+default["kafka"]["kerberos"]["keytab"] = "/etc/security/keytabs/kafka.service.keytab"
 default["kafka"]["kerberos"]["realm"] = "INMOBI.COM"
 default["kafka"]["kerberos"]["principal"] = "#{node["kafka"]["user"]}/#{node["fqdn"]}@#{node["kafka"]["kerberos"]["realm"]}"
 
@@ -78,32 +75,35 @@ default["kafka"]["kerberos"]["zk_krb5_properties"]["useKeyTab"] = "true"
 default["kafka"]["kerberos"]["zk_krb5_properties"]["storeKey"] = "true"
 
 # This should match the principal name of the Kafka brokers which is kafka/datanode1001.grid.ev1.inmobi.com@INMOBI.COM
-default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka' 
+default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka'
 
 # SASL_PLAINTEXT://host.name:port if you leave host.name empty it will bind to 0.0.0.0
-default["kafka"]["server.properties"]["listeners"] = 'SASL_PLAINTEXT://:9092' 
+default["kafka"]["server.properties"]["listeners"] = 'SASL_PLAINTEXT://:9092'
 
 # Kafka brokers to authenticate each other using SASL
 default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
-default["kafka"]["server.properties"]["sasl.mechanism.inter.broker.protoco"] = 'GSSAPI'
+
+# Kafka brokers to authenticate each other using SASL
+#default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
+#default["kafka"]["server.properties"]["sasl.mechanism.inter.broker.protocol"] = 'GSSAPI'
 
 # SASL mechanisms enabled in the Kafka server
-default["kafka"]["server.properties"]["sasl.enabled.mechanisms"] = 'GSSAPI'
+#default["kafka"]["server.properties"]["sasl.enabled.mechanisms"] = 'GSSAPI'
 
 # Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.
-default["kafka"]["server.properties"]["security.protocol"] = 'SASL_PLAINTEX'
+#default["kafka"]["server.properties"]["security.protocol"] = 'SASL_PLAINTEX'
 
 # authorizer class that should be used for authorization
-default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security.auth.SimpleAclAuthorizer'
+#default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security.auth.SimpleAclAuthorizer'
 
 # Kafka acls are defined in the general format of "Principal P is [Allowed/Denied] Operation O From Host H On Resource R". 
 # By default, if a Resource R has no associated acls, no one other than super users is allowed to access R
 # This is to be overrriden below.
-default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
+#default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
 
 # translation from principal to user name has to be configured, which is defined as follows.
-default["kafka"]["server.properties"]["principal.to.local.class"] = 'kafka.security.auth.KerberosPrincipalToLocal'
-default["kafka"]["server.properties"]["sasl.kerberos.principal.to.local.rules"] = 'RULE:[1:$1@$0](ambari-qa-xenon@INMOBI.COM)s/.*/ambari-qa/,RULE:[1:$1@$0](hdfs-xenon@INMOBI.COM)s/.*/hdfs/,RULE:[1:$1@$0](.*@INMOBI.COM)s/@.*//, RULE:[2:$1@$0](amshbase@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](amszk@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](dn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](jhs@INMOBI.COM)s/.*/mapred/,RULE:[2:$1@$0](jn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](nm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](nn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](oozie@INMOBI.COM)s/.*/oozie/,RULE:[2:$1@$0](rm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](yarn@INMOBI.COM)s/.*/yarn/,DEFAULT'
+#default["kafka"]["server.properties"]["principal.to.local.class"] = 'kafka.security.auth.KerberosPrincipalToLocal'
+#default["kafka"]["server.properties"]["sasl.kerberos.principal.to.local.rules"] = 'RULE:[1:$1@$0](ambari-qa-xenon@INMOBI.COM)s/.*/ambari-qa/,RULE:[1:$1@$0](hdfs-xenon@INMOBI.COM)s/.*/hdfs/,RULE:[1:$1@$0](.*@INMOBI.COM)s/@.*//, RULE:[2:$1@$0](amshbase@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](amszk@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](dn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](jhs@INMOBI.COM)s/.*/mapred/,RULE:[2:$1@$0](jn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](nm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](nn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](oozie@INMOBI.COM)s/.*/oozie/,RULE:[2:$1@$0](rm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](yarn@INMOBI.COM)s/.*/yarn/,DEFAULT'
 
 # Consumber Properties files to enable SASL 
 default["kafka"]["consumer.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
@@ -115,8 +115,7 @@ default["kafka"]["producer.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
 default["kafka"]["producer.properties"]["sasl.mechanism"] = 'GSSAPI'
 default["kafka"]["producer.properties"]["sasl.kerberos.service.name"] = 'kafka'
 
-# ------- Kerberos Related Changes Ends here-------------------#
-
+#------- Kerberos Related Changes Ends here-------------------#
 # Log4J config
 default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, DRFA"
 default["kafka"]["log4j.properties"]["log4j.appender.DRFA"] = "org.apache.log4j.DailyRollingFileAppender"
@@ -160,3 +159,4 @@ default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 default['jmxtrans_version'] = '250-1'
 default['cluster_name'] = {'ev1' => 'ev1-xenon'}
+
