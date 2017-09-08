@@ -23,7 +23,7 @@ default['kafkadisks']['mounts']="/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/d
 
 default["kafka"]["brokers"]["ev1"] = ["rmanager1001.grid.ev1.inmobi.com","rmanager1002.grid.ev1.inmobi.com","datanode1004.grid.ev1.inmobi.com"]
 default["kafka"]["zookeepers"]["ev1"] = ["datanode1005.grid.ev1.inmobi.com:2181","datanode1006.grid.ev1.inmobi.com:2181","datanode1007.grid.ev1.inmobi.com:2181"]
-default['kafka']['mrelay']['dfw1'] = "datanode1004.grid.ev1.inmobi.com"
+default['kafka']['mrelay']['ev1'] = "datanode1004.grid.ev1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
