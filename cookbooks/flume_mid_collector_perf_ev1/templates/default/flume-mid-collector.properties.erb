@@ -45,9 +45,9 @@ end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.z
 
 
 <% @sinks.each do |sink, details| %>
-mid-collector.sinks.<%= "#{sink}" %>.type = avro
+mid-collector.sinks.<%= "#{sink}" %>.type = <%= details[:type] %>
 mid-collector.sinks.<%= "#{sink}" %>.channel = spillable
-mid-collector.sinks.<%= "#{sink}" %>.hostname = flume.grid.uh1.inmobi.com 
+mid-collector.sinks.<%= "#{sink}" %>.hostname = flume.grid.dfw1.inmobi.com 
 mid-collector.sinks.<%= "#{sink}" %>.port = 2541
 mid-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
 mid-collector.sinks.<%= "#{sink}" %>.batch-size = 500
