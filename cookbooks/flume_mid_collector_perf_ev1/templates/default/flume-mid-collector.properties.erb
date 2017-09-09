@@ -31,16 +31,16 @@ mid-collector.sinks = <% @sinks.each do |sink, details| %><%= " #{sink}" %><% en
 
 
 <% @sources.each do |src, details| %>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = spillable
-end-collector.sources.<%= "#{src}" %>.bind = 0.0.0.0
-end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
+mid-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+mid-collector.sources.<%= "#{src}" %>.channels = spillable
+mid-collector.sources.<%= "#{src}" %>.bind = 0.0.0.0
+mid-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
 <% if details[:'enable_compression'] == true -%>
-end-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
+mid-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression-type'] %>
 <% end -%>
-end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
-end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= @kafkazookeeper %>
+mid-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
+mid-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
+mid-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.zkServers = <%= @kafkazookeeper %>
 <% end %>
 
 
