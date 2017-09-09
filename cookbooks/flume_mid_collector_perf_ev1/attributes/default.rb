@@ -34,4 +34,4 @@ default["flume_collector"]["midcollector_channels"]['ev1']  = {
 
 
 #Configure the sinks for the Flume Collector
-default["flume_collector"]["midcollector_sinks"]['ev1']  = {"avrosink1","avrosink2","avrosink3","avrosink4","avrosink5","avrosink6","avrosink7","avrosink8","avrosink9","avrosink10","avrosink11","avrosink12","avrosink13","avrosink14","avrosink15","avrosink16","avrosink17","avrosink18"}
+default["flume_collector"]["midcollector_sinks"]['ev1']  = "avrosink1,avrosink2,avrosink3,avrosink4,avrosink5,avrosink6,avrosink7,avrosink8,avrosink9,avrosink10,avrosink11,avrosink12,avrosink13,avrosink14,avrosink15,avrosink16,avrosink17,avrosink18"
