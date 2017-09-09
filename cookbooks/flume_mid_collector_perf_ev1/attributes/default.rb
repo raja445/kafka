@@ -34,4 +34,24 @@ default["flume_collector"]["midcollector_channels"]['ev1']  = {
 
 
 #Configure the sinks for the Flume Collector
-default["flume_collector"]["midcollector_sinks"]['ev1']  = "avrosink1,avrosink2,avrosink3,avrosink4,avrosink5,avrosink6,avrosink7,avrosink8,avrosink9,avrosink10,avrosink11,avrosink12,avrosink13,avrosink14,avrosink15,avrosink16,avrosink17,avrosink18"
+default["flume_collector"]["midcollector_sinks"]['ev1']  = {
+     "avrosink1" => {:type => "avro"},
+     "avrosink2" => {:type => "avro"},
+     "avrosink3" => {:type => "avro"},
+     "avrosink4" => {:type => "avro"},
+     "avrosink5" => {:type => "avro"},
+     "avrosink6" => {:type => "avro"},
+     "avrosink7" => {:type => "avro"},
+     "avrosink8" => {:type => "avro"},
+     "avrosink9" => {:type => "avro"},
+     "avrosink10" => {:type => "avro"},
+     "avrosink11" => {:type => "avro"},
+     "avrosink12" => {:type => "avro"},
+     "avrosink13" => {:type => "avro"},
+     "avrosink14" => {:type => "avro"},
+     "avrosink15" => {:type => "avro"},
+     "avrosink16" => {:type => "avro"},
+     "avrosink17" => {:type => "avro"},
+     "avrosink18" => {:type => "avro"},
+}
+
