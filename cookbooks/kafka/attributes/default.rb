@@ -62,13 +62,14 @@ default["kafka"]["server.properties"]["leader.imbalance.check.interval.seconds"]
 default["kafka"]["server.properties"]["replica.lag.max.messages"] = 10000
 default["kafka"]["server.properties"]["auto.leader.rebalance.enable"] = true
 default["kafka"]["server.properties"]["num.network.threads"] = 12
-default["kafka"]["server.properties"]["delete.topic.enable"] = false
+default["kafka"]["server.properties"]["delete.topic.enable"] = true
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
 default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.10.2'
 default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
+default["kafka"]["server.properties"]["offsets.retention.minutes"] = 3060
 
 # Log4J config
 default["kafka"]["log4j.properties"]["log4j.rootLogger"] = "INFO, DRFA"
