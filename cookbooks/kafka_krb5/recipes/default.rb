@@ -293,6 +293,12 @@ template "/var/lib/jmxtrans/kafka.json" do
   )
 end
 
+remote_directory "#{node["kafka"]["install_dir"]}/sample-api" do
+  source 'kafka-kerberos-api'
+  action :create
+  owner node["kafka"]["user"]
+  mode 00777
+end
 
 #template "/etc/logrotate.d/kafka" do
 #  source "log_rotate.erb"
