@@ -342,8 +342,8 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['dfw1']  = {
 
 
 default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
-     "mergekafkasink" => {:channel => "mergespillable"},
-     "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel"},
+     "mergekafkasink" => {:channel => "mergespillable",:producer_id =>"flume-merge-kafka-sink"},
+     "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel",:producer_id =>"flume-photonmerge-kafka-sink"},
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['dfw1']  = {
@@ -489,8 +489,8 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['lhr1']  = {
 
 
 default["flume_collector"]["endcollector_merged_kafka_sinks"]['lhr1']  = {
-     "mergekafkasink" => {:channel => "mergespillable"},
-      "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel"},
+     "mergekafkasink" => {:channel => "mergespillable",:producer_id =>"flume-merge-kafka-sink"},
+      "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel",:producer_id =>"flume-photonmerge-kafka-sink"},
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['lhr1']  = {
@@ -635,8 +635,8 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['pek1']  = {
 
 
 default["flume_collector"]["endcollector_merged_kafka_sinks"]['pek1']  = {
-     "mergekafkasink" => {:channel => "mergespillable"},
-     "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel"},
+     "mergekafkasink" => {:channel => "mergespillable",:producer_id =>"flume-merge-kafka-sink"},
+     "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel",:producer_id =>"flume-photonmerge-kafka-sink"},
 }
 
 default["flume_collector"]["endcollector_merged_avro_sinks"]['pek1']  = {
