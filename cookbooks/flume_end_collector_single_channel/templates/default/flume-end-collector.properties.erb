@@ -201,7 +201,7 @@ end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKa
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
 end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.client.id = flume-merge-kafka-sink
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.client.id = <%= details[:producer_id] %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 268435456
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.batch.size = 65536
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 5
