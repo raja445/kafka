@@ -303,8 +303,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_
-dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfa1,network_render_cpc_dfw1"},
+         :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfa1,network_render_cpc_dfw1"},
      "dfw1-to-dfw1-mergesrc" => {
          :src_category => "kafkamerge",
          :consumer_group => "dfw1-to-dfw1-kafkamerge",
