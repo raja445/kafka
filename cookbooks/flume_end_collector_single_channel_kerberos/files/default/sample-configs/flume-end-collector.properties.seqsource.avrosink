@@ -1,0 +1,19 @@
+end-collector.sources = SeqSource
+end-collector.channels = spillable
+end-collector.sinks = sink1
+
+# Describing/Configuring the source 
+end-collector.sources.SeqSource.type = seq
+end-collector.sources.SeqSource.totalEvents = 20000
+end-collector.sources.SeqSource.channels = spillable
+
+end-collector.channels.spillable.type = memory
+end-collector.channels.spillable.capacity = 40000
+end-collector.channels.spillable.transactionCapacity = 500
+
+end-collector.sinks.sink1.type = avro
+end-collector.sinks.sink1.channel = spillable
+end-collector.sinks.sink1.hostname = datanode1002.grid.ev1.inmobi.com
+end-collector.sinks.sink1.port = 2541
+end-collector.sinks.sink1.batch-size = 500
+
