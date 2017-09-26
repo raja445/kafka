@@ -1,0 +1,32 @@
+# Sample Configutation file which will read data from avro source
+# Write it to Kafka Topci "flume-kafka-write-topic  with kerberos enabled
+# Channel used it Disk backed Memory Channel
+
+end-collector.sources = avrosrc
+end-collector.channels = avrospillable
+end-collector.sinks = avrosink1
+
+end-collector.sources.avrosrc.type = avro
+end-collector.sources.avrosrc.channels = avrospillable
+end-collector.sources.avrosrc.bind = 0.0.0.0
+end-collector.sources.avrosrc.port = 2541
+
+end-collector.channels.avrospillable.type = memory
+end-collector.channels.avrospillable.capacity = 40000
+end-collector.channels.avrospillable.transactionCapacity = 500
+ 
+end-collector.sinks.avrosink1.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.avrosink1.kafka.producer.security.protocol=SASL_PLAINTEXT
+end-collector.sinks.avrosink1.channel = avrospillable
+end-collector.sinks.avrosink1.topicHeader = category
+end-collector.sinks.avrosink1.flumeBatchSize = 500
+end-collector.sinks.avrosink1.kafka.bootstrap.servers = rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092,datanode1004.grid.ev1.inmobi.com:9092
+end-collector.sinks.avrosink1.kafka.topic = flume-kafka-write-topic
+end-collector.sinks.avrosink1.kafka.producer.client.id = flume-kafka-sink1
+end-collector.sinks.avrosink1.kafka.producer.buffer.memory = 268435456
+end-collector.sinks.avrosink1.kafka.producer.batch.size = 65536
+end-collector.sinks.avrosink1.kafka.producer.linger.ms = 5
+end-collector.sinks.avrosink1.kafka.producer.acks = all
+end-collector.sinks.avrosink1.kafka.producer.compression.type = gzip
+end-collector.sinks.avrosink1.workerThreads = 4
+

@@ -1,0 +1,51 @@
+# Sample Configutation file which will read from Kafka Topic 'kafka-test-topic'
+# interceptors will append merge_ to topic and write the data to merge_kafka-topic
+# Channel used it Disk backed Memory Channel
+
+end-collector.sources = SeqSource
+end-collector.channels = spillable
+end-collector.sinks = sink1
+
+# Describing/Configuring the source 
+
+end-collector.sources.SeqSource.type = org.apache.flume.source.kafka.MultiKafkaSource
+end-collector.sources.SeqSource.channels = spillable
+end-collector.sources.SeqSource.zookeeper.connect = datanode1005.grid.ev1.inmobi.com:2181,datanode1006.grid.ev1.inmobi.com:2181,datanode1007.grid.ev1.inmobi.com:2181
+end-collector.sources.SeqSource.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.SeqSource.kafka.consumer.security.protocol=SASL_PLAINTEXT
+end-collector.sources.SeqSource.kafka.consumer.sasl.kerberos.service.name=kafka
+end-collector.sources.SeqSource.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.SeqSource.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.SeqSource.kafka.bootstrap.servers = datanode1004.grid.ev1.inmobi.com:9092,rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092
+end-collector.sources.SeqSource.kafka.consumer.group.id = flume
+end-collector.sources.SeqSource.kafka.topics = kafka-test-topic
+end-collector.sources.SeqSource.batchSize = 500
+end-collector.sources.SeqSource.topicHeaderKey = category
+end-collector.sources.SeqSource.consumerGroupSize = 4
+end-collector.sources.SeqSource.interceptors = topic-name-prefix-adder-kafkamergesrc
+end-collector.sources.SeqSource.interceptors.topic-name-prefix-adder-kafkamergesrc.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.SeqSource.interceptors.topic-name-prefix-adder-kafkamergesrc.topicHeaderKey = category
+
+end-collector.channels.spillable.type = memory
+end-collector.channels.spillable.capacity = 40000
+end-collector.channels.spillable.transactionCapacity = 500
+ 
+end-collector.sinks.sink1.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.sink1.kafka.producer.security.protocol=SASL_PLAINTEXT
+end-collector.sinks.sink1.channel = spillable
+end-collector.sinks.sink1.topicHeader = category
+end-collector.sinks.sink1.flumeBatchSize = 500
+end-collector.sinks.sink1.kafka.bootstrap.servers = rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092,datanode1004.grid.ev1.inmobi.com:9092
+#end-collector.sinks.sink1.kafka.topic = flume-kafka-write-topic
+end-collector.sinks.sink1.kafka.producer.client.id = flume-kafka-sink1
+end-collector.sinks.sink1.kafka.producer.buffer.memory = 268435456
+end-collector.sinks.sink1.kafka.producer.batch.size = 65536
+end-collector.sinks.sink1.kafka.producer.linger.ms = 5
+end-collector.sinks.sink1.kafka.producer.acks = all
+end-collector.sinks.sink1.kafka.producer.compression.type = gzip
+end-collector.sinks.sink1.workerThreads = 4
+
+
+# Binding the source and sink to the channel 
+end-collector.sources.SeqSource.channels = spillable
+end-collector.sinks.sink1.channel = spillable

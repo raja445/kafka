@@ -1,0 +1,166 @@
+#------------------------------------------------------------------------#
+#  Flow #1:								 #
+#        - Consume the data written by Agent to Avro			 #
+#        - Write it to Kafka Topic: SeqGen-Topic			 #
+#  Flow #2:								 #
+#	 - Consume from Kafka Topic from flow #1 i.e. SeqGen-Topic	 #
+#        - Write it to Kafka Topic: merge_SeqGen-Topic			 #
+#  Flow #3:								 #
+#   	 - Consume from Kafka Topic from flow #2 i.e. merge_SeqGen-Topic #
+#	 - Write it to HDFS sink					 #
+#------------------------------------------------------------------------#
+
+#------------------------------------------------------------------------#
+#  List the sources, sinks and channels for "Flume Collector"  		 #
+#------------------------------------------------------------------------#
+
+end-collector.sources = AvroSource KafkaSource KafkaMergeSource
+end-collector.channels = AvroSrc-KafkaSink-Channel KafkaSrc-KafkaMrgSink-Channel KafkaMrgSrc-HdfsSink-Channel
+end-collector.sinks = KafkaSink KafkaMrgSink HdfsSink
+
+#--------------------------------------------------------------#
+# Describe and configue Flow #1				       #
+# Source  = Avro Source (AvroSource)			       #
+# Channel = Memory Channel (AvroSrc-KafkaSink-Channel)	       #
+# Sink    = Kafka Sink (KafkaSink, Topic: SeqGen-Topic)	       #
+#--------------------------------------------------------------#
+
+# Source  
+end-collector.sources.AvroSource.type = avro
+end-collector.sources.AvroSource.channels = AvroSrc-KafkaSink-Channel
+end-collector.sources.AvroSource.bind = 0.0.0.0
+end-collector.sources.AvroSource.port = 2541
+
+# Channel
+end-collector.channels.AvroSrc-KafkaSink-Channel.type = memory
+end-collector.channels.AvroSrc-KafkaSink-Channel.capacity = 40000
+end-collector.channels.AvroSrc-KafkaSink-Channel.transactionCapacity = 500
+
+# Sink
+end-collector.sinks.KafkaSink.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.KafkaSink.kafka.producer.security.protocol=SASL_PLAINTEXT
+end-collector.sinks.KafkaSink.channel = AvroSrc-KafkaSink-Channel
+end-collector.sinks.KafkaSink.topicHeader = category
+end-collector.sinks.KafkaSink.flumeBatchSize = 500
+end-collector.sinks.KafkaSink.kafka.bootstrap.servers = rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092,datanode1004.grid.ev1.inmobi.com:9092
+end-collector.sinks.KafkaSink.kafka.topic = SeqGen-Topic
+end-collector.sinks.KafkaSink.kafka.producer.client.id = flume-kafka-sink
+end-collector.sinks.KafkaSink.kafka.producer.buffer.memory = 268435456
+end-collector.sinks.KafkaSink.kafka.producer.batch.size = 65536
+end-collector.sinks.KafkaSink.kafka.producer.linger.ms = 5
+end-collector.sinks.KafkaSink.kafka.producer.acks = all
+end-collector.sinks.KafkaSink.kafka.producer.compression.type = gzip
+end-collector.sinks.KafkaSink.workerThreads = 4
+
+#---------------------------------------------------------------------------------------#
+# Describe and configue Flow #2				       			   	#
+# Source  = Kafka Source (KafkaSource, Topic: SeqGen-Topic which was sink of Flow #1)   #
+# Channel = Memory Channel (KafkaSrc-KafkaMrgSink-Channel)      			#
+# Sink    = Kafka Sink (KafkaMrgSink, Topic: merge_SeqGen-Topic)			#
+# *.interceptors will append topic name with merge_ so that the data is written to 	#
+# merge_<topic_name>. Thus no need to mention topic name in the sink.			#
+#---------------------------------------------------------------------------------------#
+
+# Source
+end-collector.sources.KafkaSource.type = org.apache.flume.source.kafka.MultiKafkaSource
+end-collector.sources.KafkaSource.channels =  KafkaSrc-KafkaMrgSink-Channel
+end-collector.sources.KafkaSource.zookeeper.connect = datanode1005.grid.ev1.inmobi.com:2181,datanode1006.grid.ev1.inmobi.com:2181,datanode1007.grid.ev1.inmobi.com:2181
+end-collector.sources.KafkaSource.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.KafkaSource.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.KafkaSource.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.KafkaSource.kafka.bootstrap.servers = datanode1004.grid.ev1.inmobi.com:9092,rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092
+end-collector.sources.KafkaSource.kafka.consumer.group.id = flume
+end-collector.sources.KafkaSource.kafka.topics = SeqGen-Topic
+end-collector.sources.KafkaSource.batchSize = 500
+end-collector.sources.KafkaSource.topicHeaderKey = category
+end-collector.sources.KafkaSource.consumerGroupSize = 4
+end-collector.sources.KafkaSource.interceptors = topic-name-prefix-adder-kafkamergesrc
+end-collector.sources.KafkaSource.interceptors.topic-name-prefix-adder-kafkamergesrc.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.KafkaSource.interceptors.topic-name-prefix-adder-kafkamergesrc.topicHeaderKey = category
+end-collector.sources.KafkaSource.kafka.consumer.security.protocol=SASL_PLAINTEXT
+end-collector.sources.KafkaSource.kafka.consumer.sasl.kerberos.service.name=kafka
+
+# Channel
+end-collector.channels.KafkaSrc-KafkaMrgSink-Channel.type = memory
+end-collector.channels.KafkaSrc-KafkaMrgSink-Channel.capacity = 40000
+end-collector.channels.KafkaSrc-KafkaMrgSink-Channel.transactionCapacity = 500
+
+# Sink
+end-collector.sinks.KafkaMrgSink.type = org.apache.flume.sink.kafka.PooledKafkaSink
+end-collector.sinks.KafkaMrgSink.kafka.producer.security.protocol=SASL_PLAINTEXT
+end-collector.sinks.KafkaMrgSink.channel = KafkaSrc-KafkaMrgSink-Channel 
+end-collector.sinks.KafkaMrgSink.topicHeader = category
+end-collector.sinks.KafkaMrgSink.flumeBatchSize = 500
+end-collector.sinks.KafkaMrgSink.kafka.bootstrap.servers = rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092,datanode1004.grid.ev1.inmobi.com:9092
+end-collector.sinks.KafkaMrgSink.kafka.producer.client.id = kafka-mergekafka-sink
+end-collector.sinks.KafkaMrgSink.kafka.producer.buffer.memory = 268435456
+end-collector.sinks.KafkaMrgSink.kafka.producer.batch.size = 65536
+end-collector.sinks.KafkaMrgSink.kafka.producer.linger.ms = 5
+end-collector.sinks.KafkaMrgSink.kafka.producer.acks = all
+end-collector.sinks.KafkaMrgSink.kafka.producer.compression.type = gzip
+end-collector.sinks.KafkaMrgSink.workerThreads = 4
+
+#--------------------------------------------------------------------------------------------------#
+# Describe and configue Flow #3				       			   	           #
+# Source  = Kafka Source (KafkaMergeSource, Topic: merge_SeqGen-Topic which was sink of Flow #2)   #
+# Channel = Memory Channel (KafkaMrgSrc-HdfsSink-Channel)		       			   #
+# Sink    = Kafka Sink (KafkaMrgSink, Topic: merge_SeqGen-Topic)				   #
+# *.interceptors will remove merge_ from topic name before writing to HDFS. This is optional	   #
+#--------------------------------------------------------------------------------------------------#
+
+# Source
+end-collector.sources.KafkaMergeSource.type = org.apache.flume.source.kafka.MultiKafkaSource
+end-collector.sources.KafkaMergeSource.channels = KafkaMrgSrc-HdfsSink-Channel
+end-collector.sources.KafkaMergeSource.zookeeper.connect = datanode1005.grid.ev1.inmobi.com:2181,datanode1006.grid.ev1.inmobi.com:2181,datanode1007.grid.ev1.inmobi.com:2181
+end-collector.sources.KafkaMergeSource.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.KafkaMergeSource.kafka.consumer.security.protocol=SASL_PLAINTEXT
+end-collector.sources.KafkaMergeSource.kafka.consumer.sasl.kerberos.service.name=kafka
+end-collector.sources.KafkaMergeSource.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.KafkaMergeSource.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.KafkaMergeSource.kafka.bootstrap.servers = datanode1004.grid.ev1.inmobi.com:9092,rmanager1001.grid.ev1.inmobi.com:9092,rmanager1002.grid.ev1.inmobi.com:9092
+end-collector.sources.KafkaMergeSource.kafka.consumer.group.id = flume
+end-collector.sources.KafkaMergeSource.kafka.topics = merge_SeqGen-Topic
+end-collector.sources.KafkaMergeSource.batchSize = 500
+end-collector.sources.KafkaMergeSource.topicHeaderKey = category
+end-collector.sources.KafkaMergeSource.consumerGroupSize = 4
+end-collector.sources.KafkaMergeSource.interceptors = topic-name-prefix-remover-hdfsmergesrc
+end-collector.sources.KafkaMergeSource.interceptors.topic-name-prefix-remover-hdfsmergesrc.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
+end-collector.sources.KafkaMergeSource.interceptors.topic-name-prefix-remover-hdfsmergesrc.topicHeaderKey = category
+
+# Channel
+end-collector.channels.KafkaMrgSrc-HdfsSink-Channel.type = memory
+end-collector.channels.KafkaMrgSrc-HdfsSink-Channel.capacity = 40000
+end-collector.channels.KafkaMrgSrc-HdfsSink-Channel.transactionCapacity = 500
+
+# Sink
+end-collector.sinks.HdfsSink.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.HdfsSink.channel = KafkaMrgSrc-HdfsSink-Channel
+end-collector.sinks.HdfsSink.hdfs.path = file:///data/d1/flume/databus/local
+end-collector.sinks.HdfsSink.hdfs.temp.path = hdfs://xenon/databus/flume/local/temp
+end-collector.sinks.HdfsSink.hdfs.staging.path = hdfs://xenon/databus/flume/local/staging
+end-collector.sinks.HdfsSink.hdfs.final.path = hdfs://xenon/databus/streams_local
+end-collector.sinks.HdfsSink.hdfs.threadsPoolSize = 1
+end-collector.sinks.HdfsSink.hdfs.batchSize = 500
+end-collector.sinks.HdfsSink.hdfs.rollInterval = 60
+end-collector.sinks.HdfsSink.hdfs.rollSize = 256000000
+end-collector.sinks.HdfsSink.hdfs.rollCount = 0
+end-collector.sinks.HdfsSink.hdfs.inUseSuffix = .processing
+end-collector.sinks.HdfsSink.hdfs.fileType = DataStream
+end-collector.sinks.HdfsSink.serializer = BASE64
+end-collector.sinks.HdfsSink.hdfs.callTimeout = 10000
+end-collector.sinks.HdfsSink.hdfs.filePrefix = datanode1002
+end-collector.sinks.HdfsSink.uploaderPoolSize = 20
+end-collector.sinks.HdfsSink.defaultUploaderSleepIntervalMs = 1000
+end-collector.sinks.HdfsSink.backoffThreshold = 30.0
+end-collector.sinks.HdfsSink.promoter.service.zkPath = /local/promoter
+end-collector.sinks.HdfsSink.retention.service.zkPath = /local/retention
+end-collector.sinks.HdfsSink.audit.service.zkPath = /local/audit
+end-collector.sinks.HdfsSink.scribe.host = datanode1008.grid.ev1.inmobi.com
+end-collector.sinks.HdfsSink.scribe.port = 2530
+end-collector.sinks.HdfsSink.codeC = gzip
+end-collector.sinks.HdfsSink.tier = LOCAL
+end-collector.sinks.HdfsSink.retention.topics = rr
+end-collector.sinks.HdfsSink.zk.url = datanode1005.grid.ev1.inmobi.com:2181,datanode1006.grid.ev1.inmobi.com:2181,datanode1007.grid.ev1.inmobi.com:2181
+end-collector.sinks.HdfsSink.hdfs.kerberosPrincipal = flume/_HOST@INMOBI.COM
+end-collector.sinks.HdfsSink.hdfs.kerberosKeytab = /etc/security/keytabs/flume.service.keytab
+
