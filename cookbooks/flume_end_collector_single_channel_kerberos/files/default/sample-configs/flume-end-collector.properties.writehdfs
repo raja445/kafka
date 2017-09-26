@@ -1,0 +1,58 @@
+# Sample Configutation file which will generate 20000 sequence number
+# Write it to HDFS with kerberos enabled.
+# Channel used it Disk backed Memory Channel
+
+# Naming the components on the current agent 
+end-collector.sources = SeqSource   
+end-collector.channels = spillable 
+end-collector.sinks = hdfslocal-sink
+
+# Describing/Configuring the source 
+end-collector.sources.SeqSource.type = seq
+end-collector.sources.SeqSource.totalEvents = 20000
+
+# Describing/Configuring the sink
+end-collector.sinks.hdfslocal-sink.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.hdfslocal-sink.channel = spillable
+end-collector.sinks.hdfslocal-sink.hdfs.path = file:///data/d1/flume/databus/local
+end-collector.sinks.hdfslocal-sink.hdfs.temp.path = hdfs://xenon/databus/flume/local/temp
+end-collector.sinks.hdfslocal-sink.hdfs.staging.path = hdfs://xenon/databus/flume/local/staging
+end-collector.sinks.hdfslocal-sink.hdfs.final.path = hdfs://xenon/databus/streams_local
+end-collector.sinks.hdfslocal-sink.hdfs.threadsPoolSize = 1
+end-collector.sinks.hdfslocal-sink.hdfs.batchSize = 500
+end-collector.sinks.hdfslocal-sink.hdfs.rollInterval = 60
+end-collector.sinks.hdfslocal-sink.hdfs.rollSize = 256000000
+end-collector.sinks.hdfslocal-sink.hdfs.rollCount = 0
+end-collector.sinks.hdfslocal-sink.hdfs.inUseSuffix = .processing
+end-collector.sinks.hdfslocal-sink.hdfs.fileType = DataStream
+end-collector.sinks.hdfslocal-sink.serializer = BASE64
+end-collector.sinks.hdfslocal-sink.hdfs.callTimeout = 10000
+end-collector.sinks.hdfslocal-sink.hdfs.filePrefix = datanode1002
+end-collector.sinks.hdfslocal-sink.uploaderPoolSize = 20
+end-collector.sinks.hdfslocal-sink.defaultUploaderSleepIntervalMs = 1000
+end-collector.sinks.hdfslocal-sink.backoffThreshold = 30.0
+end-collector.sinks.hdfslocal-sink.promoter.service.zkPath = /local/promoter
+end-collector.sinks.hdfslocal-sink.retention.service.zkPath = /local/retention
+end-collector.sinks.hdfslocal-sink.audit.service.zkPath = /local/audit
+end-collector.sinks.hdfslocal-sink.scribe.host = datanode1008.grid.ev1.inmobi.com
+end-collector.sinks.hdfslocal-sink.scribe.port = 2530
+end-collector.sinks.hdfslocal-sink.codeC = gzip
+end-collector.sinks.hdfslocal-sink.tier = LOCAL
+end-collector.sinks.hdfslocal-sink.retention.topics = rr
+end-collector.sinks.hdfslocal-sink.zk.url = datanode1005.grid.ev1.inmobi.com:2181,datanode1006.grid.ev1.inmobi.com:2181,datanode1007.grid.ev1.inmobi.com:2181
+
+end-collector.sinks.hdfslocal-sink.hdfs.kerberosPrincipal = flume/_HOST@INMOBI.COM
+end-collector.sinks.hdfslocal-sink.hdfs.kerberosKeytab = /etc/security/keytabs/flume.service.keytab
+# Describing/Configuring the channel 
+
+end-collector.channels.spillable.type = org.apache.flume.channel.DiskBackedMemoryChannel
+end-collector.channels.spillable.capacity = 2000000
+end-collector.channels.spillable.spoolWorkers = 16
+end-collector.channels.spillable.despoolWorkers = 16
+end-collector.channels.spillable.transactionCapacity = 500
+end-collector.channels.spillable.spoolDirectories = /data/d1/flume/spool/spillable
+end-collector.channels.spillable.spoolDiskCapacityMB = 5000000
+
+# Binding the source and sink to the channel 
+end-collector.sources.SeqSource.channels = spillable
+end-collector.sinks.hdfslocal-sink.channel = spillable 
