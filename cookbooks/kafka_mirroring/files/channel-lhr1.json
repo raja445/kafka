@@ -1,52 +1,6 @@
 {
   "streams": [
     {
-      "streamName": "georrlite",
-      "source": [
-        {
-          "topic": "georrlite",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "base64": "false",
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "ifcCookieOrganicActivityLhr1",
-      "source": [
-        {
-          "topic": "ifc_cookie_organic_activity",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "240"
-      }
-    },
-    {
-      "streamName": "webPostbacksLhr1",
-      "source": [
-        {
-          "topic": "web_postbacks",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "appdAttributeErrors",
       "source": [
         {
@@ -182,37 +136,6 @@
       }
     },
     {
-      "streamName": "ifcActivityHighFreq",
-      "source": [
-        {
-          "topic": "ifc_activity_high_freq",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "base64": "false",
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "ifcPhotonEnrichedPbLhr1",
-      "source": [
-        {
-          "topic": "ifc_photon_enriched_pb_lhr1",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "ifc_photon_enriched_pb_lhr1",
       "source": [
         {
@@ -223,22 +146,6 @@
       "hdfsDestination": {
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://platinum:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "ifcActivityLowFreq",
-      "source": [
-        {
-          "topic": "ifc_activity_low_freq",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "base64": "false",
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
         "compression": "gz",
         "retention": "48"
       }
@@ -655,36 +562,6 @@
       }
     },
     {
-      "streamName": "ttdRequestGlobal",
-      "source": [
-        {
-          "topic": "ttd-request",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "ttdBeaconGlobal",
-      "source": [
-        {
-          "topic": "ttd-beacon",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "appdDebug",
       "source": [
         {
@@ -986,21 +863,6 @@
       }
     },
     {
-      "streamName": "usermetaChangeLhr1",
-      "source": [
-        {
-          "topic": "usermeta_change",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://gold:8020",
-        "compression": "gz",
-        "retention": "72"
-      }
-    },
-    {
       "streamName": "AdUnitEnhancedBeaconEgretTest",
       "source": [
         {
@@ -1059,21 +921,6 @@
                 }
             ],
             "streamName": "ifc_photon_nonenriched_pb_lhr1"
-    },
-    {
-            "hdfsDestination": {
-                "basePath": "kafka/data",
-                "compression": "gz",
-                "hdfsUrl": "hdfs://gold:8020",
-                "retention": "48"
-            },
-            "source": [
-                {
-                    "topic": "ifc_photon_nonenriched_pb_lhr1",
-                    "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
-                }
-            ],
-            "streamName": "ifcPhotonNonenrichedPbLhr1Gold"
     },
     {
             "hdfsDestination": {
