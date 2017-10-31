@@ -75,7 +75,6 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :normal_avroreceive_channels =>node["flume_collector"]["endcollector_normal_avroreceive_channels"][colo],
     :merge_avroreceive_channels =>node["flume_collector"]["endcollector_merge_avroreceive_channels"][colo],
     :mid_avroreceive_channels =>node["flume_collector"]["endcollector_mid_avroreceive_channels"][colo],
-    :merge_kafkaread_channels =>node["flume_collector"]["endcollector_merge_kafkaread_channels"][colo],
     :normal_kafka_sinks =>node["flume_collector"]["endcollector_normal_kafka_sinks"][colo],
     :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
     :merged_avro_sinks =>node["flume_collector"]["endcollector_merged_avro_sinks"][colo],
