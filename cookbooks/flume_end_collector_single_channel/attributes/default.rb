@@ -50,7 +50,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink mergekafkasink dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "avrosrc" => {
@@ -165,7 +165,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfsmerge-sink hdfslocal-sink photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink  mergekafkasink hdfsmerge-sink hdfslocal-sink photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['lhr1']  = {
      "avrosrc" => {
@@ -277,7 +277,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable hdfslocal-channel  hdfsmerge-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "kafkasink  mergekafkasink dfw1-mergesink1 dfw1-mergesink2 dfw1-mergesink3 lhr1-mergesink pek1-mergesink1 pek1-mergesink2 pek1-mergesink3 hdfslocal-sink  hdfsmerge-sink photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "kafkasink  mergekafkasink hdfslocal-sink  hdfsmerge-sink photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['pek1']  = {
      "avrosrc" => {
