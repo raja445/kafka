@@ -225,32 +225,6 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
 #Single channel
 end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads %>
 <% end %>
-<% @merged_avro_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.MultiAvroSink
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:flumevip] %>
-end-collector.sinks.<%= "#{sink}" %>.port = 2542
-end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @avrosinkworkerthreads %>
-end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
-# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
-end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
-# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
-end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
-<% end %>
-
-<% if @colo == 'uh1' -%>
-<% @mid_avro_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = <%= details[:type] %>
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.hostname = <%= details[:flumevip] %>
-end-collector.sinks.<%= "#{sink}" %>.port = 2541
-end-collector.sinks.<%= "#{sink}" %>.compression-type = deflate
-# tune based on the setup and performance. must be less than the transaction capacity of the channel attached
-end-collector.sinks.<%= "#{sink}" %>.batch-size = 500
-# addition of new nodes to the load balancer will take affect by resetting the connections periodically.
-end-collector.sinks.<%= "#{sink}" %>.reset-connection-interval = 60
-<% end %>
-<% end %>
 
 <% @local_hdfs_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
@@ -343,29 +317,7 @@ end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 5000000
 <% end %>
 
-<% if @colo == 'uh1' -%>
-<% @mid_avroreceive_channels.each do |channel| %>
-end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-#Single channel
-end-collector.channels.<%= "#{channel}" %>.capacity = 2000000
-end-collector.channels.<%= "#{channel}" %>.spoolWorkers = 16
-end-collector.channels.<%= "#{channel}" %>.despoolWorkers = 16
-end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
-end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 5000000
-<% end %>
-<% end %>
-
 <% @merge_avroreceive_channels.each do |channel| %>
-end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-#Single Channel
-end-collector.channels.<%= "#{channel}" %>.capacity = 100000
-end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
-end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
-end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 500
-<% end %>
-<% @merge_kafkaread_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 #Single Channel
 end-collector.channels.<%= "#{channel}" %>.capacity = 100000
