@@ -65,7 +65,7 @@ end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.offsetStore = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
 end-collector.sources.<%= "#{src}" %>.dualCommit = false
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
@@ -85,8 +85,10 @@ end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
 end-collector.sources.<%= "#{src}" %>.dualCommit = false
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
@@ -105,7 +107,7 @@ end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['pek1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = <%= node["flume_collector"]["kafka_zookeeper"]['pek1'] %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
 end-collector.sources.<%= "#{src}" %>.dualCommit = false
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
@@ -127,7 +129,7 @@ end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['lhr1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = <%= node["flume_collector"]["kafka_zookeeper"]['lhr1'] %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
 end-collector.sources.<%= "#{src}" %>.dualCommit = false
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
@@ -149,7 +151,7 @@ end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
 end-collector.sources.<%= "#{src}" %>.dualCommit = false
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
@@ -168,7 +170,7 @@ end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
 end-collector.sources.<%= "#{src}" %>.dualCommit = false
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
