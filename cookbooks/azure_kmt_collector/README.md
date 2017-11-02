@@ -1,2 +1,0 @@
-Cookbook for kmt collector
-============================
