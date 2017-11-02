@@ -38,7 +38,22 @@
         "compression": "gz",
         "retention": "168"
       }
-    },
+     },
+     {
+      "streamName": "beeswax_bid_logs",
+      "source": [
+        {
+          "topic": "beeswax_bid_logs",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+     },
      {
       "streamName": "dsp_segments",
       "source": [
