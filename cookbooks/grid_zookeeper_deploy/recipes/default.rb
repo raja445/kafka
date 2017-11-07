@@ -1,5 +1,5 @@
 #package "zookeeper" do
-package %w(zookeeper zookeeper-server) do
+package %w(zookeeper zookeeper-2-2-4-2-2 zookeeper-server zookeeper-2-2-4-2-2-server) do
   version node['zookeeper']['zookeeper_version']
   action :install
   options '--force-yes'
