@@ -106,70 +106,10 @@
       }
     },
     {
-      "streamName": "rtbd_ads",
-      "source": [
-        {
-          "topic": "rtbd_ads",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
-    {
-      "streamName": "cas_ads",
-      "source": [
-        {
-          "topic": "cas_ads",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
-    {
-      "streamName": "splash",
-      "source": [
-        {
-          "topic": "splash",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
-    {
-      "streamName": "carb_user_relevance",
-      "source": [
-        {
-          "topic": "carb_user_relevance",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
-    {
       "streamName": "_audit",
       "source": [
         {
           "topic": "_audit",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
-    {
-      "streamName": "sdkpubreq",
-      "source": [
-        {
-          "topic": "sdkpubreq",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
       ],
