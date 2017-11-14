@@ -34,7 +34,7 @@ default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw2']  = "4"
 #number of sinkworkerthreads
 default["flume_collector"]["sinkworkerthreads"]['pek1']  = "64"
 default["flume_collector"]["sinkworkerthreads"]['dfw1']  = "88"
-default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "72"
+default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['dfw2']  = "64"
 
 #number of sinkworkerthreads
