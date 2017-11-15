@@ -222,74 +222,6 @@
        }
     },
     {
-      "streamName": "nwClickCpcPek1",
-      "source": [
-        {
-          "topic": "nwClickCpcPek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "retention": "120"
-       }
-    },
-    {
-      "streamName": "nwClickCpmPek1",
-      "source": [
-        {
-          "topic": "nwClickCpmPek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://pyrite:8020"
-       }
-    },
-    {
-      "streamName": "nwClickInvalidPek1",
-      "source": [
-        {
-          "topic": "nwClickInvalidPek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://pyrite:8020"
-       }
-    },
-    {
-      "streamName": "renderCpcPek1",
-      "source": [
-        {
-          "topic": "renderCpcPek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "retention": "120"
-       }
-    },
-    {
-      "streamName": "renderCpmPek1",
-      "source": [
-        {
-          "topic": "renderCpmPek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://pyrite:8020",
-        "retention": "120"
-       }
-    },
-    {
       "streamName": "egret_lambda_AdUnitBeacon_pek1_defer",
       "source": [
         {
@@ -485,18 +417,6 @@
        }
     },
     {
-      "streamName": "fds_pek1",
-      "source": [
-        {
-          "topic": "fds_pek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
-    {
       "streamName": "iapclick",
       "source": [
         {
@@ -509,6 +429,18 @@
         "hdfsUrl": "hdfs://platinum:8020",
         "compression": "gz",
         "retention": "48"
+      }
+    },
+     {
+      "streamName": "fds_pek1",
+      "source": [
+        {
+          "topic": "fds_pek1",
+          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
+        }
+      ],
+      "hdfsCollectorDestination": {
+        "hdfsUrl": "hdfs://pyrite:8020"
       }
     }
   ]
