@@ -166,8 +166,8 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 
 
 ######################################################### DFW2 ###################################################################
-#default["flume_collector"]["endcollector_local_retention_topics"]['dfw2']  = "test"
-#default["flume_collector"]["endcollector_merge_retention_topics"]['dfw2']  = "test"
+#default["flume_collector"]["endcollector_local_retention_topics"]['dfw2']  = "rr,egret_lambda_AdUnitBeacon_dfw2_enhanced,egret_lambda_AdUnitPublisherFill_dfw2_enhanced,egret_lambda_RenderCPC_dfw2_enhanced,egret_lambda_RenderCPM_dfw2_enhanced,egret_lambda_BillingCPC_dfw2_enhanced,egret_lambda_BeaconRRDefault_dfw2_enhanced,egret_lambda_BillingCPM_dfw2_enhanced,egret_lambda_BillingDownload_dfw2_enhanced,egret_lambda_NWClickCPC_dfw2_enhanced,egret_lambda_NWClickCPM_dfw2_enhanced,egret_lambda_NWClickInvalid_dfw2_enhanced,egret_lambda_NonNWClickCPC_dfw2_enhanced,egret_lambda_NonNWClickCPM_dfw2_enhanced,egret_lambda_NonNWClickInvalid_dfw2_enhanced,egret_lambda_NWClickInvalid_dfw2_enhanced,dsp-beacon,user_context,adroit_attribution_stats,sandboxrr,sandbox_postimpression,ifcp_dfw2,beacon_csi_events,dcp_beacon,dcp_beacon_adunit,dcp_beacon_adunit_interaction,dcp_beacon_publisherfill,dcp_click,nnstudio,rtbs_beacon,rtbs_click,sdk_metrics,cas_rr,rtbd_ads,cas_ads,splash,carb_user_relevance,_audit,sdkpubreq,beaconDefaultDfw2,nested_activity_add-ifc_compressed,ifc_ff_dfw2,adroit_conversion_enhanced_dfw2,nonNwClickCpcDfw2,nonNwClickCpmDfw2,nonNwClickInvalidDfw2,nwClickCpcDfw2,nwClickCpmDfw2,nwClickInvalidDfw2,renderCpcDfw2,renderCpmDfw2,egret_lambda_AdUnitBeacon_dfw2_defer,egret_lambda_AdUnitBeacon_dfw2_enhanced,egret_lambda_AdUnitPublisherFill_dfw2_enhanced,egret_lambda_RenderCPC_dfw2_enhanced,egret_lambda_RenderCPM_dfw2_enhanced,egret_lambda_BillingCPC_dfw2_enhanced,egret_lambda_BeaconRRDefault_dfw2_enhanced,egret_lambda_BillingCPM_dfw2_enhanced,egret_lambda_BillingDownload_dfw2_enhanced,egret_lambda_NWClickCPC_dfw2_enhanced,egret_lambda_NWClickCPM_dfw2_enhanced,egret_lambda_NWClickInvalid_dfw2_enhanced,egret_lambda_NonNWClickCPC_dfw2_enhanced,egret_lambda_NonNWClickCPM_dfw2_enhanced,egret_lambda_NonNWClickInvalid_dfw2_enhanced,fds_dfw2"
+#default["flume_collector"]["endcollector_merge_retention_topics"]['dfw2']  = "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_dfw2,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2,adroit_report_obj_dfw2,billing_cpc_dfw2,billing_cpm_dfw2,billing_download_dfw2"
 
 #default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel photon-mergespillable-channel"
 
@@ -199,56 +199,63 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "hdfslocal-channel",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "rr,egret_lambda_AdUnitBeacon_dfw2_enhanced,egret_lambda_AdUnitPublisherFill_dfw2_enhanced,egret_lambda_RenderCPC_dfw2_enhanced,egret_lambda_RenderCPM_dfw2_enhanced,egret_lambda_BillingCPC_dfw2_enhanced,egret_lambda_BeaconRRDefault_dfw2_enhanced,egret_lambda_BillingCPM_dfw2_enhanced,egret_lambda_BillingDownload_dfw2_enhanced,egret_lambda_NWClickCPC_dfw2_enhanced,egret_lambda_NWClickCPM_dfw2_enhanced,egret_lambda_NWClickInvalid_dfw2_enhanced,egret_lambda_NonNWClickCPC_dfw2_enhanced,egret_lambda_NonNWClickCPM_dfw2_enhanced,egret_lambda_NonNWClickInvalid_dfw2_enhanced,egret_lambda_NWClickInvalid_dfw2_enhanced,dsp-beacon,user_context,adroit_attribution_stats,sandboxrr,sandbox_postimpression,ifcp_dfw2,beacon_csi_events,dcp_beacon,dcp_beacon_adunit,dcp_beacon_adunit_interaction,dcp_beacon_publisherfill,dcp_click,nnstudio,rtbs_beacon,rtbs_click,sdk_metrics,cas_rr,rtbd_ads,cas_ads,splash,carb_user_relevance,_audit,sdkpubreq,beaconDefaultDfw2,nested_activity_add-ifc_compressed,ifc_ff_dfw2,adroit_conversion_enhanced_dfw2,nonNwClickCpcDfw2,nonNwClickCpmDfw2,nonNwClickInvalidDfw2,nwClickCpcDfw2,nwClickCpmDfw2,nwClickInvalidDfw2,renderCpcDfw2,renderCpmDfw2,egret_lambda_AdUnitBeacon_dfw2_defer,egret_lambda_AdUnitBeacon_dfw2_enhanced,egret_lambda_AdUnitPublisherFill_dfw2_enhanced,egret_lambda_RenderCPC_dfw2_enhanced,egret_lambda_RenderCPM_dfw2_enhanced,egret_lambda_BillingCPC_dfw2_enhanced,egret_lambda_BeaconRRDefault_dfw2_enhanced,egret_lambda_BillingCPM_dfw2_enhanced,egret_lambda_BillingDownload_dfw2_enhanced,egret_lambda_NWClickCPC_dfw2_enhanced,egret_lambda_NWClickCPM_dfw2_enhanced,egret_lambda_NWClickInvalid_dfw2_enhanced,egret_lambda_NonNWClickCPC_dfw2_enhanced,egret_lambda_NonNWClickCPM_dfw2_enhanced,egret_lambda_NonNWClickInvalid_dfw2_enhanced,fds_dfw2"},
 #     "hdfsmergesrc" => {
 #         :src_category => "hdfsmerge",
 #         :consumer_group => "dfw2hdfsmerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "hdfsmerge-channel",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "merge_beacon_rr_dfw2_cpm_render,merge_network_beacon_dfw2_adunit,merge_network_beacon_dfw2_publisherfill,merge_beacon_rr_dfw2_default,merge_network_beacon_adunit_interaction_dfw2,merge_beacon_rr_dfw2_cpc_render,merge_ifc_ff_dfw2,merge_non_network_click_cpc_dfw2,merge_non_network_click_cpm_dfw2,merge_network_click_cpc_dfw2,merge_network_click_cpm_dfw2,merge_network_click_invalid_dfw2,merge_click_rr_dfw2,merge_adroit_report_obj_dfw2,merge_billing_cpc_dfw2,merge_billing_cpm_dfw2,merge_billing_download_dfw2"},
 #     "dfw1kafkamergesrc" => {
 #         :src_category => "dfw1kafkamerge",
 #         :consumer_group => "dfw1-to-dfw2-kafkamerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "mergespillable",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_dfw2,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2,datasciences-attributes_dfw2,adroit_report_obj_dfw2,billing_cpc_dfw2,billing_cpm_dfw2,billing_download_dfw2"},
 #     "lhr1kafkamergesrc" => {
 #         :src_category => "lhr1kafkamerge",
 #         :consumer_group => "lhr1-to-dfw2-kafkamerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "mergespillable",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_dfw2,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2"},
 #     "pek1kafkamergesrc" => {
 #         :src_category => "pek1kafkamerge",
 #         :consumer_group => "pek1-to-dfw2-kafkamerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "mergespillable",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_lhr1,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2"},
 #     "dfw2kafkamergesrc" => {
 #         :src_category => "dfw2kafkamerge",
 #         :consumer_group => "dfw2-to-dfw2-kafkamerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "mergespillable",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_dfw2,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2"},
+#     "dfw1photonmergesrc" => {
+#         :src_category => "dfw1kafkamerge",
+#         :consumer_group => "dfw1-to-dfw2-kafkamerge",
+#         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+#         :channels => "photon-mergespillable-channel",
+#         :batchSize => 500,
+#         :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2"},
 #     "lhr1photonmergesrc" => {
 #         :src_category => "lhr1kafkamerge",
 #         :consumer_group => "lhr1-to-dfw2-kafkamerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "photon-mergespillable-channel",
 #         :batchSize => 500,
-#          :'kafka.topics' => "testmerge"},
+#          :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2"},
 #     "pek1photonmergesrc" => {
 #         :src_category => "pek1kafkamerge",
 #         :consumer_group => "pek1-to-dfw2-kafkamerge",
 #         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
 #         :channels => "photon-mergespillable-channel",
 #         :batchSize => 500,
-#         :'kafka.topics' => "testmerge"},
+#         :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2"},
 #       }
 
 #Configure the channels for the Flume Collector
