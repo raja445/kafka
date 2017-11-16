@@ -99,9 +99,9 @@
         "typeNames": [
          "client-id"
         ],
-        "host": "metrics-relay.grid.lhr1.inmobi.com",
+        "host": "<%= @graphite_host %>",
         "port": 2020,
-        "rootPrefix": "prod.lhr1.grid.LHR1_Emerald.app"
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
        }
       }
      ]
