@@ -398,7 +398,8 @@ default["flume_collector"]["endcollector_local_hdfs_channels"]['lhr1']  = ["hdfs
 
 #Configure the sinks for the Flume Collector
 default["flume_collector"]["endcollector_normal_kafka_sinks"]['lhr1']  = {
-     "kafkasink" => {:channel => "spillable"}
+     "kafkasink1" => {:channel => "spillable"},
+     "kafkasink2" => {:channel => "spillable"}
 }
 
 
