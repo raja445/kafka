@@ -303,7 +303,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['lhr1']  = "be
 
 default["flume_collector"]["endcollector_all_channels"]['lhr1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['lhr1'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink1 hdfsmerge-sink2 hdfslocal-sink1 hdfslocal-sink2 photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['lhr1']  = {
      "avrosrc" => {
@@ -414,7 +414,8 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['lhr1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['lhr1']  = {
-     "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"emerald"}
+     "hdfsmerge-sink1" => {:channel => "hdfsmerge-channel",:cluster =>"emerald"},
+     "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel",:cluster =>"emerald"}
 }
 
 ######################################################### End Of LHR1 ###################################################################
