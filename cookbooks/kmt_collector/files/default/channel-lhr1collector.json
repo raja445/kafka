@@ -259,7 +259,22 @@
       "source": [
         {
           "topic": "ifc_cookie_organic_activity",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "databus/streams",
+        "hdfsUrl": "hdfs://platinum:8020",
+        "compression": "gz",
+        "retention": "48"
+      }
+    },
+    {
+      "streamName": "ifc_photon_enriched_san_pb",
+      "source": [
+        {
+          "topic": "ifc_photon_enriched_san_pb",
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
@@ -289,7 +304,7 @@
       "source": [
         {
           "topic": "dsp-beacon",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
@@ -304,7 +319,7 @@
       "source": [
         {
           "topic": "user_context",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
@@ -319,7 +334,7 @@
       "source": [
         {
           "topic": "sandboxrr",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
@@ -334,7 +349,7 @@
       "source": [
         {
           "topic": "sandbox_postimpression",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
@@ -349,7 +364,7 @@
       "source": [
         {
           "topic": "adroit_attribution_stats",
-          "zookeeper": "kafka-zookeeper.grid.lhr1.inmobi.com:2181"
+          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
       "hdfsDestination": {
