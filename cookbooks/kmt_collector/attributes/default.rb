@@ -2,7 +2,7 @@ default['kafkaMirroring']['instanceid']['uh1']={ "krkf4013" => 1}
 default['kafkaMirroring']['instanceid']['dfw1']={ "oxkm4002" => 1}
 default['kafkaMirroring']['instanceid']['lhr1']={ "erkf4013" => 1}
 default['kafkaMirroring']['instanceid']['pek1']={ "pykm4001" => 1}
-default['kafkaMirroring']['instanceid']['dfw2']={ "gakm4001" => 1}
+default['kafkaMirroring']['instanceid']['dfw2']={ "gafl4001" => 1}
 default['kafkaMirroring']['collectorid']['uh1']='uh1collector'
 default['kafkaMirroring']['collectorid']['dfw1']='dfw1collector'
 default['kafkaMirroring']['collectorid']['lhr1']='lhr1collector'
