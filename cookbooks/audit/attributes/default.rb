@@ -46,7 +46,7 @@ default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw2']  = "1"
 
 
 
-default["audit_collector"]["auditcollector_all_channels"]  = "scribe-channel druidlocal-channel  hdfslocal-channel"
+default["audit_collector"]["auditcollector_all_channels"]  = "druidlocal-channel  hdfslocal-channel"
 
 default["audit_collector"]["auditcollector_all_sinks"] = "druidlocal-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
@@ -55,7 +55,7 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :src_category => "auditscribe",
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.scribe.ScribeSource",
-         :channels => "scribe-channel",
+         :channels => "druidlocal-channel hdfslocal-channel",
          :port => 2530},
      "dfw1localkafkasrc" => {
          :src_category => "auditkafka",
@@ -96,7 +96,6 @@ default["audit_collector"]["auditcollector_sources"]  = {
        }
 
 #Configure the channels for the Flume Collector
-default["audit_collector"]["auditcollector_local_scribe_channels"]  = ["scribe-channel"]
 default["audit_collector"]["auditcollector_local_druid_channels"]  = ["druidlocal-channel"]
 default["audit_collector"]["auditcollector_local_hdfs_channels"]  = ["hdfslocal-channel"]
 
