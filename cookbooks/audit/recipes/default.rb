@@ -67,7 +67,6 @@ template "#{flumeConf}/flume-audit-collector.properties" do
     :druid_sinks =>node["audit_collector"]["auditcollector_local_druid_sinks"][colo],
     :hdfs_channels =>node["audit_collector"]["auditcollector_local_hdfs_channels"],
     :druid_channels =>node["audit_collector"]["auditcollector_local_druid_channels"],
-    :scribe_channels =>node["audit_collector"]["auditcollector_local_scribe_channels"],
     :kafkabrokers =>node["audit_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["audit_collector"]["kafka_zookeeper"][colo],
     :flumeagent =>node["audit_collector"]["flume_agent_host"][colo],
