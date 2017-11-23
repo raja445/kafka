@@ -46,7 +46,7 @@ default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw2']  = "1"
 
 
 
-default["audit_collector"]["auditcollector_all_channels"]  = "druidlocal-channel  hdfslocal-channel"
+default["audit_collector"]["auditcollector_all_channels"]  = "scribe-channel druidlocal-channel  hdfslocal-channel"
 
 default["audit_collector"]["auditcollector_all_sinks"] = "druidlocal-sink hdfslocal-sink"
 #Configure the sources for the Flume Collector
