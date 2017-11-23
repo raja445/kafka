@@ -56,6 +56,7 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.scribe.ScribeSource",
          :channels => "druidlocal-channel hdfslocal-channel",
+         :'selector_optional' => "druidlocal-channel",
          :port => 2530},
      "dfw1localkafkasrc" => {
          :src_category => "auditkafka",
