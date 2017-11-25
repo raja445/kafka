@@ -412,7 +412,7 @@
         "basePath": "kafka/data",
         "hdfsUrl": "hdfs://garnet:8020",
         "compression": "gz",
-        "retention": "192"
+        "retention": "48"
       }
     },
     {
