@@ -23,6 +23,8 @@ default["flume_collector"]["kafka_zookeeper"]['dfw2']  = "kafka-zookeeper-1.grid
 #Flume Agents
 default["flume_collector"]["flume_agent_host"]['dfw1']  = "oxns4002.grid.dfw1.inmobi.com"
 
+default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "4"
+
 ######################################################### Platinum ###################################################################
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "testmerge"
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "hdfsmerge-channel"
