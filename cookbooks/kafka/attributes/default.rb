@@ -37,6 +37,9 @@ default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
 default["kafka"]["brokers"]["dfw2"] = ["gakf4001.grid.dfw2.inmobi.com","gakf4002.grid.dfw2.inmobi.com","gakf4003.grid.dfw2.inmobi.com","gakf4004.grid.dfw2.inmobi.com","gakf4005.grid.dfw2.inmobi.com","gakf4006.grid.dfw2.inmobi.com","gakf4007.grid.dfw2.inmobi.com","gakf4008.grid.dfw2.inmobi.com","gakf4009.grid.dfw2.inmobi.com","gakf4010.grid.dfw2.inmobi.com"]
 default["kafka"]["zookeepers"]["dfw2"] = ["kafka-zookeeper-1.grid.dfw2.inmobi.com:2181","kafka-zookeeper-2.grid.dfw2.inmobi.com:2181","kafka-zookeeper-3.grid.dfw2.inmobi.com:2181","kafka-zookeeper-4.grid.dfw2.inmobi.com:2181","kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"]
 default['kafka']['mrelay']['dfw2'] = "metrics-relay.grid.dfw2.inmobi.com"
+default["kafka"]["brokers"]["asm1"] = ["azkf4001.grid.asm1.inmobi.com","azkf4002.grid.asm1.inmobi.com","azkf4003.grid.asm1.inmobi.com","azkf4004.grid.asm1.inmobi.com","azkf4005.grid.asm1.inmobi.com","azkf4006.grid.asm1.inmobi.com","azkf4007.grid.asm1.inmobi.com","azkf4008.grid.asm1.inmobi.com","azkf4009.grid.asm1.inmobi.com","azkf4010.grid.asm1.inmobi.com"]
+default["kafka"]["zookeepers"]["asm1"] = ["kafka-zookeeper-1.grid.asm1.inmobi.com:2181","kafka-zookeeper-2.grid.asm1.inmobi.com:2181","kafka-zookeeper-3.grid.asm1.inmobi.com:2181","kafka-zookeeper-4.grid.asm1.inmobi.com:2181","kafka-zookeeper-5.grid.asm1.inmobi.com:2181"]
+default['kafka']['mrelay']['dfw2'] = "metrics-relay.grid.asm1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
@@ -109,4 +112,4 @@ default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite', 'dfw2' => 'dfw2-garnet'}
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite', 'dfw2' => 'dfw2-garnet', 'asm1' => 'asm1-azurite'}
