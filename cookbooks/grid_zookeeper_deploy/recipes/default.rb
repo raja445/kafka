@@ -1,14 +1,15 @@
-package "zookeeper" do
+#package "zookeeper" do
+package %w(zookeeper zookeeper-2-2-4-2-2 zookeeper-server zookeeper-2-2-4-2-2-server) do
   version node['zookeeper']['zookeeper_version']
   action :install
   options '--force-yes'
 end
 
-package "zookeeper-server" do
-  version node['zookeeper']['zookeeper_version']
-  action :install
-  options '--force-yes'
-end
+#package "zookeeper-server" do
+#  version node['zookeeper']['zookeeper_version']
+#  action :install
+#  options '--force-yes'
+#end
 
 package "zookeeper-server-startup" do
   version node['zookeeper']['zookeeper_startup_version']

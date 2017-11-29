@@ -26,21 +26,20 @@ default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002
 default["kafka"]["zookeepers"]["dfw1"] = ["kafka-zookeeper-1.grid.dfw1.inmobi.com:2181","kafka-zookeeper-2.grid.dfw1.inmobi.com:2181","kafka-zookeeper-3.grid.dfw1.inmobi.com:2181","kafka-zookeeper-4.grid.dfw1.inmobi.com:2181","kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"]
 default['kafka']['mrelay']['dfw1'] = "metrics-relay.grid.dfw1.inmobi.com"
 
-default["kafka"]["brokers"]["uh1"] = ["krkf4002.grid.uh1.inmobi.com","krkf4003.grid.uh1.inmobi.com","krkf4004.grid.uh1.inmobi.com", "krkf4005.grid.uh1.inmobi.com","krkf4001.grid.uh1.inmobi.com","krkf4006.grid.uh1.inmobi.com","krkf4007.grid.uh1.inmobi.com","krkf4008.grid.uh1.inmobi.com","krkf4009.grid.uh1.inmobi.com","krkf4010.grid.uh1.inmobi.com"]
-default["kafka"]["zookeepers"]["uh1"] = ["kafka-zookeeper-1.grid.uh1.inmobi.com:2181","kafka-zookeeper-2.grid.uh1.inmobi.com:2181","kafka-zookeeper-3.grid.uh1.inmobi.com:2181","kafka-zookeeper-4.grid.uh1.inmobi.com:2181","kafka-zookeeper-5.grid.uh1.inmobi.com:2181"]
-default['kafka']['mrelay']['uh1'] = "metrics-relay.grid.uh1.inmobi.com"
-
-default["kafka"]["brokers"]["hkg1"] = ["opkf4002.grid.hkg1.inmobi.com","opkf4003.grid.hkg1.inmobi.com","opkf4004.grid.hkg1.inmobi.com", "opkf4005.grid.hkg1.inmobi.com","opkf4001.grid.hkg1.inmobi.com","opkf4006.grid.hkg1.inmobi.com","opkf4007.grid.hkg1.inmobi.com","opkf4008.grid.hkg1.inmobi.com","opkf4009.grid.hkg1.inmobi.com","opkf4010.grid.hkg1.inmobi.com"]
-default["kafka"]["zookeepers"]["hkg1"] = ["kafka-zookeeper-1.grid.hkg1.inmobi.com:2181","kafka-zookeeper-2.grid.hkg1.inmobi.com:2181","kafka-zookeeper-3.grid.hkg1.inmobi.com:2181","kafka-zookeeper-4.grid.hkg1.inmobi.com:2181","kafka-zookeeper-5.grid.hkg1.inmobi.com:2181"]
-default['kafka']['mrelay']['hkg1'] = "metrics-relay.grid.hkg1.inmobi.com"
-
-default["kafka"]["brokers"]["lhr1"] = ["erkf4002.grid.lhr1.inmobi.com","erkf4003.grid.lhr1.inmobi.com","erkf4004.grid.lhr1.inmobi.com", "erkf4005.grid.lhr1.inmobi.com","erkf4001.grid.lhr1.inmobi.com","erkf4006.grid.lhr1.inmobi.com","erkf4007.grid.lhr1.inmobi.com","erkf4008.grid.lhr1.inmobi.com","erkf4009.grid.lhr1.inmobi.com","erkf4010.grid.lhr1.inmobi.com","erkf4016.grid.lhr1.inmobi.com"]
+default["kafka"]["brokers"]["lhr1"] = ["erkf4002.grid.lhr1.inmobi.com","erkf4003.grid.lhr1.inmobi.com","erkf4004.grid.lhr1.inmobi.com", "erkf4005.grid.lhr1.inmobi.com","erkf4001.grid.lhr1.inmobi.com","erkf4006.grid.lhr1.inmobi.com","erkf4007.grid.lhr1.inmobi.com","erkf4008.grid.lhr1.inmobi.com","erkf4009.grid.lhr1.inmobi.com","erkf4010.grid.lhr1.inmobi.com","erkf4016.grid.lhr1.inmobi.com","erkf4011.grid.lhr1.inmobi.com","erkf4015.grid.lhr1.inmobi.com"]
 default["kafka"]["zookeepers"]["lhr1"] = ["kafka-zookeeper-1.grid.lhr1.inmobi.com:2181","kafka-zookeeper-2.grid.lhr1.inmobi.com:2181","kafka-zookeeper-3.grid.lhr1.inmobi.com:2181","kafka-zookeeper-4.grid.lhr1.inmobi.com:2181","kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"]
 default['kafka']['mrelay']['lhr1'] = "metrics-relay.grid.lhr1.inmobi.com"
 
 default["kafka"]["brokers"]["pek1"] = ["pykf4001.grid.pek1.inmobi.com","pykf4002.grid.pek1.inmobi.com","pykf4003.grid.pek1.inmobi.com","pykf4004.grid.pek1.inmobi.com", "pykf4005.grid.pek1.inmobi.com","pykf4006.grid.pek1.inmobi.com","pykf4007.grid.pek1.inmobi.com","pykf4008.grid.pek1.inmobi.com","pykf4009.grid.pek1.inmobi.com","pykf4010.grid.pek1.inmobi.com"]
 default["kafka"]["zookeepers"]["pek1"] = ["kafka-zookeeper-1.grid.pek1.inmobi.com:2181","kafka-zookeeper-2.grid.pek1.inmobi.com:2181","kafka-zookeeper-3.grid.pek1.inmobi.com:2181","kafka-zookeeper-4.grid.pek1.inmobi.com:2181","kafka-zookeeper-5.grid.pek1.inmobi.com:2181"]
 default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
+
+default["kafka"]["brokers"]["dfw2"] = ["gakf4001.grid.dfw2.inmobi.com","gakf4002.grid.dfw2.inmobi.com","gakf4003.grid.dfw2.inmobi.com","gakf4004.grid.dfw2.inmobi.com","gakf4005.grid.dfw2.inmobi.com","gakf4006.grid.dfw2.inmobi.com","gakf4007.grid.dfw2.inmobi.com","gakf4008.grid.dfw2.inmobi.com","gakf4009.grid.dfw2.inmobi.com","gakf4010.grid.dfw2.inmobi.com"]
+default["kafka"]["zookeepers"]["dfw2"] = ["kafka-zookeeper-1.grid.dfw2.inmobi.com:2181","kafka-zookeeper-2.grid.dfw2.inmobi.com:2181","kafka-zookeeper-3.grid.dfw2.inmobi.com:2181","kafka-zookeeper-4.grid.dfw2.inmobi.com:2181","kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"]
+default['kafka']['mrelay']['dfw2'] = "metrics-relay.grid.dfw2.inmobi.com"
+default["kafka"]["brokers"]["asm1"] = ["azkf4001.grid.asm1.inmobi.com","azkf4002.grid.asm1.inmobi.com","azkf4003.grid.asm1.inmobi.com","azkf4004.grid.asm1.inmobi.com","azkf4005.grid.asm1.inmobi.com","azkf4006.grid.asm1.inmobi.com","azkf4007.grid.asm1.inmobi.com","azkf4008.grid.asm1.inmobi.com","azkf4009.grid.asm1.inmobi.com","azkf4010.grid.asm1.inmobi.com"]
+default["kafka"]["zookeepers"]["asm1"] = ["kafka-zookeeper-1.grid.asm1.inmobi.com:2181","kafka-zookeeper-2.grid.asm1.inmobi.com:2181","kafka-zookeeper-3.grid.asm1.inmobi.com:2181","kafka-zookeeper-4.grid.asm1.inmobi.com:2181","kafka-zookeeper-5.grid.asm1.inmobi.com:2181"]
+default['kafka']['mrelay']['dfw2'] = "metrics-relay.grid.asm1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
@@ -113,4 +112,4 @@ default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'uh1' => 'UH1_Krypton', 'hkg1' => 'HKG1_Opal', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite'}
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite', 'dfw2' => 'dfw2-garnet', 'asm1' => 'asm1-azurite'}

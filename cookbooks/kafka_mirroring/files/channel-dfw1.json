@@ -31,6 +31,21 @@
       }
     },
     {
+      "streamName": "appd_install_events_dfw2",
+      "source": [
+        {
+          "topic": "appd_install_events_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "appd_install_events_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "network_attribute_dfw1_lhr1",
       "source": [
         {
@@ -41,6 +56,19 @@
       "kafkaDestination": {
         "topic": "network_attribute_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "network_attribute_dfw1_dfw2",
+      "source": [
+        {
+          "topic": "network_attribute_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "network_attribute_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -74,6 +102,21 @@
       }
     },
     {
+      "streamName": "appd_ltv_events_dfw2",
+      "source": [
+        {
+          "topic": "appd_ltv_events_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "appd_ltv_events_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "appd_ltv_events_pek1",
       "source": [
         {
@@ -104,6 +147,21 @@
       }
     },
     {
+      "streamName": "appdNestedActivityDfw2Dfw2",
+      "source": [
+        {
+          "topic": "appd_nested_activity_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "appd_nested_activity_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "appdNestedActivityPek1Pek1",
       "source": [
         {
@@ -131,6 +189,21 @@
         "batchSize": 10000,
         "topic": "audience-attributes_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "audienceAttributesDfw2Dfw2",
+      "source": [
+        {
+          "topic": "audience-attributes_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "audience-attributes_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -179,6 +252,21 @@
       }
     },
     {
+      "streamName": "brandAttributesDfw2Dfw2",
+      "source": [
+        {
+          "topic": "brand_attributes_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "brand_attributes_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "brandAttributesPek1Pek1",
       "source": [
         {
@@ -219,6 +307,19 @@
       "kafkaDestination": {
         "topic": "photon_optout_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "photonOptoutDfw2Dfw2",
+      "source": [
+        {
+          "topic": "photon_optout_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "topic": "photon_optout_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -310,6 +411,21 @@
       }
     },
     {
+      "streamName": "appdAttributeDfw1Dfw2",
+      "source": [
+        {
+          "topic": "appd_attribute_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "appd_attribute_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkBeaconPek1Pek1",
       "source": [
         {
@@ -337,6 +453,21 @@
         "batchSize": 10000,
         "topic": "network_beacon_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkBeaconDfw2Dfw2",
+      "source": [
+        {
+          "topic": "network_beacon_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_beacon_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -370,6 +501,21 @@
       }
     },
     {
+      "streamName": "networkPostImpressionDfw2Dfw2",
+      "source": [
+        {
+          "topic": "network_post_impression_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_post_impression_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "ifcOrganicActivityLhr1Lhr1",
       "source": [
         {
@@ -382,6 +528,21 @@
         "batchSize": 10000,
         "topic": "ifc_organic_activity_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcOrganicActivityDfw2Dfw2",
+      "source": [
+        {
+          "topic": "ifc_organic_activity_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "ifc_organic_activity_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -412,6 +573,21 @@
         "batchSize": 10000,
         "topic": "ifc_attributes_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "ifcAttributesDfw2Dfw2",
+      "source": [
+        {
+          "topic": "ifc_attributes_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "ifc_attributes_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -778,21 +954,6 @@
       }
     },
     {
-      "streamName": "napp",
-      "source": [
-        {
-          "topic": "napp",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://onyx:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "brandAttributeDfw1Dfw1",
       "source": [
         {
@@ -989,6 +1150,21 @@
       }
     },
     {
+      "streamName": "appdFlatActivityDfw2Dfw2",
+      "source": [
+        {
+          "topic": "appd_flat_activity_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "appd_flat_activity_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "appdFlatActivityPek1Pek1",
       "source": [
         {
@@ -1049,6 +1225,21 @@
       }
     },
     {
+      "streamName": "networkClickDfw1Dfw2",
+      "source": [
+        {
+          "topic": "network_click_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_click_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkClickDfw1Pek1",
       "source": [
         {
@@ -1094,6 +1285,21 @@
       }
     },
     {
+      "streamName": "networkConversionDfw1Dfw2",
+      "source": [
+        {
+          "topic": "network_conversion_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_conversion_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkRenderCpcDfw1Pek1",
       "source": [
         {
@@ -1124,6 +1330,21 @@
       }
     },
     {
+      "streamName": "networkRenderCpcDfw1Dfw2",
+      "source": [
+        {
+          "topic": "network_render_cpc_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_render_cpc_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+      }
+    },
+    {
       "streamName": "networkRenderCpmDfw1Pek1",
       "source": [
         {
@@ -1151,6 +1372,21 @@
         "batchSize": 10000,
         "topic": "network_render_cpm_lhr1_lhr1",
         "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "networkRenderCpmDfw1Dfw2",
+      "source": [
+        {
+          "topic": "network_render_cpm_dfw1_dfw2",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "kafkaDestination": {
+        "waitTime": 5000,
+        "batchSize": 10000,
+        "topic": "network_render_cpm_dfw2_dfw2",
+        "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
       }
     },
     {
@@ -1221,6 +1457,10 @@
           "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         },
         {
+          "topic": "ifc_activity_dfw2_dfw1",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
+        },
+        {
           "topic": "ifc_activity_pek1_dfw1",
           "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
         }
@@ -1230,6 +1470,21 @@
         "batchSize": 10000,
         "topic": "ifc_activity_dfw1_dfw1",
         "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+      }
+    },
+    {
+      "streamName": "napp",
+      "source": [
+        {
+          "topic": "napp",
+          "zookeeper": "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://onyx:8020",
+        "compression": "gz",
+        "retention": "48"
       }
     },
     {
