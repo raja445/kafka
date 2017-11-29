@@ -72,8 +72,10 @@ template "#{flumeConf}/flume-end-collector.properties" do
   mode  00644
   variables(
     :sources =>node["flume_collector"]["endcollector_sources"][colo],
-    :merged_hdfs_sinks =>node["flume_collector"]["endcollector_merged_hdfs_sinks"][colo],
-    :merge_hdfs_channels =>node["flume_collector"]["endcollector_merge_hdfs_channels"][colo],
+    :kafka_to_hdfs_sinks =>node["flume_collector"]["endcollector_kafka_to_hdfs_sinks"][colo],
+    :kafkamerge_to_hdfs_sinks =>node["flume_collector"]["endcollector_kafkamerge_to_hdfs_sinks"][colo],
+    :kafka_to_hdfs_channels =>node["flume_collector"]["endcollector_kafka_to_hdfs_channels"][colo],
+    :kafkamerge_to_hdfs_channels =>node["flume_collector"]["endcollector_kafkamerge_to_hdfs_channels"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
     :flumeagent =>node["flume_collector"]["flume_agent_host"][colo],
