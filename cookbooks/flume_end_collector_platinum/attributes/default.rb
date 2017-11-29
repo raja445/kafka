@@ -23,49 +23,88 @@ default["flume_collector"]["kafka_zookeeper"]['dfw2']  = "kafka-zookeeper-1.grid
 #Flume Agents
 default["flume_collector"]["flume_agent_host"]['dfw1']  = "oxns4002.grid.dfw1.inmobi.com"
 
+default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "4"
+
 ######################################################### Platinum ###################################################################
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "testmerge"
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "hdfsmerge-channel"
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "hdfsmerge-sink1 hdfsmerge-sink2"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "kafka-to-hdfs-channel kafkamerge-to-hdfs-channel"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafka-to-hdfs-sink1 kafka-to-hdfs-sink2 kafka-to-hdfs-sink3 kafka-to-hdfs-sink4 kafka-to-hdfs-sink5"
 
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
-     "dfw1kafkamergesrc" => {
-         :src_category => "dfw1kafkamerge",
-         :consumer_group => "dfw1-to-platinum-kafkamerge",
+     "dfw1kafkasrc" => {
+         :src_category => "dfw1kafkasrc",
+         :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfsmerge-channel",
+         :channels => "kafka-to-hdfs-channel",
          :batchSize => 500,
          :'kafka.topics' => "testmerge"},
-     "lhr1kafkamergesrc" => {
-         :src_category => "lhr1kafkamerge",
-         :consumer_group => "lhr1-to-platinum-kafkamerge",
+     "lhr1kafkasrc" => {
+         :src_category => "lhr1kafkasrc",
+         :consumer_group => "lhr1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfsmerge-channel",
+         :channels => "kafka-to-hdfs-channel",
          :batchSize => 500,
          :'kafka.topics' => "testmerge"},
-     "pek1kafkamergesrc" => {
-         :src_category => "pek1kafkamerge",
-         :consumer_group => "pek1-to-platinum-kafkamerge",
+     "pek1kafkasrc" => {
+         :src_category => "pek1kafkasrc",
+         :consumer_group => "pek1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfsmerge-channel",
+         :channels => "kafka-to-hdfs-channel",
          :batchSize => 500,
          :'kafka.topics' => "testmerge"},
-     "dfw2kafkamergesrc" => {
-         :src_category => "dfw2kafkamerge",
-         :consumer_group => "dfw2-to-platinum-kafkamerge",
+     "dfw2kafkasrc" => {
+         :src_category => "dfw2kafkasrc",
+         :consumer_group => "dfw2-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfsmerge-channel",
+         :channels => "kafka-to-hdfs-channel",
          :batchSize => 500,
          :'kafka.topics' => "testmerge"},
+     "dfw1mergedkafkasrc" => {
+         :src_category => "dfw1mergedkafkasrc",
+         :consumer_group => "dfw1-merge-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "kafkamerge-to-hdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_testmerge"},
+     "lhr1mergedkafkasrc" => {
+         :src_category => "lhr1mergedkafkasrc",
+         :consumer_group => "lhr1-merge-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "kafkamerge-to-hdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_testmerge"},
+     "pek1mergedkafkasrc" => {
+         :src_category => "pek1mergedkafkasrc",
+         :consumer_group => "pek1-merge-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "kafkamerge-to-hdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_testmerge"},
+     "dfw2mergedkafkasrc" => {
+         :src_category => "dfw2mergedkafkasrc",
+         :consumer_group => "dfw2-merge-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "kafkamerge-to-hdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_testmerge"},
        }
 
-default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel"]
+default["flume_collector"]["endcollector_kafka_to_hdfs_channels"]['dfw1']  = ["kafka-to-hdfs-channel"]
+default["flume_collector"]["endcollector_kafkamerge_to_hdfs_channels"]['dfw1']  = ["kafkamerge-to-hdfs-channel"]
 
-default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
-     "hdfsmerge-sink1" => {:channel => "hdfsmerge-channel",:cluster =>"platinum"},
-     "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel",:cluster =>"platinum"},
-     "hdfsmerge-sink3" => {:channel => "hdfsmerge-channel",:cluster =>"platinum"},
-     "hdfsmerge-sink4" => {:channel => "hdfsmerge-channel",:cluster =>"platinum"},
-     "hdfsmerge-sink5" => {:channel => "hdfsmerge-channel",:cluster =>"platinum"}
+default["flume_collector"]["endcollector_kafka_to_hdfs_sinks"]['dfw1']  = {
+     "kafka-to-hdfs-sink1" => {:channel => "kafka-to-hdfs-channel",:cluster =>"platinum"},
+     "kafka-to-hdfs-sink2" => {:channel => "kafka-to-hdfs-channel",:cluster =>"platinum"},
+     "kafka-to-hdfs-sink3" => {:channel => "kafka-to-hdfs-channel",:cluster =>"platinum"},
+     "kafka-to-hdfs-sink4" => {:channel => "kafka-to-hdfs-channel",:cluster =>"platinum"},
+     "kafka-to-hdfs-sink5" => {:channel => "kafka-to-hdfs-channel",:cluster =>"platinum"}
+}
+
+default["flume_collector"]["endcollector_kafkamerge_to_hdfs_sinks"]['dfw1']  = {
+     "kafkamerge-to-hdfs-sink1" => {:channel => "kafkamerge-to-hdfs-channel",:cluster =>"platinum"},
+     "kafkamerge-to-hdfs-sink2" => {:channel => "kafkamerge-to-hdfs-channel",:cluster =>"platinum"},
+     "kafkamerge-to-hdfs-sink3" => {:channel => "kafkamerge-to-hdfs-channel",:cluster =>"platinum"},
+     "kafkamerge-to-hdfs-sink4" => {:channel => "kafkamerge-to-hdfs-channel",:cluster =>"platinum"},
+     "kafkamerge-to-hdfs-sink5" => {:channel => "kafkamerge-to-hdfs-channel",:cluster =>"platinum"}
 }
