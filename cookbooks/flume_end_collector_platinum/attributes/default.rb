@@ -28,7 +28,7 @@ default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "4"
 ######################################################### Platinum ###################################################################
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "testmerge"
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "kafka-to-hdfs-channel kafkamerge-to-hdfs-channel"
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafka-to-hdfs-sink1 kafka-to-hdfs-sink2 kafka-to-hdfs-sink3 kafka-to-hdfs-sink4 kafka-to-hdfs-sink5"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafka-to-hdfs-sink1 kafka-to-hdfs-sink2 kafka-to-hdfs-sink3 kafka-to-hdfs-sink4 kafka-to-hdfs-sink5 kafkamerge-to-hdfs-sink1 kafkamerge-to-hdfs-sink2 kafkamerge-to-hdfs-sink3 kafkamerge-to-hdfs-sink4 kafkamerge-to-hdfs-sink5"
 
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
