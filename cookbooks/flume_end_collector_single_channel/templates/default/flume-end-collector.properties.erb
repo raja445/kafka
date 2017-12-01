@@ -98,6 +98,10 @@ end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -120,6 +124,10 @@ end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -142,6 +150,10 @@ end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -164,6 +176,10 @@ end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -185,6 +201,10 @@ end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = local_src
 <% end -%>
 <% if details[:'src_category'] == 'hdfsmerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -201,6 +221,10 @@ end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = merge_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
