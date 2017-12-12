@@ -119,7 +119,7 @@ audit-collector.sinks.<%= "#{sink}" %>.retention.topics = _audit
 audit-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 audit-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 audit-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
-audit-collector.sinks.<%= "#{sink}" %>.retention.topics._audit = 120
+audit-collector.sinks.<%= "#{sink}" %>.retention.topics._audit = 240
 <% end %>
 <% @druid_sinks.each do |sink, details| %>
 audit-collector.sinks.<%= "#{sink}" %>.type = com.apache.flume.sink.druid.DruidSink
