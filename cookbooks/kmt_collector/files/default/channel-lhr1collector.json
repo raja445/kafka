@@ -121,19 +121,6 @@
       }
     },
     {
-      "streamName": "ifc_ff_colo",
-      "source": [
-        {
-          "topic": "ifc_ff_lhr1",
-          "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "databus/streams_local",
-        "hdfsUrl": "hdfs://emerald:8020"
-       }
-    },
-    {
       "streamName": "il-flat_activity_add-ifcorganicactivity",
       "source": [
         {
