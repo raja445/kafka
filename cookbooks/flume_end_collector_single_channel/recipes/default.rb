@@ -89,6 +89,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :spooldir =>node["flume_collector"]["spool_dir"],
     :local_retention_topics=>node["flume_collector"]["endcollector_local_retention_topics"][colo],
     :merge_retention_topics=>node["flume_collector"]["endcollector_merge_retention_topics"][colo],
+    :platinum_retention_topics=>node["flume_collector"]["endcollector_platinum_retention_topics"][colo],
     :sinkworkerthreads=>node["flume_collector"]["sinkworkerthreads"][colo],
     :mergesinkworkerthreads=>node["flume_collector"]["mergesinkworkerthreads"][colo],
     :avrosinkworkerthreads=>node["flume_collector"]["avrosinkworkerthreads"][colo],
