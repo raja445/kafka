@@ -468,4 +468,13 @@ end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
 <% end %>
+<% @platinum_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
 
