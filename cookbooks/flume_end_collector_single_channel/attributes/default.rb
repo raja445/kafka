@@ -563,8 +563,8 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['pek1']  = {
 default["flume_collector"]["platinum_hdfs_sinks"]['pek1']  = {
      "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
      "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
-     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
      "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
 }
 ######################################################### End Of PEK1 ###################################################################
