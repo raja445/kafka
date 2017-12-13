@@ -419,9 +419,9 @@ end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
 end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
-end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/promoter
-end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/retention
-end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/platinumpromoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/platinumretention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
