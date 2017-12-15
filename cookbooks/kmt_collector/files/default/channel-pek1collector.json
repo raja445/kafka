@@ -75,18 +75,6 @@
         "retention": "48"
       }
     },
-     {
-      "streamName": "fds_pek1",
-      "source": [
-        {
-          "topic": "fds_pek1",
-          "zookeeper": "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
-        }
-      ],
-      "hdfsCollectorDestination": {
-        "hdfsUrl": "hdfs://pyrite:8020"
-      }
-    },
     {
       "streamName": "il-flat_activity_add-ifcorganicactivity",
       "source": [
