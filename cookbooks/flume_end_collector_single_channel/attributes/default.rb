@@ -368,12 +368,13 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw2']  = {
 
 
 ######################################################### AMS1 ###################################################################
-default["flume_collector"]["endcollector_local_retention_topics"]['ams1']  = "test"
-default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "test"
+default["flume_collector"]["endcollector_local_retention_topics"]['ams1']  = "testmerge"
+default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "testmerge"
+default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = "testmerge"
 
-default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel photon-mergespillable-channel"
+default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink mergekafkasink hdfsmerge-sink hdfslocal-sink1 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink mergekafkasink hdfsmerge-sink hdfslocal-sink1 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -409,6 +410,20 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :channels => "hdfsmerge-channel",
          :batchSize => 500,
 	 :'kafka.topics' => "testmerge"},
+     "hdfsplatinumsrc" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "ams1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "testmerge"},
+     "hdfsplatinummergesrc" => {
+         :src_category => "mergetoplatinumhdfs",
+         :consumer_group => "ams1-merge-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_testmerge"},
      "dfw1kafkamergesrc" => {
          :src_category => "dfw1kafkamerge",
          :consumer_group => "dfw1-to-ams1-kafkamerge",
@@ -479,6 +494,7 @@ default["flume_collector"]["endcollector_normal_avroreceive_channels"]['ams1']  
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['ams1']  = ["mergespillable","photon-mergespillable-channel"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['ams1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['ams1']  = ["hdfslocal-channel"]
+default["flume_collector"]["endcollector_platinum_hdfs_channels"]['ams1']  = ["platinumhdfs-channel"]
 
 #Configure the sinks for the Flume Collector
 default["flume_collector"]["endcollector_normal_kafka_sinks"]['ams1']  = {
@@ -498,6 +514,15 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['ams1']  = {
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['ams1']  = {
     "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"azurite"}
 }
+
+default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['ams1']  = {
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+}
+
 ######################################################### End Of AMS1 ###################################################################
 
 
