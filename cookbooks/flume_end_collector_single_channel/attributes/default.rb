@@ -65,7 +65,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "avrosrc" => {
@@ -195,6 +195,7 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
      "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
+     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
