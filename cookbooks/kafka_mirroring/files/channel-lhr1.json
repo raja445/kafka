@@ -408,7 +408,7 @@
       "streamName": "ifcOrganicActivityLhr1Ams1",
       "source": [
         {
-          "topic": "ifc_organic_activity_ams1_dfw2",
+          "topic": "ifc_organic_activity_lhr1_ams1",
           "zookeeper": "kafka-zookeeper-1.grid.lhr1.inmobi.com:2181,kafka-zookeeper-2.grid.lhr1.inmobi.com:2181,kafka-zookeeper-3.grid.lhr1.inmobi.com:2181,kafka-zookeeper-4.grid.lhr1.inmobi.com:2181,kafka-zookeeper-5.grid.lhr1.inmobi.com:2181"
         }
       ],
