@@ -194,7 +194,7 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
      "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
-     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
      "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
 }
 
