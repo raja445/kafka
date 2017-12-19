@@ -9,4 +9,4 @@ default['kafka']['mrelay']['lhr1'] = "metrics-relay.grid.lhr1.inmobi.com"
 default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
 default['kafka']['mrelay']['dfw2'] = "metrics-relay.grid.dfw2.inmobi.com"
 default['kafka']['mrelay']['ams1'] = "metrics-relay.grid.ams1.inmobi.com"
-default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'dfw2' => 'dfw2-garnet', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite', 'ams1 => 'ams1-azurite'}
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'dfw2' => 'dfw2-garnet', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite', 'ams1' => 'ams1-azurite'}
