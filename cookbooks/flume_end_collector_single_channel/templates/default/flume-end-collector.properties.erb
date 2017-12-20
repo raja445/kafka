@@ -109,7 +109,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -135,7 +135,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -161,7 +161,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -187,7 +187,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -213,7 +213,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.tier = mergecollector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
@@ -238,7 +238,7 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = lbs_src
+end-collector.sources.<%= "#{src}" %>.tier = local_src
 <% end -%>
 <% if details[:'src_category'] == 'hdfsmerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -258,7 +258,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = mbs_src
+end-collector.sources.<%= "#{src}" %>.tier = merge_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
@@ -282,7 +282,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = global_merger_src
+end-collector.sources.<%= "#{src}" %>.tier = global_merge_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 <% end -%>
 <% if details[:'src_category'] == 'mergetoplatinumhdfs' -%>
@@ -303,7 +303,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = global_merger_src
+end-collector.sources.<%= "#{src}" %>.tier = global_merge_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
@@ -387,7 +387,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /local/audit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = lbs_sink
+end-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
@@ -419,7 +419,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
 <% if @colo == 'dfw1' -%>
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_dfw1 = 120
@@ -467,7 +467,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
