@@ -113,11 +113,11 @@ end
 
 
 #HEALTH CHECK
-package "scribe-scripts" do
-  version node['flume_collector']['scribescripts']
-  action :install
-  options '--force-yes'
-end
+#package "scribe-scripts" do
+#  version node['flume_collector']['scribescripts']
+#  action :install
+#  options '--force-yes'
+#end
 
 directory "/etc/flume_audit_health" do
   owner 'root'
