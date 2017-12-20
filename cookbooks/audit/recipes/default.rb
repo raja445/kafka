@@ -137,13 +137,13 @@ directory "/etc/flume_audit_health/flume_audit_healthcheck/log" do
   mode '0755'
   action :create
 end
-directory "/etc/flume_health/flume_audit_healthcheck/log/main" do
+directory "/etc/flume_audit_health/flume_audit_healthcheck/log/main" do
   owner 'nobody'
   group 'nogroup'
   mode '0755'
   action :create
 end
-template "/etc/flume_health/flume_audit_healthcheck/run" do
+template "/etc/flume_audit_health/flume_audit_healthcheck/run" do
   source "flume_audit_healthcheck.erb"
   owner "root"
   group "root"
