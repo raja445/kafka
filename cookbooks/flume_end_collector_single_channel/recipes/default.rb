@@ -132,11 +132,11 @@ link "#{flumeHome}" do
 end
 
 #HEALTH CHECK
-package "scribe-scripts" do
-  version node['flume_collector']['scribescripts']
-  action :install
-  options '--force-yes'
-end
+#package "scribe-scripts" do
+#  version node['flume_collector']['scribescripts']
+#  action :install
+#  options '--force-yes'
+#end
 
 directory "/etc/flume_health" do
   owner 'root'
