@@ -469,7 +469,7 @@ end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
-end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
 <% end %>
 
 <% @normal_avroreceive_channels.each do |channel| %>
