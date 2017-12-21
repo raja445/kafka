@@ -84,6 +84,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :platinum_hdfs_channels =>node["flume_collector"]["endcollector_platinum_hdfs_channels"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
+    :platinumzookeeper =>node["flume_collector"]["kafka_zookeeper"]['platinum'],
     :flumeagent =>node["flume_collector"]["flume_agent_host"][colo],
     :mergesrc_consumer_gpsize =>node["flume_collector"]["mergesrc_consumer_gpsize"][colo],
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
