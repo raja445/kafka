@@ -359,6 +359,39 @@ end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
 <% end %>
 
+<% @platinum_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/platinummerge
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+#Single Channel
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/platinumpromoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/platinumretention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
+end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
+<% end %>
+
 <% @local_hdfs_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
@@ -437,39 +470,6 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_pek1 = 120
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_pek1 = 120
 <% end %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
-<% end %>
-
-<% @platinum_hdfs_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/platinummerge
-end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/temp
-end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/staging
-end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams
-end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
-end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
-end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
-end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
-end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
-end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
-end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
-end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
-end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
-end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
-end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
-end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
-end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
-#Single Channel
-end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
-end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/platinumpromoter
-end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/platinumretention
-end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
-end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
-end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
-end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
-end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
-end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
 <% end %>
 
 <% @normal_avroreceive_channels.each do |channel| %>
