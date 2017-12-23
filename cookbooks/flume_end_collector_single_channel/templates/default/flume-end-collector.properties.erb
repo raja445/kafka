@@ -389,6 +389,9 @@ end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
 <% end %>
 
