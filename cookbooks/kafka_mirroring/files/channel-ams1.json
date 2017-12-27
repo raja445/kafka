@@ -31,51 +31,6 @@
       }
     },
     {
-      "streamName": "customTypeRecordUpdateAppduserrenderhistory",
-      "source": [
-        {
-          "topic": "custom_type_record_update-appduserrenderhistory",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateAppduserclickhistory",
-      "source": [
-        {
-          "topic": "custom_type_record_update-appduserclickhistory",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateBranduseractivityhistory",
-      "source": [
-        {
-          "topic": "custom_type_record_update-branduseractivityhistory",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "profileDeleteIfc",
       "source": [
         {
@@ -272,67 +227,6 @@
       }
     },
     {
-      "streamName": "attributeChangeCore",
-      "source": [
-        {
-          "topic": "attribute_change-core",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "thresholdSize": 32212254720,
-        "retention": "72"
-      }
-    },
-    {
-      "streamName": "attributeChangeIfc",
-      "source": [
-        {
-          "topic": "attribute_change-ifc",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "72"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateCore",
-      "source": [
-        {
-          "topic": "custom_type_record_update-core",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateIfc",
-      "source": [
-        {
-          "topic": "custom_type_record_update-ifc",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
       "streamName": "networkActivityAms1Ams1",
       "source": [
         {
@@ -465,21 +359,6 @@
       }
     },
     {
-      "streamName": "attributeChangeAppd",
-      "source": [
-        {
-          "topic": "attribute_change-appd",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "192"
-      }
-    },
-    {
       "streamName": "fdsAms1",
       "source": [
         {
@@ -597,21 +476,6 @@
         "hdfsUrl": "hdfs://azurite:8020",
         "compression": "gz",
         "retention": "72"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateAppdlookaliketype",
-      "source": [
-        {
-          "topic": "custom_type_record_update-appdlookaliketype",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
       }
     },
     {
@@ -817,21 +681,6 @@
       }
     },
     {
-      "streamName": "attributeChangeBrand",
-      "source": [
-        {
-          "topic": "attribute_change-brand",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "72"
-      }
-    },
-    {
       "streamName": "networkBeaconAms1Ams1",
       "source": [
         {
@@ -866,21 +715,6 @@
       "source": [
         {
           "topic": "usermeta_change",
-          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://azurite:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
-      "streamName": "customTypeRecordUpdateIfcinorg",
-      "source": [
-        {
-          "topic": "custom_type_record_update-ifcinorg",
           "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
         }
       ],
@@ -935,21 +769,6 @@
                 }
             ],
             "streamName": "ifc_photon_nonenriched_pb_ams1"
-    },
-    {
-            "hdfsDestination": {
-                "basePath": "kafka/data",
-                "compression": "gz",
-                "hdfsUrl": "hdfs://azurite:8020",
-                "retention": "48"
-            },
-            "source": [
-                {
-                    "topic": "custom_type_record_update-appduserscore",
-                    "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-                }
-            ],
-            "streamName": "customTypeRecordUpdateAppduserscore"
     }
   ]
 }
