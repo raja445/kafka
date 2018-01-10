@@ -84,26 +84,26 @@ default["kafka"]["server.properties"]["listeners"] = 'SASL_PLAINTEXT://:9092'
 default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
 
 # Kafka brokers to authenticate each other using SASL
-#default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
-#default["kafka"]["server.properties"]["sasl.mechanism.inter.broker.protocol"] = 'GSSAPI'
+default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
+default["kafka"]["server.properties"]["sasl.mechanism.inter.broker.protocol"] = 'GSSAPI'
 
 # SASL mechanisms enabled in the Kafka server
-#default["kafka"]["server.properties"]["sasl.enabled.mechanisms"] = 'GSSAPI'
+default["kafka"]["server.properties"]["sasl.enabled.mechanisms"] = 'GSSAPI'
 
 # Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL.
-#default["kafka"]["server.properties"]["security.protocol"] = 'SASL_PLAINTEX'
+default["kafka"]["server.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
 
 # authorizer class that should be used for authorization
-#default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security.auth.SimpleAclAuthorizer'
+default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security.auth.SimpleAclAuthorizer'
 
 # Kafka acls are defined in the general format of "Principal P is [Allowed/Denied] Operation O From Host H On Resource R". 
 # By default, if a Resource R has no associated acls, no one other than super users is allowed to access R
 # This is to be overrriden below.
-#default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
+default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
 
 # translation from principal to user name has to be configured, which is defined as follows.
-#default["kafka"]["server.properties"]["principal.to.local.class"] = 'kafka.security.auth.KerberosPrincipalToLocal'
-#default["kafka"]["server.properties"]["sasl.kerberos.principal.to.local.rules"] = 'RULE:[1:$1@$0](ambari-qa-xenon@INMOBI.COM)s/.*/ambari-qa/,RULE:[1:$1@$0](hdfs-xenon@INMOBI.COM)s/.*/hdfs/,RULE:[1:$1@$0](.*@INMOBI.COM)s/@.*//, RULE:[2:$1@$0](amshbase@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](amszk@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](dn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](jhs@INMOBI.COM)s/.*/mapred/,RULE:[2:$1@$0](jn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](nm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](nn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](oozie@INMOBI.COM)s/.*/oozie/,RULE:[2:$1@$0](rm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](yarn@INMOBI.COM)s/.*/yarn/,DEFAULT'
+default["kafka"]["server.properties"]["principal.to.local.class"] = 'kafka.security.auth.KerberosPrincipalToLocal'
+default["kafka"]["server.properties"]["sasl.kerberos.principal.to.local.rules"] = 'RULE:[1:$1@$0](ambari-qa-xenon@INMOBI.COM)s/.*/ambari-qa/,RULE:[1:$1@$0](hdfs-xenon@INMOBI.COM)s/.*/hdfs/,RULE:[1:$1@$0](.*@INMOBI.COM)s/@.*//, RULE:[2:$1@$0](amshbase@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](amszk@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](dn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](jhs@INMOBI.COM)s/.*/mapred/,RULE:[2:$1@$0](jn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](nm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](nn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](oozie@INMOBI.COM)s/.*/oozie/,RULE:[2:$1@$0](rm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](yarn@INMOBI.COM)s/.*/yarn/,DEFAULT'
 
 # Consumber Properties files to enable SASL 
 default["kafka"]["consumer.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
