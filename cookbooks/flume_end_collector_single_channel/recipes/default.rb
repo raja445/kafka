@@ -79,9 +79,12 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :local_hdfs_sinks =>node["flume_collector"]["endcollector_local_hdfs_sinks"][colo],
     :local_hdfs_channels =>node["flume_collector"]["endcollector_local_hdfs_channels"][colo],
     :merged_hdfs_sinks =>node["flume_collector"]["endcollector_merged_hdfs_sinks"][colo],
+    :platinum_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_hdfs_sinks"][colo],
     :merge_hdfs_channels =>node["flume_collector"]["endcollector_merge_hdfs_channels"][colo],
+    :platinum_hdfs_channels =>node["flume_collector"]["endcollector_platinum_hdfs_channels"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
+    :platinumzookeeper =>node["flume_collector"]["kafka_zookeeper"]['platinum'],
     :flumeagent =>node["flume_collector"]["flume_agent_host"][colo],
     :mergesrc_consumer_gpsize =>node["flume_collector"]["mergesrc_consumer_gpsize"][colo],
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
@@ -89,6 +92,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :spooldir =>node["flume_collector"]["spool_dir"],
     :local_retention_topics=>node["flume_collector"]["endcollector_local_retention_topics"][colo],
     :merge_retention_topics=>node["flume_collector"]["endcollector_merge_retention_topics"][colo],
+    :platinum_retention_topics=>node["flume_collector"]["endcollector_platinum_retention_topics"][colo],
     :sinkworkerthreads=>node["flume_collector"]["sinkworkerthreads"][colo],
     :mergesinkworkerthreads=>node["flume_collector"]["mergesinkworkerthreads"][colo],
     :avrosinkworkerthreads=>node["flume_collector"]["avrosinkworkerthreads"][colo],
@@ -129,11 +133,11 @@ link "#{flumeHome}" do
 end
 
 #HEALTH CHECK
-package "scribe-scripts" do
-  version node['flume_collector']['scribescripts']
-  action :install
-  options '--force-yes'
-end
+#package "scribe-scripts" do
+#  version node['flume_collector']['scribescripts']
+#  action :install
+#  options '--force-yes'
+#end
 
 directory "/etc/flume_health" do
   owner 'root'

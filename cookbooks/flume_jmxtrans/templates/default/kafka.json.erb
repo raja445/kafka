@@ -66,6 +66,25 @@
      ]
     },
     {
+     "resultAlias": "flume.other",
+     "obj": "org.apache.flume.other:type=audit,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
      "resultAlias": "flume.interceptor",
      "obj": "org.apache.flume.interceptor:type=*",
      "attr": [
