@@ -212,11 +212,11 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
 }
 
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw1']  = {
-     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"}
 }
 
 ######################################################### End Of DFW1 ###################################################################
@@ -374,11 +374,11 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw2']  = {
 }
 
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw2']  = {
-     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 ######################################################### End Of DFW2 ###################################################################
@@ -534,11 +534,11 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['ams1']  = {
 }
 
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['ams1']  = {
-     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 ######################################################### End Of AMS1 ###################################################################
@@ -699,11 +699,11 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['lhr1']  = {
 }
 
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['lhr1']  = {
-     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 ######################################################### End Of LHR1 ###################################################################
@@ -863,10 +863,10 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['pek1']  = {
      "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"pyrite"}
 }
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['pek1']  = {
-     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"},
-     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum"}
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 ######################################################### End Of PEK1 ###################################################################
