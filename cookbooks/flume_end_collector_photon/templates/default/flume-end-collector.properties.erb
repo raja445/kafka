@@ -42,7 +42,7 @@ end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -68,7 +68,7 @@ end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw2'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -94,7 +94,7 @@ end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['ams1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -120,7 +120,7 @@ end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['pek1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -146,7 +146,7 @@ end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['lhr1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -172,7 +172,7 @@ end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
@@ -193,7 +193,7 @@ end-collector.sources.<%= "#{src}" %>.dualCommit = false
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
