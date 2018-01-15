@@ -116,7 +116,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "mergespillable",
          :batchSize => 500,
-	 :'kafka.topics' => ""}
+	 :'kafka.topics' => "testmerge"}
        }
 
 #Configure the channels for the Flume Collector
