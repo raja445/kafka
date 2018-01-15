@@ -922,6 +922,21 @@
       }
     },
     {
+      "streamName": "attributeChangeIfc",
+      "source": [
+        {
+          "topic": "attribute_change-ifc",
+          "zookeeper": "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
+        }
+      ],
+      "hdfsDestination": {
+        "basePath": "kafka/data",
+        "hdfsUrl": "hdfs://azurite:8020",
+        "compression": "gz",
+        "retention": "72"
+      }
+    },
+    {
             "hdfsDestination": {
                 "basePath": "kafka/data",
                 "compression": "gz",
