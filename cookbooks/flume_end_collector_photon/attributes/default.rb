@@ -458,7 +458,6 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "mergespillable",
          :batchSize => 500,
 	 :'kafka.topics' => "testmerge"},
-         :'kafka.topics' => "testmerge"},
      "dfw2photonmergesrc" => {
          :src_category => "dfw2kafkamerge",
          :consumer_group => "dfw2-to-pek1-kafkamerge",
