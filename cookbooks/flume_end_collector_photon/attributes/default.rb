@@ -231,7 +231,7 @@ default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw2']  = {
 default["flume_collector"]["endcollector_local_retention_topics"]['ams1']  = "photon_flume_test"
 default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_all_channels"]['ams1']  = "hdfsmerge-channel hdfslocal-channel"
+default["flume_collector"]["endcollector_all_channels"]['ams1']  = "mergespillable hdfsmerge-channel hdfslocal-channel"
 
 default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1"
 #Configure the sources for the Flume Collector
