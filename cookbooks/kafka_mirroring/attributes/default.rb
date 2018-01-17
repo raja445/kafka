@@ -3,7 +3,7 @@ default['kafkaMirroring']['instanceid']['uh1']={ "krkf4012" => 2, "krkf4011" => 
 default['kafkaMirroring']['instanceid']['lhr1']={ "erkf4012" => 1, "erkf4014" => 2}
 default['kafkaMirroring']['instanceid']['pek1']={ "pykm4002" => 1, "pykm4003" => 2}
 default['kafkaMirroring']['instanceid']['dfw2']={ "gakm4001" => 1}
-default['kafkaMirroring']['instanceid']['ams1']={ "azgs4045" => 1, "azgs4046" => 1, "azgs4047" => 1}
+default['kafkaMirroring']['instanceid']['ams1']={ "azfl4010" => 1, "azfl4011" => 1}
 default['kafkaMirroring']['version']= '0.6.23'
 default['kafkaMirroringConfig']['version']= '0.6.23'
 default['kafkaMirroring']['staging_dir']= '/data/kafka/staging'
