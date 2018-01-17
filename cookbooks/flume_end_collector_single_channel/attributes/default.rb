@@ -392,7 +392,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink mergekafkasink hdfsmerge-sink hdfslocal-sink1 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 mergekafkasink hdfsmerge-sink hdfslocal-sink1 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -516,7 +516,9 @@ default["flume_collector"]["endcollector_platinum_hdfs_channels"]['ams1']  = ["p
 
 #Configure the sinks for the Flume Collector
 default["flume_collector"]["endcollector_normal_kafka_sinks"]['ams1']  = {
-     "kafkasink" => {:channel => "spillable"}
+     "kafkasink1" => {:channel => "spillable"},
+     "kafkasink2" => {:channel => "spillable"},
+     "kafkasink3" => {:channel => "spillable"}
 }
 
 
