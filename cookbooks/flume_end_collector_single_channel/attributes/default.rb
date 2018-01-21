@@ -42,7 +42,7 @@ default["flume_collector"]["sinkworkerthreads"]['pek1']  = "64"
 default["flume_collector"]["sinkworkerthreads"]['dfw1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['dfw2']  = "64"
-default["flume_collector"]["sinkworkerthreads"]['ams1']  = "64"
+default["flume_collector"]["sinkworkerthreads"]['ams1']  = "84"
 
 #number of sinkworkerthreads
 default["flume_collector"]["mergesinkworkerthreads"]['pek1']  = "64"
@@ -392,7 +392,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -518,7 +518,8 @@ default["flume_collector"]["endcollector_platinum_hdfs_channels"]['ams1']  = ["p
 default["flume_collector"]["endcollector_normal_kafka_sinks"]['ams1']  = {
      "kafkasink1" => {:channel => "spillable"},
      "kafkasink2" => {:channel => "spillable"},
-     "kafkasink3" => {:channel => "spillable"}
+     "kafkasink3" => {:channel => "spillable"},
+     "kafkasink4" => {:channel => "spillable"}
 }
 
 
