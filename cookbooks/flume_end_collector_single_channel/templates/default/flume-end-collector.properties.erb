@@ -444,6 +444,17 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_pek1 = 120
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_pek1 = 120
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_pek1 = 120
 <% end %>
+<% if @colo == 'ams1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_ams1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_ams1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_ams1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_lhr1 = 120
+<% end %>
+<% if @colo == 'dfw2' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_dfw2 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_dfw2 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_dfw2 = 120
+<% end %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 <% end %>
 
