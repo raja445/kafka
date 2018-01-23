@@ -42,7 +42,7 @@ default["flume_collector"]["sinkworkerthreads"]['pek1']  = "64"
 default["flume_collector"]["sinkworkerthreads"]['dfw1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['dfw2']  = "64"
-default["flume_collector"]["sinkworkerthreads"]['ams1']  = "84"
+default["flume_collector"]["sinkworkerthreads"]['ams1']  = "104"
 
 #number of sinkworkerthreads
 default["flume_collector"]["mergesinkworkerthreads"]['pek1']  = "64"
