@@ -362,9 +362,9 @@ default["flume_collector"]["endcollector_local_retention_topics"]['ams1']  = "rr
 default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "beacon_rr_ams1_cpm_render,network_beacon_ams1_adunit,network_beacon_ams1_publisherfill,beacon_rr_ams1_default,network_beacon_adunit_interaction_ams1,beacon_rr_ams1_cpc_render,ifc_ff_ams1,non_network_click_cpc_ams1,non_network_click_cpm_ams1,network_click_cpc_ams1,network_click_cpm_ams1,network_click_invalid_ams1,click_rr_ams1,adroit_report_obj_ams1,billing_cpc_ams1,billing_cpm_ams1,billing_download_ams1,billing_download_lhr1"
 default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = "testmerge,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,adomain_meta"
 
-default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel"
+default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel ams1-to-dfw1-push-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -449,6 +449,13 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
 	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1"},
+     "ams1todfw1pushsrc" => {
+         :src_category => "ams1todfw1kafkamerge",
+         :consumer_group => "ams1-to-dfw1-kafkapush",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "ams1-to-dfw1-push-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => ""},
      "dfw2photonmergesrc" => {
          :src_category => "dfw2kafkamerge",
          :consumer_group => "dfw2-to-ams1-kafkamerge",
@@ -467,7 +474,7 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['ams1']  = ["spillable"]
-default["flume_collector"]["endcollector_merge_avroreceive_channels"]['ams1']  = ["mergespillable","photon-mergespillable-channel"]
+default["flume_collector"]["endcollector_merge_avroreceive_channels"]['ams1']  = ["mergespillable","photon-mergespillable-channel", "ams1-to-dfw1-push-channel"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['ams1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['ams1']  = ["hdfslocal-channel"]
 default["flume_collector"]["endcollector_platinum_hdfs_channels"]['ams1']  = ["platinumhdfs-channel"]
@@ -485,6 +492,10 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['ams1']  = {
 default["flume_collector"]["endcollector_merged_kafka_sinks"]['ams1']  = {
      "mergekafkasink" => {:channel => "mergespillable",:producer_id =>"flume-merge-kafka-sink"},
      "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel",:producer_id =>"flume-photonmerge-kafka-sink"},
+}
+
+default["flume_collector"]["endcollector_ams1todfw1_merged_kafka_sinks"]['ams1']  = {
+     "ams1todfw1-mergekafkasink" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['ams1']  = {
