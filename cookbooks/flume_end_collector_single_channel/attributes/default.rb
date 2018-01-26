@@ -364,7 +364,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel ams1-to-dfw1-push-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink1 ams1todfw1-mergekafkasink2 ams1todfw1-mergekafkasink3 ams1todfw1-mergekafkasink4 ams1todfw1-mergekafkasink5"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -495,7 +495,11 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['ams1']  = {
 }
 
 default["flume_collector"]["endcollector_ams1todfw1_merged_kafka_sinks"]['ams1']  = {
-     "ams1todfw1-mergekafkasink" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
+     "ams1todfw1-mergekafkasink1" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
+     "ams1todfw1-mergekafkasink2" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
+     "ams1todfw1-mergekafkasink3" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
+     "ams1todfw1-mergekafkasink4" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
+     "ams1todfw1-mergekafkasink5" => {:channel => "ams1-to-dfw1-push-channel",:producer_id =>"flume-ams1todfw1merge-kafka-sink"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['ams1']  = {
