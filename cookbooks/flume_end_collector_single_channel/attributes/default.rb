@@ -194,10 +194,6 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw1']  = {
      "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel",:producer_id =>"flume-photonmerge-kafka-sink"},
 }
 
-default["flume_collector"]["endcollector_merged_kafka_sinks"]['ams1']  = {
-     "dfw1-to-ams1-kafkamerge-sink" => {:channel => "dfw1-to-ams1-kafkamerge",:producer_id =>"flume-merge-kafka-sink"},
-}
-
 default["flume_collector"]["endcollector_dfw1toams1_merged_kafka_sinks"]['dfw1']  = {
      "dfw1-to-ams1-kafkamerge-sink1" => {:channel => "dfw1-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw1toams1merge-kafka-sink"},
      "dfw1-to-ams1-kafkamerge-sink2" => {:channel => "dfw1-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw1toams1merge-kafka-sink"},
