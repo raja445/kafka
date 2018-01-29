@@ -359,6 +359,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
 <% end %>
 
+<% if @colo == 'ams1' -%>
 <% @ams1todfw1merged_kafka_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKafkaSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
@@ -379,6 +380,7 @@ end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = oxfl4001.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
+<% end %>
 <% end %>
 
 <% @platinum_hdfs_sinks.each do |sink, details| %>
