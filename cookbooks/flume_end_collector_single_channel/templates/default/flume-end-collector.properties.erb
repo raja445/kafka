@@ -141,7 +141,7 @@ end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
 <% end -%>
 
-<% if details[:'src_category'] == 'dfw1toams1kafkamerge' -%>
+<% if details[:'src_category'] == 'dfw1ams1kafkamerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
 end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
