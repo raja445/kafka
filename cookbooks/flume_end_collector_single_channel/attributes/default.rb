@@ -151,7 +151,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "dfw1-to-ams1-kafkamerge-channel",
          :batchSize => 500,
-         :'kafka.topics' => "photon_appd_flat_activity_ams1,billing_cpm_ams1"},
+         :'kafka.topics' => "photon_appd_flat_activity_ams1,billing_cpm_ams1,network_activity_ams1"},
      "ams1photonmergesrc" => {
          :src_category => "ams1kafkamerge",
          :consumer_group => "ams1-to-dfw1-kafkamerge",
@@ -230,9 +230,10 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw2']  = "be
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw2']  = "testmerge,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,adroit_attribution_stats,adomain_meta"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel"
+default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel dfw2-to-ams1-kafkamerge-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink hdfslocal-sink1 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink"
+default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink hdfslocal-sink1 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink dfw2-to-ams1-kafkamerge-sink1 dfw2-to-ams1-kafkamerge-sink2 dfw2-to-ams1-kafkamerge-sink3 dfw2-to-ams1-kafkamerge-sink4 dfw2-to-ams1-kafkamerge-sink5"
+
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw2']  = {
      "avrosrc" => {
@@ -303,6 +304,13 @@ default["flume_collector"]["endcollector_sources"]['dfw2']  = {
          :channels => "mergespillable",
          :batchSize => 500,
 	 :'kafka.topics' => "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_dfw2,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2"},
+     "dfw2-to-ams1-kafkamergesrc" => {
+         :src_category => "dfw2ams1kafkamerge",
+         :consumer_group => "dfw2-to-ams1-kafkamerge",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "dfw2-to-ams1-kafkamerge-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "network_activity_ams1"},
      "dfw2kafkamergesrc" => {
          :src_category => "dfw2kafkamerge",
          :consumer_group => "dfw2-to-dfw2-kafkamerge",
@@ -335,7 +343,7 @@ default["flume_collector"]["endcollector_sources"]['dfw2']  = {
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['dfw2']  = ["spillable"]
-default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw2']  = ["mergespillable","photon-mergespillable-channel"]
+default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw2']  = ["mergespillable","photon-mergespillable-channel","dfw2-to-ams1-kafkamerge-channel"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw2']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw2']  = ["hdfslocal-channel"]
 default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw2']  = ["platinumhdfs-channel"]
@@ -350,6 +358,14 @@ default["flume_collector"]["endcollector_normal_kafka_sinks"]['dfw2']  = {
 default["flume_collector"]["endcollector_merged_kafka_sinks"]['dfw2']  = {
      "mergekafkasink" => {:channel => "mergespillable",:producer_id =>"flume-merge-kafka-sink"},
      "photon-mergekafkasink" => {:channel => "photon-mergespillable-channel",:producer_id =>"flume-photonmerge-kafka-sink"},
+}
+
+default["flume_collector"]["endcollector_dfw2toams1_merged_kafka_sinks"]['dfw2']  = {
+     "dfw2-to-ams1-kafkamerge-sink1" => {:channel => "dfw2-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw2toams1merge-kafka-sink"},
+     "dfw2-to-ams1-kafkamerge-sink2" => {:channel => "dfw2-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw2toams1merge-kafka-sink"},
+     "dfw2-to-ams1-kafkamerge-sink3" => {:channel => "dfw2-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw2toams1merge-kafka-sink"},
+     "dfw2-to-ams1-kafkamerge-sink4" => {:channel => "dfw2-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw2toams1merge-kafka-sink"},
+     "dfw2-to-ams1-kafkamerge-sink5" => {:channel => "dfw2-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw2toams1merge-kafka-sink"},
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw2']  = {
@@ -463,7 +479,7 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_optout_ams1"},
+	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_optout_ams1"},
      "ams1todfw1pushsrc" => {
          :src_category => "ams1todfw1kafkamerge",
          :consumer_group => "ams1-to-dfw1-kafkapush",
@@ -477,7 +493,7 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1"},
+	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1"},
      "pek1photonmergesrc" => {
          :src_category => "pek1kafkamerge",
          :consumer_group => "pek1-to-ams1-kafkamerge",
