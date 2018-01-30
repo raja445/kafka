@@ -50,8 +50,10 @@ default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
 default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
+default["kafka"]["server.properties"]["zookeeper.session.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.10.2'
 default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
+default["kafka"]["server.properties"]["offsets.retention.minutes"] = 3060
 
 #------------Kerberos Related Changes------------------
 
@@ -78,7 +80,7 @@ default["kafka"]["kerberos"]["zk_krb5_properties"]["storeKey"] = "true"
 default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka'
 
 # SASL_PLAINTEXT://host.name:port if you leave host.name empty it will bind to 0.0.0.0
-default["kafka"]["server.properties"]["listeners"] = 'SASL_PLAINTEXT://:9092'
+default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://:9092,SASL_PLAINTEXT://:9093'
 
 # Kafka brokers to authenticate each other using SASL
 default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
