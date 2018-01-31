@@ -20,14 +20,26 @@ default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kaf
 default['kafkadisks']['mounts']="/data/d1/kafka,/data/d2/kafka,/data/d3/kafka,/data/d4/kafka,/data/d5/kafka,/data/d6/kafka"
 # These are required to be supplied by the consumer so setting to nil
 
+default["kafka"]["brokers"]["dfw1"] = ["oxkf4001.grid.dfw1.inmobi.com","oxkf4002.grid.dfw1.inmobi.com","oxkf4003.grid.dfw1.inmobi.com","oxkf4008.grid.dfw1.inmobi.com","oxkf4009.grid.dfw1.inmobi.com","oxkf4010.grid.dfw1.inmobi.com","oxkf4011.grid.dfw1.inmobi.com","oxkf4012.grid.dfw1.inmobi.com","oxkf4013.grid.dfw1.inmobi.com","oxkf4014.grid.dfw1.inmobi.com","oxkf4015.grid.dfw1.inmobi.com","oxkf4016.grid.dfw1.inmobi.com","oxkf4017.grid.dfw1.inmobi.com","oxkf4018.grid.dfw1.inmobi.com","oxkf4019.grid.dfw1.inmobi.com","oxkf4020.grid.dfw1.inmobi.com","oxkf4021.grid.dfw1.inmobi.com","oxkf4022.grid.dfw1.inmobi.com","oxkf4023.grid.dfw1.inmobi.com","oxkf4024.grid.dfw1.inmobi.com","oxkf4025.grid.dfw1.inmobi.com","oxkf4026.grid.dfw1.inmobi.com","oxkf4027.grid.dfw1.inmobi.com","oxkf4028.grid.dfw1.inmobi.com","oxkf4029.grid.dfw1.inmobi.com","oxkf4030.grid.dfw1.inmobi.com","oxkf4031.grid.dfw1.inmobi.com","oxkf4032.grid.dfw1.inmobi.com","oxkf4033.grid.dfw1.inmobi.com","oxkf4034.grid.dfw1.inmobi.com"]
+default["kafka"]["zookeepers"]["dfw1"] = ["kafka-zookeeper-1.grid.dfw1.inmobi.com:2181","kafka-zookeeper-2.grid.dfw1.inmobi.com:2181","kafka-zookeeper-3.grid.dfw1.inmobi.com:2181","kafka-zookeeper-4.grid.dfw1.inmobi.com:2181","kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"]
+default['kafka']['mrelay']['dfw1'] = "metrics-relay.grid.dfw1.inmobi.com"
 
-default["kafka"]["brokers"]["ev1"] = ["rmanager1001.grid.ev1.inmobi.com","rmanager1002.grid.ev1.inmobi.com","datanode1004.grid.ev1.inmobi.com"]
-default["kafka"]["zookeepers"]["ev1"] = ["datanode1005.grid.ev1.inmobi.com:2181","datanode1006.grid.ev1.inmobi.com:2181","datanode1007.grid.ev1.inmobi.com:2181"]
-default['kafka']['mrelay']['ev1'] = "datanode1004.grid.ev1.inmobi.com"
+default["kafka"]["brokers"]["pek1"] = ["pykf4001.grid.pek1.inmobi.com","pykf4002.grid.pek1.inmobi.com","pykf4003.grid.pek1.inmobi.com","pykf4004.grid.pek1.inmobi.com", "pykf4005.grid.pek1.inmobi.com","pykf4006.grid.pek1.inmobi.com","pykf4007.grid.pek1.inmobi.com","pykf4008.grid.pek1.inmobi.com","pykf4009.grid.pek1.inmobi.com","pykf4010.grid.pek1.inmobi.com"]
+default["kafka"]["zookeepers"]["pek1"] = ["kafka-zookeeper-1.grid.pek1.inmobi.com:2181","kafka-zookeeper-2.grid.pek1.inmobi.com:2181","kafka-zookeeper-3.grid.pek1.inmobi.com:2181","kafka-zookeeper-4.grid.pek1.inmobi.com:2181","kafka-zookeeper-5.grid.pek1.inmobi.com:2181"]
+default['kafka']['mrelay']['pek1'] = "metrics-relay.grid.pek1.inmobi.com"
+
+default["kafka"]["brokers"]["dfw2"] = ["gakf4001.grid.dfw2.inmobi.com","gakf4002.grid.dfw2.inmobi.com","gakf4003.grid.dfw2.inmobi.com","gakf4004.grid.dfw2.inmobi.com","gakf4005.grid.dfw2.inmobi.com","gakf4006.grid.dfw2.inmobi.com","gakf4007.grid.dfw2.inmobi.com","gakf4008.grid.dfw2.inmobi.com","gakf4009.grid.dfw2.inmobi.com","gakf4010.grid.dfw2.inmobi.com"]
+default["kafka"]["zookeepers"]["dfw2"] = ["kafka-zookeeper-1.grid.dfw2.inmobi.com:2181","kafka-zookeeper-2.grid.dfw2.inmobi.com:2181","kafka-zookeeper-3.grid.dfw2.inmobi.com:2181","kafka-zookeeper-4.grid.dfw2.inmobi.com:2181","kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"]
+default['kafka']['mrelay']['dfw2'] = "metrics-relay.grid.dfw2.inmobi.com"
+
+default["kafka"]["brokers"]["ams1"] = ["azkf4001.grid.ams1.inmobi.com","azkf4002.grid.ams1.inmobi.com","azkf4003.grid.ams1.inmobi.com","azkf4004.grid.ams1.inmobi.com","azkf4005.grid.ams1.inmobi.com","azkf4006.grid.ams1.inmobi.com","azkf4007.grid.ams1.inmobi.com","azkf4008.grid.ams1.inmobi.com","azkf4009.grid.ams1.inmobi.com","azkf4010.grid.ams1.inmobi.com","azkf4011.grid.ams1.inmobi.com","azkf4012.grid.ams1.inmobi.com","azkf4013.grid.ams1.inmobi.com","azkf4014.grid.ams1.inmobi.com","azkf4015.grid.ams1.inmobi.com","azkf4016.grid.ams1.inmobi.com","azkf4017.grid.ams1.inmobi.com","azkf4018.grid.ams1.inmobi.com"]
+default["kafka"]["zookeepers"]["ams1"] = ["kafka-zookeeper-1.grid.ams1.inmobi.com:2181","kafka-zookeeper-2.grid.ams1.inmobi.com:2181","kafka-zookeeper-3.grid.ams1.inmobi.com:2181","kafka-zookeeper-4.grid.ams1.inmobi.com:2181","kafka-zookeeper-5.grid.ams1.inmobi.com:2181"]
+default['kafka']['mrelay']['ams1'] = "metrics-relay.grid.ams1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
-default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx4G -Xms4G\""
+default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx8G -Xms8G\""
+default["kafka"]["env_vars"]["KAFKA_OPTS"] = "\"-Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_server_jaas.conf\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:MaxDirectMemorySize=2G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
