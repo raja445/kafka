@@ -38,7 +38,8 @@ default['kafka']['mrelay']['ams1'] = "metrics-relay.grid.ams1.inmobi.com"
 
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
-default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx8G -Xms8G -Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_server_jaas.conf\""
+default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx8G -Xms8G\""
+default["kafka"]["env_vars"]["KAFKA_OPTS"] = "\"-Djava.security.auth.login.config=/opt/inmobi/kafka/config/kafka_server_jaas.conf\""
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:MaxDirectMemorySize=2G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
