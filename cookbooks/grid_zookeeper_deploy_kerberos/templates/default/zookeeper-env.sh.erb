@@ -17,3 +17,4 @@ export ZOO_LOG_DIR=<%= @log_dir %>
 ts=$(date '+%d-%m-%Y-%H-%M')
 export SERVER_JVMFLAGS="$SERVER_JVMFLAGS -Xmx2048m -Xms2048m -XX:MaxDirectMemorySize=256m -XX:+UseG1GC -Xloggc:$ZOO_LOG_DIR/gc-zookeeper-$ts.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=20 -XX:GCLogFileSize=128M -XX:ErrorFile=$ZOO_LOG_DIR/zookeeper-hserr-$ts.log -XX:HeapDumpPath=$ZOO_LOG_DIR/zookeeper-heap-$ts.hprof -XX:-HeapDumpOnOutOfMemoryError"
 export SERVER_JVMFLAGS="$SERVER_JVMFLAGS -Djava.security.auth.login.config=/etc/zookeeper/conf/zookeeper-server.jaas -Dsun.security.krb5.debug=true"
+export CLIENT_JVMFLAGS ="-Djava.security.auth.login.config=/etc/zookeeper/conf/zookeeper-client.jaas"

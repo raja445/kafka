@@ -40,6 +40,9 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-server.jaa
   owner "root"
   group "root"
   mode "0644"
+  variables(
+    :fqdn => node['fqdn']
+  )
 end
 
 template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-client.jaas" do
@@ -47,6 +50,9 @@ template "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/zookeeper-client.jaa
   owner "root"
   group "root"
   mode "0644"
+  variables(
+    :fqdn => node['fqdn']
+  )
 end
 
 cookbook_file "/usr/hdp/#{node['hdp']['version']}/zookeeper/conf/log4j.properties" do
