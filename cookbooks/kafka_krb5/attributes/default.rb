@@ -169,8 +169,5 @@ default["kafka"]["offset_monitor"]["db_name"] = "offset_monitor"
 default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
-
-
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'ev1' => 'ev1-xenon'}
-
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'lhr1' => 'LHR1_Emerald', 'pek1' => 'pek1-pyrite', 'dfw2' => 'dfw2-garnet', 'ams1' => 'ams1-azurite'}
