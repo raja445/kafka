@@ -71,7 +71,7 @@ default["kafka"]["server.properties"]["offsets.retention.minutes"] = 3060
 
 default["kafka"]["kerberos"]["enable"] = "true"
 default["kafka"]["kerberos"]["keytab"] = "/etc/security/keytabs/kafka.service.keytab"
-default["kafka"]["kerberos"]["realm"] = "INMOBI.COM"
+default["kafka"]["kerberos"]["realm"] = "PROD.INMOBI.COM"
 default["kafka"]["kerberos"]["principal"] = "#{node["kafka"]["user"]}/#{node["fqdn"]}@#{node["kafka"]["kerberos"]["realm"]}"
 
 # Jaas configuration parameters for KafkaServer
@@ -92,7 +92,7 @@ default["kafka"]["kerberos"]["zk_krb5_properties"]["storeKey"] = "true"
 default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka'
 
 # SASL_PLAINTEXT://host.name:port if you leave host.name empty it will bind to 0.0.0.0
-default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://:9092,SASL_PLAINTEXT://:9093'
+default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://0.0.0.0:9092,SASL_PLAINTEXT://0.0.0.0:9093'
 
 # Kafka brokers to authenticate each other using SASL
 default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
