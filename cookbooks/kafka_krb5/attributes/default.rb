@@ -113,11 +113,11 @@ default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security
 # Kafka acls are defined in the general format of "Principal P is [Allowed/Denied] Operation O From Host H On Resource R". 
 # By default, if a Resource R has no associated acls, no one other than super users is allowed to access R
 # This is to be overrriden below.
-default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
+#default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
 
 # translation from principal to user name has to be configured, which is defined as follows.
 default["kafka"]["server.properties"]["principal.to.local.class"] = 'kafka.security.auth.KerberosPrincipalToLocal'
-default["kafka"]["server.properties"]["sasl.kerberos.principal.to.local.rules"] = 'RULE:[1:$1@$0](ambari-qa-xenon@INMOBI.COM)s/.*/ambari-qa/,RULE:[1:$1@$0](hdfs-xenon@INMOBI.COM)s/.*/hdfs/,RULE:[1:$1@$0](.*@INMOBI.COM)s/@.*//, RULE:[2:$1@$0](amshbase@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](amszk@INMOBI.COM)s/.*/ams/,RULE:[2:$1@$0](dn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](jhs@INMOBI.COM)s/.*/mapred/,RULE:[2:$1@$0](jn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](nm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](nn@INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](oozie@INMOBI.COM)s/.*/oozie/,RULE:[2:$1@$0](rm@INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](yarn@INMOBI.COM)s/.*/yarn/,DEFAULT'
+default["kafka"]["server.properties"]["sasl.kerberos.principal.to.local.rules"] = 'RULE:[1:$1@$0](ambari-qa@PROD.INMOBI.COM)s/.*/ambari-qa/,RULE:[1:$1@$0](hdfs@PROD.INMOBI.COM)s/.*/hdfs/,RULE:[1:$1@$0](.*@PROD.INMOBI.COM)s/@.*//, RULE:[2:$1@$0](dn@PROD.INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](jhs@PROD.INMOBI.COM)s/.*/mapred/,RULE:[2:$1@$0](jn@PROD.INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](nm@PROD.INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](nn@PROD.INMOBI.COM)s/.*/hdfs/,RULE:[2:$1@$0](oozie@PROD.INMOBI.COM)s/.*/oozie/,RULE:[3:$1@$0](rm@PROD.INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](yarn@PROD.INMOBI.COM)s/.*/yarn/,RULE:[2:$1@$0](kafka@PROD.INMOBI.COM)s/.*/kafka/,DEFAULT'
 
 # Consumber Properties files to enable SASL 
 default["kafka"]["consumer.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
