@@ -243,7 +243,7 @@ if node["kafka"]["kerberos"]["enable"]
   raise "Kerberos realm or principal must be configured" if node["kafka"]["kerberos"]["principal"].end_with? '@'
 
   # Create kafka_jaas.conf fie.
-  template "#{node["kafka"]["install_dir"]}/config/kafka_jaas.conf" do
+  template "#{node["kafka"]["install_dir"]}/config/kafka_server_jaas.conf" do
      source "kafka_jaas.conf.erb"
      owner node["kafka"]["user"]
      group node["kafka"]["group"]
