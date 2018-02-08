@@ -537,6 +537,7 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['ams1']  = {
      "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
      "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
+     "hdfslocal-sink4" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['ams1']  = {
