@@ -140,12 +140,12 @@ audit-collector.sinks.<%= "#{sink}" %>.type = com.apache.flume.sink.druid.DruidS
 audit-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 audit-collector.sinks.<%= "#{sink}" %>.indexService = overlord
 audit-collector.sinks.<%= "#{sink}" %>.discoveryPath = druid/discovery
-audit-collector.sinks.<%= "#{sink}" %>.dimensions = timeinterval,hostname,tier,topic,cluster,totalevents
+audit-collector.sinks.<%= "#{sink}" %>.dimensions = timeinterval,hostname,tier,topic,cluster
 audit-collector.sinks.<%= "#{sink}" %>.timestampField = timeinterval
 audit-collector.sinks.<%= "#{sink}" %>.queryGranularity = minute
 audit-collector.sinks.<%= "#{sink}" %>.dataSource = conduitaudit
 audit-collector.sinks.<%= "#{sink}" %>.batchSize = 500
-audit-collector.sinks.<%= "#{sink}" %>.aggregators = sent,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c15,c30,c60,c120,c240,c600
+audit-collector.sinks.<%= "#{sink}" %>.aggregators = sent,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c15,c30,c60,c120,c240,c600,totalevents
 audit-collector.sinks.<%= "#{sink}" %>.zookeeperLocation = <%= details[:zookeeper] %>
 audit-collector.sinks.<%= "#{sink}" %>.period = PT22H
 audit-collector.sinks.<%= "#{sink}" %>.segmentGranularity = DAY
