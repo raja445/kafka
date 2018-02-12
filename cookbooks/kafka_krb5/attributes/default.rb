@@ -7,7 +7,8 @@ default["kafka"]["group"] = "kafka"
 
 default["kafka"]["scala_version"] = "2.11"
 default["kafka"]["version"] = "0.10.2.1"
-default["kafka"]["download_url"] = "http://www-us.apache.org/dist/kafka"
+#default["kafka"]["download_url"] = "http://www-us.apache.org/dist/kafka"
+default["kafka"]["download_url"] = "http://plgw4001.grid.dfw1.inmobi.com/kafka"
 
 default["kafka"]["base_dir"]  = "/opt/inmobi"
 default["kafka"]["log_dir"] = "/var/log/kafka"
