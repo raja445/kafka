@@ -6,7 +6,7 @@ default["kafka"]["user"] = "kafka"
 default["kafka"]["group"] = "kafka"
 
 default["kafka"]["scala_version"] = "2.12"
-default["kafka"]["version"] = "0.10.2.1"
+default["kafka"]["version"] = "0.11.0.2"
 #default["kafka"]["download_url"] = "http://www-us.apache.org/dist/kafka"
 default["kafka"]["download_url"] = "http://plgw4001.grid.dfw1.inmobi.com/kafka"
 
@@ -68,7 +68,7 @@ default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
 default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["zookeeper.session.timeout.ms"] = 20000
-default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.10.2'
+default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.11.0'
 default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
 default["kafka"]["server.properties"]["offsets.retention.minutes"] = 3060
 
