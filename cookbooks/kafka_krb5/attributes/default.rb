@@ -97,7 +97,7 @@ default["kafka"]["kerberos"]["zk_krb5_properties"]["storeKey"] = "true"
 default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka'
 
 # SASL_PLAINTEXT://host.name:port if you leave host.name empty it will bind to 0.0.0.0
-default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://0.0.0.0:9092,SASL_PLAINTEXT://0.0.0.0:9093'
+default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://:9092,SASL_PLAINTEXT://:9093'
 
 # Kafka brokers to authenticate each other using SASL
 default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
@@ -114,6 +114,8 @@ default["kafka"]["server.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
 
 # authorizer class that should be used for authorization
 default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security.auth.SimpleAclAuthorizer'
+default["kafka"]["server.properties"]["super.users"] = 'User:kafka'
+default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
 
 # Kafka acls are defined in the general format of "Principal P is [Allowed/Denied] Operation O From Host H On Resource R". 
 # By default, if a Resource R has no associated acls, no one other than super users is allowed to access R
