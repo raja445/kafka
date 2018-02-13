@@ -100,11 +100,11 @@ default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka'
 default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://:9092,SASL_PLAINTEXT://:9093'
 
 # Kafka brokers to authenticate each other using SASL
-default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
+####default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
 
 # Kafka brokers to authenticate each other using SASL
-default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
-default["kafka"]["server.properties"]["sasl.mechanism.inter.broker.protocol"] = 'GSSAPI'
+####default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
+####default["kafka"]["server.properties"]["sasl.mechanism.inter.broker.protocol"] = 'GSSAPI'
 
 # SASL mechanisms enabled in the Kafka server
 default["kafka"]["server.properties"]["sasl.enabled.mechanisms"] = 'GSSAPI'
