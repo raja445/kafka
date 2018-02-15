@@ -2,6 +2,8 @@
 # Cookbook Name:: kafka
 # Attributes:: default
 
+cluster_colo = node['domain'].split(".")[-3]
+
 default["kafka"]["user"] = "kafka"
 default["kafka"]["group"] = "kafka"
 
@@ -65,7 +67,12 @@ default["kafka"]["server.properties"]["num.network.threads"] = 12
 default["kafka"]["server.properties"]["delete.topic.enable"] = false
 default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
-default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
+if cluster_colo == 'ams1'
+  default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 72
+else
+  default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
+end
+
 default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["zookeeper.session.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.10.2'
