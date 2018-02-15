@@ -2,6 +2,8 @@
 # Cookbook Name:: cerner_kafka
 # Recipe:: default
 
+cluster_colo1 = node['domain'].split(".")[-3]
+
 include_recipe 'ohai'
 ohai "reload" do
   action :reload
@@ -64,7 +66,11 @@ ruby_block 'assert broker and zookeeper lists are correct' do # ~FC014
 end
 
 node.default['kafka']['server.properties']['log.dir'] = node['kafkadisks']['mounts'].strip
-node.default['kafka']['server.properties']['num.io.threads'] = node['kafkadisks']['mounts'].split(",").length()*4
+if cluster_colo1 == 'ams1'
+  node.default['kafka']['server.properties']['num.io.threads'] = node['kafkadisks']['mounts'].split(",").length()*24
+else
+  node.default['kafka']['server.properties']['num.io.threads'] = node['kafkadisks']['mounts'].split(",").length()*4
+end
 
 # Set all default attributes that are built from other attributes
 node.default["kafka"]["install_dir"] = "#{node["kafka"]["base_dir"]}/kafka"
