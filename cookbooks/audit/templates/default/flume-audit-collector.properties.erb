@@ -42,7 +42,8 @@ audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collecto
 audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:'batchSize'] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @audit_consumer_gpsize %>
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
+audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
 <% end -%>
 <% if details[:'src_category'] == 'auditscribe' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -63,22 +64,8 @@ audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collecto
 audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-#audit-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
-<% end -%>
-<% if details[:'src_category'] == 'lhr1kafkamerge' -%>
-audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-audit-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["audit_collector"]["kafka_zookeeper"]['lhr1'] %>
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-audit-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["audit_collector"]["kafka_brokers"]['lhr1'] %>
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-#audit-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
+audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
 <% end -%>
 <% if details[:'src_category'] == 'dfw2kafkamerge' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -91,8 +78,8 @@ audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collecto
 audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-#audit-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
+audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
 <% end -%>
 <% if details[:'src_category'] == 'ams1kafkamerge' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -105,8 +92,8 @@ audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collecto
 audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-audit-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-#audit-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset - smallest
+audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
+audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
 <% end -%>
 <% end -%>
 
