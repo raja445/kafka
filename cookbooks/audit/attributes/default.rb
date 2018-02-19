@@ -98,15 +98,6 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :'selector_optional' => "druidlocal-channel",
          :channels => "druidlocal-channel hdfslocal-channel",
          :batchSize => 500,
-         :'kafka.topics' => "_audit"},
-     "lhr1kafkamergesrc" => {
-         :src_category => "lhr1kafkamerge",
-         :consumer_group => "audit-service",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel",
-         :batchSize => 500,
          :'kafka.topics' => "_audit"}
        }
 
