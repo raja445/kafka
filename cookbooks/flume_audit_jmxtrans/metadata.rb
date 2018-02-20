@@ -1,4 +1,4 @@
-name              "flume_jmxtrans"
+name              "flume_audit_jmxtrans"
 maintainer        "gridops"
 maintainer_email  "gridops@imobi.com"
 description       'Installs and configure jmxtrans for flume'
