@@ -1,0 +1,150 @@
+{
+ "servers": [
+  {
+   "numQueryThreads": 8,
+   "alias": "oxfl4001",
+   "alias": "<%= @host %>",
+   "host": "<%= @fqdn %>",
+   "queries": [
+    {
+     "resultAlias": "audit.flume.sink",
+     "obj": "org.apache.flume.sink:type=*,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "audit.flume.gc",
+     "obj": "java.lang:type=GarbageCollector,name=*",
+     "attr": [
+      "CollectionCount",
+      "CollectionTime"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "audit.flume.source",
+     "obj": "org.apache.flume.source:type=*,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "audit.flume.other",
+     "obj": "org.apache.flume.other:type=audit,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "audit.flume.interceptor",
+     "obj": "org.apache.flume.interceptor:type=*",
+     "attr": [
+      "EventReceivedCount",
+      "EventAcceptedCount",
+      "EventRejectedCount"
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "audit.kafka.consumer",
+     "obj": "kafka.consumer:type=consumer-coordinator-metrics,client-id=*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "client-id"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    },
+    {
+     "resultAlias": "audit.flume.channel",
+     "obj": "org.apache.flume.channel:type=*,*",
+     "attr": [
+     ],
+     "outputWriters": [
+      {
+       "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+       "settings": {
+        "typeNames": [
+         "name","type"
+        ],
+        "host": "<%= @graphite_host %>",
+        "port": 2020,
+        "rootPrefix": "prod.<%= @colo %>.grid.<%= @cluster_name %>.app"
+       }
+      }
+     ]
+    }
+  ]
+ }
+ ]
+}
