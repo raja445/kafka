@@ -4,8 +4,8 @@ default['kafkaMirroring']['instanceid']['lhr1']={ "erkf4012" => 1, "erkf4014" =>
 default['kafkaMirroring']['instanceid']['pek1']={ "pykm4002" => 1, "pykm4003" => 2}
 default['kafkaMirroring']['instanceid']['dfw2']={ "gakm4001" => 1}
 default['kafkaMirroring']['instanceid']['ams1']={ "azfl4009" => 1, "azfl4010" => 2, "azfl4011" => 3}
-default['kafkaMirroring']['version']= '0.6.13'
-default['kafkaMirroringConfig']['version']= '0.6.13'
+default['kafkaMirroring']['version']= '0.6.23'
+default['kafkaMirroringConfig']['version']= '0.6.23'
 default['kafkaMirroring']['staging_dir']= '/data/kafka/staging'
 default['kafkaMirroringConfig']['prodconf']= '/opt/inmobi/config/KafkaMirroringConfig/prod/'
 default['kafkaMirroringConfig']['confighome']= '/opt/inmobi/config/KafkaMirroringConfig/'
