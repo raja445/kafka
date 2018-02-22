@@ -219,7 +219,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "ph
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "mergespillable hdfsmerge-channel hdfslocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 "
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "hdfslocalsrc" => {
@@ -278,11 +278,10 @@ default["flume_collector"]["endcollector_merged_kafka_sinks"]['ams1']  = {
 }
 
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['ams1']  = {
-     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
-     "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
-     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
-     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
-     "hdfslocal-sink4" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
+     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
+     "hdfslocal-sink4" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['ams1']  = {
