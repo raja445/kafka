@@ -269,21 +269,6 @@
       }
     },
     {
-      "streamName": "AdUnitEnhancedBeaconEgretTest",
-      "source": [
-        {
-          "topic": "AdUnitEnhancedBeacon_EgretTest",
-          "zookeeper": "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
-        }
-      ],
-      "hdfsDestination": {
-        "basePath": "kafka/data",
-        "hdfsUrl": "hdfs://garnet:8020",
-        "compression": "gz",
-        "retention": "48"
-      }
-    },
-    {
             "hdfsDestination": {
                 "basePath": "kafka/data",
                 "compression": "gz",
