@@ -63,9 +63,11 @@ default["flume_collector"]["avrosinkworkerthreads"]['ams1']  = "16"
 default["flume_collector"]["endcollector_local_retention_topics"]['dfw1']  = "profile_delete-appd,attribute_change-appd,attribute_change-brand,attribute_change-core,attribute_change-ifc,profile_delete-brand,profile_delete-core,profile_delete-ifc,custom_type_record_update-appduserclickhistory,custom_type_record_update-appduserrenderhistory,custom_type_record_update-appduserscore,custom_type_record_update-branduseractivityhistory,custom_type_record_update-ifc,custom_type_record_update-appdlookaliketype,custom_type_record_update-core,custom_type_record_update-ifcinorg,flat_activity_add-appdcustomactivity,flat_activity_add-appddownloadactivity,flat_activity_add-appdpurchaseactivity,flat_activity_add-appds2scustomsegmentactivity,flat_activity_add-coredownloadactivity,flat_activity_add-ifcorganicactivity,nested_activity_add-appd,nested_activity_add-cas,nested_activity_add-ifc_compressed,nested_activity_add-network,adroit_report_obj_dfw1,appd_attribute_errors,appd-debug,brand_attribute_dfw1_dfw1,ifc_photon_nonenriched_pb_dfw1,nested_activity_add-ifc,nested_activity_add-ifcuseractivity,network_activity_dfw1_dfw1,network_attribute_raw_dfw1,network_beacon_dfw1_dfw1,ttd-beacon,ttd-request,usermeta_change,wadogorr,fdsDfw1,georrcore,georrmetrics,napp,perfRR,supplyRR,brand_attributes,network_attribute_dfw1_dfw1"
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel"
+default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel"
+
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfslocalsrc" => {
@@ -82,6 +84,13 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "hdfsmerge-channel",
          :batchSize => 500,
          :'kafka.topics' => "merge_photon_flume_test"},
+     "hdfsplatinumsrc" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "dfw1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "photon_flume_test"},
      "dfw1kafkamergesrc" => {
          :src_category => "dfw1kafkamerge",
          :consumer_group => "dfw1-to-dfw1-kafkamerge",
@@ -116,6 +125,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw1']  = ["hdfslocal-channel"]
+default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw1']  = ["platinumhdfs-channel”]
 
 #Configure the sinks for the Flume Collector
 
@@ -131,6 +141,12 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
      "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"onyx"}
+}
+
+default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw1']  = {
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"}
 }
 
 ######################################################### End Of DFW1 ###################################################################
