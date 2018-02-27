@@ -65,7 +65,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "ph
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel evenhublocal-channel"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel"
 
 default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 eventhublocal-sink1"
 #Configure the sources for the Flume Collector
