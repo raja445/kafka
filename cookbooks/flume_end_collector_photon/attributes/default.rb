@@ -65,9 +65,9 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "ph
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel evenhublocal-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 eventhublocal-sink1"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfslocalsrc" => {
@@ -118,13 +118,21 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "mergespillable",
          :batchSize => 500,
-	 :'kafka.topics' => "photon_flume_test"}
+	 :'kafka.topics' => "photon_flume_test"},
+     "eventhublocalsrc" => {
+         :src_category => "dfw1eventhublocal",
+         :consumer_group => "dfw1eventhublocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_tpce_purchase_summary"}
        }
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw1']  = ["hdfslocal-channel"]
+default["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1']  = ["eventhublocal-channel"]
 default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw1']  = ["platinumhdfs-channel"]
 
 #Configure the sinks for the Flume Collector
@@ -137,6 +145,10 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
      "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
      "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
+}
+
+default["flume_collector"]["endcollector_local_eventhub_sinks"]['dfw1']  = {
+     "eventhublocal-sink1" => {:channel => "eventhublocal-channel",:cluster =>"onyx"},
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
