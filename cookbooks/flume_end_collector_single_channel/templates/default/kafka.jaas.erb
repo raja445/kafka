@@ -2,7 +2,7 @@ KafkaClient {
     com.sun.security.auth.module.Krb5LoginModule required
     useKeyTab=true
     storeKey=true
-    keyTab="/etc/security/keytabs/flume-service.keytab"
+    keyTab="/etc/security/keytabs/flume.service.keytab"
     principal="flume/<%= node['fqdn'] %>@PROD.INMOBI.COM";
 };
 
@@ -10,6 +10,6 @@ Client {
     com.sun.security.auth.module.Krb5LoginModule required
     useKeyTab=true
     storeKey=true
-    keyTab="/etc/security/keytabs/flume-service.keytab"
+    keyTab="/etc/security/keytabs/flume.service.keytab"
     principal="flume/<%= node['fqdn'] %>@PROD.INMOBI.COM";
 };
