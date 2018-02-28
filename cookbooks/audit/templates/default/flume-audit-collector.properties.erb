@@ -107,7 +107,7 @@ audit-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:clu
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
-audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 512000000
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
 audit-collector.sinks.<%= "#{sink}" %>.audit.enable = false
@@ -120,7 +120,7 @@ audit-collector.sinks.<%= "#{sink}" %>.retention.topics = _audit
 audit-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 audit-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 audit-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
-audit-collector.sinks.<%= "#{sink}" %>.retention.topics._audit = 240
+audit-collector.sinks.<%= "#{sink}" %>.retention.topics._audit = 120
 <% end %>
 <% @druid_sinks.each do |sink, details| %>
 audit-collector.sinks.<%= "#{sink}" %>.type = com.apache.flume.sink.druid.DruidSink
