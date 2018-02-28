@@ -87,6 +87,10 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'dfw1kafkamerge' -%>
@@ -113,6 +117,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'ams1todfw1kafkamerge' -%>
@@ -139,6 +147,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'dfw1ams1kafkamerge' -%>
@@ -165,6 +177,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'dfw2ams1kafkamerge' -%>
@@ -191,6 +207,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'dfw2kafkamerge' -%>
@@ -217,6 +237,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'ams1kafkamerge' -%>
@@ -243,6 +267,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'pek1kafkamerge' -%>
@@ -269,6 +297,10 @@ end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
 <% if details[:'src_category'] == 'hdfslocal' -%>
@@ -291,6 +323,10 @@ end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
 end-collector.sources.<%= "#{src}" %>.tier = lbs_src
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% if details[:'src_category'] == 'hdfsmerge' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -315,6 +351,10 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% if details[:'src_category'] == 'platinumhdfs' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -336,6 +376,10 @@ end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
 end-collector.sources.<%= "#{src}" %>.tier = global_merger_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% if details[:'src_category'] == 'mergetoplatinumhdfs' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -360,6 +404,10 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% end -%>
 
@@ -388,6 +436,9 @@ end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = collector_sink
+#Kerberos Conf
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
 <% end %>
 <% @merged_kafka_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKafkaSink
@@ -409,6 +460,9 @@ end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
+#Kerberos Conf
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
 <% end %>
 
 <% if @colo == 'ams1' -%>
@@ -432,6 +486,9 @@ end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
+#Kerberos Conf
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
 <% end %>
 <% end %>
 
@@ -456,6 +513,9 @@ end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
+#Kerberos Conf
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
 <% end %>
 <% end %>
 
@@ -480,6 +540,9 @@ end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
+#Kerberos Conf
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
 <% end %>
 <% end %>
 
