@@ -100,6 +100,12 @@ template "#{flumeConf}/flume-end-collector.properties" do
 
 end
 
+template "#{flumeConf}/kafka.jaas" do
+  source "kafka.jaas.erb"
+  owner "flume"
+  mode  00644
+end
+
 cookbook_file "#{flumeConf}/flume-env.sh" do
   source "flume-env.sh"
   mode "0644"
