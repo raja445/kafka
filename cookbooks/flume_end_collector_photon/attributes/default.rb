@@ -260,7 +260,7 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw2']  = {
 default["flume_collector"]["endcollector_local_retention_topics"]['ams1']  = "profile_delete-appd,attribute_change-appd,attribute_change-brand,attribute_change-core,attribute_change-ifc,profile_delete-brand,profile_delete-core,profile_delete-ifc,custom_type_record_update-appduserclickhistory,custom_type_record_update-appduserrenderhistory,custom_type_record_update-appduserscore,custom_type_record_update-branduseractivityhistory,custom_type_record_update-ifc,custom_type_record_update-appdlookaliketype,custom_type_record_update-core,custom_type_record_update-ifcinorg,flat_activity_add-appdcustomactivity,flat_activity_add-appddownloadactivity,flat_activity_add-appdpurchaseactivity,flat_activity_add-appds2scustomsegmentactivity,flat_activity_add-coredownloadactivity,flat_activity_add-ifcorganicactivity,nested_activity_add-appd,nested_activity_add-cas,nested_activity_add-ifc_compressed,nested_activity_add-network,adroit_report_obj_ams1,appd_attribute_errors,appd-debug,brand_attribute_ams1_ams1,ifc_photon_nonenriched_pb_ams1,nested_activity_add-ifc,nested_activity_add-ifcuseractivity,network_activity_ams1_ams1,network_attribute_raw_ams1,network_beacon_ams1_ams1,ttd-beacon,ttd-request,usermeta_change,wadogorr,fdsAms1,georrcore,georrmetrics,napp,perfRR,supplyRR"
 default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = "photon_flume_test"
+default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1"
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel"
 
@@ -287,7 +287,7 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfs-channel",
          :batchSize => 500,
-         :'kafka.topics' => "merge_photon_flume_test"},
+         :'kafka.topics' => "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1"},
      "dfw1kafkamergesrc" => {
          :src_category => "dfw1kafkamerge",
          :consumer_group => "dfw1-to-ams1-kafkamerge",
