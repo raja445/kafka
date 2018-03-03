@@ -44,6 +44,10 @@ audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:'batchSize'] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
 audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% if details[:'src_category'] == 'auditscribe' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -66,6 +70,10 @@ audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
 audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% if details[:'src_category'] == 'dfw2kafkamerge' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -80,6 +88,10 @@ audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
 audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% if details[:'src_category'] == 'ams1kafkamerge' -%>
 audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
@@ -94,6 +106,10 @@ audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
 audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 <% end -%>
 
