@@ -57,7 +57,7 @@ export JAVA_OPTS="$JAVA_OPTS -Dflume.root.log.level=$FLUME_ROOT_LOG_LEVEL -Dflum
 
 export HDP_VERSION=2.2.4.2-2
 export LD_LIBRARY_PATH=/usr/hdp/${HDP_VERSION}/hadoop/lib/native:/usr/hdp/${HDP_VERSION}/hadoop/lib/native/Linux-amd64-64
-export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$LD_LIBRARY_PATH -Djava.security.auth.login.config=/opt/inmobi/flume/conf/kafka.jaas"
+export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$LD_LIBRARY_PATH -Djava.security.auth.login.config=/opt/inmobi/flume-audit/conf/kafka.jaas"
 
 # Note that the Flume conf directory is always included in the classpath.
 #FLUME_CLASSPATH=""
