@@ -140,7 +140,7 @@ audit-collector.sinks.<%= "#{sink}" %>.segmentGranularity = DAY
 
 <% @druid_channels.each do |channel| %>
 audit-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-audit-collector.channels.<%= "#{channel}" %>.capacity = 50000
+audit-collector.channels.<%= "#{channel}" %>.capacity = 200000
 audit-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 audit-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
 audit-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
@@ -149,7 +149,7 @@ audit-collector.channels.<%= "#{channel}" %>.despoolWorkers = 8
 <% end %>
 <% @hdfs_channels.each do |channel| %>
 audit-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-audit-collector.channels.<%= "#{channel}" %>.capacity = 50000
+audit-collector.channels.<%= "#{channel}" %>.capacity = 200000
 audit-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
 audit-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
 audit-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 1000000
