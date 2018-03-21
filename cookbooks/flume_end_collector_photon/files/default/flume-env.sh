@@ -55,7 +55,7 @@ export JAVA_OPTS="$JAVA_OPTS -Dflume.monitoring.type=http -Dflume.monitoring.por
 # Flume logs settings.
 export JAVA_OPTS="$JAVA_OPTS -Dflume.root.log.level=$FLUME_ROOT_LOG_LEVEL -Dflume.log.dir=$FLUME_LOGS_HOME -Dflume.log.backup.dir=$FLUME_LOGS_BACKUP_HOME"
 
-export HDP_VERSION=2.2.4.2-2
+export HDP_VERSION=2.4.3.0-227
 export LD_LIBRARY_PATH=/usr/hdp/${HDP_VERSION}/hadoop/lib/native:/usr/hdp/${HDP_VERSION}/hadoop/lib/native/Linux-amd64-64
 export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$LD_LIBRARY_PATH -Djava.security.auth.login.config=/opt/inmobi/flume/conf/kafka.jaas"
 
