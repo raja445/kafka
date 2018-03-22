@@ -50,7 +50,7 @@ default["kafka"]["env_vars"]["KAFKA_OPTS"] = "\"-Djava.security.auth.login.confi
 default["kafka"]["env_vars"]["KAFKA_JVM_PERFORMANCE_OPTS"] = "\"-XX:MaxDirectMemorySize=2G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\""
 default["kafka"]["lib_jars"] = []
 
-default["kafka"]["server.properties"]["port"] = 9092
+default["kafka"]["server.properties"]["port"] = 9093
 default["kafka"]["server.properties"]["num.partitions"] = 10
 default["kafka"]["server.properties"]["default.replication.factor"] = 3
 default["kafka"]["server.properties"]["log.flush.interval.messages"] = 40000
@@ -104,7 +104,7 @@ default["kafka"]["kerberos"]["zk_krb5_properties"]["storeKey"] = "true"
 default["kafka"]["server.properties"]["sasl.kerberos.service.name"] = 'kafka'
 
 # SASL_PLAINTEXT://host.name:port if you leave host.name empty it will bind to 0.0.0.0
-default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://:9092,SASL_PLAINTEXT://:9093'
+default["kafka"]["server.properties"]["listeners"] = 'PLAINTEXT://:9099,SASL_PLAINTEXT://:9093'
 
 # Kafka brokers to authenticate each other using SASL
 ####default["kafka"]["server.properties"]["security.inter.broker.protocol"] = 'SASL_PLAINTEXT'
