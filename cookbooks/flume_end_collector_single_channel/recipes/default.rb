@@ -93,6 +93,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
     :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
+    :keytab =>node["flume_collector"]["keytab"],
     :local_retention_topics=>node["flume_collector"]["endcollector_local_retention_topics"][colo],
     :merge_retention_topics=>node["flume_collector"]["endcollector_merge_retention_topics"][colo],
     :platinum_retention_topics=>node["flume_collector"]["endcollector_platinum_retention_topics"][colo],
