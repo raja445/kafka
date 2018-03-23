@@ -595,6 +595,8 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
 <% if @colo == 'dfw2' -%>
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
 <% end %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
 <% end %>
 
 <% @local_hdfs_sinks.each do |sink, details| %>
@@ -684,6 +686,8 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_dfw2 = 120
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_dfw2 = 120
 <% end %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
 <% end %>
 
 <% @normal_avroreceive_channels.each do |channel| %>
