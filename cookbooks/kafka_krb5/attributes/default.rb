@@ -15,6 +15,9 @@ default["kafka"]["download_url"] = "http://plgw4001.grid.dfw1.inmobi.com/kafka"
 default["kafka"]["base_dir"]  = "/opt/inmobi"
 default["kafka"]["log_dir"] = "/var/log/kafka"
 
+default["kafka"]["audit_jar_download_url"] = "http://plgw4001.grid.dfw1.inmobi.com/jar/"
+default["kafka"]["log4j_ext_jar"] = "log4j-ext-1.0.jar"
+
 # Set Log file for kafka init script stdout/stderr
 default["kafka"]["service"]["stdout"] = File.join node["kafka"]["log_dir"], "kafka_init_stdout.log"
 default["kafka"]["service"]["stderr"] = File.join node["kafka"]["log_dir"], "kafka_init_stderr.log"
