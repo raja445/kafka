@@ -175,6 +175,7 @@ default["kafka"]["log4j.properties"]["log4j.additivity.kafka.controller"] = "fal
 default["kafka"]["log4j.properties"]["log4j.logger.state.change.logger"] = "INFO, stateChangeAppender"
 default["kafka"]["log4j.properties"]["log4j.additivity.state.change.logger"] = "false"
 
+
 #Offset monitor config
 default["kafka"]["offset_monitor"]["url"] = "https://github.com/quantifind/KafkaOffsetMonitor/releases/download/v0.2.0/KafkaOffsetMonitor-assembly-0.2.0.jar"
 default["kafka"]["offset_monitor"]["main_class"] = "com.quantifind.kafka.offsetapp.OffsetGetterWeb"

@@ -164,6 +164,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/#{binaryFileName}" do
   backup false
 end
 
+
 # Untar kafka binary file (this will only run if the real kafka directory /opt/kafka_1.2.3 does not exist)
 # We actually untar the file into /opt (not /opt/kafka)
 execute "untar kafka binary" do
