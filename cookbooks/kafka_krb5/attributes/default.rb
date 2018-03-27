@@ -178,6 +178,28 @@ default["kafka"]["log4j.properties"]["log4j.additivity.kafka.controller"] = "fal
 default["kafka"]["log4j.properties"]["log4j.logger.state.change.logger"] = "INFO, stateChangeAppender"
 default["kafka"]["log4j.properties"]["log4j.additivity.state.change.logger"] = "false"
 
+default["kafka"]["log4j.properties"]["log4j.logger.kafka.authorizer.logger"] = "DEBUG, authorizerAppender, denyAppender"
+
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender"] = "org.apache.log4j.DailyRollingFileAppender"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.DatePattern"] = "'.'yyyy-MM-dd-HH"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.File"] = "/var/log/kafka/kafka-authorizer.log"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.layout"] = "org.apache.log4j.PatternLayout"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.layout.ConversionPattern"] = "[%d] %p %m (%c)%n"
+
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1"] = "com.inmobi.log4j.StringMatchAndRateLimit"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1.stringToMatch"] = "Denied"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1.acceptOnMatch"] = "false"
+default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1.rateLimit"] = "100"
+
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender"] = "org.apache.log4j.DailyRollingFileAppender"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.File"] = "/var/log/kafka/kafka-authorizer-deny.log"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.layout"] = "org.apache.log4j.PatternLayout"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.layout.ConversionPattern"] = "[%d] %p %m (%c)%n"
+
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1"]= "org.apache.log4j.varia.StringMatchFilter"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.stringToMatch"] = "Denied"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.acceptOnMatch"] = "true"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2"] = "org.apache.log4j.varia.DenyAllFilter"
 
 #Offset monitor config
 default["kafka"]["offset_monitor"]["url"] = "https://github.com/quantifind/KafkaOffsetMonitor/releases/download/v0.2.0/KafkaOffsetMonitor-assembly-0.2.0.jar"
