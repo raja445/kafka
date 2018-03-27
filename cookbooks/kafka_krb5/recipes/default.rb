@@ -164,6 +164,16 @@ remote_file "#{Chef::Config[:file_cache_path]}/#{binaryFileName}" do
   backup false
 end
 
+#Download the log4 jar
+log4jjardownloadlink="http://plgw4001.grid.dfw1.inmobi.com/jar/log4j-ext-1.0.jar"
+file_name = File.basename log4jjardownloadlink
+remote_file "#{node["kafka"]["install_dir"]}/libs/#{file_name}" do
+  action :create_if_missing
+  source log4jjardownloadlink
+  mode 00644
+  backup false
+end
+
 # Untar kafka binary file (this will only run if the real kafka directory /opt/kafka_1.2.3 does not exist)
 # We actually untar the file into /opt (not /opt/kafka)
 execute "untar kafka binary" do
