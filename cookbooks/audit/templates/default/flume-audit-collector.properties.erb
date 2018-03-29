@@ -136,6 +136,7 @@ audit-collector.sinks.<%= "#{sink}" %>.aggregators = sent,c0,c1,c2,c3,c4,c5,c6,c
 audit-collector.sinks.<%= "#{sink}" %>.zookeeperLocation = <%= details[:zookeeper] %>
 audit-collector.sinks.<%= "#{sink}" %>.period = PT22H
 audit-collector.sinks.<%= "#{sink}" %>.segmentGranularity = DAY
+audit-collector.sinks.<%= "#{sink}" %>.blacklistedTiers = pintailpublisher,pintailconsumer
 <% end %>
 
 <% @druid_channels.each do |channel| %>
