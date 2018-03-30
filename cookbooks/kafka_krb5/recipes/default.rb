@@ -68,6 +68,8 @@ end
 node.default['kafka']['server.properties']['log.dir'] = node['kafkadisks']['mounts'].strip
 if cluster_colo1 == 'ams1'
   node.default['kafka']['server.properties']['num.io.threads'] = node['kafkadisks']['mounts'].split(",").length()*36
+elsif cluster_colo1 == 'dfw2'
+  node.default['kafka']['server.properties']['num.io.threads'] = node['kafkadisks']['mounts'].split(",").length()*40
 else
   node.default['kafka']['server.properties']['num.io.threads'] = node['kafkadisks']['mounts'].split(",").length()*4
 end
