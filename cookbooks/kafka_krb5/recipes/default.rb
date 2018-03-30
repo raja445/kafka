@@ -259,12 +259,12 @@ if node["kafka"]["kerberos"]["enable"]
   end
 end
 
-remote_file "#{node["kafka"]["install_dir"]}/libs/#{node["kafka"]["log4j_ext_jar"]}" do
-  action :create_if_missing
-  source "#{node["kafka"]["audit_jar_download_url"]}/#{node["kafka"]["log4j_ext_jar"]}"
-  mode 00644
-  backup false
-end
+#remote_file "#{node["kafka"]["install_dir"]}/libs/#{node["kafka"]["log4j_ext_jar"]}" do
+#  action :create_if_missing
+#  source "#{node["kafka"]["audit_jar_download_url"]}/#{node["kafka"]["log4j_ext_jar"]}"
+#  mode 00644
+#  backup false
+#end
 
 # Link kafka config to /etc/kafka
 link "/etc/kafka" do
