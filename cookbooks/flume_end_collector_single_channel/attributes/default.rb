@@ -398,7 +398,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel ams1-to-dfw1-push-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink mergekafkasink2 hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink1 ams1todfw1-mergekafkasink2 ams1todfw1-mergekafkasink3 ams1todfw1-mergekafkasink4 ams1todfw1-mergekafkasink5"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink mergekafkasink2 hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink1 ams1todfw1-mergekafkasink2 ams1todfw1-mergekafkasink3 ams1todfw1-mergekafkasink4 ams1todfw1-mergekafkasink5"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -420,7 +420,14 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
          :port => "2542"},
-     "hdfslocalsrc" => {
+     "hdfslocalsrc1" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "ams1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocal-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "rr,egret_lambda_AdUnitBeacon_ams1_enhanced,egret_lambda_AdUnitPublisherFill_ams1_enhanced,egret_lambda_RenderCPC_ams1_enhanced,egret_lambda_RenderCPM_ams1_enhanced,egret_lambda_BillingCPC_ams1_enhanced,egret_lambda_BeaconRRDefault_ams1_enhanced,egret_lambda_BillingCPM_ams1_enhanced,egret_lambda_BillingDownload_ams1_enhanced,egret_lambda_NWClickCPC_ams1_enhanced,egret_lambda_NWClickCPM_ams1_enhanced,egret_lambda_NWClickInvalid_ams1_enhanced,egret_lambda_NonNWClickCPC_ams1_enhanced,egret_lambda_NonNWClickCPM_ams1_enhanced,egret_lambda_NonNWClickInvalid_ams1_enhanced,egret_lambda_NWClickInvalid_ams1_enhanced,dsp-beacon,adroit_attribution_stats,sandboxrr,sandbox_postimpression,ifcp_ams1,beacon_csi_events,dcp_beacon,dcp_beacon_adunit,dcp_beacon_adunit_interaction,dcp_beacon_publisherfill,dcp_click,nnstudio,rtbs_beacon,rtbs_click,sdk_metrics,cas_rr,rtbd_ads,cas_ads,splash,carb_user_relevance,_audit,sdkpubreq,beaconDefaultAms1,nested_activity_add-ifc_compressed,ifc_ff_ams1,adroit_conversion_enhanced_ams1,nonNwClickCpcAms1,nonNwClickCpmAms1,nonNwClickInvalidAms1,nwClickCpcAms1,nwClickCpmAms1,nwClickInvalidAms1,renderCpcAms1,renderCpmAms1,egret_lambda_AdUnitBeacon_ams1_defer,egret_lambda_AdUnitBeacon_ams1_enhanced,egret_lambda_AdUnitPublisherFill_ams1_enhanced,egret_lambda_RenderCPC_ams1_enhanced,egret_lambda_RenderCPM_ams1_enhanced,egret_lambda_BillingCPC_ams1_enhanced,egret_lambda_BeaconRRDefault_ams1_enhanced,egret_lambda_BillingCPM_ams1_enhanced,egret_lambda_BillingDownload_ams1_enhanced,egret_lambda_NWClickCPC_ams1_enhanced,egret_lambda_NWClickCPM_ams1_enhanced,egret_lambda_NWClickInvalid_ams1_enhanced,egret_lambda_NonNWClickCPC_ams1_enhanced,egret_lambda_NonNWClickCPM_ams1_enhanced,egret_lambda_NonNWClickInvalid_ams1_enhanced,fds_ams1,appd_attribute"},
+     "hdfslocalsrc2" => {
          :src_category => "hdfslocal",
          :consumer_group => "ams1hdfslocal",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
@@ -540,8 +547,7 @@ default["flume_collector"]["endcollector_ams1todfw1_merged_kafka_sinks"]['ams1']
 default["flume_collector"]["endcollector_local_hdfs_sinks"]['ams1']  = {
      "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
-     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"azurite"},
-     "hdfslocal-sink4" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
+     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"azurite"}
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['ams1']  = {
