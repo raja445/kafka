@@ -908,11 +908,11 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['pek1']  = {
 }
 
 default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
-     "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"}
+     "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"}
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['pek1']  = {
-     "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"onyx"}
+     "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"pyrite"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['pek1']  = {
