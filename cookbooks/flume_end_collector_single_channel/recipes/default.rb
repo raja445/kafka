@@ -27,7 +27,15 @@ directory "#{flumeTmpDir}" do
   mode 00755
 end
 
-%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume].each do |path|
+%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume /data/d1/flume/spool/hdfslocalsecure-channel /data/d1/flume/spool/hdfsmergesecure-channel /data/d1/flume/spool/platinumhdfssecure-channel].each do |path|
+  directory path do
+    owner 'flume'
+    mode '0755'
+    action :create
+  end
+end
+
+%w[/data/d1/secure /data/d1/secure/flume /data/d1/secure/flume/databus].each do |path|
   directory path do
     owner 'flume'
     mode '0755'
@@ -100,6 +108,12 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :sinkworkerthreads=>node["flume_collector"]["sinkworkerthreads"][colo],
     :mergesinkworkerthreads=>node["flume_collector"]["mergesinkworkerthreads"][colo],
     :avrosinkworkerthreads=>node["flume_collector"]["avrosinkworkerthreads"][colo],
+    :local_secure_hdfs_sinks =>node["flume_collector"]["endcollector_local_secure_hdfs_sinks"][colo],
+    :local_secure_hdfs_channels =>node["flume_collector"]["endcollector_local_secure_hdfs_channels"][colo],
+    :merged_secure_hdfs_sinks =>node["flume_collector"]["endcollector_merged_secure_hdfs_sinks"][colo],
+    :platinum_secure_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"][colo],
+    :merge_secure_hdfs_channels =>node["flume_collector"]["endcollector_merge_secure_hdfs_channels"][colo],
+    :platinum_secure_hdfs_channels =>node["flume_collector"]["endcollector_platinum_secure_hdfs_channels"][colo],
     :colo => colo
   )
 

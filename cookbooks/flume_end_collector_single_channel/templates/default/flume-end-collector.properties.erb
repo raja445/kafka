@@ -738,3 +738,178 @@ end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
 <% end %>
 
+#################################################################################
+# flume secure configs
+<% @platinum_secure_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/secure/flume/databus/platinummerge
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/merge/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/merge/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+#Single Channel
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /secure/merge/platinumpromoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /secure/merge/platinumretention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /secure/merge/platinumaudit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = flume-audit.grid.dfw1.inmobi.com
+end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
+#end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+#promotion enabling / disabling
+end-collector.sinks.<%= "#{sink}" %>.promotion.enable = <%= details[:ispromoter] %>
+<% if @colo == 'dfw1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'pek1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'ams1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'dfw2' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
+<% end %>
+
+<% @local_secure_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/secure/flume/databus/local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/local/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/local/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/streams_local
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 20
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+#Single Channel
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 30.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /secure/local/promoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /secure/local/retention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /secure/local/audit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = flume-audit.grid.dfw1.inmobi.com
+end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.tier = lbs_sink
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
+
+<% end %>
+<% @merged_secure_hdfs_sinks.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/secure/flume/databus/merge
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/merge/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/merge/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
+end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollSize = 256000000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.rollCount = 0
+end-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
+end-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
+end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
+end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
+end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
+end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
+#Single Channel
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /secure/merge/promoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /secure/merge/retention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /secure/merge/audit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = flume-audit.grid.dfw1.inmobi.com
+end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
+end-collector.sinks.<%= "#{sink}" %>.tier = mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
+<% if @colo == 'dfw1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_dfw1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_dfw1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_dfw1 = 120
+<% end %>
+<% if @colo == 'pek1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_pek1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_pek1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_pek1 = 120
+<% end %>
+<% if @colo == 'ams1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_ams1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_ams1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_ams1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_lhr1 = 120
+<% end %>
+<% if @colo == 'dfw2' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_dfw2 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_dfw2 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_dfw2 = 120
+<% end %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
+<% end %>
+
+
+<% @local_secure_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
+<% @merge_secure_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
+<% @platinum_secure_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
+
