@@ -438,9 +438,9 @@ default["flume_collector"]["endcollector_local_retention_topics"]['ams1']  = "pr
 default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "beacon_rr_ams1_cpm_render,network_beacon_ams1_adunit,network_beacon_ams1_publisherfill,beacon_rr_ams1_default,network_beacon_adunit_interaction_ams1,beacon_rr_ams1_cpc_render,ifc_ff_ams1,non_network_click_cpc_ams1,non_network_click_cpm_ams1,network_click_cpc_ams1,network_click_cpm_ams1,network_click_invalid_ams1,click_rr_ams1,adroit_report_obj_ams1,billing_cpc_ams1,billing_cpm_ams1,billing_download_ams1,billing_download_lhr1"
 default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = "testmerge,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,adomain_meta"
 
-default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel ams1-to-dfw1-push-channel"
+default["flume_collector"]["endcollector_all_channels"]['ams1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel ams1-to-dfw1-push-channel hdfslocalsecure-channel hdfsmergesecure-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink mergekafkasink2 hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink1 ams1todfw1-mergekafkasink2 ams1todfw1-mergekafkasink3 ams1todfw1-mergekafkasink4 ams1todfw1-mergekafkasink5"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "kafkasink1 kafkasink2 kafkasink3 kafkasink4 kafkasink5 mergekafkasink mergekafkasink2 hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink ams1todfw1-mergekafkasink1 ams1todfw1-mergekafkasink2 ams1todfw1-mergekafkasink3 ams1todfw1-mergekafkasink4 ams1todfw1-mergekafkasink5 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "avrosrc" => {
@@ -611,6 +611,24 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['ams1']  = {
      "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
+default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['ams1']  = {
+     "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"}
+}
+
+default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['ams1']  = {
+     "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"azurite"}
+}
+
+default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['ams1']  = {
+     "platinumhdfssecure-sink1" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink2" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+}
+
+default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['ams1']  = ["hdfsmergesecure-channel"]
+default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['ams1']  = ["hdfslocalsecure-channel"]
+default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['ams1']  = ["platinumhdfssecure-channel"]
 ######################################################### End Of AMS1 ###################################################################
 
 
