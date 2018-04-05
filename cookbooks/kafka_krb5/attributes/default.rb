@@ -72,6 +72,8 @@ default["kafka"]["server.properties"]["controlled.shutdown.enable"] = true
 default["kafka"]["server.properties"]["auto.create.topics.enable"] = false
 if cluster_colo == 'ams1'
   default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 72
+elsif cluster_colo == 'dfw2'
+  default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 72
 else
   default["kafka"]["server.properties"]["num.recovery.threads.per.data.dir"] = 12
 end
