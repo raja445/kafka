@@ -265,6 +265,8 @@ remote_file "#{node["kafka"]["install_dir"]}/libs/#{node["kafka"]["log4j_ext_jar
   action :create_if_missing
   source "#{node["kafka"]["audit_jar_download_url"]}/#{node["kafka"]["log4j_ext_jar"]}"
   mode 00644
+  owner "kafka"
+  group "kafka"
   backup false
 end
 
