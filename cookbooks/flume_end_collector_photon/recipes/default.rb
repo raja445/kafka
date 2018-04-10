@@ -95,6 +95,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :merge_retention_topics=>node["flume_collector"]["endcollector_merge_retention_topics"][colo],
     :sinkworkerthreads=>node["flume_collector"]["sinkworkerthreads"][colo],
     :mergesinkworkerthreads=>node["flume_collector"]["mergesinkworkerthreads"][colo],
+    :local_secure_hdfs_sinks =>node["flume_collector"]["endcollector_local_secure_hdfs_sinks"][colo],
     :local_secure_hdfs_channels =>node["flume_collector"]["endcollector_local_secure_hdfs_channels"][colo],
     :merged_secure_hdfs_sinks =>node["flume_collector"]["endcollector_merged_secure_hdfs_sinks"][colo],
     :platinum_secure_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"][colo],
