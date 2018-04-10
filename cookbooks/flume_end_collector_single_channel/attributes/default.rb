@@ -618,6 +618,7 @@ default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['ams1']  = {
      "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"},
      "hdfslocalsecure-sink2" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"},
      "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"}
+}
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['ams1']  = {
      "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"azurite"}
