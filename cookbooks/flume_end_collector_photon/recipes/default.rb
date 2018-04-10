@@ -27,7 +27,15 @@ directory "#{flumeTmpDir}" do
   mode 00755
 end
 
-%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume].each do |path|
+%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume /data/d1/flume/spool/hdfslocalsecure-channel /data/d1/flume/spool/hdfsmergesecure-channel /data/d1/flume/spool/platinumhdfssecure-channel].each do |path|
+  directory path do
+    owner 'flume'
+    mode '0755'
+    action :create
+  end
+end
+
+%w[/data/d1/secure /data/d1/secure/flume /data/d1/secure/flume/databus].each do |path|
   directory path do
     owner 'flume'
     mode '0755'
