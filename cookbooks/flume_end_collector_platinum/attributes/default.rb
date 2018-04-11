@@ -70,28 +70,28 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfs-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"}
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"},
      "hdfsplatinumsrc2" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfs-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"}
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"},
      "hdfsplatinumsrc3" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfs-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"}
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"},
      "hdfsplatinumsrc4" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfs-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"}
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1"},
      "hdfsplatinumsrc5" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
@@ -139,16 +139,44 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw2']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "platinumhdfs-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw2']  = {
-     "hdfsplatinumsrc" => {
+     "hdfsplatinumsrc1" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw2-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfs-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2"}
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2"},
+     "hdfsplatinumsrc2" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "dfw2-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2"},
+     "hdfsplatinumsrc3" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "dfw2-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2"},
+     "hdfsplatinumsrc4" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "dfw2-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2"},
+     "hdfsplatinumsrc5" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "dfw2-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2"},
        }
 
 #Configure the channels for the Flume Collector
@@ -159,13 +187,23 @@ default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw2']  = ["p
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw2']  = {
      "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink6" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink7" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink8" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['dfw2']  = {
      "platinumhdfssecure-sink1" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfssecure-sink2" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
-     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink5" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink6" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink7" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink8" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['dfw2']  = ["platinumhdfssecure-channel"]
@@ -179,10 +217,38 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['ams1']  = "platinumhdfs-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
-     "hdfsplatinumsrc" => {
+     "hdfsplatinumsrc1" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "ams1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1"},
+     "hdfsplatinumsrc2" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "ams1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1"},
+     "hdfsplatinumsrc3" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "ams1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1"},
+     "hdfsplatinumsrc4" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "ams1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1"},
+     "hdfsplatinumsrc5" => {
          :src_category => "platinumhdfs",
          :consumer_group => "ams1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
@@ -198,13 +264,23 @@ default["flume_collector"]["endcollector_platinum_hdfs_channels"]['ams1']  = ["p
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['ams1']  = {
      "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink6" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink7" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink8" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['ams1']  = {
      "platinumhdfssecure-sink1" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfssecure-sink2" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
-     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink5" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink6" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink7" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink8" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['ams1']  = ["platinumhdfssecure-channel"]
@@ -217,10 +293,38 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "platinumhdfs-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['pek1']  = {
-     "hdfsplatinumsrc" => {
+     "hdfsplatinumsr1" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "pek1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1"},
+     "hdfsplatinumsrc2" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "pek1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1"},
+     "hdfsplatinumsrc3" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "pek1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1"},
+     "hdfsplatinumsrc4" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "pek1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfs-channel",
+         :batchSize => 500,
+	 :'kafka.topics' => "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1"},
+     "hdfsplatinumsrc5" => {
          :src_category => "platinumhdfs",
          :consumer_group => "pek1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
@@ -237,14 +341,23 @@ default["flume_collector"]["endcollector_platinum_hdfs_channels"]['pek1']  = ["p
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['pek1']  = {
      "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
-     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink6" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink7" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink8" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['pek1']  = {
      "platinumhdfssecure-sink1" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfssecure-sink2" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
-     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink5" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink6" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink7" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink8" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['pek1']  = ["platinumhdfssecure-channel"]
