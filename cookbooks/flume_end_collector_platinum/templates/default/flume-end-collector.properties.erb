@@ -31,209 +31,37 @@ end-collector.sinks = <%= @allsinks %>
 
 
 <% @sources.each do |src, details| %>
-
-<% if details[:'src_category'] == 'dfw1kafkasrc' -%>
+<% if details[:'src_category'] == 'platinumhdfs' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
 #Single Channel
 end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= @kafkazookeeper %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
+end-collector.sources.<%= "#{src}" %>.dualCommit = false
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= @kafkabrokers %>
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
 end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
 end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
 end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-<% end -%>
-
-<% if details[:'src_category'] == 'dfw1mergedkafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.tier = global_merger_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
+<% end -%>
 <% end -%>
 
-<% if details[:'src_category'] == 'dfw2kafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw2'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw2'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-<% end -%>
-
-<% if details[:'src_category'] == 'dfw2mergedkafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw2'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw2'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
-<% end -%>
-
-<% if details[:'src_category'] == 'pek1kafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['pek1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['pek1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-<% end -%>
-
-<% if details[:'src_category'] == 'pek1mergedkafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['pek1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['pek1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
-<% end -%>
-
-<% if details[:'src_category'] == 'lhr1kafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['lhr1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['lhr1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-<% end -%>
-
-<% if details[:'src_category'] == 'lhr1mergedkafkasrc' -%>
-end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['lhr1'] %>
-end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
-end-collector.sources.<%= "#{src}" %>.dualCommit = false
-#Single Channel
-end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['lhr1'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
-end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
-end-collector.sources.<%= "#{src}" %>.audit.enable = true
-end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sources.<%= "#{src}" %>.audit.port = 2530
-end-collector.sources.<%= "#{src}" %>.tier = merge_src
-end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixRemover$Builder
-end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-remover-<%= "#{src}" %>.topicHeaderKey = category
-<% end -%>
-
-<% end -%>
-
-<% @kafka_to_hdfs_sinks.each do |sink, details| %>
+<% @platinum_hdfs_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/merge
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/platinummerge
 end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/temp
 end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/staging
 end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams
@@ -252,24 +80,45 @@ end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
 end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
-end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/promoter
-end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/retention
-end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/platinumpromoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/platinumretention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
 end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
-end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
-end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumflumezookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+#promotion enabling / disabling
+end-collector.sinks.<%= "#{sink}" %>.promotion.enable = <%= details[:ispromoter] %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
 <% end %>
 
-<% @kafkamerge_to_hdfs_sinks.each do |sink, details| %>
+
+
+<% @platinum_hdfs_channels.each do |channel| %>
+end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
+#Single Channel
+end-collector.channels.<%= "#{channel}" %>.capacity = 100000
+end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
+end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
+end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
+end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
+<% end %>
+
+#################################################################################
+# flume secure configs
+<% @platinum_secure_hdfs_sinks.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume/databus/merge
-end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/temp
-end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/databus/flume/merge/staging
-end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/databus/streams
+end-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/secure/flume/databus/platinummerge
+end-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/merge/temp
+end-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/flume/merge/staging
+end-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/streams
 end-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
 end-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 end-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
@@ -285,18 +134,38 @@ end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
 end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
-end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/promoter
-end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/retention
-end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/audit
-end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
+end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /secure/merge/platinumpromoter
+end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /secure/merge/platinumretention
+end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /secure/merge/platinumaudit
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
-end-collector.sinks.<%= "#{sink}" %>.tier = MERGE
-end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @merge_retention_topics %>
-end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumflumezookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
+end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
+#end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
+end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
+#promotion enabling / disabling
+end-collector.sinks.<%= "#{sink}" %>.promotion.enable = <%= details[:ispromoter] %>
+<% if @colo == 'dfw1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'pek1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'ams1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'dfw2' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
+end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
 <% end %>
 
-<% @kafka_to_hdfs_channels.each do |channel| %>
+<% @platinum_secure_hdfs_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 #Single Channel
 end-collector.channels.<%= "#{channel}" %>.capacity = 100000
@@ -306,12 +175,3 @@ end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<
 end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
 <% end %>
 
-<% @kafkamerge_to_hdfs_channels.each do |channel| %>
-end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
-#Single Channel
-end-collector.channels.<%= "#{channel}" %>.capacity = 100000
-end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
-end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
-end-collector.channels.<%= "#{channel}" %>.spoolDirectories = <%= @spooldir %>/<%= "#{channel}" %>
-end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
-<% end %>
