@@ -317,7 +317,7 @@ default["flume_collector"]["endcollector_all_channels"]['pek1']  = "platinumhdfs
 default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['pek1']  = {
-     "hdfsplatinumsr1" => {
+     "hdfsplatinumsrc1" => {
          :src_category => "platinumhdfs",
          :consumer_group => "pek1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
