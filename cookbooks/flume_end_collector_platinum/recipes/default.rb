@@ -86,6 +86,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
     :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
+    :mergesrc_consumer_gpsize =>node["flume_collector"]["mergesrc_consumer_gpsize"][colo],
     :platinum_retention_topics=>node["flume_collector"]["endcollector_platinum_retention_topics"][colo],
     :platinum_secure_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"][colo],
     :platinum_secure_hdfs_channels =>node["flume_collector"]["endcollector_platinum_secure_hdfs_channels"][colo],
