@@ -111,7 +111,7 @@ end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/platinumpromoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/platinumretention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
-end-collector.sinks.<%= "#{sink}" %>.scribe.host = <%= @flumeagent %>
+end-collector.sinks.<%= "#{sink}" %>.scribe.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
