@@ -89,6 +89,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :platinum_retention_topics=>node["flume_collector"]["endcollector_platinum_retention_topics"][colo],
     :platinum_secure_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"][colo],
     :platinum_secure_hdfs_channels =>node["flume_collector"]["endcollector_platinum_secure_hdfs_channels"][colo],
+    :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :keytab =>node["flume_collector"]["keytab"],
     :colo => colo
   )
