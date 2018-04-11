@@ -27,7 +27,15 @@ directory "#{flumeTmpDir}" do
   mode 00755
 end
 
-%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume].each do |path|
+%w[/data/d1/flume /data/d1/flume/spool /data/d1/flume/databus /var/log/flume /data/d1/flume/spool/hdfslocalsecure-channel /data/d1/flume/spool/hdfsmergesecure-channel /data/d1/flume/spool/platinumhdfssecure-channel].each do |path|
+  directory path do
+    owner 'flume'
+    mode '0755'
+    action :create
+  end
+end
+
+%w[/data/d1/secure /data/d1/secure/flume /data/d1/secure/flume/databus].each do |path|
   directory path do
     owner 'flume'
     mode '0755'
@@ -72,22 +80,45 @@ template "#{flumeConf}/flume-end-collector.properties" do
   mode  00644
   variables(
     :sources =>node["flume_collector"]["endcollector_sources"][colo],
-    :kafka_to_hdfs_sinks =>node["flume_collector"]["endcollector_kafka_to_hdfs_sinks"][colo],
-    :kafkamerge_to_hdfs_sinks =>node["flume_collector"]["endcollector_kafkamerge_to_hdfs_sinks"][colo],
-    :kafka_to_hdfs_channels =>node["flume_collector"]["endcollector_kafka_to_hdfs_channels"][colo],
-    :kafkamerge_to_hdfs_channels =>node["flume_collector"]["endcollector_kafkamerge_to_hdfs_channels"][colo],
+    :merge_avroreceive_channels =>node["flume_collector"]["endcollector_merge_avroreceive_channels"][colo],
+    :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
+    :local_hdfs_sinks =>node["flume_collector"]["endcollector_local_hdfs_sinks"][colo],
+    :local_eventhub_sinks =>node["flume_collector"]["endcollector_local_eventhub_sinks"]['dfw1'],
+    :local_hdfs_channels =>node["flume_collector"]["endcollector_local_hdfs_channels"][colo],
+    :local_eventhub_channels =>node["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1'],
+    :merged_hdfs_sinks =>node["flume_collector"]["endcollector_merged_hdfs_sinks"][colo],
+    :platinum_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_hdfs_sinks"][colo],
+    :merge_hdfs_channels =>node["flume_collector"]["endcollector_merge_hdfs_channels"][colo],
+    :platinum_hdfs_channels =>node["flume_collector"]["endcollector_platinum_hdfs_channels"][colo],
     :kafkabrokers =>node["flume_collector"]["kafka_brokers"][colo],
     :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"][colo],
+    :platinumzookeeper =>node["flume_collector"]["kafka_zookeeper"]['platinum'],
     :flumeagent =>node["flume_collector"]["flume_agent_host"][colo],
     :mergesrc_consumer_gpsize =>node["flume_collector"]["mergesrc_consumer_gpsize"][colo],
     :allchannels =>node["flume_collector"]["endcollector_all_channels"][colo],
     :allsinks =>node["flume_collector"]["endcollector_all_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
-    :platinumflumezookeeper =>node["flume_collector"]["platinumflumezookeeper"],
+    :local_retention_topics=>node["flume_collector"]["endcollector_local_retention_topics"][colo],
+    :platinum_retention_topics=>node["flume_collector"]["endcollector_platinum_retention_topics"][colo],
     :merge_retention_topics=>node["flume_collector"]["endcollector_merge_retention_topics"][colo],
+    :sinkworkerthreads=>node["flume_collector"]["sinkworkerthreads"][colo],
+    :mergesinkworkerthreads=>node["flume_collector"]["mergesinkworkerthreads"][colo],
+    :local_secure_hdfs_sinks =>node["flume_collector"]["endcollector_local_secure_hdfs_sinks"][colo],
+    :local_secure_hdfs_channels =>node["flume_collector"]["endcollector_local_secure_hdfs_channels"][colo],
+    :merged_secure_hdfs_sinks =>node["flume_collector"]["endcollector_merged_secure_hdfs_sinks"][colo],
+    :platinum_secure_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"][colo],
+    :merge_secure_hdfs_channels =>node["flume_collector"]["endcollector_merge_secure_hdfs_channels"][colo],
+    :platinum_secure_hdfs_channels =>node["flume_collector"]["endcollector_platinum_secure_hdfs_channels"][colo],
+    :keytab =>node["flume_collector"]["keytab"],
     :colo => colo
   )
 
+end
+
+template "#{flumeConf}/kafka.jaas" do
+  source "kafka.jaas.erb"
+  owner "flume"
+  mode  00644
 end
 
 cookbook_file "#{flumeConf}/flume-env.sh" do
@@ -120,3 +151,53 @@ link "#{flumeHome}" do
   to "#{flumeInstallDir}"
   link_type :symbolic
 end
+
+#HEALTH CHECK
+#package "scribe-scripts" do
+#  version node['flume_collector']['scribescripts']
+#  action :install
+#  options '--force-yes'
+#end
+
+directory "/etc/flume_health" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+directory "/etc/flume_health/flume_healthcheck" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+directory "/etc/flume_health/flume_healthcheck/log" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+directory "/etc/flume_health/flume_healthcheck/log/main" do
+  owner 'nobody'
+  group 'nogroup'
+  mode '0755'
+  action :create
+end
+template "/etc/flume_health/flume_healthcheck/run" do
+  source "flume_healthcheck.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+end
+template "/etc/flume_health/flume_healthcheck/log/run" do
+  source "flume_logrun.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+end
+
+link '/service/flume_healthcheck' do
+  to '/etc/flume_health/flume_healthcheck'
+end
+
+
