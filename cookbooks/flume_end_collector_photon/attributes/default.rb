@@ -577,8 +577,6 @@ default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "rr
 
 default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "photon_flume_test"
 
-default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1"
-
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "mergespillable hdfslocal-channel  hdfsmerge-channel platinumhdfs-channel hdfslocalsecure-channel  hdfsmergesecure-channel platinumhdfssecure-channel"
 
 default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "mergekafkasink hdfslocal-sink  hdfsmerge-sink platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfslocalsecure-sink1  hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfsmergesecure-sink platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
@@ -598,13 +596,6 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :channels => "hdfsmergesecure-channel",
          :batchSize => 500,
          :'kafka.topics' => "merge_photon_flume_test"},
-     "hdfsplatinumsrc" => {
-         :src_category => "platinumhdfs",
-         :consumer_group => "pek1-to-platinum-hdfs",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "platinumhdfs-channel",
-         :batchSize => 500,
-	 :'kafka.topics' => "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1"},
      "dfw1kafkamergesrc" => {
          :src_category => "dfw1kafkamerge",
          :consumer_group => "dfw1-to-pek1-kafkamerge",
