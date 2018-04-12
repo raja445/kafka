@@ -252,7 +252,7 @@ default["flume_collector"]["endcollector_local_retention_topics"]['dfw2']  = "rr
 
 default["flume_collector"]["endcollector_merge_retention_topics"]['dfw2']  = "beacon_rr_dfw2_cpm_render,network_beacon_dfw2_adunit,network_beacon_dfw2_publisherfill,beacon_rr_dfw2_default,network_beacon_adunit_interaction_dfw2,beacon_rr_dfw2_cpc_render,ifc_ff_dfw2,non_network_click_cpc_dfw2,non_network_click_cpm_dfw2,network_click_cpc_dfw2,network_click_cpm_dfw2,network_click_invalid_dfw2,click_rr_dfw2,adroit_report_obj_dfw2,billing_cpc_dfw2,billing_cpm_dfw2,billing_download_dfw2"
 
-default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw2']  = "testmerge,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,adroit_attribution_stats,adomain_meta"
+default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw2']  = "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,adroit_attribution_stats,ucm_mapping,adomain_meta"
 
 default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel dfw2-to-ams1-kafkamerge-channel hdfslocalsecure-channel hdfsmergesecure-channel platinumhdfssecure-channel"
 
@@ -293,20 +293,6 @@ default["flume_collector"]["endcollector_sources"]['dfw2']  = {
          :channels => "hdfsmergesecure-channel",
          :batchSize => 500,
          :'kafka.topics' => "merge_beacon_rr_dfw2_cpm_render,merge_network_beacon_dfw2_adunit,merge_network_beacon_dfw2_publisherfill,merge_beacon_rr_dfw2_default,merge_network_beacon_adunit_interaction_dfw2,merge_beacon_rr_dfw2_cpc_render,merge_ifc_ff_dfw2,merge_non_network_click_cpc_dfw2,merge_non_network_click_cpm_dfw2,merge_network_click_cpc_dfw2,merge_network_click_cpm_dfw2,merge_network_click_invalid_dfw2,merge_click_rr_dfw2,merge_adroit_report_obj_dfw2,merge_billing_cpc_dfw2,merge_billing_cpm_dfw2,merge_billing_download_dfw2"},
-     "hdfsplatinumsrc" => {
-         :src_category => "platinumhdfs",
-         :consumer_group => "dfw2-to-platinum-hdfs",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "platinumhdfs-channel",
-         :batchSize => 500,
-         :'kafka.topics' => "user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,adroit_attribution_stats,ucm_mapping,adomain_meta"},
-     "hdfsplatinummergesrc" => {
-         :src_category => "mergetoplatinumhdfs",
-         :consumer_group => "dfw2-merge-to-platinum-hdfs",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "platinumhdfs-channel",
-         :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge"},
      "dfw1kafkamergesrc" => {
          :src_category => "dfw1kafkamerge",
          :consumer_group => "dfw1-to-dfw2-kafkamerge",
