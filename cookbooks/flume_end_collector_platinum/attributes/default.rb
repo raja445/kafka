@@ -310,11 +310,9 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['ams1']
 
 
 ######################################################### PEK1 ###################################################################
-default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "testmerge"
+default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,wclick_pek1,ifc_photon_enriched_san_pb,adroit_attribution_stats,ifc_cookie_organic_activity,iapclick,adomain_meta"
 
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "platinumhdfs-channel platinumhdfssecure-channel"
-
-default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,wclick_pek1,ifc_photon_enriched_san_pb,adroit_attribution_stats,ifc_cookie_organic_activity,iapclick,adomain_meta"
 
 default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
 #Configure the sources for the Flume Collector
