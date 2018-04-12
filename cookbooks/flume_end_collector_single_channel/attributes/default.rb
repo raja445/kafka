@@ -928,3 +928,64 @@ default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['pek1']  =
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['pek1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of PEK1 ###################################################################
+
+######################################################### START OF EV1 #################################################################
+default["flume_collector"]["endcollector_local_retention_topics"]['ev1']  = "test"
+
+default["flume_collector"]["endcollector_merge_retention_topics"]['ev1']  = "beacon_rr_dfw1_default"
+
+default["flume_collector"]["endcollector_all_channels"]['ev1']  = "AvroSrc-KafkaSink-Channel KafkaMrgSrc-HdfsSink-Channel mergespillable hdfsmergesecure-channel"
+
+default["flume_collector"]["endcollector_all_sinks"]['ev1'] = "KafkaSink-NS HdfsSink mergekafkasink hdfsmergesecure-sink"
+
+#Configure the sources for the Flume Collector
+default["flume_collector"]["endcollector_sources"]['ev1']  = {
+     "avrosrc" => {
+         :src_category => "avro",
+         :type => "avro",
+         :channels => "spillable",
+         :port => "2540"},
+     "zipavrosrc" => {
+         :src_category => "avro",
+         :type => "avro",
+         :channels => "spillable",
+         :'enable_compression' => true,
+         :'compression-type' => 'deflate',
+         :port => "2541"},
+     "mergezipavrosrc" => {
+         :src_category => "avro",
+         :type => "avro",
+         :channels => "mergespillable",
+         :'enable_compression' => true,
+         :'compression-type' => 'deflate',
+         :port => "2542"},
+     "hdfsmergesrc" => {
+         :src_category => "hdfsmerge",
+         :consumer_group => "ev1hdfsmerge",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfsmergesecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_beacon_rr_dfw1_default"},
+     "dfw1kafkamergesrc" => {
+         :src_category => "dfw1kafkamerge",
+         :consumer_group => "dfw1-to-ev1-kafkamerge",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "mergespillable",
+         :batchSize => 500,
+         :'kafka.topics' => "beacon_rr_dfw1_default"},
+       }
+
+#Configure the channels for the Flume Collector
+default["flume_collector"]["endcollector_merge_avroreceive_channels"]['ev1']  = ["mergespillable"]
+default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['ev1']  = ["hdfsmergesecure-channel"]
+
+#Configure the sinks for the Flume Collector
+
+default["flume_collector"]["endcollector_merged_kafka_sinks"]['ev1']  = {
+     "mergekafkasink" => {:channel => "mergespillable",:producer_id =>"flume-merge-kafka-sink"},
+}
+
+default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['ev1']  = {
+     "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"garnet"}
+}
+#################################################### END OF EV1 ####################################
