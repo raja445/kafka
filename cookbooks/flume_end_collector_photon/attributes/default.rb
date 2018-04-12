@@ -577,6 +577,8 @@ default["flume_collector"]["endcollector_local_retention_topics"]['pek1']  = "rr
 
 default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "photon_flume_test"
 
+default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "testmerge,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,wclick_pek1,ifc_photon_enriched_san_pb,adroit_attribution_stats,ifc_cookie_organic_activity,iapclick,adomain_meta"
+
 default["flume_collector"]["endcollector_all_channels"]['pek1']  = "mergespillable hdfslocal-channel  hdfsmerge-channel platinumhdfs-channel hdfslocalsecure-channel  hdfsmergesecure-channel platinumhdfssecure-channel"
 
 default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "mergekafkasink hdfslocal-sink  hdfsmerge-sink platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfslocalsecure-sink1  hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfsmergesecure-sink platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
