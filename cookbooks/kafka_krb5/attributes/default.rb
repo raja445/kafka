@@ -126,7 +126,7 @@ default["kafka"]["server.properties"]["security.protocol"] = 'SASL_PLAINTEXT'
 
 # authorizer class that should be used for authorization
 default["kafka"]["server.properties"]["authorizer.class.name"] = 'kafka.security.auth.SimpleAclAuthorizer'
-default["kafka"]["server.properties"]["super.users"] = 'User:kafka'
+default["kafka"]["server.properties"]["super.users"] = 'User:kafka;User:flume'
 default["kafka"]["server.properties"]["allow.everyone.if.no.acl.found"] = 'true'
 
 # Kafka acls are defined in the general format of "Principal P is [Allowed/Denied] Operation O From Host H On Resource R". 
