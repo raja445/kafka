@@ -61,6 +61,8 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "platinumhdfs-channel platinumhdfssecure-channel"
 
+default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta,tpce_custom_goal_summary,tpce_enriched_download,tpce_purchase_summary"
+
 default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
@@ -70,42 +72,42 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "testmerge"},
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta"},
      "hdfsplatinumsrc2" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "testmerge"},
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta"},
      "hdfsplatinumsrc3" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "testmerge"},
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta"},
      "hdfsplatinumsrc4" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "testmerge"},
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta"},
      "hdfsplatinumsrc5" => {
          :src_category => "platinumhdfs",
          :consumer_group => "dfw1-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "testmerge"},
+	 :'kafka.topics' => "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta"},
      "hdfsplatinummergesrc" => {
          :src_category => "mergetoplatinumhdfs",
          :consumer_group => "dfw1-merge-to-platinum-hdfs",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge"},
+         :'kafka.topics' => "merge_testmerge,merge_tpce_custom_goal_summary,merge_tpce_enriched_download,merge_tpce_purchase_summary"},
        }
 
 #Configure the channels for the Flume Collector
