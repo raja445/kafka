@@ -322,6 +322,18 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 24
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 #promotion enabling / disabling
 end-collector.sinks.<%= "#{sink}" %>.promotion.enable = <%= details[:ispromoter] %>
+<% if @colo == 'dfw1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'pek1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'ams1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
+<% if @colo == 'dfw2' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.beeswax_bid_logs = 240
+<% end %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
 <% end %>
