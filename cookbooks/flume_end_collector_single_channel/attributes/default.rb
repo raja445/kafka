@@ -914,3 +914,4 @@ default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['pek1']  =
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['pek1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of PEK1 ###################################################################
+
