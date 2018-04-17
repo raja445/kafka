@@ -6,6 +6,7 @@ default["audit_collector"]["download_url"] = "http://plgw4001.grid.dfw1.inmobi.c
 default["audit_collector"]["base_dir"]  = "/opt/inmobi"
 default["audit_collector"]["spool_dir"]  = "/data/d1/flume-audit/spool"
 default["audit_collector"]["pid_dir"]  = "/var/run/flume-audit"
+default["audit_collector"]["keytab"]  = "/etc/security/keytabs/flume.service.keytab"
 
 # Kafka Brokers in each colo
 default["audit_collector"]["kafka_brokers"]['dfw1']  = "oxkf4001.grid.dfw1.inmobi.com:9099,oxkf4002.grid.dfw1.inmobi.com:9099,oxkf4003.grid.dfw1.inmobi.com:9099,oxkf4008.grid.dfw1.inmobi.com:9099,oxkf4009.grid.dfw1.inmobi.com:9099,oxkf4010.grid.dfw1.inmobi.com:9099,oxkf4011.grid.dfw1.inmobi.com:9099,oxkf4012.grid.dfw1.inmobi.com:9099,oxkf4013.grid.dfw1.inmobi.com:9099,oxkf4014.grid.dfw1.inmobi.com:9099,oxkf4015.grid.dfw1.inmobi.com:9099,oxkf4016.grid.dfw1.inmobi.com:9099,oxkf4017.grid.dfw1.inmobi.com:9099"
