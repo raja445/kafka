@@ -74,6 +74,7 @@ template "#{flumeConf}/flume-audit-collector.properties" do
     :allchannels =>node["audit_collector"]["auditcollector_all_channels"],
     :allsinks =>node["audit_collector"]["auditcollector_all_sinks"],
     :spooldir =>node["audit_collector"]["spool_dir"],
+    :keytab =>node["audit_collector"]["keytab"],
     :mergesrc_consumer_gpsize =>node["audit_collector"]["mergesrc_consumer_gpsize"][colo],
     :colo => colo
   )
