@@ -39,6 +39,7 @@ end-collector.sources.<%= "#{src}" %>.port = <%= details[:port] %>
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = collector_src
 <% if "#{src}" == 'mergezipavrosrc' -%>
 #end-collector.sources.<%= "#{src}" %>.threads = 32
@@ -60,6 +61,7 @@ end-collector.sources.<%= "#{src}" %>.compression-type=<%= details[:'compression
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = mid_collector_src
 end-collector.sources.<%= "#{src}" %>.interceptors = whitelister_<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.whitelister_<%= "#{src}" %>.type = org.apache.flume.interceptor.TopicWhitelistFilter$Builder
@@ -113,6 +115,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -143,6 +146,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -173,6 +177,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -203,6 +208,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -233,6 +239,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -263,6 +270,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -293,6 +301,7 @@ end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = merger_src
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
 end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
@@ -322,6 +331,7 @@ end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = lbs_src
 #Kerberos Conf
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
@@ -346,6 +356,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = mbs_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
@@ -374,6 +385,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = global_merger_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 #Kerberos Conf
@@ -399,6 +411,7 @@ end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
 end-collector.sources.<%= "#{src}" %>.audit.enable = true
 end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.auditpublishers = 10
 end-collector.sources.<%= "#{src}" %>.tier = global_merger_src
 end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
 end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-remover-<%= "#{src}" %>
@@ -435,6 +448,7 @@ end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @sinkworkerthreads %>
 end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.auditpublishers = 10
 end-collector.sinks.<%= "#{sink}" %>.tier = collector_sink
 #Kerberos Conf
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
@@ -459,6 +473,7 @@ end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads
 end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.auditpublishers = 10
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
 #Kerberos Conf
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
@@ -485,6 +500,7 @@ end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads
 end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.auditpublishers = 10
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
 #Kerberos Conf
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
@@ -512,6 +528,7 @@ end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads
 end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.auditpublishers = 10
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
 #Kerberos Conf
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
@@ -539,6 +556,7 @@ end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads
 end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
 end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
 end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
+end-collector.sinks.<%= "#{sink}" %>.auditpublishers = 10
 end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
 #Kerberos Conf
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
