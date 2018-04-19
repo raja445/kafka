@@ -116,10 +116,10 @@ audit-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 3000
 <% @hdfs_sinks.each do |sink, details| %>
 audit-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.hdfs.HDFSEventSink
 audit-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-audit-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/flume-audit/local
-audit-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/data/audit/working/temp
-audit-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/data/audit/working/staging
-audit-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/data/audit/streams
+audit-collector.sinks.<%= "#{sink}" %>.hdfs.path = file:///data/d1/secure/flume-audit/local
+audit-collector.sinks.<%= "#{sink}" %>.hdfs.temp.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/audit/working/temp
+audit-collector.sinks.<%= "#{sink}" %>.hdfs.staging.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/audit/working/staging
+audit-collector.sinks.<%= "#{sink}" %>.hdfs.final.path = hdfs://<%= details[:cluster] %>/secure/projects/databus/audit/streams
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.threadsPoolSize = 1
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.batchSize = 500
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.rollInterval = 60
@@ -129,9 +129,9 @@ audit-collector.sinks.<%= "#{sink}" %>.hdfs.inUseSuffix = .processing
 audit-collector.sinks.<%= "#{sink}" %>.audit.enable = false
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.fileType = DataStream
 audit-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
-audit-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /data/audit/promoter
-audit-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /data/audit/retention
-audit-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /data/audit/audit
+audit-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /secure/audit/promoter
+audit-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /secure/audit/retention
+audit-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /secure/audit/audit
 audit-collector.sinks.<%= "#{sink}" %>.retention.topics = _audit
 audit-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 audit-collector.sinks.<%= "#{sink}" %>.codeC = gzip

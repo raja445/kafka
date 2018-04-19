@@ -27,7 +27,7 @@ directory "#{flumeTmpDir}" do
   mode 00755
 end
 
-%w[/data/d1/flume-audit /data/d1/flume-audit/spool /var/log/flume-audit].each do |path|
+%w[/data/d1/secure/flume-audit /data/d1/secure/flume-audit/spool /var/log/flume-audit].each do |path|
   directory path do
     owner 'flume'
     mode '0755'
