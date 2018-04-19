@@ -30,7 +30,7 @@ export FLUME_PID_DIR=/var/run/flume-audit
 
 export MIN_HEAPSIZE=8G
 export MAX_HEAPSIZE=8G
-export MAX_METASPACE_SIZE=64M
+export MAX_METASPACE_SIZE=2G
 export MAX_DIRECT_MEMORY_SIZE=3G
 
 export FLUME_HTTP_PORT=2610
