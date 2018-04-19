@@ -43,7 +43,7 @@ default["audit_collector"]["mergesrc_consumer_gpsize"]['ams1']  = "1"
 
 default["audit_collector"]["auditcollector_all_channels"]  = "druidlocal-channel  hdfslocal-channel"
 
-default["audit_collector"]["auditcollector_all_sinks"] = "druidlocal-sink hdfslocal-sink"
+default["audit_collector"]["auditcollector_all_sinks"] = "druidlocal-sink druidlocal-sink2 druidlocal-sink3 hdfslocal-sink hdfslocal-sink2 hdfslocal-sink3"
 #Configure the sources for the Flume Collector
 default["audit_collector"]["auditcollector_sources"]  = {
      "auditscribesrc" => {
@@ -97,27 +97,19 @@ default["audit_collector"]["auditcollector_local_hdfs_channels"]  = ["hdfslocal-
 
 
 #Configure the sinks for the Flume Collector
-default["audit_collector"]["auditcollector_local_hdfs_sinks"]['uh1']  = {
-     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"krypton"},
-}
-default["audit_collector"]["auditcollector_local_hdfs_sinks"]['lhr1']  = {
-     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"emerald"},
-}
 default["audit_collector"]["auditcollector_local_hdfs_sinks"]['dfw1']  = {
      "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
 }
 default["audit_collector"]["auditcollector_local_hdfs_sinks"]['pek1']  = {
      "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
 }
 
-default["audit_collector"]["auditcollector_local_druid_sinks"]['uh1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
-}
-default["audit_collector"]["auditcollector_local_druid_sinks"]['lhr1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
-}
 default["audit_collector"]["auditcollector_local_druid_sinks"]['dfw1']  = {
      "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
+     "druidlocal-sink2" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
+     "druidlocal-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
 }
 default["audit_collector"]["auditcollector_local_druid_sinks"]['pek1']  = {
      "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
