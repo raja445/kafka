@@ -195,6 +195,7 @@ default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1
 default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1.acceptOnMatch"] = "false"
 default["kafka"]["log4j.properties"]["log4j.appender.authorizerAppender.filter.1.rateLimit"] = "100"
 
+
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender"] = "org.apache.log4j.DailyRollingFileAppender"
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.DatePattern"] = "'.'yyyy-MM-dd-HH"
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.File"] = "/var/log/kafka/kafka-authorizer-deny.log"
@@ -203,10 +204,31 @@ default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.layout.Convers
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.MaxBackupIndex"] = "48"
 
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1"] = "com.inmobi.log4j.StringMatchAndRateLimit"
-default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.stringToMatch"] = "Denied"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.stringToMatch"] = "Denied Operation = Read"
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.acceptOnMatch"] = "true"
 default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.rateLimit"] = "100"
-default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2"] = "org.apache.log4j.varia.DenyAllFilter"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2"] = "com.inmobi.log4j.StringMatchAndRateLimit"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2.stringToMatch"] = "Denied Operation = Write"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2.acceptOnMatch"] = "true"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2.rateLimit"] = "100"
+default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.3"] = "org.apache.log4j.varia.DenyAllFilter"
+
+
+
+
+
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender"] = "org.apache.log4j.DailyRollingFileAppender"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.DatePattern"] = "'.'yyyy-MM-dd-HH"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.File"] = "/var/log/kafka/kafka-authorizer-deny.log"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.layout"] = "org.apache.log4j.PatternLayout"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.layout.ConversionPattern"] = "[%d] %p %m (%c)%n"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.MaxBackupIndex"] = "48"
+
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1"] = "com.inmobi.log4j.StringMatchAndRateLimit"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.stringToMatch"] = "Denied"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.acceptOnMatch"] = "true"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.1.rateLimit"] = "100"
+#default["kafka"]["log4j.properties"]["log4j.appender.denyAppender.filter.2"] = "org.apache.log4j.varia.DenyAllFilter"
 
 #default["kafka"]["log4j.properties"]["log4j.logger.kafka.authorizer.logger"] = "DEBUG, authorizerAppender, denyAppender"
 
