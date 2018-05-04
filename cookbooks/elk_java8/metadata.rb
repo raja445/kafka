@@ -1,4 +1,4 @@
-name             'java8'
+name             'elk_java8'
 maintainer       'GRIDOPS'
 maintainer_email 'grid-ops@inmobi.com'
 license          'all_rights'
