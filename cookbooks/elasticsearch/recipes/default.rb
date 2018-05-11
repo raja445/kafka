@@ -3,6 +3,7 @@ elasticsearchTmp="/tmp/elasticsearch-#{node["elasticsearch"]["version"]}.tar.gz"
 elasticsearchTmpDir="/tmp/elasticsearch"
 elasticsearchHome="#{node["elasticsearch"]["base_dir"]}/elasticsearch"
 elasticsearchConf="#{elasticsearchInstallDir}/conf"
+lockFile="#{elasticsearchInstallDir}/LOCK"
 
 directory "#{elasticsearchInstallDir}" do
   action :create
@@ -33,6 +34,16 @@ end
 execute "untar elasticsearch binary" do
   cwd elasticsearchTmpDir
   command "tar -xvf #{elasticsearchTmp}; mv elasticsearch-#{node["elasticsearch"]["version"]}/* #{elasticsearchInstallDir}/"
+  not_if do
+    File.exists? "#{lockFile}"
+  end
+end
+
+execute "Create Lock file" do
+  command "touch #{lockFile}"
+  not_if do
+    File.exists? "#{lockFile}"
+  end
 end
 
 link "#{elasticsearchHome}" do
