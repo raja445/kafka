@@ -34,3 +34,9 @@ execute "untar elasticsearch binary" do
   cwd elasticsearchTmpDir
   command "tar -xvf #{elasticsearchTmp}; mv elasticsearch-#{node["elasticsearch"]["version"]}/* #{elasticsearchInstallDir}/"
 end
+
+link "#{elasticsearchHome}" do
+  owner 'root'
+  to "#{elasticsearchInstallDir}"
+  link_type :symbolic
+end
