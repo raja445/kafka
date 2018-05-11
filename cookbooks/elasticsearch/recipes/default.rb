@@ -1,8 +1,9 @@
+colo = node['domain'].split(".")[-3]
 elasticsearchInstallDir="#{node["elasticsearch"]["base_dir"]}/elasticsearch-#{node["elasticsearch"]["version"]}"
 elasticsearchTmp="/tmp/elasticsearch-#{node["elasticsearch"]["version"]}.tar.gz"
 elasticsearchTmpDir="/tmp/elasticsearch"
 elasticsearchHome="#{node["elasticsearch"]["base_dir"]}/elasticsearch"
-elasticsearchConf="#{elasticsearchInstallDir}/conf"
+elasticsearchConf="#{elasticsearchInstallDir}/config"
 lockFile="#{elasticsearchInstallDir}/LOCK"
 
 directory "#{elasticsearchInstallDir}" do
@@ -50,4 +51,16 @@ link "#{elasticsearchHome}" do
   owner 'root'
   to "#{elasticsearchInstallDir}"
   link_type :symbolic
+end
+
+template "#{elasticsearchConf}/elasticsearch.yml" do
+   source "elasticsearch.yml.erb"
+   owner "root"
+   mode 00644
+   variables(
+      :fqdn => node['fqdn'],
+      :elastic_data_nodes =>node["elasticsearch"]["data_nodes"][colo],
+      :min_masters =>node["elasticsearch"]["minimum_master_node"][colo]
+)
+
 end
