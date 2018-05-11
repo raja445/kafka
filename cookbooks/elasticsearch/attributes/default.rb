@@ -4,7 +4,7 @@ default["elasticsearch"]["base_dir"]  = "/opt/inmobi"
 default["elasticsearch"]["log_base_dir"]  = "/var/log"
 
 #elastic search node
-default["elasticsearch"]["data_nodes"]['dfw2'] = "grid-staging1.grid.dfw2.inmobi.com,grid-staging2.grid.dfw2.inmobi.com,grid-staging3.grid.dfw2.inmobi.com"
+default["elasticsearch"]["data_nodes"]['dfw2'] = ["grid-staging1.grid.dfw2.inmobi.com","grid-staging2.grid.dfw2.inmobi.com","grid-staging3.grid.dfw2.inmobi.com"]
 
 #minimun master node 
 #    (no of nodes/2) + 1
