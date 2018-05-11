@@ -5,6 +5,7 @@ elasticsearchTmpDir="/tmp/elasticsearch"
 elasticsearchHome="#{node["elasticsearch"]["base_dir"]}/elasticsearch"
 elasticsearchConf="#{elasticsearchInstallDir}/config"
 lockFile="#{elasticsearchInstallDir}/LOCK"
+supervisordir="/etc/supervisor/conf.d"
 
 directory "#{elasticsearchInstallDir}" do
   action :create
@@ -63,4 +64,10 @@ template "#{elasticsearchConf}/elasticsearch.yml" do
       :min_masters =>node["elasticsearch"]["minimum_master_node"][colo]
 )
 
+end
+
+cookbook_file "#{supervisordir}/elasticsearch.conf" do
+    source "elasticsearch.conf"
+    owner "root"
+    mode "644"
 end
