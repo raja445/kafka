@@ -71,3 +71,15 @@ cookbook_file "#{supervisordir}/elasticsearch.conf" do
     owner "root"
     mode "644"
 end
+
+cookbook_file "#{supervisordir}/log4j2.properties" do
+    source "log4j2.properties"
+    owner "root"
+    mode "644"
+end
+
+cookbook_file "#{supervisordir}/jvm.options" do
+    source "jvm.options"
+    owner "root"
+    mode "644"
+end
