@@ -69,7 +69,7 @@ http.port: 9200
 #
 discovery.zen.ping.unicast.hosts:
 <% @elastic_data_nodes.each do |datanode| %>
-	- <%= "#{datanode}" %>
+   - <%= "#{datanode}" %>
 <% end %>
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
