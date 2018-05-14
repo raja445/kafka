@@ -9,19 +9,19 @@ supervisordir="/etc/supervisor/conf.d"
 
 directory "#{elasticsearchInstallDir}" do
   action :create
-  owner 'root'
+  owner 'gridops'
   mode 00755
 end
 
 directory "#{elasticsearchTmpDir}" do
   action :create
-  owner 'root'
+  owner 'gridops'
   mode 00755
 end
 
 %w[/data/elasticsearch /var/log/elasticsearch].each do |path|
   directory path do
-    owner 'root'
+    owner 'gridops'
     mode '0755'
     action :create
   end
@@ -49,14 +49,14 @@ execute "Create Lock file" do
 end
 
 link "#{elasticsearchHome}" do
-  owner 'root'
+  owner 'gridops'
   to "#{elasticsearchInstallDir}"
   link_type :symbolic
 end
 
 template "#{elasticsearchConf}/elasticsearch.yml" do
    source "elasticsearch.yml.erb"
-   owner "root"
+   owner "gridops"
    mode 00644
    variables(
       :fqdn => node['fqdn'],
@@ -68,18 +68,18 @@ end
 
 cookbook_file "#{supervisordir}/elasticsearch.conf" do
     source "elasticsearch.conf"
-    owner "root"
+    owner "gridops"
     mode "644"
 end
 
 cookbook_file "#{elasticsearchConf}/log4j2.properties" do
     source "log4j2.properties"
-    owner "root"
+    owner "gridops"
     mode "644"
 end
 
 cookbook_file "#{elasticsearchConf}/jvm.options" do
     source "jvm.options"
-    owner "root"
+    owner "gridops"
     mode "644"
 end
