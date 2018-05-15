@@ -1,6 +1,6 @@
 colo = node['domain'].split(".")[-3]
 kibanaInstallDir="#{node["kibana"]["base_dir"]}/kibana-#{node["kibana"]["version"]}"
-kibanaTmp="/tmp/kibana-#{node["kibana"]["version"]}.tar.gz"
+kibanaTmp="/tmp/kibana-#{node["kibana"]["version"]}-linux-x86_64.tar.gz"
 kibanaTmpDir="/tmp/kibana"
 kibanaHome="#{node["kibana"]["base_dir"]}/kibana"
 kibanaConf="#{kibanaInstallDir}/config"
@@ -33,7 +33,7 @@ remote_file "#{kibanaTmp}" do
   backup false
 end
 
-execute "untar kibana binary" do
+execute "untar kibana binary" do	
   cwd kibanaTmpDir
   command "tar -xvf #{kibanaTmp}; mv kibana-#{node["kibana"]["version"]}/* #{kibanaInstallDir}/"
   not_if do
