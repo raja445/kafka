@@ -66,6 +66,6 @@ template "#{kibanaConf}/kibana.yml" do
     mode 00644
     variables(
     	:fqdn => node['fqdn'],
-        :elasticsearch_url => default["kibana"]["elk_url"][colo]
+        :elasticsearch_url => node["kibana"]["elk_url"][colo]
     )
 end 
