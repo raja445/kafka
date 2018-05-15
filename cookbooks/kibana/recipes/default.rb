@@ -35,7 +35,7 @@ end
 
 execute "untar kibana binary" do	
   cwd kibanaTmpDir
-  command "tar -xvf #{kibanaTmp}; mv kibana-#{node["kibana"]["version"]}/* #{kibanaInstallDir}/"
+  command "tar -xvf #{kibanaTmp}; mv kibana-#{node["kibana"]["version"]}-linux-x86_64/* #{kibanaInstallDir}/"
   not_if do
     File.exists? "#{lockFile}"
   end
