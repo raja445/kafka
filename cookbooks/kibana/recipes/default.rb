@@ -59,3 +59,13 @@ cookbook_file "#{supervisordir}/kibana.conf" do
     owner "gridops"
     mode "644"
 end
+
+template "#{kibanaConf}/kibana.yml" do
+    source "kibana.yml.erb"
+    owner "gridops"
+    mode 00644
+    variables(
+    	:fqdn => node['fqdn'],
+        :elasticsearch_url => default["kibana"]["elk_url"][colo]
+    )
+end 
