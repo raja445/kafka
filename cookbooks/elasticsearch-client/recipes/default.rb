@@ -1,8 +1,8 @@
 colo = node['domain'].split(".")[-3]
-elasticsearchInstallDir="#{node["elasticsearch"]["base_dir"]}/elasticsearch-#{node["elasticsearch"]["version"]}"
+elasticsearchInstallDir="#{node["elasticsearch"]["base_dir"]}/elasticsearch-client-#{node["elasticsearch"]["version"]}"
 elasticsearchTmp="/tmp/elasticsearch-#{node["elasticsearch"]["version"]}.tar.gz"
-elasticsearchTmpDir="/tmp/elasticsearch"
-elasticsearchHome="#{node["elasticsearch"]["base_dir"]}/elasticsearch"
+elasticsearchTmpDir="/tmp/elasticsearch-client"
+elasticsearchHome="#{node["elasticsearch"]["base_dir"]}/elasticsearch-client"
 elasticsearchConf="#{elasticsearchInstallDir}/config"
 lockFile="#{elasticsearchInstallDir}/LOCK"
 supervisordir="/etc/supervisor/conf.d"
@@ -66,8 +66,8 @@ template "#{elasticsearchConf}/elasticsearch.yml" do
 
 end
 
-cookbook_file "#{supervisordir}/elasticsearch.conf" do
-    source "elasticsearch.conf"
+cookbook_file "#{supervisordir}/elasticsearch-client.conf" do
+    source "elasticsearch-client.conf"
     owner "gridops"
     mode "644"
 end
