@@ -61,7 +61,14 @@ default["kafka"]["server.properties"]["log.flush.interval.ms"] = 120000
 default["kafka"]["server.properties"]["log.retention.hours"] = 48
 default["kafka"]["server.properties"]["log.roll.hours"] = 1
 default["kafka"]["server.properties"]["log.retention.check.interval.ms"] = 300000
-default["kafka"]["server.properties"]["num.replica.fetchers"] = 12
+if cluster_colo == 'ams1'
+  default["kafka"]["server.properties"]["num.replica.fetchers"] = 18
+else
+  default["kafka"]["server.properties"]["num.replica.fetchers"] = 12
+end
+if cluster_colo == 'ams1'
+  default["kafka"]["server.properties"]["replica.fetch.max.bytes"] = 2097152
+end
 default["kafka"]["server.properties"]["replica.fetch.wait.max.ms"] = 500
 default["kafka"]["server.properties"]["leader.imbalance.check.interval.seconds"] = 120
 default["kafka"]["server.properties"]["replica.lag.max.messages"] = 10000
