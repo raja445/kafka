@@ -84,7 +84,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
     :local_hdfs_sinks =>node["flume_collector"]["endcollector_local_hdfs_sinks"][colo],
     :local_eventhub_sinks =>node["flume_collector"]["endcollector_local_eventhub_sinks"]['dfw1'],
-    :local_eventhub_sinks =>node["flume_collector"]["endcollector_local_eventhub_sinks1"]['dfw1'],
+    :local_eventhub_sinks1 =>node["flume_collector"]["endcollector_local_eventhub_sinks1"]['dfw1'],
     :local_hdfs_channels =>node["flume_collector"]["endcollector_local_hdfs_channels"][colo],
     :local_eventhub_channels =>node["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1'],
     :merged_hdfs_sinks =>node["flume_collector"]["endcollector_merged_hdfs_sinks"][colo],
