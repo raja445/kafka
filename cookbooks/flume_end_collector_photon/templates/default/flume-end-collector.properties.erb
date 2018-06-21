@@ -474,7 +474,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks.each do |sink, details| %>
+<% @local_eventhub_sinks1.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = sg-ingestion-iad2

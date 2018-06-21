@@ -151,6 +151,9 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
 
 default["flume_collector"]["endcollector_local_eventhub_sinks"]['dfw1']  = {
      "eventhublocal-sink1" => {:channel => "eventhublocal-channel",:cluster =>"onyx"},
+}
+
+default["flume_collector"]["endcollector_local_eventhub_sinks1"]['dfw1']  = {
      "eventhublocal-sink2" => {:channel => "eventhublocal-channel1",:cluster =>"onyx"},
 }
 
