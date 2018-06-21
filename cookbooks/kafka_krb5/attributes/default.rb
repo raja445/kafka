@@ -88,7 +88,7 @@ end
 default["kafka"]["server.properties"]["zookeeper.connection.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["zookeeper.session.timeout.ms"] = 20000
 default["kafka"]["server.properties"]["inter.broker.protocol.version"] = '0.10.2'
-default["kafka"]["server.properties"]["log.message.format.version"] = '0.8.2'
+default["kafka"]["server.properties"]["log.message.format.version"] = '0.10.2'
 default["kafka"]["server.properties"]["offsets.retention.minutes"] = 3060
 
 #------------Kerberos Related Changes------------------
