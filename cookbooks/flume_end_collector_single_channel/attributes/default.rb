@@ -145,21 +145,21 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-          :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfw1,network_render_cpc_dfw1,network_attribute_dfw1,profile_delete_dfw1,network_render_cpm_dfw1,photon_appd_flat_activity_dfw1,photon_optout_dfw1"},
+          :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfw1,network_render_cpc_dfw1,network_attribute_dfw1,profile_delete_dfw1,network_render_cpm_dfw1,photon_appd_flat_activity_dfw1,photon_optout_dfw1,pso-attributes_dfw1"},
      "dfw2photonmergesrc" => {
          :src_category => "dfw2kafkamerge",
          :consumer_group => "dfw2-to-dfw1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-          :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfw1,network_render_cpc_dfw1,network_attribute_dfw1,profile_delete_dfw1,network_render_cpm_dfw1,photon_appd_flat_activity_dfw1,photon_optout_dfw1"},
+          :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfw1,network_render_cpc_dfw1,network_attribute_dfw1,profile_delete_dfw1,network_render_cpm_dfw1,photon_appd_flat_activity_dfw1,photon_optout_dfw1,pso-attributes_dfw1"},
      "pek1photonmergesrc" => {
          :src_category => "pek1kafkamerge",
          :consumer_group => "pek1-to-dfw1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfw1,network_render_cpc_dfw1,network_attribute_dfw1,profile_delete_dfw1,network_render_cpm_dfw1,photon_appd_flat_activity_dfw1,photon_optout_dfw1"},
+         :'kafka.topics' => "appd_attribute_dfw1,appd_custom_type_dfw1,appd_flat_activity_dfw1,audience-attributes_dfw1,brand_attributes_dfw1,cas_nested_activity_dfw1,ifc_activity_dfw1,ifc_attributes_dfw1,ifc_organic_activity_dfw1,network_activity_dfw1,network_beacon_dfw1,network_billing_dfw1,network_click_dfw1,network_conversion_dfw1,network_render_cpc_dfw1,network_attribute_dfw1,profile_delete_dfw1,network_render_cpm_dfw1,photon_appd_flat_activity_dfw1,photon_optout_dfw1,pso-attributes_dfw1"},
        }
 
 #Configure the channels for the Flume Collector
@@ -320,21 +320,21 @@ default["flume_collector"]["endcollector_sources"]['dfw2']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2"},
+         :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2,pso-attributes_dfw2"},
      "ams1photonmergesrc" => {
          :src_category => "ams1kafkamerge",
          :consumer_group => "ams1-to-dfw2-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-          :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2"},
+          :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2,pso-attributes_dfw2"},
      "pek1photonmergesrc" => {
          :src_category => "pek1kafkamerge",
          :consumer_group => "pek1-to-dfw2-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2"},
+         :'kafka.topics' => "appd_attribute_dfw2,appd_custom_type_dfw2,appd_flat_activity_dfw2,audience-attributes_dfw2,brand_attributes_dfw2,cas_nested_activity_dfw2,ifc_activity_dfw2,ifc_attributes_dfw2,ifc_organic_activity_dfw2,network_activity_dfw2,network_beacon_dfw2,network_billing_dfw2,network_click_dfw2,network_conversion_dfw2,network_render_cpc_dfw2,network_attribute_dfw2,profile_delete_dfw2,network_render_cpm_dfw2,photon_appd_flat_activity_dfw2,photon_optout_dfw2,pso-attributes_dfw2"},
        }
 
 #Configure the channels for the Flume Collector
@@ -499,7 +499,7 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_optout_ams1"},
+	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_optout_ams1,pso-attributes_ams1"},
      "ams1todfw1pushsrc" => {
          :src_category => "ams1todfw1kafkamerge",
          :consumer_group => "ams1-to-dfw1-kafkapush",
@@ -513,14 +513,14 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1"},
+	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1,pso-attributes_ams1"},
      "pek1photonmergesrc" => {
          :src_category => "pek1kafkamerge",
          :consumer_group => "pek1-to-ams1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1"},
+	 :'kafka.topics' => "appd_attribute_ams1,appd_custom_type_ams1,appd_flat_activity_ams1,audience-attributes_ams1,brand_attributes_ams1,cas_nested_activity_ams1,ifc_activity_ams1,ifc_attributes_ams1,ifc_organic_activity_ams1,network_activity_ams1,network_beacon_ams1,network_billing_ams1,network_click_ams1,network_conversion_ams1,network_render_cpc_ams1,network_attribute_ams1,profile_delete_ams1,network_render_cpm_ams1,photon_appd_flat_activity_ams1,photon_optout_ams1,pso-attributes_ams1"},
        }
 
 #Configure the channels for the Flume Collector
@@ -851,21 +851,21 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_pek1,appd_custom_type_pek1,appd_flat_activity_pek1,audience-attributes_pek1,brand_attributes_pek1,cas_nested_activity_pek1,ifc_activity_pek1,ifc_attributes_pek1,ifc_organic_activity_pek1,network_activity_pek1,network_beacon_pek1,network_billing_pek1,network_click_pek1,network_conversion_pek1,network_render_cpc_pek1,network_attribute_pek1,profile_delete_pek1,network_render_cpm_pek1,photon_appd_flat_activity_pek1,photon_optout_pek1"},
+         :'kafka.topics' => "appd_attribute_pek1,appd_custom_type_pek1,appd_flat_activity_pek1,audience-attributes_pek1,brand_attributes_pek1,cas_nested_activity_pek1,ifc_activity_pek1,ifc_attributes_pek1,ifc_organic_activity_pek1,network_activity_pek1,network_beacon_pek1,network_billing_pek1,network_click_pek1,network_conversion_pek1,network_render_cpc_pek1,network_attribute_pek1,profile_delete_pek1,network_render_cpm_pek1,photon_appd_flat_activity_pek1,photon_optout_pek1,pso-attributes_pek1"},
      "ams1photonmergesrc" => {
          :src_category => "ams1kafkamerge",
          :consumer_group => "ams1-to-pek1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_pek1,appd_custom_type_pek1,appd_flat_activity_pek1,audience-attributes_pek1,brand_attributes_pek1,cas_nested_activity_pek1,ifc_activity_pek1,ifc_attributes_pek1,ifc_organic_activity_pek1,network_activity_pek1,network_beacon_pek1,network_billing_pek1,network_click_pek1,network_conversion_pek1,network_render_cpc_pek1,network_attribute_pek1,profile_delete_pek1,network_render_cpm_pek1,photon_appd_flat_activity_pek1,photon_optout_pek1"},
+         :'kafka.topics' => "appd_attribute_pek1,appd_custom_type_pek1,appd_flat_activity_pek1,audience-attributes_pek1,brand_attributes_pek1,cas_nested_activity_pek1,ifc_activity_pek1,ifc_attributes_pek1,ifc_organic_activity_pek1,network_activity_pek1,network_beacon_pek1,network_billing_pek1,network_click_pek1,network_conversion_pek1,network_render_cpc_pek1,network_attribute_pek1,profile_delete_pek1,network_render_cpm_pek1,photon_appd_flat_activity_pek1,photon_optout_pek1,pso-attributes_pek1"},
      "dfw2photonmergesrc" => {
          :src_category => "dfw2kafkamerge",
          :consumer_group => "dfw2-to-pek1-kafkamerge",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "photon-mergespillable-channel",
          :batchSize => 500,
-         :'kafka.topics' => "appd_attribute_pek1,appd_custom_type_pek1,appd_flat_activity_pek1,audience-attributes_pek1,brand_attributes_pek1,cas_nested_activity_pek1,ifc_activity_pek1,ifc_attributes_pek1,ifc_organic_activity_pek1,network_activity_pek1,network_beacon_pek1,network_billing_pek1,network_click_pek1,network_conversion_pek1,network_render_cpc_pek1,network_attribute_pek1,profile_delete_pek1,network_render_cpm_pek1,photon_appd_flat_activity_pek1,photon_optout_pek1"},
+         :'kafka.topics' => "appd_attribute_pek1,appd_custom_type_pek1,appd_flat_activity_pek1,audience-attributes_pek1,brand_attributes_pek1,cas_nested_activity_pek1,ifc_activity_pek1,ifc_attributes_pek1,ifc_organic_activity_pek1,network_activity_pek1,network_beacon_pek1,network_billing_pek1,network_click_pek1,network_conversion_pek1,network_render_cpc_pek1,network_attribute_pek1,profile_delete_pek1,network_render_cpm_pek1,photon_appd_flat_activity_pek1,photon_optout_pek1,pso-attributes_pek1"},
        }
 
 #Configure the channels for the Flume Collector
