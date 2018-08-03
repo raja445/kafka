@@ -62,7 +62,7 @@ default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "platinumhdfs
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "wclick_pek1,wclick_dfw1,user_context,ucm_mapping,tpce_purchase_summary,tpce_enriched_download,tpce_custom_goal_summary,sandboxrr,sandbox_postimpression,optout,normalized_postback,il-flat_activity_add-ifcorganicactivity,ifc_photon_nonenriched_pb_pek1,ifc_photon_nonenriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw1,ifc_photon_nonenriched_pb_ams1,ifc_photon_enriched_san_pb,ifc_photon_enriched_postback,ifc_photon_enriched_pb_pek1,ifc_photon_enriched_pb_dfw2,ifc_photon_enriched_pb_dfw1,ifc_photon_enriched_pb_ams1,ifc_inmobi_api_user_segments,ifc_cookie_organic_activity,ifc_attributes,iapclick,iapbilling,iapattribution,genesis_postback,dsp_segments,dsp-beacon,beeswax_post_install_event,beeswax_download_event,beeswax_bid_logs,adroit_attribution_stats,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfs-sink9 platinumhdfs-sink10 platinumhdfs-sink11 platinumhdfs-sink12 platinumhdfs-sink13 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8 platinumhdfssecure-sink9 platinumhdfssecure-sink10 platinumhdfssecure-sink11 platinumhdfssecure-sink12 platinumhdfssecure-sink13"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfsplatinumsrc1" => {
@@ -123,6 +123,11 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw1']  = {
      "platinumhdfs-sink6" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
      "platinumhdfs-sink7" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
      "platinumhdfs-sink8" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink9" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink10" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink11" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink12" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink13" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['dfw1']  = {
@@ -134,6 +139,11 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['dfw1']  =
      "platinumhdfssecure-sink6" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfssecure-sink7" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
      "platinumhdfssecure-sink8" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink9" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink10" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink11" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink12" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+     "platinumhdfssecure-sink13" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
 }
 
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['dfw1']  = ["platinumhdfssecure-channel"]
