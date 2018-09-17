@@ -582,7 +582,7 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.producer.batch.size = 131072
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 500
 end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['ams1'] %>
 end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
+end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = 0
 # valid values none, gzip, snappy
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
 #Single channel
