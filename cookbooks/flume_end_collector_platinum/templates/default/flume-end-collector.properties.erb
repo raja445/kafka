@@ -104,10 +104,10 @@ end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
-end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 30
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
-end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 50.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /merge/platinumpromoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /merge/platinumretention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /merge/platinumaudit
@@ -119,6 +119,8 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.perfRR = 96
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.adroit_san_pinger_stats = 240
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 #promotion enabling / disabling
 end-collector.sinks.<%= "#{sink}" %>.promotion.enable = <%= details[:ispromoter] %>
@@ -174,10 +176,10 @@ end-collector.sinks.<%= "#{sink}" %>.serializer = BASE64
 end-collector.sinks.<%= "#{sink}" %>.hdfs.callTimeout = 10000
 end-collector.sinks.<%= "#{sink}" %>.hdfs.filePrefix = <%= node["hostname"] %>
 end-collector.sinks.<%= "#{sink}" %>.proxyUser = databus
-end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 10
+end-collector.sinks.<%= "#{sink}" %>.uploaderPoolSize = 30
 end-collector.sinks.<%= "#{sink}" %>.defaultUploaderSleepIntervalMs = 1000
 #Single Channel
-end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 10.0
+end-collector.sinks.<%= "#{sink}" %>.backoffThreshold = 50.0
 end-collector.sinks.<%= "#{sink}" %>.promoter.service.zkPath = /secure/merge/platinumpromoter
 end-collector.sinks.<%= "#{sink}" %>.retention.service.zkPath = /secure/merge/platinumretention
 end-collector.sinks.<%= "#{sink}" %>.audit.service.zkPath = /secure/merge/platinumaudit
@@ -189,6 +191,8 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.perfRR = 96
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.adroit_san_pinger_stats = 240
 #end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 #promotion enabling / disabling

@@ -13,7 +13,7 @@ default["flume_collector"]["kafka_zookeeper"]['dfw1']  = "kafka-zookeeper-1.grid
 
 
 #Configure the sources for the Flume Collector
-default["flume_collector"]["midcollector_sources"]['ev1']  = {
+default["flume_collector"]["midcollector_sources"]['wo1']  = {
      "zipavrosrc" => {
          :type => "avro",
          :'kafka.zookeeper' => node["flume_collector"]["kafka_zookeeper"]['dfw1'],
@@ -24,7 +24,7 @@ default["flume_collector"]["midcollector_sources"]['ev1']  = {
        }
 
 #Configure the channels for the UH1 Flume Collector
-default["flume_collector"]["midcollector_channels"]['ev1']  = {
+default["flume_collector"]["midcollector_channels"]['wo1']  = {
      "spillable" => {
          :type => "org.apache.flume.channel.DiskBackedMemoryChannel",
          :capacity => "50000",
@@ -34,7 +34,7 @@ default["flume_collector"]["midcollector_channels"]['ev1']  = {
 
 
 #Configure the sinks for the Flume Collector
-default["flume_collector"]["midcollector_sinks"]['ev1']  = {
+default["flume_collector"]["midcollector_sinks"]['wo1']  = {
      "avrosink1" => {:type => "avro"},
      "avrosink2" => {:type => "avro"},
      "avrosink3" => {:type => "avro"},

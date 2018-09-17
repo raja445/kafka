@@ -7,16 +7,16 @@ default["flume_collector"]["base_dir"]  = "/opt/inmobi"
 default["flume_collector"]["spool_dir"]  = "/data/d1/flume/spool"
 default["flume_collector"]["pid_dir"]  = "/var/run/flume"
 
-default["flume_collector"]["kafka_brokers"]['dfw1']  = "oxkf4001.grid.dfw1.inmobi.com:9092,oxkf4002.grid.dfw1.inmobi.com:9092,oxkf4003.grid.dfw1.inmobi.com:9092,oxkf4008.grid.dfw1.inmobi.com:9092,oxkf4009.grid.dfw1.inmobi.com:9092,oxkf4010.grid.dfw1.inmobi.com:9092,oxkf4011.grid.dfw1.inmobi.com:9092,oxkf4012.grid.dfw1.inmobi.com:9092,oxkf4013.grid.dfw1.inmobi.com:9092,oxkf4014.grid.dfw1.inmobi.com:9092,oxkf4015.grid.dfw1.inmobi.com:9092,oxkf4016.grid.dfw1.inmobi.com:9092,oxkf4017.grid.dfw1.inmobi.com:9092"
+default["flume_collector"]["kafka_brokers"]['dfw2']  = "gakf4001.grid.dfw2.inmobi.com:9093,gakf4002.grid.dfw2.inmobi.com:9093,gakf4003.grid.dfw2.inmobi.com:9093,gakf4004.grid.dfw2.inmobi.com:9093,gakf4005.grid.dfw2.inmobi.com:9093,gakf4006.grid.dfw2.inmobi.com:9093,gakf4007.grid.dfw2.inmobi.com:9093,gakf4008.grid.dfw2.inmobi.com:9093,gakf4009.grid.dfw2.inmobi.com:9093,gakf4010.grid.dfw2.inmobi.com:9093,gakf4011.grid.dfw2.inmobi.com:9093,gakf4012.grid.dfw2.inmobi.com:9093"
 
-default["flume_collector"]["kafka_zookeeper"]['dfw1']  = "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
+default["flume_collector"]["kafka_zookeeper"]['dfw2']  = "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
 
 
 #Configure the sources for the Flume Collector
-default["flume_collector"]["midcollector_sources"]['ev1']  = {
+default["flume_collector"]["midcollector_sources"]['iad3']  = {
      "zipavrosrc" => {
          :type => "avro",
-         :'kafka.zookeeper' => node["flume_collector"]["kafka_zookeeper"]['dfw1'],
+         :'kafka.zookeeper' => node["flume_collector"]["kafka_zookeeper"]['dfw2'],
          :bind => "0.0.0.0",
          :'enable_compression' => true,
          :'compression-type' => 'deflate',
@@ -24,7 +24,7 @@ default["flume_collector"]["midcollector_sources"]['ev1']  = {
        }
 
 #Configure the channels for the UH1 Flume Collector
-default["flume_collector"]["midcollector_channels"]['ev1']  = {
+default["flume_collector"]["midcollector_channels"]['iad3']  = {
      "spillable" => {
          :type => "org.apache.flume.channel.DiskBackedMemoryChannel",
          :capacity => "50000",
@@ -34,7 +34,7 @@ default["flume_collector"]["midcollector_channels"]['ev1']  = {
 
 
 #Configure the sinks for the Flume Collector
-default["flume_collector"]["midcollector_sinks"]['ev1']  = {
+default["flume_collector"]["midcollector_sinks"]['iad3']  = {
      "avrosink1" => {:type => "avro"},
      "avrosink2" => {:type => "avro"},
      "avrosink3" => {:type => "avro"},

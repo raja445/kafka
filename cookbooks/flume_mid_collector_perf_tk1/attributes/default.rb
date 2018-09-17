@@ -13,7 +13,7 @@ default["flume_collector"]["kafka_zookeeper"]['dfw1']  = "kafka-zookeeper-1.grid
 
 
 #Configure the sources for the Flume Collector
-default["flume_collector"]["midcollector_sources"]['ev1']  = {
+default["flume_collector"]["midcollector_sources"]['tk1']  = {
      "zipavrosrc" => {
          :type => "avro",
          :'kafka.zookeeper' => node["flume_collector"]["kafka_zookeeper"]['dfw1'],
@@ -24,7 +24,7 @@ default["flume_collector"]["midcollector_sources"]['ev1']  = {
        }
 
 #Configure the channels for the UH1 Flume Collector
-default["flume_collector"]["midcollector_channels"]['ev1']  = {
+default["flume_collector"]["midcollector_channels"]['tk1']  = {
      "spillable" => {
          :type => "org.apache.flume.channel.DiskBackedMemoryChannel",
          :capacity => "50000",
@@ -34,7 +34,7 @@ default["flume_collector"]["midcollector_channels"]['ev1']  = {
 
 
 #Configure the sinks for the Flume Collector
-default["flume_collector"]["midcollector_sinks"]['ev1']  = {
+default["flume_collector"]["midcollector_sinks"]['tk1']  = {
      "avrosink1" => {:type => "avro"},
      "avrosink2" => {:type => "avro"},
      "avrosink3" => {:type => "avro"},
@@ -57,5 +57,18 @@ default["flume_collector"]["midcollector_sinks"]['ev1']  = {
      "avrosink20" => {:type => "avro"},
      "avrosink21" => {:type => "avro"},
      "avrosink22" => {:type => "avro"},
+     "avrosink23" => {:type => "avro"},
+     "avrosink24" => {:type => "avro"},
+     "avrosink25" => {:type => "avro"},
+     "avrosink26" => {:type => "avro"},
+     "avrosink27" => {:type => "avro"},
+     "avrosink28" => {:type => "avro"},
+     "avrosink29" => {:type => "avro"},
+     "avrosink30" => {:type => "avro"},
+     "avrosink31" => {:type => "avro"},
+     "avrosink32" => {:type => "avro"},
+     "avrosink33" => {:type => "avro"},
+     "avrosink34" => {:type => "avro"},
+     "avrosink35" => {:type => "avro"},
 }
 
