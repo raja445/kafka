@@ -193,6 +193,14 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary =
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.perfRR = 96
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.adroit_san_pinger_stats = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_enriched_pb_dfw1 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_enriched_pb_dfw2 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_enriched_pb_pek1 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_enriched_pb_ams1 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_nonenriched_pb_dfw1 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_nonenriched_pb_dfw2 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_nonenriched_pb_ams1 = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_nonenriched_pb_pek1 = 168
 #end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 #promotion enabling / disabling
