@@ -286,7 +286,7 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "platinumhdfssecure-channel",
          :batchSize => 500,
-         :'kafka.topics' => "merge_testmerge,merge_iapclick,merge_iapbilling,merge_iapattribution"},
+         :'kafka.topics' => "merge_testmerge"},
        }
 
 #Configure the channels for the Flume Collector
