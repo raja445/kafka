@@ -652,7 +652,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 <% if @colo == 'dfw2' -%>
 <% @local_eventhub_sinks1.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
-end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
+end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = organic-install
 end-collector.sinks.<%= "#{sink}" %>.batchsize = 204800
 end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
