@@ -46,6 +46,10 @@ default["kafka"]["brokers"]["ams1"] = ["azkf4001.grid.ams1.inmobi.com","azkf4002
 default["kafka"]["zookeepers"]["ams1"] = ["kafka-zookeeper-1.grid.ams1.inmobi.com:2181","kafka-zookeeper-2.grid.ams1.inmobi.com:2181","kafka-zookeeper-3.grid.ams1.inmobi.com:2181","kafka-zookeeper-4.grid.ams1.inmobi.com:2181","kafka-zookeeper-5.grid.ams1.inmobi.com:2181"]
 default['kafka']['mrelay']['ams1'] = "metrics-relay.grid.ams1.inmobi.com"
 
+default["kafka"]["brokers"]["maa1"] = ["bekf4001.grid.maa1.inmobi.com","bekf4002.grid.maa1.inmobi.com","bekf4003.grid.maa1.inmobi.com","bekf4004.grid.maa1.inmobi.com","bekf4005.grid.maa1.inmobi.com","bekf4006.grid.maa1.inmobi.com","bekf4007.grid.maa1.inmobi.com","bekf4008.grid.maa1.inmobi.com","bekf4009.grid.maa1.inmobi.com"]
+default["kafka"]["zookeepers"]["maa1"] = ["kafka-zookeeper-1.grid.maa1.inmobi.com:2181","kafka-zookeeper-2.grid.maa1.inmobi.com:2181","kafka-zookeeper-3.grid.maa1.inmobi.com:2181","kafka-zookeeper-4.grid.maa1.inmobi.com:2181","kafka-zookeeper-5.grid.maa1.inmobi.com:2181"]
+default['kafka']['mrelay']['maa1'] = "metrics-relay.grid.maa1.inmobi.com"
+
 default["kafka"]["shutdown_timeout"] = 80     # init.d script shutdown time-out in seconds
 default["kafka"]["env_vars"]["JMX_PORT"] = "9999"
 default["kafka"]["env_vars"]["KAFKA_HEAP_OPTS"] = "\"-Xmx8G -Xms8G\""
@@ -269,4 +273,4 @@ default["kafka"]["offset_monitor"]["refresh"] = "15.minutes"
 default["kafka"]["offset_monitor"]["retain"] = "7.days"
 
 default['jmxtrans_version'] = '250-1'
-default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'pek1' => 'pek1-pyrite', 'dfw2' => 'dfw2-garnet', 'ams1' => 'ams1-azurite'}
+default['cluster_name'] = {'dfw1' => 'DFW1_Onyx', 'pek1' => 'pek1-pyrite', 'dfw2' => 'dfw2-garnet', 'ams1' => 'ams1-azurite', 'maa1' => 'maa1-beryl'}
