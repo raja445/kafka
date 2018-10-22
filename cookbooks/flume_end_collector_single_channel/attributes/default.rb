@@ -924,10 +924,7 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['pek1']  = {
 }
 
 default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
-     "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"}
-}
-
-default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
+     "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"},
      "hdfslocalsecure-sink2" => {:channel => "hdfslocalsecure-channel2",:cluster =>"pyrite",:ispromoter =>"false"},
      "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel2",:cluster =>"pyrite",:ispromoter =>"false"}
 }
@@ -945,7 +942,7 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['pek1']  =
 }
 
 default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['pek1']  = ["hdfsmergesecure-channel"]
-default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['pek1']  = ["hdfslocalsecure-channel","hdfslocalsecure-channel2"]
+default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['pek1']  = ["hdfslocalsecure-channel" "hdfslocalsecure-channel2"]
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['pek1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of PEK1 ###################################################################
