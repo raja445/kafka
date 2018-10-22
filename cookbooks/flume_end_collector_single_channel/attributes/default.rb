@@ -772,7 +772,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['pek1']  = "be
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "testmerge,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,wclick_pek1,ifc_photon_enriched_san_pb,adroit_attribution_stats,ifc_cookie_organic_activity,iapclick,adomain_meta,adroit_san_pinger_stats,perfRR"
 
-default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable hdfslocal-channel  hdfsmerge-channel platinumhdfs-channel photon-mergespillable-channel pek1-to-dfw1-push-channel hdfslocalsecure-channel hdfsmergesecure-channel platinumhdfssecure-channel"
+default["flume_collector"]["endcollector_all_channels"]['pek1']  = "spillable  mergespillable hdfslocal-channel  hdfsmerge-channel platinumhdfs-channel photon-mergespillable-channel pek1-to-dfw1-push-channel hdfslocalsecure-channel hdfsmergesecure-channel platinumhdfssecure-channel hdfslocalsecure-channel2"
 
 default["flume_collector"]["endcollector_all_sinks"]['pek1'] = "kafkasink  mergekafkasink hdfslocal-sink  hdfsmerge-sink pek1todfw1-mergekafkasink1 pek1todfw1-mergekafkasink2 pek1todfw1-mergekafkasink3 pek1todfw1-mergekafkasink4 pek1todfw1-mergekafkasink5 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink hdfsmergesecure-sink hdfslocalsecure-sink1 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4"
 #Configure the sources for the Flume Collector
@@ -802,7 +802,21 @@ default["flume_collector"]["endcollector_sources"]['pek1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "hdfslocalsecure-channel",
          :batchSize => 500,
-         :'kafka.topics' => "rr,egret_lambda_AdUnitBeacon_pek1_defer,egret_lambda_AdUnitBeacon_pek1_enhanced,egret_lambda_AdUnitPublisherFill_pek1_enhanced,egret_lambda_RenderCPC_pek1_enhanced,egret_lambda_RenderCPM_pek1_enhanced,egret_lambda_BillingCPC_pek1_enhanced,egret_lambda_BeaconRRDefault_pek1_enhanced,egret_lambda_BillingCPM_pek1_enhanced,egret_lambda_BillingDownload_pek1_enhanced,egret_lambda_NWClickCPC_pek1_enhanced,egret_lambda_NWClickCPM_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced,egret_lambda_NonNWClickCPC_pek1_enhanced,egret_lambda_NonNWClickCPM_pek1_enhanced,egret_lambda_NonNWClickInvalid_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced,dsp-beacon,beacon_rr_hkg1_cpm_render,wclick_pek1,adroit_attribution_stats,sandboxrr,sandbox_postimpression,imei_attribute_change-appd,imei_attribute_change-brand,imei_attribute_change-core,imei_attribute_change-ifc,imei_flat_activity_add-appdcustomactivity,imei_flat_activity_add-appddownloadactivity,imei_flat_activity_add-appdpurchaseactivity,imei_flat_activity_add-appds2scustomsegmentactivity,imei_flat_activity_add-coredownloadactivity,imei_flat_activity_add-ifcorganicactivity,imei_nested_activity_add-appd,imei_nested_activity_add-cas,imei_nested_activity_add-ifc,imei_nested_activity_add-network,imei_custom_type_record_update-core,imei_custom_type_record_update-ifc,imei_custom_type_record_update-ifcinorg,imei_custom_type_record_update-appdlookaliketype,imei_custom_type_record_update-appduserrenderhistory,imei_custom_type_record_update-appduserclickhistory,imei_custom_type_record_update-branduseractivityhistory,imei_profile_delete-core,imei_profile_delete-ifc,imei_profile_delete-appd,imei_profile_delete-brand,dcp_beacon,dcp_beacon_adunit,dcp_beacon_adunit_interaction,dcp_click,nnstudio,rtbs_beacon,rtbs_click,sdk_metrics,cas_rr,rtbd_ads,cas_ads,splash,carb_user_relevance,sdkpubreq,nwClickCpcPek1,nwClickCpmPek1,nwClickInvalidPek1,renderCpcPek1,renderCpmPek1,beaconDefaultPek1,ifcp_pek1,nested_activity_add-ifc_compressed,adroit_conversion_enhanced_pek1,nonNwClickCpcPek1,nonNwClickCpmPek1,nonNwClickInvalidPek1,_audit,fds_pek1,appd_attribute,sdk_response_latencies,sdk_stability_metrics,rta,adroit_san_pinger_stats,esS2SPek1"},
+         :'kafka.topics' => "egret_lambda_AdUnitBeacon_pek1_defer,egret_lambda_AdUnitBeacon_pek1_enhanced,egret_lambda_AdUnitPublisherFill_pek1_enhanced,egret_lambda_RenderCPC_pek1_enhanced,egret_lambda_RenderCPM_pek1_enhanced,egret_lambda_BillingCPC_pek1_enhanced,egret_lambda_BeaconRRDefault_pek1_enhanced,egret_lambda_BillingCPM_pek1_enhanced,egret_lambda_BillingDownload_pek1_enhanced,egret_lambda_NWClickCPC_pek1_enhanced,egret_lambda_NWClickCPM_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced,egret_lambda_NonNWClickCPC_pek1_enhanced,egret_lambda_NonNWClickCPM_pek1_enhanced,egret_lambda_NonNWClickInvalid_pek1_enhanced,egret_lambda_NWClickInvalid_pek1_enhanced,dsp-beacon,beacon_rr_hkg1_cpm_render,wclick_pek1,adroit_attribution_stats,sandboxrr,sandbox_postimpression,imei_attribute_change-appd,imei_attribute_change-brand,imei_attribute_change-core,imei_attribute_change-ifc,imei_flat_activity_add-appdcustomactivity,imei_flat_activity_add-appddownloadactivity,imei_flat_activity_add-appdpurchaseactivity,imei_flat_activity_add-appds2scustomsegmentactivity,imei_flat_activity_add-coredownloadactivity,imei_flat_activity_add-ifcorganicactivity,imei_nested_activity_add-appd,imei_nested_activity_add-cas,imei_nested_activity_add-ifc,imei_nested_activity_add-network,imei_custom_type_record_update-core,imei_custom_type_record_update-ifc,imei_custom_type_record_update-ifcinorg,imei_custom_type_record_update-appdlookaliketype,imei_custom_type_record_update-appduserrenderhistory,imei_custom_type_record_update-appduserclickhistory,imei_custom_type_record_update-branduseractivityhistory,imei_profile_delete-core,imei_profile_delete-ifc,imei_profile_delete-appd,imei_profile_delete-brand,dcp_beacon,dcp_beacon_adunit,dcp_beacon_adunit_interaction,dcp_click,nnstudio,rtbs_beacon,rtbs_click,sdk_metrics,cas_rr,rtbd_ads,cas_ads,splash,carb_user_relevance,sdkpubreq,nwClickCpcPek1,nwClickCpmPek1,nwClickInvalidPek1,renderCpcPek1,renderCpmPek1,beaconDefaultPek1,ifcp_pek1,nested_activity_add-ifc_compressed,adroit_conversion_enhanced_pek1,nonNwClickCpcPek1,nonNwClickCpmPek1,nonNwClickInvalidPek1,_audit,fds_pek1,appd_attribute,sdk_response_latencies,sdk_stability_metrics,rta,adroit_san_pinger_stats"},
+    "hdfslocalsrc2" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "pek1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+         :'kafka.topics' => "rr"},
+    "hdfslocalsrc3" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "pek1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+         :'kafka.topics' => "rr"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "pek1hdfsmerge",
@@ -911,6 +925,10 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['pek1']  = {
 
 default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
      "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"}
+}
+
+default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
+     "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel2",:cluster =>"pyrite"}
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['pek1']  = {
