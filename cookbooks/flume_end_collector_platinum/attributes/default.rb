@@ -14,25 +14,28 @@ default["flume_collector"]["kafka_brokers"]['dfw1']  = "oxkf4001.grid.dfw1.inmob
 default["flume_collector"]["kafka_brokers"]['pek1']  = "pykf4001.grid.pek1.inmobi.com:9093,pykf4002.grid.pek1.inmobi.com:9093,pykf4003.grid.pek1.inmobi.com:9093,pykf4004.grid.pek1.inmobi.com:9093,pykf4005.grid.pek1.inmobi.com:9093,pykf4006.grid.pek1.inmobi.com:9093,pykf4007.grid.pek1.inmobi.com:9093,pykf4008.grid.pek1.inmobi.com:9093,pykf4009.grid.pek1.inmobi.com:9093,pykf4010.grid.pek1.inmobi.com:9093"
 default["flume_collector"]["kafka_brokers"]['dfw2']  = "gakf4001.grid.dfw2.inmobi.com:9093,gakf4002.grid.dfw2.inmobi.com:9093,gakf4003.grid.dfw2.inmobi.com:9093,gakf4004.grid.dfw2.inmobi.com:9093,gakf4005.grid.dfw2.inmobi.com:9093,gakf4006.grid.dfw2.inmobi.com:9093,gakf4007.grid.dfw2.inmobi.com:9093,gakf4008.grid.dfw2.inmobi.com:9093,gakf4009.grid.dfw2.inmobi.com:9093,gakf4010.grid.dfw2.inmobi.com:9093,gakf4011.grid.dfw2.inmobi.com:9093,gakf4012.grid.dfw2.inmobi.com:9093"
 default["flume_collector"]["kafka_brokers"]['ams1']  = "azkf4001.grid.ams1.inmobi.com:9093,azkf4002.grid.ams1.inmobi.com:9093,azkf4003.grid.ams1.inmobi.com:9093,azkf4004.grid.ams1.inmobi.com:9093,azkf4005.grid.ams1.inmobi.com:9093,azkf4006.grid.ams1.inmobi.com:9093,azkf4007.grid.ams1.inmobi.com:9093,azkf4008.grid.ams1.inmobi.com:9093:azkf4009.grid.ams1.inmobi.com:9093,azkf4010.grid.ams1.inmobi.com:9093,azkf4011.grid.ams1.inmobi.com:9093,azkf4012.grid.ams1.inmobi.com:9093,azkf4013.grid.ams1.inmobi.com:9093,azkf4014.grid.ams1.inmobi.com:9093,azkf4015.grid.ams1.inmobi.com:9093"
+default["flume_collector"]["kafka_brokers"]['maa1']  = "bekf4001.grid.maa1.inmobi.com:9093,bekf4002.grid.maa1.inmobi.com:9093,bekf4003.grid.maa1.inmobi.com:9093,bekf4004.grid.maa1.inmobi.com:9093,bekf4005.grid.maa1.inmobi.com:9093,bekf4006.grid.maa1.inmobi.com:9093,bekf4007.grid.maa1.inmobi.com:9093,bekf4008.grid.maa1.inmobi.com:9093,bekf4009.grid.maa1.inmobi.com:9093"
 
 # Zookeeper Quorum in each colo
 default["flume_collector"]["kafka_zookeeper"]['dfw1']  = "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
 default["flume_collector"]["kafka_zookeeper"]['pek1']  = "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
 default["flume_collector"]["kafka_zookeeper"]['dfw2']  = "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
 default["flume_collector"]["kafka_zookeeper"]['ams1']  = "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-
+default["flume_collector"]["kafka_zookeeper"]['maa1']  = "kafka-zookeeper-1.grid.maa1.inmobi.com:2181,kafka-zookeeper-2.grid.maa1.inmobi.com:2181,kafka-zookeeper-3.grid.maa1.inmobi.com:2181,kafka-zookeeper-4.grid.maa1.inmobi.com:2181,kafka-zookeeper-5.grid.maa1.inmobi.com:2181"
 
 #Flume Agents
 default["flume_collector"]["flume_agent_host"]['pek1']  = "oxfl4001.grid.dfw1.inmobi.com"
 default["flume_collector"]["flume_agent_host"]['dfw1']  = "oxfl4001.grid.dfw1.inmobi.com"
 default["flume_collector"]["flume_agent_host"]['dfw2']  = "oxfl4001.grid.dfw1.inmobi.com"
 default["flume_collector"]["flume_agent_host"]['ams1']  = "oxfl4001.grid.dfw1.inmobi.com"
+default["flume_collector"]["flume_agent_host"]['maa1']  = "oxfl4001.grid.dfw1.inmobi.com"
 
 #Flume merge source consumer groupsize
 default["flume_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "4"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "4"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['dfw2']  = "4"
 default["flume_collector"]["mergesrc_consumer_gpsize"]['ams1']  = "4"
+default["flume_collector"]["mergesrc_consumer_gpsize"]['maa1']  = "4"
 
 #number of sinkworkerthreads
 default["flume_collector"]["sinkworkerthreads"]['pek1']  = "64"
@@ -40,6 +43,7 @@ default["flume_collector"]["sinkworkerthreads"]['dfw1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['lhr1']  = "88"
 default["flume_collector"]["sinkworkerthreads"]['dfw2']  = "64"
 default["flume_collector"]["sinkworkerthreads"]['ams1']  = "64"
+default["flume_collector"]["sinkworkerthreads"]['maa1']  = "64"
 
 #number of sinkworkerthreads
 default["flume_collector"]["mergesinkworkerthreads"]['pek1']  = "64"
@@ -47,6 +51,7 @@ default["flume_collector"]["mergesinkworkerthreads"]['dfw1']  = "64"
 default["flume_collector"]["mergesinkworkerthreads"]['lhr1']  = "64"
 default["flume_collector"]["mergesinkworkerthreads"]['dfw2']  = "64"
 default["flume_collector"]["mergesinkworkerthreads"]['ams1']  = "64"
+default["flume_collector"]["mergesinkworkerthreads"]['maa1']  = "64"
 
 #number of avrosinkworkerthreads
 default["flume_collector"]["avrosinkworkerthreads"]['pek1']  = "16"
@@ -54,6 +59,7 @@ default["flume_collector"]["avrosinkworkerthreads"]['dfw1']  = "16"
 default["flume_collector"]["avrosinkworkerthreads"]['lhr1']  = "16"
 default["flume_collector"]["avrosinkworkerthreads"]['dfw2']  = "16"
 default["flume_collector"]["avrosinkworkerthreads"]['ams1']  = "16"
+default["flume_collector"]["avrosinkworkerthreads"]['maa1']  = "16"
 
 
 ######################################################### DFW1 ###################################################################
@@ -319,6 +325,87 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['ams1']
 
 ######################################################### End Of AMS1 ###################################################################
 
+######################################################### MAA1 #########################################################################
+default["flume_collector"]["endcollector_all_channels"]['maa1']  = "platinumhdfs-channel platinumhdfssecure-channel"
+
+default["flume_collector"]["endcollector_platinum_retention_topics"]['maa1']  = "ifc_photon_enriched_pb_maa1,ifc_photon_nonenriched_pb_maa1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,ucm_mapping,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"
+
+default["flume_collector"]["endcollector_all_sinks"]['maa1'] = "platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 platinumhdfs-sink6 platinumhdfs-sink7 platinumhdfs-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5 platinumhdfssecure-sink6 platinumhdfssecure-sink7 platinumhdfssecure-sink8"
+#Configure the sources for the Flume Collector
+default["flume_collector"]["endcollector_sources"]['maa1']  = {
+     "hdfsplatinumsrc1" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "maa1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfssecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_maa1,ifc_photon_nonenriched_pb_maa1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,ucm_mapping,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"},
+     "hdfsplatinumsrc2" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "maa1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfssecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_maa1,ifc_photon_nonenriched_pb_maa1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,ucm_mapping,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"},
+     "hdfsplatinumsrc3" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "maa1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfssecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_maa1,ifc_photon_nonenriched_pb_maa1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,ucm_mapping,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"},
+     "hdfsplatinumsrc4" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "maa1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfssecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_maa1,ifc_photon_nonenriched_pb_maa1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,ucm_mapping,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"},
+     "hdfsplatinumsrc5" => {
+         :src_category => "platinumhdfs",
+         :consumer_group => "maa1-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfssecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "ifc_photon_enriched_pb_maa1,ifc_photon_nonenriched_pb_maa1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,il-flat_activity_add-ifcorganicactivity,adroit_attribution_stats,ucm_mapping,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"},
+     "hdfsplatinummergesrc" => {
+         :src_category => "mergetoplatinumhdfs",
+         :consumer_group => "maa1-merge-to-platinum-hdfs",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "platinumhdfssecure-channel",
+         :batchSize => 500,
+         :'kafka.topics' => "merge_testmerge"},
+       }
+
+#Configure the channels for the Flume Collector
+default["flume_collector"]["endcollector_platinum_hdfs_channels"]['maa1']  = ["platinumhdfs-channel"]
+
+#Configure the sinks for the Flume Collector
+default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['maa1']  = {
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink6" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink7" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfs-sink8" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"false"}
+}
+
+default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['maa1']  = {
+     "platinumhdfssecure-sink1" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink2" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink5" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink6" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink7" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"},
+     "platinumhdfssecure-sink8" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"false"}
+}
+
+default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['maa1']  = ["platinumhdfssecure-channel"]
+
+######################################################### End Of AMS1 ###################################################################
 
 ######################################################### PEK1 ###################################################################
 default["flume_collector"]["endcollector_platinum_retention_topics"]['pek1']  = "ifc_photon_enriched_pb_pek1,ifc_photon_nonenriched_pb_pek1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,wclick_pek1,ifc_photon_enriched_san_pb,adroit_attribution_stats,ifc_cookie_organic_activity,iapclick,adomain_meta,rtf,perfRR,adroit_san_pinger_stats"
