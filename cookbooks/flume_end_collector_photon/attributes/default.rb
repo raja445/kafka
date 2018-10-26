@@ -679,8 +679,7 @@ default["flume_collector"]["endcollector_sources"]['maa1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "mergespillable",
          :batchSize => 500,
-	 :'kafka.topics' => "photon_flume_test"}
-       }
+	 :'kafka.topics' => "photon_flume_test"},
      "ams1kafkamergesrc" => {
          :src_category => "ams1kafkamerge",
          :consumer_group => "ams1-to-maa1-kafkamerge",
@@ -689,6 +688,7 @@ default["flume_collector"]["endcollector_sources"]['maa1']  = {
          :batchSize => 500,
 	 :'kafka.topics' => "photon_flume_test"}
        }
+
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['maa1']  = ["mergespillable"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['maa1']  = ["hdfsmerge-channel"]
