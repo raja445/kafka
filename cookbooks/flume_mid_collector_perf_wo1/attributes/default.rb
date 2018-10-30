@@ -57,5 +57,18 @@ default["flume_collector"]["midcollector_sinks"]['wo1']  = {
      "avrosink20" => {:type => "avro"},
      "avrosink21" => {:type => "avro"},
      "avrosink22" => {:type => "avro"},
+     "avrosink23" => {:type => "avro"},
+     "avrosink24" => {:type => "avro"},
+     "avrosink25" => {:type => "avro"},
+     "avrosink26" => {:type => "avro"},
+     "avrosink27" => {:type => "avro"},
+     "avrosink28" => {:type => "avro"},
+     "avrosink29" => {:type => "avro"},
+     "avrosink30" => {:type => "avro"},
+     "avrosink31" => {:type => "avro"},
+     "avrosink32" => {:type => "avro"},
+     "avrosink33" => {:type => "avro"},
+     "avrosink34" => {:type => "avro"},
+     "avrosink35" => {:type => "avro"},
 }
 
