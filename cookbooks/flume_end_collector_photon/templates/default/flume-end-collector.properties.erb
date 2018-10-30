@@ -410,6 +410,96 @@ end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name 
 end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
 
+<% if details[:'src_category'] == 'dfw1eventhublocal6' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
+end-collector.sources.<%= "#{src}" %>.dualCommit = false
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
+<% end -%>
+
+<% if details[:'src_category'] == 'dfw1eventhublocal7' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
+end-collector.sources.<%= "#{src}" %>.dualCommit = false
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
+<% end -%>
+
+<% if details[:'src_category'] == 'dfw1eventhublocal8' -%>
+end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
+end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
+end-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["flume_collector"]["kafka_zookeeper"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.offsetStore = zookeeper
+end-collector.sources.<%= "#{src}" %>.dualCommit = false
+#Single Channel
+end-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume/locker
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
+end-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-photon-<%= details[:'consumer_group'] %>
+end-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
+end-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
+end-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
+end-collector.sources.<%= "#{src}" %>.consumerGroupSize = <%= @mergesrc_consumer_gpsize %>
+end-collector.sources.<%= "#{src}" %>.kafka.auto.offset.reset = latest
+end-collector.sources.<%= "#{src}" %>.audit.enable = true
+end-collector.sources.<%= "#{src}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
+end-collector.sources.<%= "#{src}" %>.audit.port = 2530
+end-collector.sources.<%= "#{src}" %>.tier = merger_src
+end-collector.sources.<%= "#{src}" %>.interceptors = topic-name-prefix-adder-<%= "#{src}" %>
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.type = org.apache.flume.source.kafka.TopicNamePrefixAdder$Builder
+end-collector.sources.<%= "#{src}" %>.interceptors.topic-name-prefix-adder-<%= "#{src}" %>.topicHeaderKey = category
+#Kerberos Conf
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
+end-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
+<% end -%>
+
 <% if details[:'src_category'] == 'dfw2eventhublocal1' -%>
 end-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
 end-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
@@ -894,6 +984,48 @@ end-collector.sinks.<%= "#{sink}" %>.saskey = JEgB9bjOXMXale6NzzqfBpSWoNKy768SHn
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.workercount = 10
 end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @local_eventhub_sinks6.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
+end-collector.sinks.<%= "#{sink}" %>.saskey = VAy6d8GYBsXCJBIZFGIUWvL9ESO/sFYSOPCrKN39n8Y=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-custom-backfill
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @local_eventhub_sinks7.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
+end-collector.sinks.<%= "#{sink}" %>.saskey = HajEk3ZqqGz7ZG9pMxVGKHl2d3PdxKhDiLSIbmC7GxA=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-install-backfill
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @local_eventhub_sinks8.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
+end-collector.sinks.<%= "#{sink}" %>.saskey = icIKeLrnwzpM07+5m2YcMdXeUnZPdfyoWiOZw0AA+3k=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-purchase-backfill
 <% end %>
 <% end %>
 
