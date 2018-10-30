@@ -198,32 +198,32 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
      "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
 }
 
-default["flume_collector"]["endcollector_local_eventhub_sinks1"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks1"]['dfw1']  = {
      "eventhublocal-sink2" => {:channel => "eventhublocal-channel1",:cluster =>"onyx"},
 }
 
-default["flume_collector"]["endcollector_local_eventhub_sinks2"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks2"]['dfw1']  = {
      "eventhublocal-sink3" => {:channel => "eventhublocal-channel2",:cluster =>"onyx"},
 }
 
-default["flume_collector"]["endcollector_local_eventhub_sinks3"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks3"]['dfw1']  = {
      "eventhublocal-sink4" => {:channel => "eventhublocal-channel3",:cluster =>"onyx"},
 }
 
-default["flume_collector"]["endcollector_local_eventhub_sinks4"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks4"]['dfw1']  = {
      "eventhublocal-sink5" => {:channel => "eventhublocal-channel4",:cluster =>"onyx"},
 }
 
-default["flume_collector"]["endcollector_local_eventhub_sinks5"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks5"]['dfw1']  = {
      "eventhublocal-sink6" => {:channel => "eventhublocal-channel5",:cluster =>"onyx"},
 }
-default["flume_collector"]["endcollector_local_eventhub_sinks6"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks6"]['dfw1']  = {
      "kestrelsink7" => {:channel => "eventhublocal-channel6",:cluster =>"onyx"},
 }
-default["flume_collector"]["endcollector_local_eventhub_sinks7"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks7"]['dfw1']  = {
      "kestrelsink8" => {:channel => "eventhublocal-channel7",:cluster =>"onyx"},
 }
-default["flume_collector"]["endcollector_local_eventhub_sinks8"]['dfw1']  = {
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks8"]['dfw1']  = {
      "kestrelsink9" => {:channel => "eventhublocal-channel8",:cluster =>"onyx"},
 }
 
