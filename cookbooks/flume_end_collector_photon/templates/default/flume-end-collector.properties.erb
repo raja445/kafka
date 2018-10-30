@@ -884,7 +884,7 @@ end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fq
 
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks1.each do |sink, details| %>
+<% @dfw1_eventhub_sinks1.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = sg-ingestion-iad2
@@ -898,7 +898,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks2.each do |sink, details| %>
+<% @dfw1_eventhub_sinks2.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = organic-purchase-iad2
@@ -912,7 +912,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks3.each do |sink, details| %>
+<% @dfw1_eventhub_sinks3.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = organic-install-iad2
@@ -926,7 +926,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks4.each do |sink, details| %>
+<% @dfw1_eventhub_sinks4.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = organic-custom-iad2
@@ -940,7 +940,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks5.each do |sink, details| %>
+<% @dfw1_eventhub_sinks5.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.eventhub.EventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iad2-adroit
 end-collector.sinks.<%= "#{sink}" %>.eventHubName = inorganic-install-iad2
@@ -954,7 +954,7 @@ end-collector.sinks.<%= "#{sink}" %>.transactionsize = 450
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks6.each do |sink, details| %>
+<% @dfw1_eventhub_sinks6.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
 end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
@@ -968,7 +968,7 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-custom-backfill
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks7.each do |sink, details| %>
+<% @dfw1_eventhub_sinks7.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
 end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
@@ -982,7 +982,7 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-install-backfill
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @local_eventhub_sinks8.each do |sink, details| %>
+<% @dfw1_eventhub_sinks8.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
 end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
