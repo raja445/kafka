@@ -23,7 +23,7 @@ default["flume_collector"]["kafka_zookeeper"]['lhr1']  = "kafka-zookeeper-1.grid
 default["flume_collector"]["kafka_zookeeper"]['pek1']  = "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
 default["flume_collector"]["kafka_zookeeper"]['dfw2']  = "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
 default["flume_collector"]["kafka_zookeeper"]['ams1']  = "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-default["flume_collector"]["kafka_zookeeper"]['maa1']  = "kafka-zookeeper-1.grid.maa1.inmobi.com:2181,kafka-zookeeper-2.grid.maa1.inmobi.com:2181,kafka-zookeeper-3.grid.maa1.inmobi.com:2181,kafka-zookeeper-4.grid.maa1.inmobi.com:2181,kafka-zookeeper-5.grid.maa1.inmobi.com:2181"
+default["flume_collector"]["kafka_zookeeper"]['maa1']  = "kafka-zookeeper-1.grid.maa1.inmobi.com:2181,kafka-zookeeper-2.grid.maa1.inmobi.com:2181,kafka-zookeeper-3.grid.maa1.inmobi.com:2181"
 
 default["flume_collector"]["kafka_zookeeper"]['platinum']="plnn4001.grid.dfw1.inmobi.com:2181,plnn4002.grid.dfw1.inmobi.com:2181,plrm4001.grid.dfw1.inmobi.com:2181,plrm4002.grid.dfw1.inmobi.com:2181,plns4001.grid.dfw1.inmobi.com:2181"
 
