@@ -403,7 +403,7 @@ default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw2']  =
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw2']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw2']  = ["hdfslocal-channel"]
 default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw2']  = ["platinumhdfs-channel"]
-default["flume_collector"]["endcollector_local_eventhub_channels"]['dfw2']  = ["eventhublocal-channel1","eventhublocal-channel2","eventhublocal-channel3","eventhublocal-channel4","eventhublocal-channel5","eventhublocal-channel6","eventhublocal-channel7","eventhublocal-channel8","eventhublocal-channel9"]
+default["flume_collector"]["endcollector_local_eventhub_channels"]['dfw2']  = ["eventhublocal-channel1","eventhublocal-channel2","eventhublocal-channel3","eventhublocal-channel4","eventhublocal-channel5","eventhublocal-channel6","eventhublocal-channel7","eventhublocal-channel8"]
 
 #Configure the sinks for the Flume Collector
 
