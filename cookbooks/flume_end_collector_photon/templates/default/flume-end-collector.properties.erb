@@ -1226,6 +1226,7 @@ end-collector.channels.<%= "#{channel}" %>.spoolDiskCapacityMB = 10000
 <% @local_eventhub_channels.each do |channel| %>
 end-collector.channels.<%= "#{channel}" %>.type = org.apache.flume.channel.DiskBackedMemoryChannel
 #Single Channel
+#Dummy Comment
 end-collector.channels.<%= "#{channel}" %>.capacity = 50000
 end-collector.channels.<%= "#{channel}" %>.spoolOnlyOnShutdown = true
 end-collector.channels.<%= "#{channel}" %>.transactionCapacity = 500
