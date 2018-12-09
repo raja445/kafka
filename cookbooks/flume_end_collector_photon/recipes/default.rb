@@ -102,7 +102,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :local_eventhub_sinks8 =>node["flume_collector"]["endcollector_local_eventhub_sinks8"]['dfw2'],
     :local_hdfs_channels =>node["flume_collector"]["endcollector_local_hdfs_channels"][colo],
     :local_eventhub_channels =>node["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1'],
-    :local_eventhub_channels =>node["flume_collector"]["endcollector_local_eventhub_channels"]['dfw2'],
+    :local_eventhub_channels =>node["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1'],
     :merged_hdfs_sinks =>node["flume_collector"]["endcollector_merged_hdfs_sinks"][colo],
     :platinum_hdfs_sinks =>node["flume_collector"]["endcollector_platinum_hdfs_sinks"][colo],
     :merge_hdfs_channels =>node["flume_collector"]["endcollector_merge_hdfs_channels"][colo],
