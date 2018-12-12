@@ -74,9 +74,9 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "ph
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta,tpce_custom_goal_summary,tpce_enriched_download,tpce_purchase_summary,adroit_san_pinger_stats,perfRR,perfex_beacon_ev1,perfex_click_ev1,perfex_render_ev1"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel1 eventhublocal-channel2 eventhublocal-channel3 eventhublocal-channel4 eventhublocal-channel5 eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8 eventhublocal-channel9 hdfsmergesecure-channel hdfslocalsecure-channel platinumhdfssecure-channel"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel1 eventhublocal-channel2 eventhublocal-channel3 eventhublocal-channel4 eventhublocal-channel5 eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8 eventhublocal-channel9 eventhublocal-channel10 eventhublocal-channel11 eventhublocal-channel12 hdfsmergesecure-channel hdfslocalsecure-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 eventhublocal-sink2 eventhublocal-sink3 eventhublocal-sink4 eventhublocal-sink5 eventhublocal-sink6 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink10 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 eventhublocal-sink2 eventhublocal-sink3 eventhublocal-sink4 eventhublocal-sink5 eventhublocal-sink6 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink10 kestrelsink11 kestrelsink12 kestrelsink13 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfslocalsrc" => {
@@ -183,14 +183,35 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "eventhublocal-channel9",
          :batchSize => 500,
-         :'kafka.topics' => "merge_iapclick"}
+         :'kafka.topics' => "merge_iapclick"},
+    "eventhublocalsrc10" => {
+         :src_category => "dfw1eventhublocal10",
+         :consumer_group => "dfw1eventhublocal10",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel10",
+         :batchSize => 500,
+         :'kafka.topics' => "iappurchase"},
+    "eventhublocalsrc11" => {
+         :src_category => "dfw1eventhublocal11",
+         :consumer_group => "dfw1eventhublocal11",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel11",
+         :batchSize => 500,
+         :'kafka.topics' => "iapdownload"},
+    "eventhublocalsrc12" => {
+         :src_category => "dfw1eventhublocal12",
+         :consumer_group => "dfw1eventhublocal12",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel12",
+         :batchSize => 500,
+         :'kafka.topics' => "iapcustom"}
        }
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable"]
 default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel"]
 default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw1']  = ["hdfslocal-channel"]
-default["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1']  = ["eventhublocal-channel1","eventhublocal-channel2","eventhublocal-channel3","eventhublocal-channel4","eventhublocal-channel5","eventhublocal-channel6","eventhublocal-channel7","eventhublocal-channel8","eventhublocal-channel9"]
+default["flume_collector"]["endcollector_local_eventhub_channels"]['dfw1']  = ["eventhublocal-channel1","eventhublocal-channel2","eventhublocal-channel3","eventhublocal-channel4","eventhublocal-channel5","eventhublocal-channel6","eventhublocal-channel7","eventhublocal-channel8","eventhublocal-channel9","eventhublocal-channel10","eventhublocal-channel11","eventhublocal-channel12"]
 default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw1']  = ["platinumhdfs-channel"]
 
 #Configure the sinks for the Flume Collector
@@ -235,6 +256,15 @@ default["flume_collector"]["endcollector_dfw1_eventhub_sinks8"]['dfw1']  = {
 }
 default["flume_collector"]["endcollector_dfw1_eventhub_sinks9"]['dfw1']  = {
      "kestrelsink10" => {:channel => "eventhublocal-channel9",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks10"]['dfw1']  = {
+     "kestrelsink11" => {:channel => "eventhublocal-channel10",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks11"]['dfw1']  = {
+     "kestrelsink12" => {:channel => "eventhublocal-channel11",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks12"]['dfw1']  = {
+     "kestrelsink13" => {:channel => "eventhublocal-channel12",:cluster =>"onyx"},
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
