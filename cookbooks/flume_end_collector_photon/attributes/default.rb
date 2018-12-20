@@ -204,8 +204,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :channels => "eventhublocal-channel12",
          :batchSize => 500,
-         :'kafka.topics' => "iapcustom"}
-       },
+         :'kafka.topics' => "iapcustom"},
     "eventhublocalsrc13" => {
          :src_category => "dfw1eventhublocal13",
          :consumer_group => "dfw1eventhublocal13",
@@ -213,7 +212,6 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel13",
          :batchSize => 500,
          :'kafka.topics' => "glance_segments_ingestion"}
-       }
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable"]
