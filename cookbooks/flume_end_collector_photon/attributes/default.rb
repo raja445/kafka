@@ -212,6 +212,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel13",
          :batchSize => 500,
          :'kafka.topics' => "glance_segments_ingestion"}
+}
 
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable"]
