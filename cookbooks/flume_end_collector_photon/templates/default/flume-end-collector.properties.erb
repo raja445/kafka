@@ -1180,20 +1180,6 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-purchase-backfill
 <% end %>
 
 <% if @colo == 'dfw1' -%>
-<% @dfw1_eventhub_sinks9.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
-end-collector.sinks.<%= "#{sink}" %>.namespace = iapstreams
-end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-iapclick
-end-collector.sinks.<%= "#{sink}" %>.saskey = b+7IoE/2q3Dznp1r841kceyatzHrZohyAymg+3MlAOY=
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 30
-end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
-end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
-end-collector.sinks.<%= "#{sink}" %>.topic.name = iapclick
-<% end %>
-<% end %>
-
-<% if @colo == 'dfw1' -%>
 <% @dfw1_eventhub_sinks10.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = iapstreams
