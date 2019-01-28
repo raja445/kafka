@@ -1224,9 +1224,9 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = iapattrcustom
 <% if @colo == 'dfw1' -%>
 <% @dfw1_eventhub_sinks13.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
-end-collector.sinks.<%= "#{sink}" %>.namespace = glance-events-ci-eh
-end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-ci
-end-collector.sinks.<%= "#{sink}" %>.saskey = auSlL5mEi5JLBa8FD/PDRX6j4hjQWFMFbrTs62aEXkk=
+end-collector.sinks.<%= "#{sink}" %>.namespace = glance-eh-prod
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = read-write
+end-collector.sinks.<%= "#{sink}" %>.saskey = gNpbqm0TmID9J/PqnAJl+24Dsby0kEh4hQGZtSYyVAs=
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
 end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
