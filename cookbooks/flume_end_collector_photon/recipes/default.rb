@@ -83,7 +83,6 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :merge_avroreceive_channels =>node["flume_collector"]["endcollector_merge_avroreceive_channels"][colo],
     :merged_kafka_sinks =>node["flume_collector"]["endcollector_merged_kafka_sinks"][colo],
     :local_hdfs_sinks =>node["flume_collector"]["endcollector_local_hdfs_sinks"][colo],
-    :dfw1_eventhub_sinks2 =>node["flume_collector"]["endcollector_dfw1_eventhub_sinks2"]['dfw1'],
     :dfw1_eventhub_sinks3 =>node["flume_collector"]["endcollector_dfw1_eventhub_sinks3"]['dfw1'],
     :dfw1_eventhub_sinks4 =>node["flume_collector"]["endcollector_dfw1_eventhub_sinks4"]['dfw1'],
     :dfw1_eventhub_sinks5 =>node["flume_collector"]["endcollector_dfw1_eventhub_sinks5"]['dfw1'],
