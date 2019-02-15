@@ -69,7 +69,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8 eventhublocal-channel10 eventhublocal-channel11 eventhublocal-channel12 eventhublocal-channel13 hdfsmergesecure-channel hdfslocalsecure-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink11 kestrelsink12 kestrelsink13 kestrelsink14 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink11 kestrelsink12 kestrelsink13 kestrelsink14 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfslocalsrc" => {
@@ -220,7 +220,12 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw1']  = {
 default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['dfw1']  = {
      "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
      "hdfslocalsecure-sink2" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
-     "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"}
+     "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
+     "hdfslocalsecure-sink4" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
+     "hdfslocalsecure-sink5" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
+     "hdfslocalsecure-sink6" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
+     "hdfslocalsecure-sink7" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
+     "hdfslocalsecure-sink8" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"}
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['dfw1']  = {
