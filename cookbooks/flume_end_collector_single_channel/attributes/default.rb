@@ -165,6 +165,9 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
 #Configure the channels for the Flume Collector
 default["flume_collector"]["endcollector_normal_avroreceive_channels"]['dfw1']  = ["spillable"]
 default["flume_collector"]["endcollector_merge_avroreceive_channels"]['dfw1']  = ["mergespillable","photon-mergespillable-channel","dfw1-to-ams1-kafkamerge-channel"]
+default["flume_collector"]["endcollector_merge_hdfs_channels"]['dfw1']  = ["hdfsmerge-channel"]
+default["flume_collector"]["endcollector_local_hdfs_channels"]['dfw1']  = ["hdfslocal-channel"]
+default["flume_collector"]["endcollector_platinum_hdfs_channels"]['dfw1']  = ["platinumhdfs-channel"]
 
 #Configure the sinks for the Flume Collector
 default["flume_collector"]["endcollector_normal_kafka_sinks"]['dfw1']  = {
