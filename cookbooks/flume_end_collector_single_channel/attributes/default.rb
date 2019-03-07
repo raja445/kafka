@@ -186,6 +186,24 @@ default["flume_collector"]["endcollector_dfw1toams1_merged_kafka_sinks"]['dfw1']
      "dfw1-to-ams1-kafkamerge-sink5" => {:channel => "dfw1-to-ams1-kafkamerge-channel",:producer_id =>"flume-dfw1toams1merge-kafka-sink"},
 }
 
+default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {	
+     "hdfslocal-sink1" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"}
+}
+
+default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
+     "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"onyx"}
+}
+
+default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw1']  = {
+     "platinumhdfs-sink1" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink2" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink3" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink4" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfs-sink5" => {:channel => "platinumhdfs-channel",:cluster =>"platinum",:ispromoter =>"true"}
+}
+
 default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['dfw1']  = {
      "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
      "hdfslocalsecure-sink2" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
@@ -196,8 +214,17 @@ default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['dfw1']  = {
      "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"onyx"}
 }
 
+default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['dfw1']  = {
+     "platinumhdfssecure-sink1" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfssecure-sink2" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfssecure-sink3" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfssecure-sink4" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"true"},
+     "platinumhdfssecure-sink5" => {:channel => "platinumhdfssecure-channel",:cluster =>"platinum",:ispromoter =>"true"}
+}
+
 default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['dfw1']  = ["hdfsmergesecure-channel"]
 default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['dfw1']  = ["hdfslocalsecure-channel"]
+default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['dfw1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of DFW1 ###################################################################
 
