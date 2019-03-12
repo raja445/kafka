@@ -253,7 +253,7 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw2']  = "ph
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw2']  = "ifc_photon_enriched_pb_dfw2,ifc_photon_nonenriched_pb_dfw2,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ifc_cookie_organic_activity,ifc_photon_enriched_san_pb,beeswax_bid_logs,adroit_attribution_stats,ucm_mapping,adomain_meta,adroit_san_pinger_stats,perfRR,perfex_beacon_ev1,perfex_click_ev1,perfex_render_ev1"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel hdfsmergesecure-channel hdfslocalsecure-channel platinumhdfssecure-channel eventhublocal-channel1 eventhublocal-channel2 eventhublocal-channel3 eventhublocal-channel4 eventhublocal-channel5 eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8"
+default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel hdfsmergesecure-channel hdfslocalsecure-channel hdfslocalsecure-channel2 platinumhdfssecure-channel eventhublocal-channel1 eventhublocal-channel2 eventhublocal-channel3 eventhublocal-channel4 eventhublocal-channel5 eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8"
 
 default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 kestrelsink kestrelsink1 kestrelsink2 kestrelsink3 kestrelsink4 kestrelsink5 kestrelsink6 kestrelsink7"
 #Configure the sources for the Flume Collector
@@ -283,21 +283,21 @@ default["flume_collector"]["endcollector_sources"]['dfw2']  = {
          :src_category => "hdfslocal",
          :consumer_group => "dfw2hdfslocal",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfslocalsecure-channel",
+         :channels => "hdfslocalsecure-channel2",
          :batchSize => 500,
          :'kafka.topics' => "supplyRR"},
      "hdfslocalsrc5" => {
          :src_category => "hdfslocal",
          :consumer_group => "dfw2hdfslocal",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfslocalsecure-channel",
+         :channels => "hdfslocalsecure-channel2",
          :batchSize => 500,
          :'kafka.topics' => "supplyRR"},
      "hdfslocalsrc6" => {
          :src_category => "hdfslocal",
          :consumer_group => "dfw2hdfslocal",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :channels => "hdfslocalsecure-channel",
+         :channels => "hdfslocalsecure-channel2",
          :batchSize => 500,
          :'kafka.topics' => "supplyRR"},
      "hdfsmergesrc" => {
@@ -458,7 +458,11 @@ default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['dfw2']  = {
      "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"garnet"},
      "hdfslocalsecure-sink2" => {:channel => "hdfslocalsecure-channel",:cluster =>"garnet"},
      "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel",:cluster =>"garnet"},
-     "hdfslocalsecure-sink4" => {:channel => "hdfslocalsecure-channel",:cluster =>"garnet"}
+     "hdfslocalsecure-sink4" => {:channel => "hdfslocalsecure-channel",:cluster =>"garnet"},
+     "hdfslocalsecure-sink5" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
+     "hdfslocalsecure-sink6" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
+     "hdfslocalsecure-sink7" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
+     "hdfslocalsecure-sink8" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['dfw2']  = {
