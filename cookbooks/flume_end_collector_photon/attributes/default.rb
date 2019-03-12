@@ -544,9 +544,9 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['ams1']  = "ph
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['ams1']  = "ifc_photon_enriched_pb_ams1,ifc_photon_nonenriched_pb_ams1,adroit_san_pinger_stats,perfRR"
 
-default["flume_collector"]["endcollector_all_channels"]['ams1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel hdfslocalsecure-channel  hdfsmergesecure-channel platinumhdfssecure-channel"
+default["flume_collector"]["endcollector_all_channels"]['ams1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel hdfslocalsecure-channel hdfslocalsecure-channel2  hdfsmergesecure-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 hdfslocal-sink5 hdfslocal-sink6 hdfslocal-sink7 hdfslocal-sink8 hdfslocal-sink9 hdfslocal-sink10 hdfslocal-sink11 hdfslocal-sink12 hdfslocal-sink13 hdfslocal-sink14 hdfslocal-sink15 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 hdfslocalsecure-sink13 hdfslocalsecure-sink14 hdfslocalsecure-sink15 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['ams1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 hdfslocal-sink5 hdfslocal-sink6 hdfslocal-sink7 hdfslocal-sink8 hdfslocal-sink9 hdfslocal-sink10 hdfslocal-sink11 hdfslocal-sink12 hdfslocal-sink13 hdfslocal-sink14 hdfslocal-sink15 hdfslocalsecure-sink16 hdfslocalsecure-sink17 hdfslocalsecure-sink18 hdfslocalsecure-sink19 hdfslocalsecure-sink20 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 hdfslocalsecure-sink13 hdfslocalsecure-sink14 hdfslocalsecure-sink15 hdfslocalsecure-sink16 hdfslocalsecure-sink17 hdfslocalsecure-sink18 hdfslocalsecure-sink19 hdfslocalsecure-sink20 hdfslocalsecure-sink16 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['ams1']  = {
      "hdfslocalsrc" => {
@@ -584,6 +584,34 @@ default["flume_collector"]["endcollector_sources"]['ams1']  = {
          :channels => "hdfslocalsecure-channel",
          :batchSize => 500,
 	 :'kafka.topics' => "profile_delete-appd,attribute_change-appd,attribute_change-brand,attribute_change-core,attribute_change-ifc,profile_delete-brand,profile_delete-core,profile_delete-ifc,custom_type_record_update-appduserclickhistory,custom_type_record_update-appduserrenderhistory,custom_type_record_update-appduserscore,custom_type_record_update-branduseractivityhistory,custom_type_record_update-ifc,custom_type_record_update-appdlookaliketype,custom_type_record_update-core,custom_type_record_update-ifcinorg,flat_activity_add-appdcustomactivity,flat_activity_add-appddownloadactivity,flat_activity_add-appdpurchaseactivity,flat_activity_add-appds2scustomsegmentactivity,flat_activity_add-coredownloadactivity,flat_activity_add-ifcorganicactivity,nested_activity_add-appd,nested_activity_add-cas,nested_activity_add-network,adroit_report_obj_ams1,appd_attribute_errors,appd-debug,brand_attribute_ams1_ams1,ifc_photon_nonenriched_pb_ams1,nested_activity_add-ifc,nested_activity_add-ifcuseractivity,network_activity_ams1_ams1,network_attribute_raw_ams1,network_beacon_ams1_ams1,ttd-beacon,ttd-request,usermeta_change,wadogorr,fdsAms1,georrcore,georrmetrics,perfRR,napp,supplyRR,sdk_health_monitoring,sdk_crash_analytics,sdk_trc"},
+     "hdfslocalsrc6" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "ams1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+     :'kafka.topics' => "supplyRR"},
+     "hdfslocalsrc7" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "ams1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+     :'kafka.topics' => "supplyRR"},
+     "hdfslocalsrc8" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "ams1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+     :'kafka.topics' => "supplyRR"},
+     "hdfslocalsrc9" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "ams1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+     :'kafka.topics' => "supplyRR"},
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "ams1hdfsmerge",
@@ -675,7 +703,12 @@ default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['ams1']  = {
      "hdfslocalsecure-sink12" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"},
      "hdfslocalsecure-sink13" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"},
      "hdfslocalsecure-sink14" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"},
-     "hdfslocalsecure-sink15" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"}
+     "hdfslocalsecure-sink15" => {:channel => "hdfslocalsecure-channel",:cluster =>"azurite"},
+     "hdfslocalsecure-sink16" => {:channel => "hdfslocalsecure-channel2",:cluster =>"azurite"},
+     "hdfslocalsecure-sink17" => {:channel => "hdfslocalsecure-channel2",:cluster =>"azurite"},
+     "hdfslocalsecure-sink18" => {:channel => "hdfslocalsecure-channel2",:cluster =>"azurite"},
+     "hdfslocalsecure-sink19" => {:channel => "hdfslocalsecure-channel2",:cluster =>"azurite"},
+     "hdfslocalsecure-sink20" => {:channel => "hdfslocalsecure-channel2",:cluster =>"azurite"}
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['ams1']  = {
@@ -689,7 +722,7 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['ams1']  =
 }
 
 default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['ams1']  = ["hdfsmergesecure-channel"]
-default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['ams1']  = ["hdfslocalsecure-channel"]
+default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['ams1']  = ["hdfslocalsecure-channel","hdfslocalsecure-channel2"]
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['ams1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of AMS1 ###################################################################
