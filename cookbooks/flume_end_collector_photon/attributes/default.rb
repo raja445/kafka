@@ -462,7 +462,7 @@ default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['dfw2']  = {
      "hdfslocalsecure-sink5" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
      "hdfslocalsecure-sink6" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
      "hdfslocalsecure-sink7" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
-     "hdfslocalsecure-sink8" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"},
+     "hdfslocalsecure-sink8" => {:channel => "hdfslocalsecure-channel2",:cluster =>"garnet"}
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['dfw2']  = {
