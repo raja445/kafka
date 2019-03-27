@@ -67,9 +67,9 @@ default["flume_collector"]["endcollector_merge_retention_topics"]['dfw1']  = "ph
 
 default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = "ifc_photon_enriched_pb_dfw1,ifc_photon_nonenriched_pb_dfw1,user_context,ifc_photon_enriched_postback,dsp-beacon,sandboxrr,sandbox_postimpression,ucm_mapping,ifc_photon_enriched_san_pb,beeswax_bid_logs,dsp_segments,genesis_postback,optout,ifc_attributes,ifc_cookie_organic_activity,wclick_dfw1,normalized_postback,beeswax_download_event,beeswax_post_install_event,ifc_inmobi_api_user_segments,adroit_attribution_stats,iapclick,iapattribution,iapbilling,adomain_meta,tpce_custom_goal_summary,tpce_enriched_download,tpce_purchase_summary,adroit_san_pinger_stats,perfRR,perfex_beacon_ev1,perfex_click_ev1,perfex_render_ev1"
 
-default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8 eventhublocal-channel10 eventhublocal-channel11 eventhublocal-channel12 eventhublocal-channel13 hdfsmergesecure-channel hdfslocalsecure-channel platinumhdfssecure-channel"
+default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8 eventhublocal-channel10 eventhublocal-channel11 eventhublocal-channel12 eventhublocal-channel13 hdfsmergesecure-channel hdfslocalsecure-channel hdfslocalsecure-channel2 platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink11 kestrelsink12 kestrelsink13 kestrelsink14 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink11 kestrelsink12 kestrelsink13 kestrelsink14 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfslocalsrc" => {
@@ -79,6 +79,39 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "hdfslocalsecure-channel",
          :batchSize => 500,
          :'kafka.topics' => "profile_delete-appd,attribute_change-appd,attribute_change-brand,attribute_change-core,attribute_change-ifc,profile_delete-brand,profile_delete-core,profile_delete-ifc,custom_type_record_update-appduserclickhistory,custom_type_record_update-appduserrenderhistory,custom_type_record_update-appduserscore,custom_type_record_update-branduseractivityhistory,custom_type_record_update-ifc,custom_type_record_update-appdlookaliketype,custom_type_record_update-core,custom_type_record_update-ifcinorg,flat_activity_add-appdcustomactivity,flat_activity_add-appddownloadactivity,flat_activity_add-appdpurchaseactivity,flat_activity_add-appds2scustomsegmentactivity,flat_activity_add-coredownloadactivity,flat_activity_add-ifcorganicactivity,nested_activity_add-appd,nested_activity_add-cas,nested_activity_add-network,adroit_report_obj_dfw1,appd_attribute_errors,appd-debug,brand_attribute_dfw1_dfw1,ifc_photon_nonenriched_pb_dfw1,nested_activity_add-ifc,nested_activity_add-ifcuseractivity,network_activity_dfw1_dfw1,network_attribute_raw_dfw1,network_beacon_dfw1_dfw1,ttd-beacon,ttd-request,usermeta_change,wadogorr,fdsDfw1,georrcore,georrmetrics,napp,perfRR,supplyRR,brand_attributes,network_attribute_dfw1_dfw1,sdk_health_monitoring,sdk_crash_analytics,sdk_trc"},
+    
+    "hdfslocalsrc2" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "dfw1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+         :'kafka.topics' => "supplyRR"},
+
+    "hdfslocalsrc3" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "dfw1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+         :'kafka.topics' => "supplyRR"},
+
+    "hdfslocalsrc4" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "dfw1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+         :'kafka.topics' => "supplyRR"},
+
+    "hdfslocalsrc5" => {
+         :src_category => "hdfslocal",
+         :consumer_group => "dfw1hdfslocal",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "hdfslocalsecure-channel2",
+         :batchSize => 500,
+         :'kafka.topics' => "supplyRR"},
+
      "hdfsmergesrc" => {
          :src_category => "hdfsmerge",
          :consumer_group => "dfw1hdfsmerge",
@@ -225,7 +258,11 @@ default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['dfw1']  = {
      "hdfslocalsecure-sink5" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
      "hdfslocalsecure-sink6" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
      "hdfslocalsecure-sink7" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
-     "hdfslocalsecure-sink8" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"}
+     "hdfslocalsecure-sink8" => {:channel => "hdfslocalsecure-channel",:cluster =>"onyx"},
+     "hdfslocalsecure-sink9" => {:channel => "hdfslocalsecure-channel2",:cluster =>"onyx"},
+     "hdfslocalsecure-sink10" => {:channel => "hdfslocalsecure-channel2",:cluster =>"onyx"},
+     "hdfslocalsecure-sink11" => {:channel => "hdfslocalsecure-channel2",:cluster =>"onyx"},
+     "hdfslocalsecure-sink12" => {:channel => "hdfslocalsecure-channel2",:cluster =>"onyx"}
 }
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['dfw1']  = {
@@ -239,7 +276,7 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['dfw1']  =
 }
 
 default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['dfw1']  = ["hdfsmergesecure-channel"]
-default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['dfw1']  = ["hdfslocalsecure-channel"]
+default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['dfw1']  = ["hdfslocalsecure-channel","hdfslocalsecure-channel2"]
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['dfw1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of DFW1 ###################################################################

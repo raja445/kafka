@@ -1094,6 +1094,7 @@ end-collector.sinks.<%= "#{sink}" %>.scribe.host = flume-audit.grid.dfw1.inmobi.
 end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = lbs_sink
+end-collector.sinks.<%= "#{sink}" %>.promoter.workers = 50
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
