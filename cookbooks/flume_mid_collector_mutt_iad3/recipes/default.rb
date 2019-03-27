@@ -75,7 +75,7 @@ template "#{flumeConf}/flume-mid-collector.properties" do
     :channels =>node["flume_collector"]["midcollector_channels"][colo],
     :sinks =>node["flume_collector"]["midcollector_sinks"][colo],
     :spooldir =>node["flume_collector"]["spool_dir"],
-    :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"]['dfw2'],
+    :kafkazookeeper =>node["flume_collector"]["kafka_zookeeper"]['dfw1'],
     :colo => colo
   )
 end
