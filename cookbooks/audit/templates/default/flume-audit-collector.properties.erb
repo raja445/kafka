@@ -111,24 +111,6 @@ audit-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
 audit-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
 <% end -%>
-<% if details[:'src_category'] == 'maa1kafkamerge' -%>
-audit-collector.sources.<%= "#{src}" %>.type = <%= details[:type] %>
-audit-collector.sources.<%= "#{src}" %>.channels = <%= details[:channels] %>
-audit-collector.sources.<%= "#{src}" %>.zookeeper.connect = <%= node["audit_collector"]["kafka_zookeeper"]['maa1'] %>
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.connection.timeout.ms=30000
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.zookeeper.session.timeout.ms=30000
-audit-collector.sources.<%= "#{src}" %>.kafka.bootstrap.servers = <%= node["audit_collector"]["kafka_brokers"]['maa1'] %>
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.group.id = flume-collector-<%= details[:'consumer_group'] %>
-audit-collector.sources.<%= "#{src}" %>.kafka.topics = <%= details[:'kafka.topics'] %>
-audit-collector.sources.<%= "#{src}" %>.batchSize = <%= details[:batchSize] %>
-audit-collector.sources.<%= "#{src}" %>.topicHeaderKey = category
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.auto.offset.reset = latest
-audit-collector.sources.<%= "#{src}" %>.sourceLockDir = /data/d1/flume-audit/locker
-#Kerberos Conf
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.security.protocol = SASL_PLAINTEXT
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.sasl.kerberos.service.name = kafka
-audit-collector.sources.<%= "#{src}" %>.kafka.consumer.session.timeout.ms = 30000
-<% end -%>
 <% end -%>
 
 <% @hdfs_sinks.each do |sink, details| %>
