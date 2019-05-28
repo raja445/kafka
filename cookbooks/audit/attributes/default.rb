@@ -13,35 +13,30 @@ default["audit_collector"]["kafka_brokers"]['dfw1']  = "oxkf4001.grid.dfw1.inmob
 default["audit_collector"]["kafka_brokers"]['pek1']  = "pykf4001.grid.pek1.inmobi.com:9093,pykf4002.grid.pek1.inmobi.com:9093,pykf4003.grid.pek1.inmobi.com:9093,pykf4004.grid.pek1.inmobi.com:9093,pykf4005.grid.pek1.inmobi.com:9093,pykf4006.grid.pek1.inmobi.com:9093,pykf4007.grid.pek1.inmobi.com:9093,pykf4008.grid.pek1.inmobi.com:9093,pykf4009.grid.pek1.inmobi.com:9093,pykf4010.grid.pek1.inmobi.com:9093"
 default["audit_collector"]["kafka_brokers"]['dfw2']  = "gakf4001.grid.dfw2.inmobi.com:9093,gakf4002.grid.dfw2.inmobi.com:9093,gakf4003.grid.dfw2.inmobi.com:9093,gakf4004.grid.dfw2.inmobi.com:9093,gakf4005.grid.dfw2.inmobi.com:9093,gakf4006.grid.dfw2.inmobi.com:9093,gakf4007.grid.dfw2.inmobi.com:9093,gakf4008.grid.dfw2.inmobi.com:9093,gakf4009.grid.dfw2.inmobi.com:9093,gakf4010.grid.dfw2.inmobi.com:9093,gakf4011.grid.dfw2.inmobi.com:9093,gakf4012.grid.dfw2.inmobi.com:9093"
 default["audit_collector"]["kafka_brokers"]['ams1']  = "azkf4001.grid.ams1.inmobi.com:9093,azkf4002.grid.ams1.inmobi.com:9093,azkf4003.grid.ams1.inmobi.com:9093,azkf4004.grid.ams1.inmobi.com:9093,azkf4005.grid.ams1.inmobi.com:9093,azkf4006.grid.ams1.inmobi.com:9093,azkf4007.grid.ams1.inmobi.com:9093,azkf4008.grid.ams1.inmobi.com:9093,azkf4009.grid.ams1.inmobi.com:9093,azkf4010.grid.ams1.inmobi.com:9093"
-default["audit_collector"]["kafka_brokers"]['maa1']  = "bekf4001.grid.maa1.inmobi.com:9093,bekf4002.grid.maa1.inmobi.com:9093,bekf4003.grid.maa1.inmobi.com:9093,bekf4004.grid.maa1.inmobi.com:9093,bekf4005.grid.maa1.inmobi.com:9093,bekf4006.grid.maa1.inmobi.com:9093,bekf4007.grid.maa1.inmobi.com:9093,bekf4008.grid.maa1.inmobi.com:9093,bekf4009.grid.maa1.inmobi.com:9095"
 
 # Zookeeper Quorum in each colo
 default["audit_collector"]["kafka_zookeeper"]['dfw1']  = "kafka-zookeeper-1.grid.dfw1.inmobi.com:2181,kafka-zookeeper-2.grid.dfw1.inmobi.com:2181,kafka-zookeeper-3.grid.dfw1.inmobi.com:2181,kafka-zookeeper-4.grid.dfw1.inmobi.com:2181,kafka-zookeeper-5.grid.dfw1.inmobi.com:2181"
 default["audit_collector"]["kafka_zookeeper"]['pek1']  = "kafka-zookeeper-1.grid.pek1.inmobi.com:2181,kafka-zookeeper-2.grid.pek1.inmobi.com:2181,kafka-zookeeper-3.grid.pek1.inmobi.com:2181,kafka-zookeeper-4.grid.pek1.inmobi.com:2181,kafka-zookeeper-5.grid.pek1.inmobi.com:2181"
 default["audit_collector"]["kafka_zookeeper"]['dfw2']  = "kafka-zookeeper-1.grid.dfw2.inmobi.com:2181,kafka-zookeeper-2.grid.dfw2.inmobi.com:2181,kafka-zookeeper-3.grid.dfw2.inmobi.com:2181,kafka-zookeeper-4.grid.dfw2.inmobi.com:2181,kafka-zookeeper-5.grid.dfw2.inmobi.com:2181"
 default["audit_collector"]["kafka_zookeeper"]['ams1']  = "kafka-zookeeper-1.grid.ams1.inmobi.com:2181,kafka-zookeeper-2.grid.ams1.inmobi.com:2181,kafka-zookeeper-3.grid.ams1.inmobi.com:2181,kafka-zookeeper-4.grid.ams1.inmobi.com:2181,kafka-zookeeper-5.grid.ams1.inmobi.com:2181"
-default["audit_collector"]["kafka_zookeeper"]['maa1']  = "kafka-zookeeper-1.grid.maa1.inmobi.com:2181,kafka-zookeeper-2.grid.maa1.inmobi.com:2181,kafka-zookeeper-3.grid.maa1.inmobi.com:2181,kafka-zookeeper-4.grid.maa1.inmobi.com:2181,kafka-zookeeper-5.grid.maa1.inmobi.com:2181"
 
 #Flume Agents
 default["audit_collector"]["flume_agent_host"]['pek1']  = "pyns4002.grid.pek1.inmobi.com"
 default["audit_collector"]["flume_agent_host"]['dfw1']  = "oxns4002.grid.dfw1.inmobi.com"
 default["audit_collector"]["flume_agent_host"]['dfw2']  = "gans4002.grid.dfw2.inmobi.com"
 default["audit_collector"]["flume_agent_host"]['ams1']  = "azns4002.grid.ams1.inmobi.com"
-default["audit_collector"]["flume_agent_host"]['maa1']  = "bens4002.grid.maa1.inmobi.com"
 
 #Flume merge source consumer groupsize
 default["audit_collector"]["audit_consumer_gpsize"]['pek1']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['dfw1']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['dfw2']  = "1"
 default["audit_collector"]["audit_consumer_gpsize"]['ams1']  = "1"
-default["audit_collector"]["audit_consumer_gpsize"]['maa1']  = "1"
 
 #Flume merge source consumer groupsize
 default["audit_collector"]["mergesrc_consumer_gpsize"]['pek1']  = "1"
 default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw1']  = "1"
 default["audit_collector"]["mergesrc_consumer_gpsize"]['dfw2']  = "1"
 default["audit_collector"]["mergesrc_consumer_gpsize"]['ams1']  = "1"
-default["audit_collector"]["mergesrc_consumer_gpsize"]['maa1']  = "1"
 
 
 
@@ -93,15 +88,6 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :channels => "druidlocal-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
-     "maa1kafkamergesrc" => {
-         :src_category => "maa1kafkamerge",
-         :consumer_group => "audit-service",
-         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
-         :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel",
-         :batchSize => 500,
-         :'kafka.topics' => "_audit"}
        }
 
 #Configure the channels for the Flume Collector
