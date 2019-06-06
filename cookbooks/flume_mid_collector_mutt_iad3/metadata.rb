@@ -1,4 +1,4 @@
-name              "flume_mid_collector_mutt_iad3"
+name              "flume_mid_collector_mutt_ssp"
 maintainer        "gridops"
 maintainer_email  "gridops@imobi.com"
 description       'Installs and configures Flume Collector'
