@@ -1,7 +1,7 @@
 # coding: UTF-8
 # Cookbook Name:: cerner_kafka
 # Recipe:: default
-colo = node['domain'].split(".")[-3]
+colo = node['domain'].split(".")[-4]
 #colo = useast1
 flumeInstallDir="#{node["flume_collector"]["base_dir"]}/flume_#{node["flume_collector"]["version"]}"
 flumeTmp="/tmp/flume_#{node["flume_collector"]["version"]}.tar.gz"
