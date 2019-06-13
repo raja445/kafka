@@ -1,6 +1,7 @@
 # coding: UTF-8
 # Cookbook Name:: cerner_kafka
 # Recipe:: default
+domain = flumemc.prod1001.useast1.ssp.inmobi.com
 colo = node['domain'].split(".")[-4]
 #colo = useast1
 flumeInstallDir="#{node["flume_collector"]["base_dir"]}/flume_#{node["flume_collector"]["version"]}"
@@ -70,7 +71,7 @@ template "#{flumeConf}/flume-mid-collector.properties" do
   source "flume-mid-collector.properties.erb"
   owner "flume"
   mode  00644
-  colo = node['domain'].split(".")[-3]
+  colo = node['domain'].split(".")[-4]
   variables(
     :sources =>node["flume_collector"]["midcollector_sources"][colo],
     :channels =>node["flume_collector"]["midcollector_channels"][colo],
