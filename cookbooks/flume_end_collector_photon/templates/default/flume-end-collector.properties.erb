@@ -1108,7 +1108,7 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = segment-ingestion
 <% @dfw1_eventhub_sinks14.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = mmp-conversion-streams
-end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-download
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-download
 end-collector.sinks.<%= "#{sink}" %>.saskey = MCUwqo48pPte/yClQWppmhWOzqKDe6h0YaywK3zGRDw=
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
@@ -1122,7 +1122,7 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = download
 <% @dfw1_eventhub_sinks15.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = mmp-conversion-streams
-end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-purchase
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-purchase
 end-collector.sinks.<%= "#{sink}" %>.saskey = eQnuXfrgLEbxFaFocnLUk9HOvt+1H9UZ9yYmvEHebwQ=
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
@@ -1136,7 +1136,7 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = purchase
 <% @dfw1_eventhub_sinks16.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = mmp-conversion-streams
-end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-custom
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-custom
 end-collector.sinks.<%= "#{sink}" %>.saskey = OJ062sh3DhBbTpKtqIpZRxcR08USc9fLTnBUuNYUnNQ=
 end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
 end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
