@@ -68,7 +68,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "spillable mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel photon-mergespillable-channel dfw1-to-ams1-kafkamerge-channel hdfslocalsecure-channel hdfsmergesecure-channel platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink dfw1-to-ams1-kafkamerge-sink1 dfw1-to-ams1-kafkamerge-sink2 dfw1-to-ams1-kafkamerge-sink3 dfw1-to-ams1-kafkamerge-sink4 dfw1-to-ams1-kafkamerge-sink5 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "kafkasink1 kafkasink2 mergekafkasink hdfsmerge-sink1 hdfsmerge-sink2 hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 platinumhdfs-sink4 platinumhdfs-sink5 photon-mergekafkasink dfw1-to-ams1-kafkamerge-sink1 dfw1-to-ams1-kafkamerge-sink2 dfw1-to-ams1-kafkamerge-sink3 dfw1-to-ams1-kafkamerge-sink4 dfw1-to-ams1-kafkamerge-sink5 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 platinumhdfssecure-sink4 platinumhdfssecure-sink5"
 
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
@@ -197,7 +197,8 @@ default["flume_collector"]["endcollector_local_hdfs_sinks"]['dfw1']  = {
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
-     "hdfsmerge-sink" => {:channel => "hdfsmerge-channel",:cluster =>"onyx"}
+     "hdfsmerge-sink1" => {:channel => "hdfsmerge-channel",:cluster =>"onyx"},
+     "hdfsmerge-sink2" => {:channel => "hdfsmerge-channel",:cluster =>"onyx"}    
 }
 
 default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['dfw1']  = {
