@@ -235,7 +235,7 @@ default["flume_collector"]["endcollector_platinum_secure_hdfs_sinks"]['dfw1']  =
 }
 
 default["flume_collector"]["endcollector_merge_secure_hdfs_channels"]['dfw1']  = ["hdfsmergesecure-channel"]
-default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['dfw1']  = ["hdfslocalsecure-channel"]
+default["flume_collector"]["endcollector_local_secure_hdfs_channels"]['dfw1']  = ["hdfslocalsecure-channel", "hdfslocalsecure-channel2"]
 default["flume_collector"]["endcollector_platinum_secure_hdfs_channels"]['dfw1']  = ["platinumhdfssecure-channel"]
 
 ######################################################### End Of DFW1 ###################################################################
