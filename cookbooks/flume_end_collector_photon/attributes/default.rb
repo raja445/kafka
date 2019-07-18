@@ -332,7 +332,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw2']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw2']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel hdfsmergesecure-channel hdfslocalsecure-channel hdfslocalsecure-channel2 hdfslocalsecure-channel3 hdfslocalsecure-channel4 platinumhdfssecure-channel eventhublocal-channel1 eventhublocal-channel2 eventhublocal-channel3 eventhublocal-channel4 eventhublocal-channel5 eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 hdfslocalsecure-sink13 hdfslocalsecure-sink14 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 kestrelsink kestrelsink1 kestrelsink2 kestrelsink3 kestrelsink4 kestrelsink5 kestrelsink6 kestrelsink7"
+default["flume_collector"]["endcollector_all_sinks"]['dfw2'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 hdfslocal-sink4 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 hdfslocalsecure-sink13 hdfslocalsecure-sink14 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3 kestrelsink kestrelsink1 kestrelsink2 kestrelsink3 kestrelsink4 kestrelsink5 kestrelsink6 kestrelsink7 kestrelsink8"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw2']  = {
      "hdfslocalsrc1" => {
@@ -566,6 +566,10 @@ default["flume_collector"]["endcollector_local_eventhub_sinks4"]['dfw2']  = {
 
 default["flume_collector"]["endcollector_local_eventhub_sinks5"]['dfw2']  = {
      "kestrelsink4" => {:channel => "eventhublocal-channel5",:cluster =>"garnet"},
+}
+
+default["flume_collector"]["endcollector_local_eventhub_sinks9"]['dfw2']  = {
+     "kestrelsink8" => {:channel => "eventhublocal-channel5",:cluster =>"garnet"},
 }
 
 default["flume_collector"]["endcollector_local_eventhub_sinks6"]['dfw2']  = {
