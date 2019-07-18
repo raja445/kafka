@@ -1275,6 +1275,34 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-custom
 <% end %>
 
 <% if @colo == 'dfw2' -%>
+<% @local_eventhub_sinks10.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
+end-collector.sinks.<%= "#{sink}" %>.saskey = rL8+m1Gmx0c+4WinqLVfSw/U+wzX4tvYExT/vJB3+gE=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-custom
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw2' -%>
+<% @local_eventhub_sinks11.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = organic-ehub-useast
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
+end-collector.sinks.<%= "#{sink}" %>.saskey = rL8+m1Gmx0c+4WinqLVfSw/U+wzX4tvYExT/vJB3+gE=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = organic-custom
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw2' -%>
 <% @local_eventhub_sinks6.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = postserve-ehub-useast
