@@ -99,6 +99,7 @@ template "#{flumeConf}/flume-end-collector.properties" do
     :local_eventhub_sinks3 =>node["flume_collector"]["endcollector_local_eventhub_sinks3"]['dfw2'],
     :local_eventhub_sinks4 =>node["flume_collector"]["endcollector_local_eventhub_sinks4"]['dfw2'],
     :local_eventhub_sinks5 =>node["flume_collector"]["endcollector_local_eventhub_sinks5"]['dfw2'],
+    :local_eventhub_sinks9 =>node["flume_collector"]["endcollector_local_eventhub_sinks9"]['dfw2'],
     :local_eventhub_sinks6 =>node["flume_collector"]["endcollector_local_eventhub_sinks6"]['dfw2'],
     :local_eventhub_sinks7 =>node["flume_collector"]["endcollector_local_eventhub_sinks7"]['dfw2'],
     :local_eventhub_sinks8 =>node["flume_collector"]["endcollector_local_eventhub_sinks8"]['dfw2'],
