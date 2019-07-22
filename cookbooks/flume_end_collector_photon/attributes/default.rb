@@ -577,7 +577,7 @@ default["flume_collector"]["endcollector_local_eventhub_sinks10"]['dfw2']  = {
 }
 
 default["flume_collector"]["endcollector_local_eventhub_sinks11"]['dfw2']  = {
-     "kestrelsink10" => {:channel => "eventhublocal-channel5",:cluster =>"garnet"},
+     "kestrelsink10" => {:channel => "eventhublocal-channel6",:cluster =>"garnet"},
 }
 
 default["flume_collector"]["endcollector_local_eventhub_sinks6"]['dfw2']  = {
