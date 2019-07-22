@@ -1331,6 +1331,20 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = user-segment
 <% end %>
 
 <% if @colo == 'dfw2' -%>
+<% @local_eventhub_sinks12.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = cdp-ehub-useast
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = write-policy-useast
+end-collector.sinks.<%= "#{sink}" %>.saskey = nL41ShL+Xrt/ohoGWsNFMDr1rSVi+8F/62MgXycnlEU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = user-segment
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw2' -%>
 <% @local_eventhub_sinks8.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
 end-collector.sinks.<%= "#{sink}" %>.namespace = cdp-ehub-useast
