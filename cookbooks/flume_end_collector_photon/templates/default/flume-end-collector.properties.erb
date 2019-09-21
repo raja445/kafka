@@ -1014,6 +1014,118 @@ end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
 <% end %>
 <% end %>
 
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks18.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks19.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks20.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks21.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks22.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks23.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks24.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
+<% if @colo == 'dfw1' -%>
+<% @dfw1_eventhub_sinks25.each do |sink, details| %>
+end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
+end-collector.sinks.<%= "#{sink}" %>.namespace = billing-billed-global-eh
+end-collector.sinks.<%= "#{sink}" %>.saskeyname = billing-billed-render-eastus-write-policy
+end-collector.sinks.<%= "#{sink}" %>.saskey = XV0F3HXxwqc+WPcyKxJo/Bx+aJLW9Lm7wG7lSCTBigU=
+end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
+end-collector.sinks.<%= "#{sink}" %>.publisherworkercount = 10
+end-collector.sinks.<%= "#{sink}" %>.compression.enable = false
+end-collector.sinks.<%= "#{sink}" %>.lingertime = 50
+end-collector.sinks.<%= "#{sink}" %>.topic.name = billing-billed-render-eastus
+<% end %>
+<% end %>
+
 <% if @colo == 'dfw2' -%>
 <% @local_eventhub_sinks1.each do |sink, details| %>
 end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kestrel.KestrelEventHubSink
