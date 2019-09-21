@@ -196,7 +196,6 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
-
     "eventhublocalsrc18" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -204,7 +203,6 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
-
     "eventhublocalsrc19" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -212,7 +210,6 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
-
     "eventhublocalsrc20" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -220,7 +217,6 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
-
     "eventhublocalsrc21" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
