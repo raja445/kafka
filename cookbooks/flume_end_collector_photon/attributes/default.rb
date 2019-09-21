@@ -69,7 +69,7 @@ default["flume_collector"]["endcollector_platinum_retention_topics"]['dfw1']  = 
 
 default["flume_collector"]["endcollector_all_channels"]['dfw1']  = "mergespillable hdfsmerge-channel hdfslocal-channel platinumhdfs-channel eventhublocal-channel6 eventhublocal-channel7 eventhublocal-channel8 eventhublocal-channel14 eventhublocal-channel15 eventhublocal-channel16 eventhublocal-channel17 hdfsmergesecure-channel hdfslocalsecure-channel hdfslocalsecure-channel2 platinumhdfssecure-channel"
 
-default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink15 kestrelsink16 kestrelsink17 kestrelsink18 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
+default["flume_collector"]["endcollector_all_sinks"]['dfw1'] = "mergekafkasink hdfsmerge-sink hdfslocal-sink1 hdfslocal-sink2 hdfslocal-sink3 platinumhdfs-sink1 platinumhdfs-sink2 platinumhdfs-sink3 kestrelsink7 kestrelsink8 kestrelsink9 kestrelsink15 kestrelsink16 kestrelsink17 kestrelsink18 kestrelsink19 kestrelsink20 kestrelsink21 kestrelsink22 kestrelsink23 kestrelsink24 kestrelsink25 kestrelsink26 hdfsmergesecure-sink hdfslocalsecure-sink1 hdfslocalsecure-sink2 hdfslocalsecure-sink3 hdfslocalsecure-sink4 hdfslocalsecure-sink5 hdfslocalsecure-sink6 hdfslocalsecure-sink7 hdfslocalsecure-sink8 hdfslocalsecure-sink9 hdfslocalsecure-sink10 hdfslocalsecure-sink11 hdfslocalsecure-sink12 platinumhdfssecure-sink1 platinumhdfssecure-sink2 platinumhdfssecure-sink3"
 #Configure the sources for the Flume Collector
 default["flume_collector"]["endcollector_sources"]['dfw1']  = {
      "hdfslocalsrc" => {
@@ -196,6 +196,34 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"}
+    "eventhublocalsrc18" => {
+         :src_category => "dfw1eventhublocal17",
+         :consumer_group => "dfw1eventhublocal17",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel17",
+         :batchSize => 500,
+         :'kafka.topics' => "billing_cpm_us_east"}
+    "eventhublocalsrc19" => {
+         :src_category => "dfw1eventhublocal17",
+         :consumer_group => "dfw1eventhublocal17",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel17",
+         :batchSize => 500,
+         :'kafka.topics' => "billing_cpm_us_east"}
+    "eventhublocalsrc20" => {
+         :src_category => "dfw1eventhublocal17",
+         :consumer_group => "dfw1eventhublocal17",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel17",
+         :batchSize => 500,
+         :'kafka.topics' => "billing_cpm_us_east"}
+    "eventhublocalsrc21" => {
+         :src_category => "dfw1eventhublocal17",
+         :consumer_group => "dfw1eventhublocal17",
+         :type => "org.apache.flume.source.kafka.MultiKafkaSource",
+         :channels => "eventhublocal-channel17",
+         :batchSize => 500,
+         :'kafka.topics' => "billing_cpm_us_east"}
 }
 
 #Configure the channels for the Flume Collector
@@ -237,6 +265,30 @@ default["flume_collector"]["endcollector_dfw1_eventhub_sinks16"]['dfw1']  = {
 }
 default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
      "kestrelsink18" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink19" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink20" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink21" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink22" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink23" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink24" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink25" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+}
+default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
+     "kestrelsink26 => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
