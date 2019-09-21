@@ -196,6 +196,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
+
     "eventhublocalsrc18" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -203,6 +204,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
+
     "eventhublocalsrc19" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -210,6 +212,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
+
     "eventhublocalsrc20" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -217,6 +220,7 @@ default["flume_collector"]["endcollector_sources"]['dfw1']  = {
          :channels => "eventhublocal-channel17",
          :batchSize => 500,
          :'kafka.topics' => "billing_cpm_us_east"},
+
     "eventhublocalsrc21" => {
          :src_category => "dfw1eventhublocal17",
          :consumer_group => "dfw1eventhublocal17",
@@ -288,7 +292,7 @@ default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
      "kestrelsink25" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
 }
 default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
-     "kestrelsink26 => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+     "kestrelsink26" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
