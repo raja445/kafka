@@ -288,7 +288,7 @@ default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
      "kestrelsink25" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
 }
 default["flume_collector"]["endcollector_dfw1_eventhub_sinks17"]['dfw1']  = {
-     "kestrelsink26 => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
+     "kestrelsink26" => {:channel => "eventhublocal-channel17",:cluster =>"onyx"},
 }
 
 default["flume_collector"]["endcollector_merged_hdfs_sinks"]['dfw1']  = {
