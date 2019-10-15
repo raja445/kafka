@@ -106,5 +106,5 @@ default["audit_collector"]["auditcollector_local_hdfs_sinks"]['pek1']  = {
 default["audit_collector"]["auditcollector_local_druid_sinks"]['pek1']  = {
      "druidlocalpek1-sink" => {:channel => "druidlocalpek1-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
      "druidlocalpek1-sink2" => {:channel => "druidlocalpek1-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
-     "druidlocalpek1-sink3" => {:channel => "druidlocalpek1-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"}
+     "druidlocalpek1-sink3" => {:channel => "druidlocalpek1-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
 }
