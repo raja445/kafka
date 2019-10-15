@@ -40,25 +40,25 @@ default["audit_collector"]["mergesrc_consumer_gpsize"]['ams1']  = "1"
 
 
 
-default["audit_collector"]["auditcollector_all_channels"]  = "druidlocal-channel  hdfslocal-channel"
+default["audit_collector"]["auditcollector_all_channels"]  = "druidlocalpek1-channel hdfslocal-channel"
 
-default["audit_collector"]["auditcollector_all_sinks"] = "druidlocal-sink druidlocal-sink2 druidlocal-sink3 hdfslocal-sink hdfslocal-sink2 hdfslocal-sink3"
+default["audit_collector"]["auditcollector_all_sinks"] = "druidlocalpek1-sink druidlocalpek1-sink2 druidlocalpek1-sink3 hdfslocal-sink hdfslocal-sink2 hdfslocal-sink3"
 #Configure the sources for the Flume Collector
 default["audit_collector"]["auditcollector_sources"]  = {
      "auditscribesrc" => {
          :src_category => "auditscribe",
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.scribe.ScribeSource",
-         :channels => "druidlocal-channel hdfslocal-channel",
-         :'selector_optional' => "druidlocal-channel",
+         :channels => "druidlocalpek1-channel hdfslocal-channel",
+         :'selector_optional' => "druidlocalpek1-channel",
          :port => 2530},
      "dfw1localkafkasrc" => {
          :src_category => "auditkafka",
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel",
+         :'selector_optional' => "druidlocalpek1-channel",
+         :channels => "druidlocalpek1-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
      "pek1kafkamergesrc" => {
@@ -66,8 +66,8 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel",
+         :'selector_optional' => "druidlocalpek1-channel",
+         :channels => "druidlocalpek1-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
      "dfw2kafkamergesrc" => {
@@ -75,8 +75,8 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel",
+         :'selector_optional' => "druidlocalpek1-channel",
+         :channels => "druidlocalpek1-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
      "ams1kafkamergesrc" => {
@@ -84,36 +84,36 @@ default["audit_collector"]["auditcollector_sources"]  = {
          :consumer_group => "audit-service",
          :type => "org.apache.flume.source.kafka.MultiKafkaSource",
          :'selector.type' => "replicating",
-         :'selector_optional' => "druidlocal-channel",
-         :channels => "druidlocal-channel hdfslocal-channel",
+         :'selector_optional' => "druidlocalpek1-channel",
+         :channels => "druidlocalpek1-channel hdfslocal-channel",
          :batchSize => 500,
          :'kafka.topics' => "_audit"},
        }
 
 #Configure the channels for the Flume Collector
-default["audit_collector"]["auditcollector_local_druid_channels"]  = ["druidlocal-channel"]
+default["audit_collector"]["auditcollector_local_druid_channels"]  = ["druidlocalpek1-channel"]
 default["audit_collector"]["auditcollector_local_hdfs_channels"]  = ["hdfslocal-channel"]
 
 
 #Configure the sinks for the Flume Collector
-default["audit_collector"]["auditcollector_local_hdfs_sinks"]['dfw1']  = {
-     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
-     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
-     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
-}
+#default["audit_collector"]["auditcollector_local_hdfs_sinks"]['dfw1']  = {
+#     "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+#     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+#     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"onyx"},
+#}
 default["audit_collector"]["auditcollector_local_hdfs_sinks"]['pek1']  = {
      "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
      "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
      "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
 }
 
-default["audit_collector"]["auditcollector_local_druid_sinks"]['dfw1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
-     "druidlocal-sink2" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
-     "druidlocal-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
-}
+#default["audit_collector"]["auditcollector_local_druid_sinks"]['dfw1']  = {
+#     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
+#     "druidlocal-sink2" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
+#     "druidlocal-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
+#}
 default["audit_collector"]["auditcollector_local_druid_sinks"]['pek1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
-     "druidlocal-sink2" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
-     "druidlocal-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"}
+     "druidlocalpek1-sink" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
+     "druidlocalpek1-sink2" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"},
+     "druidlocalpek1-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"}
 }
