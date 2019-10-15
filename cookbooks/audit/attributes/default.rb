@@ -103,6 +103,8 @@ default["audit_collector"]["auditcollector_local_hdfs_sinks"]['dfw1']  = {
 }
 default["audit_collector"]["auditcollector_local_hdfs_sinks"]['pek1']  = {
      "hdfslocal-sink" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
+     "hdfslocal-sink2" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
+     "hdfslocal-sink3" => {:channel => "hdfslocal-channel",:cluster =>"pyrite"},
 }
 
 default["audit_collector"]["auditcollector_local_druid_sinks"]['dfw1']  = {
@@ -111,5 +113,7 @@ default["audit_collector"]["auditcollector_local_druid_sinks"]['dfw1']  = {
      "druidlocal-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"},
 }
 default["audit_collector"]["auditcollector_local_druid_sinks"]['pek1']  = {
-     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"oxdr4001.grid.dfw1.inmobi.com:2181,oxdr4002.grid.dfw1.inmobi.com:2181,oxdr4003.grid.dfw1.inmobi.com:2181"}
+     "druidlocal-sink" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"}
+     "druidlocal-sink2" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"}
+     "druidlocal-sink3" => {:channel => "druidlocal-channel",:zookeeper =>"pydr4001.grid.pek1.inmobi.com:2181,pydr4002.grid.pek1.inmobi.com:2181,pydr4003.grid.pek1.inmobi.com:2181"}
 }
