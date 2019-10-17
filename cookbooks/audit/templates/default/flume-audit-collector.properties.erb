@@ -136,7 +136,7 @@ audit-collector.sinks.<%= "#{sink}" %>.retention.topics = _audit
 audit-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 audit-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 audit-collector.sinks.<%= "#{sink}" %>.tier = LOCAL
-audit-collector.sinks.<%= "#{sink}" %>.retention.topics._audit = 120
+audit-collector.sinks.<%= "#{sink}" %>.retention.topics._audit = 124
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
 audit-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
 <% end %>
