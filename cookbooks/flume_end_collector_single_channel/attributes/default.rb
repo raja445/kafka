@@ -911,7 +911,7 @@ default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
 
 
 default["flume_collector"]["endcollector_merged_secure_hdfs_sinks"]['pek1']  = {
-     "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"pyrite"}
+     "hdfsmergesecure-sink" => {:channel => "hdfsmergesecure-channel",:cluster =>"pyrite"},
      "hdfsmergesecure-sink1" => {:channel => "hdfsmergesecure-channel",:cluster =>"pyrite"}
 }
 
