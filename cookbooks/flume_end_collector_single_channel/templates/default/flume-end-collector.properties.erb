@@ -605,34 +605,6 @@ end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLA
 end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
 <% end %>
 
-<% if @colo == 'ams1' -%>
-<% @ams1todfw1merged_kafka_sinks.each do |sink, details| %>
-end-collector.sinks.<%= "#{sink}" %>.type = org.apache.flume.sink.kafka.PooledKafkaSink
-end-collector.sinks.<%= "#{sink}" %>.channel = <%= details[:channel] %>
-end-collector.sinks.<%= "#{sink}" %>.topicHeader = category
-end-collector.sinks.<%= "#{sink}" %>.flumeBatchSize = 500
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.client.id = <%= details[:producer_id] %>
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.buffer.memory = 268435456
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.batch.size = 131072
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.linger.ms = 500
-end-collector.sinks.<%= "#{sink}" %>.kafka.bootstrap.servers = <%= node["flume_collector"]["kafka_brokers"]['dfw1'] %>
-end-collector.sinks.<%= "#{sink}" %>.kafka.topic = dummy
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.acks = all
-# valid values none, gzip, snappy
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.compression.type = gzip
-#Single channel
-end-collector.sinks.<%= "#{sink}" %>.workerThreads = <%= @mergesinkworkerthreads %>
-end-collector.sinks.<%= "#{sink}" %>.audit.enable = true
-end-collector.sinks.<%= "#{sink}" %>.audit.host = flume-audit.grid.dfw1.inmobi.com
-end-collector.sinks.<%= "#{sink}" %>.audit.port = 2530
-end-collector.sinks.<%= "#{sink}" %>.auditpublishers = 10
-end-collector.sinks.<%= "#{sink}" %>.tier = merger_sink
-#Kerberos Conf
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.security.protocol = SASL_PLAINTEXT
-end-collector.sinks.<%= "#{sink}" %>.kafka.producer.sasl.kerberos.service.name = kafka
-<% end %>
-<% end %>
-
 
 <% if @colo == 'maa1' -%>
 <% @maa1todfw1merged_kafka_sinks.each do |sink, details| %>
