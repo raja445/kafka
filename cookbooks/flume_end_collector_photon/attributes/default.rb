@@ -1089,7 +1089,7 @@ default["flume_collector"]["endcollector_platinum_hdfs_sinks"]['pek1']  = {
 default["flume_collector"]["endcollector_local_secure_hdfs_sinks"]['pek1']  = {
      "hdfslocalsecure-sink1" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"},
      "hdfslocalsecure-sink2" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"},
-     "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"}
+     "hdfslocalsecure-sink3" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"},
      "hdfslocalsecure-sink4" => {:channel => "hdfslocalsecure-channel",:cluster =>"pyrite"}
 }
 
