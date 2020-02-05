@@ -802,6 +802,8 @@ end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_purchase_pek1 = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_custom_pek1 = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.perfRR = 96
 #end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @platinumzookeeper %>
@@ -1394,6 +1396,8 @@ end-collector.sinks.<%= "#{sink}" %>.tier = global_mbs_sink
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @platinum_retention_topics %>
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_purchase_pek1 = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_custom_pek1 = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_enriched_pb_dfw1 = 168
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.ifc_photon_enriched_pb_dfw2 = 168
