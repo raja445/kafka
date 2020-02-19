@@ -862,6 +862,10 @@ end-collector.sinks.<%= "#{sink}" %>.scribe.port = 2530
 end-collector.sinks.<%= "#{sink}" %>.codeC = gzip
 end-collector.sinks.<%= "#{sink}" %>.tier = lbs_sink
 end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_topics %>
+<% if @colo == 'pek1' -%>
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_purchase_pek1 = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_custom_pek1 = 240
+<% end %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosPrincipal = flume/<%= node["fqdn"] %>@PROD.INMOBI.COM
