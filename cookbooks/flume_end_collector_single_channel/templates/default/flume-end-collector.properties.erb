@@ -1024,6 +1024,19 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics = <%= @local_retention_top
 <% if @colo == 'pek1' -%>
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_purchase_pek1 = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_custom_pek1 = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpc_pek1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_cpm_pek1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.billing_download_pek1 = 120
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_download = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_enriched_download = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_purchase_summary = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_custom_goal_summary = 168
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_purchase_pek1 = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_custom_pek1 = 240
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.china-dmp-data = 72
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.china-dmp-data-idfa = 72
 <% end %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
