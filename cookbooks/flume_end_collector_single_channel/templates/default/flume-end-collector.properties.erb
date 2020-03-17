@@ -1037,6 +1037,7 @@ end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_purchase_pe
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.tpce_inorganic_custom_pek1 = 240
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.china-dmp-data = 72
 end-collector.sinks.<%= "#{sink}" %>.retention.topics.china-dmp-data-idfa = 72
+end-collector.sinks.<%= "#{sink}" %>.retention.topics.china-dmp-segment-reporting = 168
 <% end %>
 end-collector.sinks.<%= "#{sink}" %>.zk.url = <%= @kafkazookeeper %>
 end-collector.sinks.<%= "#{sink}" %>.hdfs.kerberosKeytab = <%= @keytab %>
